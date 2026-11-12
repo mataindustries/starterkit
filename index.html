@@ -197,6 +197,8 @@ mark{background:rgba(226,84,43,.14);color:inherit;border-radius:4px;padding:0 2p
     <div class="upload">
       <label class="btn" for="f_file"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span id="uplabel" data-i="l_upload"></span></label>
       <input id="f_file" type="file" accept="image/*" class="vh" tabindex="-1">
+      <label class="btn" for="f_camera"><span data-i="l_capture"></span></label>
+      <input id="f_camera" type="file" accept="image/*" capture="environment" class="vh" tabindex="-1">
       <div id="imgbox" class="imgbox" hidden>
         <img id="imgprev" alt="">
         <div class="seg" id="kindseg" role="group"><button type="button" data-kind="logo" data-i="k_logo"></button><button type="button" data-kind="photo" data-i="k_photo"></button></div>
@@ -289,14 +291,14 @@ const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>Array.from(r.quer
 const UI={
 en:{appName:"Starter Kit",eyebrow:"Free · No sign-up · Stays on your phone",
 h1:"Your business, ready to post in <em>five minutes.</em>",
-lede:"A flyer, a story, your bio, customer texts and a week of post ideas — made from a few details.",
+lede:"A flyer, a story, your bio, customer texts and a week of post ideas. All from a few details.",
 examples:"Examples",s1:"Your business",s2:"How customers reach you",s3:"Logo or photo",optional:"Optional",
 l_name:"Business name",ph_name:"e.g. Bright Path Cleaning",l_service:"What do you do?",ph_other:"e.g. Pool cleaning",
 l_area:"City or service area",ph_area:"e.g. Glendora & nearby",l_desc:"Your service in a sentence or two",
 descHint:"Leave blank to use the suggestion.",suggest:"Use suggestion",
 contactHint:"Only what you type here shows up on your materials.",
 l_phone:"Phone (call or text)",l_handle:"Instagram or Facebook",ph_handle:"@yourbusiness",l_web:"Website",ph_web:"yourbusiness.com",l_email:"Email",
-l_upload:"Add a logo or photo",change:"Change image",
+l_upload:"Add a logo or photo",l_capture:"Take a photo",change:"Change image",
 imgHint:"Use your own logo or a photo you took. Ask before posting photos of a client's home.",
 k_logo:"Logo",k_photo:"Photo",remove:"Remove",go:"Make my kit",privacy:"Nothing is uploaded. It all stays on this phone.",
 needName:"Add your business name to continue.",needOther:"Tell us what service you offer.",
@@ -304,7 +306,7 @@ back:"Edit details",t_g:"Graphics",t_b:"Bio",t_m:"Messages",t_w:"Week 1",
 style:"Style",colors:"Colors",l_head:"Headline",l_cta:"Call to action",another:"Another idea",
 cap_post:"Post · 1080 × 1350",cap_story:"Story · 1080 × 1920",
 save:"Save image",share:"Share",copy:"Copy",copyCap:"Copy caption",copied:"Copied",
-saved:"Saved — check your Downloads",shareNo:"Sharing isn't available here, so the image was saved instead.",
+saved:"Saved. Check your Downloads",shareNo:"Sharing isn't available here, so the image was saved instead.",
 imgErr:"Couldn't open that image. Try a JPG or PNG.",copyErr:"Couldn't copy. Press and hold the text to copy it.",
 tplNames:["Editorial","Poster","Grid"],
 bioT:"Instagram bio",chars:"{n}/150 characters",aboutT:"About your business",aboutM:"Google Business Profile · Facebook page",
@@ -329,7 +331,7 @@ l_area:"Ciudad o zona de servicio",ph_area:"Ej. Glendora y alrededores",l_desc:"
 descHint:"Déjelo en blanco para usar la sugerencia.",suggest:"Usar sugerencia",
 contactHint:"Solo lo que escriba aquí aparece en sus materiales.",
 l_phone:"Teléfono (llamadas o mensajes)",l_handle:"Instagram o Facebook",ph_handle:"@sunegocio",l_web:"Sitio web",ph_web:"sunegocio.com",l_email:"Correo electrónico",
-l_upload:"Agregar logo o foto",change:"Cambiar imagen",
+l_upload:"Agregar logo o foto",l_capture:"Tomar foto",change:"Cambiar imagen",
 imgHint:"Use su propio logo o una foto que usted tomó. Pida permiso antes de publicar fotos de la casa de un cliente.",
 k_logo:"Logo",k_photo:"Foto",remove:"Quitar",go:"Crear mi kit",privacy:"No se sube nada. Todo se queda en este teléfono.",
 needName:"Escriba el nombre de su negocio para continuar.",needOther:"Díganos qué servicio ofrece.",
@@ -362,7 +364,7 @@ const CHIPS={en:{cleaning:"House cleaning",landscaping:"Landscaping",detailing:"
 const SV={
 cleaning:{
  en:{label:"House cleaning",noun:"home cleaning",hl:["Come home to clean.","A cleaner home. Your weekends back.","Detail-minded cleaning for busy homes."],
-  desc:"Home cleaning for busy households — kitchens, bathrooms, floors, and the small details that make a place feel fresh.",
+  desc:"Home cleaning for busy households. Kitchens, bathrooms, floors, and the little details that make a place feel fresh.",
   job:"a kitchen or bathroom you cleaned",tip:"one two-minute habit that keeps a bathroom cleaner between visits",tools:"your cleaning caddy and supplies",faq:"the difference between a regular clean and a deep clean",quote:"how many bedrooms and bathrooms you have, and whether you want a regular or a deep clean",prep:"If anything needs special care, or pets will be home, give me a heads-up."},
  es:{label:"Limpieza de casas",noun:"limpieza de casas",hl:["Llegue a una casa limpia.","Su casa limpia. Su fin de semana libre.","Limpieza con atención a cada detalle."],
   desc:"Limpieza de casas para familias ocupadas: cocinas, baños, pisos y esos detalles que hacen que todo se sienta fresco.",
@@ -376,13 +378,13 @@ landscaping:{
   job:"un jardín que limpió o podó",tip:"cuándo y cada cuánto regar cuando hace calor",tools:"su podadora, su desbrozadora y su troca o tráiler",faq:"qué incluye una visita de mantenimiento regular",quote:"un par de fotos del jardín y qué le gustaría que hiciera",prep:"Por favor deje abierta la puerta del patio y dígame si va a haber mascotas afuera."}},
 detailing:{
  en:{label:"Mobile detailing",noun:"mobile car detailing",hl:["Showroom shine, right in your driveway.","You stay put. Your car gets the shine.","Car detailing that comes to you."],
-  desc:"Mobile car detailing at your home or work — interior, exterior, and the details in between.",
+  desc:"Mobile car detailing at your home or work. Interior, exterior, and the details in between.",
   job:"a car interior you detailed",tip:"one easy way to keep a car interior cleaner day to day",tools:"your detailing kit and setup",faq:"how long a full detail takes and what you need on site",quote:"the make and model of your car, and whether you want the inside, the outside, or both",prep:"Please park where I can work all around the car, and tell me if there is a water spigot or outlet I can use."},
  es:{label:"Detallado a domicilio",noun:"detallado de autos a domicilio",hl:["Su carro brillando, sin salir de casa.","Usted descansa. Su carro queda brillando.","Detallado de autos hasta su puerta."],
   desc:"Detallado de autos en su casa o trabajo: interior, exterior y todos los detalles.",
   job:"el interior de un carro que detalló",tip:"una forma fácil de mantener el interior del carro más limpio día a día",tools:"su equipo y productos de detallado",faq:"cuánto tarda un detallado completo y qué necesita en el lugar",quote:"la marca y el modelo de su carro, y si quiere el interior, el exterior o los dos",prep:"Por favor deje el carro donde pueda trabajar alrededor, y dígame si hay una llave de agua o un contacto que pueda usar."}},
 pressure:{
- en:{label:"Pressure washing",noun:"pressure washing",hl:["Bring back the clean.","Driveways, patios, and walls — fresh again.","Wash away a year of grime."],
+ en:{label:"Pressure washing",noun:"pressure washing",hl:["Bring back the clean.","Fresh driveways, patios, and walls.","Wash away a year of grime."],
   desc:"Pressure washing for driveways, patios, walkways, and walls. Clean results without giving up your weekend.",
   job:"a driveway or patio you washed",tip:"how often outdoor surfaces should be washed, and why",tools:"your pressure washer and surface cleaner",faq:"which surfaces can be pressure washed and which need a gentler method",quote:"a photo of the area and roughly how big it is",prep:"Please move cars and anything fragile out of the area, and tell me where the outdoor water spigot is."},
  es:{label:"Lavado a presión",noun:"lavado a presión",hl:["Que todo vuelva a verse limpio.","Entradas, patios y paredes, otra vez limpios.","Adiós a la mugre de todo el año."],
@@ -390,7 +392,7 @@ pressure:{
   job:"una entrada o un patio que lavó",tip:"cada cuánto conviene lavar las superficies exteriores y por qué",tools:"su hidrolavadora y su limpiador de superficies",faq:"qué superficies se pueden lavar a presión y cuáles necesitan un método más suave",quote:"una foto del área y más o menos qué tan grande es",prep:"Por favor quite los carros y cualquier cosa delicada del área, y dígame dónde está la llave de agua de afuera."}},
 handyman:{
  en:{label:"Handyman",noun:"handyman help",hl:["The small fixes, finally handled.","Your to-do list, done.","One call for the little things."],
-  desc:"Repairs, installs, and odd jobs around the house — the projects that have been waiting.",
+  desc:"Repairs, installations, and small jobs around the house. Get those pending projects taken care of.",
   job:"a repair or install you finished",tip:"a small home maintenance task most people forget",tools:"your toolbox or truck setup",faq:"which jobs you take on, and which ones you refer out",quote:"a photo of what needs fixing and a short description",prep:"If you already have parts or materials for the job, please have them handy."},
  es:{label:"Reparaciones del hogar",noun:"reparaciones para el hogar",hl:["Esos arreglos pendientes, por fin listos.","Su lista de pendientes, resuelta.","Una llamada para los arreglos de la casa."],
   desc:"Reparaciones, instalaciones y trabajitos de la casa: esos proyectos que siguen esperando.",
@@ -476,7 +478,7 @@ function buildCopy(d){
     const hi=`Hi ${d.customer||"[Name]"},`,me=d.owner?`this is ${d.owner} with ${d.name}.`:`this is ${d.name}.`;
     msgs=[
      {t:"First introduction",x:`${hi} ${me} I offer ${d.noun}${inArea}. If you ever need a hand, I'd be glad to send you a quote. Just reply with ${d.x.quote}.${d.handle?` You can also find me at ${d.handle}.`:""} Thank you!`},
-     {t:"Estimate follow-up",x:`${hi} ${me} I'm following up on the quote I sent for [job]. Do you have any questions, or would you like to pick a date? No pressure either way — thanks for considering me.`},
+     {t:"Estimate follow-up",x:`${hi} ${me} I'm following up on the quote I sent for [job]. Do you have any questions, or would you like to pick a date? No pressure. Thanks for considering me.`},
      {t:"Appointment reminder",x:`${hi} just a friendly reminder from ${d.owner?`${d.owner} at ${d.name}`:d.name}: your appointment is on [day] at [time] at [address].${d.x.prep?" "+d.x.prep:""} Reply here to confirm, or let me know if you need to reschedule. See you then!`},
      {t:"Review request",x:`${hi} thank you for choosing ${d.name}! Would you mind leaving a short, honest review about your experience? It helps a small local business like mine more than you know.\n${d.review||"[review link]"}\nThank you!`},
      {t:"Referral request",x:`${hi} thanks again for choosing ${d.name}. If you know a neighbor, friend, or family member who could use ${d.noun}, I'd really appreciate you passing along my info${reach?`: ${reach}`:""}. Referrals mean a lot to a small business like mine.`}];
@@ -491,10 +493,10 @@ function buildCopy(d){
    {t:"Dónde trabaja",w:`Muestre las zonas donde da servicio${d.area?` cerca de ${d.area}`:""}.`,h:"Publique una foto de una calle o un lugar conocido de la zona. Compártala en grupos de la comunidad solo si sus reglas permiten publicaciones de negocios.",c:`Ya estoy agendando trabajos${inArea}. Si vive cerca y necesita ${d.noun}, mándeme un mensaje.`},
    {t:"Dé las gracias",w:"Agradezca a quienes lo apoyaron esta semana e invite a sus clientes a dejar una reseña honesta.",h:"Una foto sencilla suya o de su trabajo. Nunca publique el nombre o la casa de un cliente sin su permiso.",c:`Gracias a todos los que han apoyado a ${d.name}. Si ya trabajé para usted, una reseña honesta ayuda muchísimo a un negocio pequeño.`}
   ]:[
-   {t:"Introduce yourself",w:"A photo of you — or your hands at work — plus two lines: who you are and where you work.",h:"Daylight, phone at eye level, simple background. People hire people, so let them see you.",c:`Hi ${d.area||"neighbors"}! I'm the person behind ${d.name}. I offer ${d.noun}${inArea}. Have a question or need a quote? Send me a message anytime.`},
+   {t:"Introduce yourself",w:"A photo of you or your hands at work, plus two lines about who you are and where you work.",h:"Daylight, phone at eye level, simple background. People hire people, so let them see you.",c:`Hi ${d.area||"neighbors"}! I'm the person behind ${d.name}. I offer ${d.noun}${inArea}. Have a question or need a quote? Send me a message anytime.`},
    {t:"Before & after",w:`Two photos of ${x.job}, side by side.`,h:"Same spot, same angle, before and after. Ask the client first, and leave out faces, house numbers, and license plates.",c:`Before → after: [what you did, in a few words]. Need something similar${inArea}? Send me a message.`},
-   {t:"One quick tip",w:`A 15–30 second vertical video sharing ${x.tip}.`,h:"Hold the phone upright, talk to the camera, and keep it to one tip. Add captions — most people watch with the sound off.",c:"Quick tip: [your tip]. Save this for later, and send it to someone who could use it."},
-   {t:"Behind the scenes",w:`A photo or short clip of ${x.tools}.`,h:"Lay everything out neatly, or film yourself loading up in the morning. Real beats perfect.",c:"What I bring to every job. Questions about how I work? Ask away — I'm happy to explain."},
+   {t:"One quick tip",w:`A 15 to 30 second vertical video sharing ${x.tip}.`,h:"Hold the phone upright, talk to the camera, and keep it to one tip. Add captions because many people watch with the sound off.",c:"Quick tip: [your tip]. Save this for later, and send it to someone who could use it."},
+   {t:"Behind the scenes",w:`A photo or short clip of ${x.tools}.`,h:"Lay everything out neatly, or film yourself loading up in the morning. Real beats perfect.",c:"What I bring to every job. Questions about how I work? Ask away. I'm happy to explain."},
    {t:"Answer a common question",w:`Explain ${x.faq}.`,h:"Write the question in big text over a clean photo, or answer it in a short talking video.",c:"People ask me this a lot: [question]. Here's the short answer: [answer]."},
    {t:"Where you work",w:`Show the neighborhoods you serve${d.area?` around ${d.area}`:""}.`,h:"Post a photo of a local street or landmark. Share it in community groups only where the rules allow business posts.",c:`Now booking${inArea}. If you're nearby and need ${d.noun}, send me a message.`},
    {t:"Say thank you",w:"Thank the people who supported you this week, and invite customers to leave an honest review.",h:"A simple photo of you or your work. Never post a customer's name or home without permission.",c:`Thank you to everyone who has supported ${d.name}. If I've worked for you, an honest review helps a small business more than you know.`}
@@ -744,10 +746,12 @@ function hasAlpha(c){try{const a=c.getContext("2d").getImageData(0,0,c.width,c.h
 function persistImg(){try{if(IMG)localStorage.setItem(IKEY,IMG.toDataURL(IMGALPHA?"image/png":"image/jpeg",.86));else localStorage.removeItem(IKEY)}catch(e){try{localStorage.removeItem(IKEY)}catch(_){}}}
 function imgUI(){$("#imgbox").hidden=!IMG;$("#uplabel").textContent=IMG?T().change:T().l_upload;
   if(IMG)$("#imgprev").src=toCanvas(IMG,160).toDataURL("image/png");$$("#kindseg button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.kind===st.kind)))}
-$("#f_file").addEventListener("change",async e=>{const f=e.target.files&&e.target.files[0];e.target.value="";if(!f)return;
+async function receiveBusinessImage(e){const f=e.target.files&&e.target.files[0];e.target.value="";if(!f)return;
   try{const im=await loadImage(f),big=toCanvas(im,1600);IMGALPHA=hasAlpha(big);const w=im.naturalWidth,h=im.naturalHeight;
     st.kind=IMGALPHA||(Math.abs(w/h-1)<.2&&Math.max(w,h)<=1200)?"logo":"photo";IMG=st.kind==="logo"?toCanvas(im,900):big;
-    persistImg();imgUI();save();schedule()}catch(err){toast(T().imgErr)}});
+    persistImg();imgUI();save();schedule()}catch(err){toast(T().imgErr)}}
+$("#f_file").addEventListener("change",receiveBusinessImage);
+$("#f_camera").addEventListener("change",receiveBusinessImage);
 $("#kindseg").addEventListener("click",e=>{const b=e.target.closest("[data-kind]");if(!b)return;st.kind=b.dataset.kind;imgUI();save();schedule()});
 $("#b_rmimg").addEventListener("click",()=>{IMG=null;IMGALPHA=false;persistImg();imgUI();schedule()});
 
@@ -861,6 +865,8 @@ async function selfTest(){
       [{canShare:()=>true,share:async()=>{throw err("AbortError")}},"cancelled"],[{canShare:()=>true,share:async o=>{got=o}},"shared"]];
     const res=[];for(const[n,want]of cases){const r=await shareFlow(n,f);if(r!==want)res.push(`${want}≠${r}`)}
     return[!res.length&&got&&got.files&&got.files[0]===f&&!("text" in got),res.join(", ")||"payload"]});
+  await run("Camera capture: separate rear-camera input leaves gallery upload available",async()=>{const cam=$("#f_camera"),gallery=$("#f_file");return[!!cam&&cam.getAttribute("capture")==="environment"&&cam.accept==="image/*"&&gallery.accept==="image/*"&&gallery.getAttribute("capture")===null,"native picker must still be checked on Android"]});
+  await run("Marketing templates: no em dashes in generated captions, bios, messages or headlines",async()=>{const bad=[];for(const lang of["en","es"])for(const service of ORDER){const d=deriveData(Object.assign({},DEF,full,{lang,service,desc:""}),null),c=buildCopy(d);for(const z of[c.bio,c.about,...c.msgs.map(x=>x.x),...c.ideas.flatMap(x=>[x.w,x.h,x.c]),...d.hls,...d.ctas,d.desc])if(z.includes("—"))bad.push(lang+"/"+service+": "+z.slice(0,55))}return[bad.length===0,bad.slice(0,3).join(" | ")]});
   await run("Contact info: nothing appears that the owner didn't type",async()=>{const d=deriveData(Object.assign({},DEF,{name:"Solo Co",lang:"en"}),null),C=buildCopy(d);const t=[C.bio,C.about,...C.msgs.map(m=>m.x)].join(" ");return[!/\(\d{3}\)|@|\.com|https?:/.test(t),t.slice(0,80)]});
   await run("Helpers: phone, handle, website and initials formatting",async()=>[formatPhone("626 555 0123")==="(626) 555-0123"&&formatPhone("+1 626-555-0123")==="(626) 555-0123"&&normHandle("https://instagram.com/brightpath/")==="@brightpath"&&normHandle("@@abc")==="@abc"&&normWeb("https://www.Brightpath.com/")==="Brightpath.com"&&initials("The Bright Path Cleaning LLC")==="BP"&&initials("Limpieza Brillante")==="LB","mismatch"]);
   await run("Privacy: page policy blocks every network request",async()=>{const m=document.querySelector('meta[http-equiv="Content-Security-Policy"]');const c=m?m.content:"";return[/default-src 'none'/.test(c)&&!/connect-src/.test(c)&&!/https?:/.test(c),c]});
