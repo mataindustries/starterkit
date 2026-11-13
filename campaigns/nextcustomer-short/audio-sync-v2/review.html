@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NextCustomer · audio sync v2 · owner review</title>
+<style>
+*{box-sizing:border-box}body{margin:0;padding:24px;background:#171512;color:#f3eee6;font:16px/1.5 system-ui,sans-serif}main{max-width:1040px;margin:auto}h1{font-size:26px;line-height:1.2}h2{font-size:18px}a{color:#ffa485}video{display:block;width:min(100%,360px);height:auto;max-height:78vh;background:#171512}audio{width:100%;max-width:560px}.layout{display:flex;gap:36px;flex-wrap:wrap}.layout section{flex:1;min-width:280px}button{border:1px solid #857c71;background:#f3eee6;color:#171512;font:inherit;border-radius:6px;padding:9px 12px;margin:4px}small{color:#bcb2a6}nav{display:flex;gap:18px;flex-wrap:wrap;margin:20px 0}#readout{font-variant-numeric:tabular-nums}
+</style>
+<main>
+<h1>NextCustomer · audio sync v2</h1>
+<p>Owner review proof. The approved picture and CTA are unchanged. Listen for the three typography strokes, the Post and Story arrivals, and the resolve into the CTA.</p>
+<div class="layout">
+<section><video id="revision" controls playsinline preload="metadata" src="nextcustomer_audio_sync_v2_proof_540x960.mp4"></video><p id="readout">20 seconds · 540 × 960 · 30 fps</p></section>
+<section><h2>Listen separately</h2><audio id="listening" controls preload="metadata" src="nextcustomer_audio_sync_v2.wav"></audio>
+<nav><a href="nextcustomer_audio_sync_v2_proof_540x960.mp4" download>Download proof</a><a href="nextcustomer_audio_sync_v2.wav" download>WAV</a><a href="nextcustomer_audio_sync_v2.mp3" download>MP3</a></nav>
+<h2>Inspect a transition</h2>
+<div id="cues"><button data-start="0" data-end="1.6">Typography</button><button data-start="2.65" data-end="3.6">Wipe → app</button><button data-start="5.2" data-end="6.2">Tap → kit</button><button data-start="6.6" data-end="8.0">Post</button><button data-start="9.0" data-end="10.4">Story</button><button data-start="11.8" data-end="13.2">Copy cards</button><button data-start="14.7" data-end="16.6">Spanish → CTA</button><button data-start="16" data-end="20">Resolution</button></div>
+<p><label><input id="loop" type="checkbox"> Loop selected transition</label></p>
+<nav><a href="../nextcustomer_launch_short_proof_540x960.mp4">Approved original</a><a href="SYNC_REVIEW.md">Sync review</a><a href="event-map.csv">Event map</a><a href="measured-sync-offsets.csv">Measured offsets</a></nav>
+<small>No revised 1080×1920 export has been made. Owner listening approval is the next gate.</small>
+</section></div>
+</main>
+<script>
+const v=document.querySelector('#revision'),a=document.querySelector('#listening');let range=null;
+document.querySelector('#cues').onclick=e=>{const b=e.target.closest('[data-start]');if(!b)return;a.pause();range=[+b.dataset.start,+b.dataset.end];v.currentTime=range[0];v.play()};
+v.addEventListener('play',()=>a.pause());a.addEventListener('play',()=>v.pause());
+v.addEventListener('timeupdate',()=>{document.querySelector('#readout').textContent=v.currentTime.toFixed(3)+'s · frame '+Math.floor(v.currentTime*30);if(range&&document.querySelector('#loop').checked&&v.currentTime>=range[1])v.currentTime=range[0]});
+</script>
+</html>

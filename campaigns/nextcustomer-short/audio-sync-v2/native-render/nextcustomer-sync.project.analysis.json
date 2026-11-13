@@ -1,0 +1,145 @@
+{
+  "master": {
+    "durationSeconds": 20,
+    "frames": 882000,
+    "sampleRate": 44100,
+    "channels": 2,
+    "bitsPerSample": 16,
+    "format": "pcm_s16le",
+    "peakDbfs": -11.28322,
+    "rmsDbfs": -37.823858,
+    "fullScaleSamples": 0,
+    "clipping": false,
+    "integratedLufs": -33.93,
+    "loudnessRangeLu": 11.5,
+    "truePeakDbfs": -11.28
+  },
+  "tracks": [
+    {
+      "trackId": "copper",
+      "analysis": {
+        "durationSeconds": 20,
+        "frames": 882000,
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "format": "pcm_s16le",
+        "peakDbfs": -19.0822,
+        "rmsDbfs": -42.439429,
+        "fullScaleSamples": 0,
+        "clipping": false,
+        "integratedLufs": -35.39,
+        "loudnessRangeLu": 4.5,
+        "truePeakDbfs": -19.02
+      }
+    },
+    {
+      "trackId": "felt",
+      "analysis": {
+        "durationSeconds": 20,
+        "frames": 882000,
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "format": "pcm_s16le",
+        "peakDbfs": -18.032162,
+        "rmsDbfs": -42.472606,
+        "fullScaleSamples": 0,
+        "clipping": false,
+        "integratedLufs": -36.53,
+        "loudnessRangeLu": 5.7,
+        "truePeakDbfs": -18.03
+      }
+    },
+    {
+      "trackId": "bass",
+      "analysis": {
+        "durationSeconds": 20,
+        "frames": 882000,
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "format": "pcm_s16le",
+        "peakDbfs": -17.03498,
+        "rmsDbfs": -39.747264,
+        "fullScaleSamples": 0,
+        "clipping": false,
+        "integratedLufs": -31.85,
+        "loudnessRangeLu": 5.2,
+        "truePeakDbfs": -17.03
+      }
+    },
+    {
+      "trackId": "resolve",
+      "analysis": {
+        "durationSeconds": 20,
+        "frames": 882000,
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "format": "pcm_s16le",
+        "peakDbfs": -22.144199,
+        "rmsDbfs": -47.299757,
+        "fullScaleSamples": 0,
+        "clipping": false,
+        "integratedLufs": -37.66,
+        "loudnessRangeLu": 4.6,
+        "truePeakDbfs": -22.13
+      }
+    },
+    {
+      "trackId": "contacts",
+      "analysis": {
+        "durationSeconds": 20,
+        "frames": 882000,
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "format": "pcm_s16le",
+        "peakDbfs": -12.976164,
+        "rmsDbfs": -42.588891,
+        "fullScaleSamples": 0,
+        "clipping": false,
+        "integratedLufs": -33.79,
+        "loudnessRangeLu": 11.5,
+        "truePeakDbfs": -12.98
+      }
+    },
+    {
+      "trackId": "movement",
+      "analysis": {
+        "durationSeconds": 20,
+        "frames": 882000,
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "format": "pcm_s16le",
+        "peakDbfs": -18.772961,
+        "rmsDbfs": -51.22445,
+        "fullScaleSamples": 0,
+        "clipping": false,
+        "integratedLufs": -36.32,
+        "loudnessRangeLu": 12.1,
+        "truePeakDbfs": -18.58
+      }
+    },
+    {
+      "trackId": "typing",
+      "analysis": {
+        "durationSeconds": 20,
+        "frames": 882000,
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "format": "pcm_s16le",
+        "peakDbfs": -34.774975,
+        "rmsDbfs": -65.988345,
+        "fullScaleSamples": 0,
+        "clipping": false,
+        "integratedLufs": -50.46,
+        "loudnessRangeLu": 6.4,
+        "truePeakDbfs": -34.78
+      }
+    }
+  ]
+}

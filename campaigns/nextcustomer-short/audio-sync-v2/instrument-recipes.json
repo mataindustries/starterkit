@@ -1,0 +1,894 @@
+{
+  "schema": "daemonv12.headliner/1",
+  "engineBase": "e2962cc1a443c841cd6ca7cb2cc56c5ebabf0e99",
+  "node": "v24.22.1",
+  "provenance": "Original numerical additive synthesis and xorshift32 noise; no imported audio, presets, SoundFonts or reference-song content.",
+  "generatorSha256": "a89278625ef82d2bd4be437a2ae94bc4d6cced517b0bf32a07d3cbe908c401c7",
+  "scoreSha256": "a7382246bacf51e10591824f256c81be25ee1a4464f1c9a30a1f4be9ca422ba3",
+  "sections": [
+    {
+      "id": "picture",
+      "bars": 10,
+      "development": "Locked 600-frame motion: irregular three-syllable hook; source UI hocket; Post/Story impacts; descending copy answers; root-resolved CTA."
+    }
+  ],
+  "sounds": [
+    {
+      "file": "assets/copper/note-74.wav",
+      "sha256": "336224ba1935d60446836433d0f7b7605fcab00bb4190e2179168ded2962a774",
+      "frames": 18522,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "copper",
+        "parameters": {
+          "partials": [
+            0.55,
+            0.16,
+            0.33,
+            0.12,
+            0.06,
+            0.08
+          ],
+          "attackSeconds": 0.001,
+          "decaySeconds": 0.13,
+          "sampleSeconds": 0.42,
+          "noise": 0.002
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 74,
+            "durationBeats": 0.84,
+            "velocity": 1
+          }
+        ],
+        "seconds": 0.42,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/copper/note-81.wav",
+      "sha256": "2239933b802fd7453590393943b7f621add6893c50072dbe8cc2da6912792e67",
+      "frames": 18522,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "copper",
+        "parameters": {
+          "partials": [
+            0.55,
+            0.16,
+            0.33,
+            0.12,
+            0.06,
+            0.08
+          ],
+          "attackSeconds": 0.001,
+          "decaySeconds": 0.13,
+          "sampleSeconds": 0.42,
+          "noise": 0.002
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 81,
+            "durationBeats": 0.84,
+            "velocity": 1
+          }
+        ],
+        "seconds": 0.42,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/copper/note-77.wav",
+      "sha256": "dca68400dd92583ab6067acae88a32016ff6c9856f69d80b9da1f79112aaa86a",
+      "frames": 18522,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "copper",
+        "parameters": {
+          "partials": [
+            0.55,
+            0.16,
+            0.33,
+            0.12,
+            0.06,
+            0.08
+          ],
+          "attackSeconds": 0.001,
+          "decaySeconds": 0.13,
+          "sampleSeconds": 0.42,
+          "noise": 0.002
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 77,
+            "durationBeats": 0.84,
+            "velocity": 1
+          }
+        ],
+        "seconds": 0.42,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/copper/note-62.wav",
+      "sha256": "66b16a3c3bba80a29fd209ab167e96df859b34abe71322b4a1ecd6b355e061b7",
+      "frames": 18522,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "copper",
+        "parameters": {
+          "partials": [
+            0.55,
+            0.16,
+            0.33,
+            0.12,
+            0.06,
+            0.08
+          ],
+          "attackSeconds": 0.001,
+          "decaySeconds": 0.13,
+          "sampleSeconds": 0.42,
+          "noise": 0.002
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 62,
+            "durationBeats": 0.84,
+            "velocity": 1
+          }
+        ],
+        "seconds": 0.42,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/copper/note-69.wav",
+      "sha256": "592f990aa10efb9c2b602b00f7c5a61c7a5e5ef7f18021022b6e356e957fa025",
+      "frames": 18522,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "copper",
+        "parameters": {
+          "partials": [
+            0.55,
+            0.16,
+            0.33,
+            0.12,
+            0.06,
+            0.08
+          ],
+          "attackSeconds": 0.001,
+          "decaySeconds": 0.13,
+          "sampleSeconds": 0.42,
+          "noise": 0.002
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 69,
+            "durationBeats": 0.84,
+            "velocity": 1
+          }
+        ],
+        "seconds": 0.42,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/copper/note-65.wav",
+      "sha256": "ed9d4c1bd08bd90cb20e895180700893245a3e8d96f0ba2eb35f09c578ad46e1",
+      "frames": 18522,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "copper",
+        "parameters": {
+          "partials": [
+            0.55,
+            0.16,
+            0.33,
+            0.12,
+            0.06,
+            0.08
+          ],
+          "attackSeconds": 0.001,
+          "decaySeconds": 0.13,
+          "sampleSeconds": 0.42,
+          "noise": 0.002
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 65,
+            "durationBeats": 0.84,
+            "velocity": 1
+          }
+        ],
+        "seconds": 0.42,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/copper/note-72.wav",
+      "sha256": "c0924b36591a8c721cfca9d82ed691aa1dd376df0a795e5305073196fb60465a",
+      "frames": 18522,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "copper",
+        "parameters": {
+          "partials": [
+            0.55,
+            0.16,
+            0.33,
+            0.12,
+            0.06,
+            0.08
+          ],
+          "attackSeconds": 0.001,
+          "decaySeconds": 0.13,
+          "sampleSeconds": 0.42,
+          "noise": 0.002
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 72,
+            "durationBeats": 0.84,
+            "velocity": 1
+          }
+        ],
+        "seconds": 0.42,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/copper/note-86.wav",
+      "sha256": "476a8d4da621d0d5966ab5cef506a9708a705abb9c1000c1302d21dddb0b3942",
+      "frames": 18522,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "copper",
+        "parameters": {
+          "partials": [
+            0.55,
+            0.16,
+            0.33,
+            0.12,
+            0.06,
+            0.08
+          ],
+          "attackSeconds": 0.001,
+          "decaySeconds": 0.13,
+          "sampleSeconds": 0.42,
+          "noise": 0.002
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 86,
+            "durationBeats": 0.84,
+            "velocity": 1
+          }
+        ],
+        "seconds": 0.42,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/copper/note-76.wav",
+      "sha256": "62f38931de9181fc39573f9186ed3a64ec9c79b1b2c1175b0471512a8179658c",
+      "frames": 18522,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "copper",
+        "parameters": {
+          "partials": [
+            0.55,
+            0.16,
+            0.33,
+            0.12,
+            0.06,
+            0.08
+          ],
+          "attackSeconds": 0.001,
+          "decaySeconds": 0.13,
+          "sampleSeconds": 0.42,
+          "noise": 0.002
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 76,
+            "durationBeats": 0.84,
+            "velocity": 1
+          }
+        ],
+        "seconds": 0.42,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/felt/note-50.wav",
+      "sha256": "53a4558af1a7b7f952243d89f42bd22300e5825a9a174e8be135aef5c96ce049",
+      "frames": 9702,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "felt",
+        "parameters": {
+          "partials": [
+            1,
+            0.38,
+            0.19,
+            0.04
+          ],
+          "attackSeconds": 0.001,
+          "decaySeconds": 0.075,
+          "sampleSeconds": 0.22,
+          "noise": 0.012
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 50,
+            "durationBeats": 0.44,
+            "velocity": 1
+          }
+        ],
+        "seconds": 0.22,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/felt/note-62.wav",
+      "sha256": "883059ee045650bdabea1b30750937f5832cabde3f894493456bc68e7f58c3a2",
+      "frames": 9702,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "felt",
+        "parameters": {
+          "partials": [
+            1,
+            0.38,
+            0.19,
+            0.04
+          ],
+          "attackSeconds": 0.001,
+          "decaySeconds": 0.075,
+          "sampleSeconds": 0.22,
+          "noise": 0.012
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 62,
+            "durationBeats": 0.44,
+            "velocity": 1
+          }
+        ],
+        "seconds": 0.22,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/felt/note-69.wav",
+      "sha256": "19889a407ff7a228e9cb6b2a1fd976b82123047797a0f44e30607b2b12dc3bdf",
+      "frames": 9702,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "felt",
+        "parameters": {
+          "partials": [
+            1,
+            0.38,
+            0.19,
+            0.04
+          ],
+          "attackSeconds": 0.001,
+          "decaySeconds": 0.075,
+          "sampleSeconds": 0.22,
+          "noise": 0.012
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 69,
+            "durationBeats": 0.44,
+            "velocity": 1
+          }
+        ],
+        "seconds": 0.22,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/felt/note-65.wav",
+      "sha256": "10ad4a2b2313922773ab1217dad51b895d7cea99436197b9d3de427904f5339f",
+      "frames": 9702,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "felt",
+        "parameters": {
+          "partials": [
+            1,
+            0.38,
+            0.19,
+            0.04
+          ],
+          "attackSeconds": 0.001,
+          "decaySeconds": 0.075,
+          "sampleSeconds": 0.22,
+          "noise": 0.012
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 65,
+            "durationBeats": 0.44,
+            "velocity": 1
+          }
+        ],
+        "seconds": 0.22,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/felt/note-57.wav",
+      "sha256": "6fd3b330e70272ae1bd27cfa85026167555db9cbe2bcf9b0a99e5b90d56abd13",
+      "frames": 9702,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "felt",
+        "parameters": {
+          "partials": [
+            1,
+            0.38,
+            0.19,
+            0.04
+          ],
+          "attackSeconds": 0.001,
+          "decaySeconds": 0.075,
+          "sampleSeconds": 0.22,
+          "noise": 0.012
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 57,
+            "durationBeats": 0.44,
+            "velocity": 1
+          }
+        ],
+        "seconds": 0.22,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/felt/note-74.wav",
+      "sha256": "089842d023b76b0c002019f2f074289c1ea455ab23fb557a0d84d8371af73a95",
+      "frames": 9702,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "felt",
+        "parameters": {
+          "partials": [
+            1,
+            0.38,
+            0.19,
+            0.04
+          ],
+          "attackSeconds": 0.001,
+          "decaySeconds": 0.075,
+          "sampleSeconds": 0.22,
+          "noise": 0.012
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 74,
+            "durationBeats": 0.44,
+            "velocity": 1
+          }
+        ],
+        "seconds": 0.22,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/felt/note-64.wav",
+      "sha256": "f672b21578dc2a901dafa2915e8ad1da9d26d32b57caa78a055a17c656f1d8b9",
+      "frames": 9702,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "felt",
+        "parameters": {
+          "partials": [
+            1,
+            0.38,
+            0.19,
+            0.04
+          ],
+          "attackSeconds": 0.001,
+          "decaySeconds": 0.075,
+          "sampleSeconds": 0.22,
+          "noise": 0.012
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 64,
+            "durationBeats": 0.44,
+            "velocity": 1
+          }
+        ],
+        "seconds": 0.22,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/felt/note-60.wav",
+      "sha256": "1be29a666dbaa9342b32069eaeac5bc323ac8b452976e5269274c55821f4ac0c",
+      "frames": 9702,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "felt",
+        "parameters": {
+          "partials": [
+            1,
+            0.38,
+            0.19,
+            0.04
+          ],
+          "attackSeconds": 0.001,
+          "decaySeconds": 0.075,
+          "sampleSeconds": 0.22,
+          "noise": 0.012
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 60,
+            "durationBeats": 0.44,
+            "velocity": 1
+          }
+        ],
+        "seconds": 0.22,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/bass/note-38.wav",
+      "sha256": "168c1b5bf42110cfd3669fd7a7a5d26ca1ccf3185650c2aee1daef0160feace0",
+      "frames": 14112,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "rubber",
+        "parameters": {
+          "partials": [
+            1,
+            0.5,
+            0.2,
+            0.05
+          ],
+          "attackSeconds": 0.003,
+          "decaySeconds": 0.1,
+          "sampleSeconds": 0.32,
+          "noise": 0
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 38,
+            "durationBeats": 0.64,
+            "velocity": 1
+          }
+        ],
+        "seconds": 0.32,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/bass/note-45.wav",
+      "sha256": "f9553d850247b5ea661393382f99bd5c212340a4c1ab0016f77acb553876ee94",
+      "frames": 14112,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "rubber",
+        "parameters": {
+          "partials": [
+            1,
+            0.5,
+            0.2,
+            0.05
+          ],
+          "attackSeconds": 0.003,
+          "decaySeconds": 0.1,
+          "sampleSeconds": 0.32,
+          "noise": 0
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 45,
+            "durationBeats": 0.64,
+            "velocity": 1
+          }
+        ],
+        "seconds": 0.32,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/bass/note-43.wav",
+      "sha256": "ca752a2cf40964f0457c6a877e52a9185e65975c2024d000307294275471f299",
+      "frames": 14112,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "rubber",
+        "parameters": {
+          "partials": [
+            1,
+            0.5,
+            0.2,
+            0.05
+          ],
+          "attackSeconds": 0.003,
+          "decaySeconds": 0.1,
+          "sampleSeconds": 0.32,
+          "noise": 0
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 43,
+            "durationBeats": 0.64,
+            "velocity": 1
+          }
+        ],
+        "seconds": 0.32,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/resolve/note-50.wav",
+      "sha256": "843e5cb0ae9d962476f6f0bc57ff78aaa34840947c3bd02b63376a2d23a53e28",
+      "frames": 44100,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "reed",
+        "parameters": {
+          "partials": [
+            0.8,
+            0.14,
+            0.08,
+            0.025
+          ],
+          "attackSeconds": 0.012,
+          "decaySeconds": 0.42,
+          "sampleSeconds": 1,
+          "noise": 0.003
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 50,
+            "durationBeats": 2,
+            "velocity": 1
+          }
+        ],
+        "seconds": 1,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/resolve/note-57.wav",
+      "sha256": "b5fe7db7aa3a1c7b7e9d5dcb3bee4dbc963d64f7d2df4f30f5f14f49fd4c1ed1",
+      "frames": 44100,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "reed",
+        "parameters": {
+          "partials": [
+            0.8,
+            0.14,
+            0.08,
+            0.025
+          ],
+          "attackSeconds": 0.012,
+          "decaySeconds": 0.42,
+          "sampleSeconds": 1,
+          "noise": 0.003
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 57,
+            "durationBeats": 2,
+            "velocity": 1
+          }
+        ],
+        "seconds": 1,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/resolve/note-65.wav",
+      "sha256": "8470a9ee5559e4f0b797e5e97233bcb4f1bf2ddeca190980c43432728cd11a80",
+      "frames": 44100,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "reed",
+        "parameters": {
+          "partials": [
+            0.8,
+            0.14,
+            0.08,
+            0.025
+          ],
+          "attackSeconds": 0.012,
+          "decaySeconds": 0.42,
+          "sampleSeconds": 1,
+          "noise": 0.003
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 65,
+            "durationBeats": 2,
+            "velocity": 1
+          }
+        ],
+        "seconds": 1,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/resolve/note-64.wav",
+      "sha256": "b74e8dce0df511a74032b008f5e99ccf27549c0ecbced1f4bb1e4fb1938fee2c",
+      "frames": 44100,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "reed",
+        "parameters": {
+          "partials": [
+            0.8,
+            0.14,
+            0.08,
+            0.025
+          ],
+          "attackSeconds": 0.012,
+          "decaySeconds": 0.42,
+          "sampleSeconds": 1,
+          "noise": 0.003
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 64,
+            "durationBeats": 2,
+            "velocity": 1
+          }
+        ],
+        "seconds": 1,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/resolve/note-62.wav",
+      "sha256": "b16904b123615190a3d013bd98281b52f4b2b88eb254c9e944b7738fa6fdc77e",
+      "frames": 44100,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "reed",
+        "parameters": {
+          "partials": [
+            0.8,
+            0.14,
+            0.08,
+            0.025
+          ],
+          "attackSeconds": 0.012,
+          "decaySeconds": 0.42,
+          "sampleSeconds": 1,
+          "noise": 0.003
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 62,
+            "durationBeats": 2,
+            "velocity": 1
+          }
+        ],
+        "seconds": 1,
+        "seed": 1202602
+      }
+    },
+    {
+      "file": "assets/resolve/note-69.wav",
+      "sha256": "15eb4667ae52d0a2d1a3259933bf608d6100088eea8ad24a87e45433763c4abf",
+      "frames": 44100,
+      "channels": 1,
+      "sampleRate": 44100,
+      "bitsPerSample": 16,
+      "recipe": {
+        "instrument": "reed",
+        "parameters": {
+          "partials": [
+            0.8,
+            0.14,
+            0.08,
+            0.025
+          ],
+          "attackSeconds": 0.012,
+          "decaySeconds": 0.42,
+          "sampleSeconds": 1,
+          "noise": 0.003
+        },
+        "notes": [
+          {
+            "beat": 0,
+            "midi": 69,
+            "durationBeats": 2,
+            "velocity": 1
+          }
+        ],
+        "seconds": 1,
+        "seed": 1202602
+      }
+    }
+  ],
+  "note": "Original task-authored parameters and notes. Generated with owner-authorized HEADLINER workflow; engine source is not bundled."
+}

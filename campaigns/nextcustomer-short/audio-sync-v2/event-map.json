@@ -1,0 +1,691 @@
+{
+  "source": {
+    "approvedMasterSha256": "4747d532e4d9d121113dbf91cabb1121d949c879043f2e6ce202d6004e44ee9e",
+    "approvedProofSha256": "30ce1bce6b5065690b8697fa8825542738b75f5706239c169a591eb31b2da968",
+    "rendererSha256": "f5eb244febba795c0e77f73063d2342526781fcd854e872b966b993f1cb68aa7",
+    "timelineSha256": "cec0af8551090a2310d3e02af3c3ab991c3f867d07ea3012ca80cbb0a525573e",
+    "originalSoundSourceSha256": "afa928b7b3284f8b9f19a62e4879c74472a114bdadd7a639cff6ac587f755e2f",
+    "fps": 30,
+    "pictureFrames": 600,
+    "engineRate": 44100,
+    "engineTempoMicroseconds": 500000,
+    "ticksPerQuarter": 960,
+    "mapping": "1 picture frame = 1470 native samples = 1600 delivery samples = 64 ticks; zero-based picture frames",
+    "noVisualChanges": true
+  },
+  "events": [
+    {
+      "id": "opening",
+      "label": "First-frame YOU RUN THE BUSINESS",
+      "kind": "static-first-frame",
+      "firstFrame": 0,
+      "anchorFrame": 0,
+      "endFrame": 0,
+      "seconds": 0.0,
+      "timecode": "00:00:00:00",
+      "engineSampleFrame": 0,
+      "sample48k": 0,
+      "engineTick": 0,
+      "cue": "low stamp + prepared pluck",
+      "evidence": {
+        "method": "source condition cross-checked against encoded frames"
+      }
+    },
+    {
+      "id": "type-marketing",
+      "label": "MARKETING masked entrance",
+      "kind": "typography",
+      "firstFrame": 18,
+      "anchorFrame": 18,
+      "endFrame": 27,
+      "seconds": 0.6,
+      "timecode": "00:00:00:18",
+      "engineSampleFrame": 26460,
+      "sample48k": 28800,
+      "engineTick": 1152,
+      "cue": "dry copper/felt signature syllable",
+      "evidence": {
+        "method": "decoded picture ROI vs local pre-event reference; |luma delta| > 18 and >= 12 pixels",
+        "roiAt270x480": [
+          19,
+          210,
+          206,
+          25
+        ],
+        "baselineFrame": 15,
+        "measurements": [
+          {
+            "frame": 16,
+            "changedPixels": 0
+          },
+          {
+            "frame": 17,
+            "changedPixels": 0
+          },
+          {
+            "frame": 18,
+            "changedPixels": 510
+          },
+          {
+            "frame": 19,
+            "changedPixels": 963
+          },
+          {
+            "frame": 20,
+            "changedPixels": 1283
+          },
+          {
+            "frame": 21,
+            "changedPixels": 1242
+          },
+          {
+            "frame": 22,
+            "changedPixels": 1242
+          },
+          {
+            "frame": 23,
+            "changedPixels": 1242
+          }
+        ]
+      }
+    },
+    {
+      "id": "type-shouldnt",
+      "label": "SHOULDN\u2019T BE masked entrance",
+      "kind": "typography",
+      "firstFrame": 26,
+      "anchorFrame": 26,
+      "endFrame": 35,
+      "seconds": 0.866667,
+      "timecode": "00:00:00:26",
+      "engineSampleFrame": 38220,
+      "sample48k": 41600,
+      "engineTick": 1664,
+      "cue": "dry copper/felt signature syllable",
+      "evidence": {
+        "method": "decoded picture ROI vs local pre-event reference; |luma delta| > 18 and >= 12 pixels",
+        "roiAt270x480": [
+          19,
+          238,
+          206,
+          19
+        ],
+        "baselineFrame": 23,
+        "measurements": [
+          {
+            "frame": 24,
+            "changedPixels": 0
+          },
+          {
+            "frame": 25,
+            "changedPixels": 0
+          },
+          {
+            "frame": 26,
+            "changedPixels": 490
+          },
+          {
+            "frame": 27,
+            "changedPixels": 966
+          },
+          {
+            "frame": 28,
+            "changedPixels": 1370
+          },
+          {
+            "frame": 29,
+            "changedPixels": 1408
+          },
+          {
+            "frame": 30,
+            "changedPixels": 1236
+          },
+          {
+            "frame": 31,
+            "changedPixels": 1085
+          }
+        ]
+      }
+    },
+    {
+      "id": "type-job",
+      "label": "ANOTHER JOB masked entrance",
+      "kind": "typography",
+      "firstFrame": 34,
+      "anchorFrame": 34,
+      "endFrame": 43,
+      "seconds": 1.133333,
+      "timecode": "00:00:01:04",
+      "engineSampleFrame": 49980,
+      "sample48k": 54400,
+      "engineTick": 2176,
+      "cue": "dry copper/felt signature syllable",
+      "evidence": {
+        "method": "decoded picture ROI vs local pre-event reference; |luma delta| > 18 and >= 12 pixels",
+        "roiAt270x480": [
+          19,
+          258,
+          206,
+          22
+        ],
+        "baselineFrame": 31,
+        "measurements": [
+          {
+            "frame": 32,
+            "changedPixels": 0
+          },
+          {
+            "frame": 33,
+            "changedPixels": 0
+          },
+          {
+            "frame": 34,
+            "changedPixels": 445
+          },
+          {
+            "frame": 35,
+            "changedPixels": 918
+          },
+          {
+            "frame": 36,
+            "changedPixels": 1321
+          },
+          {
+            "frame": 37,
+            "changedPixels": 1333
+          },
+          {
+            "frame": 38,
+            "changedPixels": 1333
+          },
+          {
+            "frame": 39,
+            "changedPixels": 1233
+          }
+        ]
+      }
+    },
+    {
+      "id": "wipe",
+      "label": "Orange wipe into real app",
+      "kind": "transition",
+      "firstFrame": 85,
+      "anchorFrame": 85,
+      "endFrame": 89,
+      "seconds": 2.833333,
+      "timecode": "00:00:02:25",
+      "engineSampleFrame": 124950,
+      "sample48k": 136000,
+      "engineTick": 5440,
+      "cue": "paper draw accelerating to app cut",
+      "evidence": {
+        "method": "source condition cross-checked against encoded frames"
+      }
+    },
+    {
+      "id": "app-cut",
+      "label": "ONE BUSINESS / real session cut",
+      "kind": "cut",
+      "firstFrame": 90,
+      "anchorFrame": 90,
+      "endFrame": 90,
+      "seconds": 3.0,
+      "timecode": "00:00:03:00",
+      "engineSampleFrame": 132300,
+      "sample48k": 144000,
+      "engineTick": 5760,
+      "cue": "focused low arrival + hook answer",
+      "evidence": {
+        "method": "source condition cross-checked against encoded frames"
+      }
+    },
+    {
+      "id": "typing",
+      "label": "Actual business-name entry",
+      "kind": "captured-ui",
+      "firstFrame": 90,
+      "anchorFrame": 93,
+      "endFrame": 139,
+      "seconds": 3.1,
+      "timecode": "00:00:03:03",
+      "engineSampleFrame": 136710,
+      "sample48k": 148800,
+      "engineTick": 5952,
+      "cue": "restrained mechanical typing cluster",
+      "evidence": {
+        "method": "successive decoded name-field ROI differences; may include cursor/compression; not all changes are keys",
+        "roiAt270x480": [
+          47,
+          212,
+          115,
+          14
+        ],
+        "changes": [
+          {
+            "frame": 93,
+            "changedPixels": 301
+          },
+          {
+            "frame": 96,
+            "changedPixels": 46
+          },
+          {
+            "frame": 98,
+            "changedPixels": 46
+          },
+          {
+            "frame": 101,
+            "changedPixels": 50
+          },
+          {
+            "frame": 103,
+            "changedPixels": 34
+          },
+          {
+            "frame": 107,
+            "changedPixels": 49
+          },
+          {
+            "frame": 109,
+            "changedPixels": 34
+          },
+          {
+            "frame": 113,
+            "changedPixels": 52
+          },
+          {
+            "frame": 116,
+            "changedPixels": 52
+          },
+          {
+            "frame": 118,
+            "changedPixels": 45
+          },
+          {
+            "frame": 122,
+            "changedPixels": 32
+          },
+          {
+            "frame": 124,
+            "changedPixels": 45
+          },
+          {
+            "frame": 127,
+            "changedPixels": 52
+          }
+        ]
+      }
+    },
+    {
+      "id": "button-crop",
+      "label": "Cut to Make my kit button",
+      "kind": "cut",
+      "firstFrame": 140,
+      "anchorFrame": 140,
+      "endFrame": 140,
+      "seconds": 4.666667,
+      "timecode": "00:00:04:20",
+      "engineSampleFrame": 205800,
+      "sample48k": 224000,
+      "engineTick": 8960,
+      "cue": "short paper fold / muted rim",
+      "evidence": {
+        "method": "source condition cross-checked against encoded frames"
+      }
+    },
+    {
+      "id": "tap-onset",
+      "label": "Tap annotation starts",
+      "kind": "tap-motion",
+      "firstFrame": 161,
+      "anchorFrame": 167,
+      "endFrame": 173,
+      "seconds": 5.566667,
+      "timecode": "00:00:05:17",
+      "engineSampleFrame": 245490,
+      "sample48k": 267200,
+      "engineTick": 10688,
+      "cue": "single tactile click at ring opacity maximum",
+      "evidence": {
+        "method": "sinusoidal ring opacity from render.cjs; peak at 5.575 s, nearest displayed frame 167; decoded-frame review"
+      }
+    },
+    {
+      "id": "kit-cut",
+      "label": "Genuine kit result cut",
+      "kind": "cut",
+      "firstFrame": 174,
+      "anchorFrame": 174,
+      "endFrame": 174,
+      "seconds": 5.8,
+      "timecode": "00:00:05:24",
+      "engineSampleFrame": 255780,
+      "sample48k": 278400,
+      "engineTick": 11136,
+      "cue": "pitched response + centered knock",
+      "evidence": {
+        "method": "source condition cross-checked against encoded frames"
+      }
+    },
+    {
+      "id": "post-cut",
+      "label": "Post export + title reveal / zoom",
+      "kind": "reveal",
+      "firstFrame": 210,
+      "anchorFrame": 210,
+      "endFrame": 227,
+      "seconds": 7.0,
+      "timecode": "00:00:07:00",
+      "engineSampleFrame": 308700,
+      "sample48k": 336000,
+      "engineTick": 13440,
+      "cue": "low body + copper attack; rising paper release",
+      "evidence": {
+        "method": "source condition cross-checked against encoded frames"
+      }
+    },
+    {
+      "id": "post-land",
+      "label": "Post bloom and rotation settle",
+      "kind": "motion-settle",
+      "firstFrame": 227,
+      "anchorFrame": 227,
+      "endFrame": 227,
+      "seconds": 7.566667,
+      "timecode": "00:00:07:17",
+      "engineSampleFrame": 333690,
+      "sample48k": 363200,
+      "engineTick": 14528,
+      "cue": "small resonant latch, lower than reveal impact",
+      "evidence": {
+        "method": "source condition cross-checked against encoded frames"
+      }
+    },
+    {
+      "id": "story-cut",
+      "label": "Story export + title reveal / zoom",
+      "kind": "reveal",
+      "firstFrame": 282,
+      "anchorFrame": 282,
+      "endFrame": 299,
+      "seconds": 9.4,
+      "timecode": "00:00:09:12",
+      "engineSampleFrame": 414540,
+      "sample48k": 451200,
+      "engineTick": 18048,
+      "cue": "different impact: deep bloom + wide glass answer",
+      "evidence": {
+        "method": "source condition cross-checked against encoded frames"
+      }
+    },
+    {
+      "id": "story-land",
+      "label": "Story bloom and rotation settle",
+      "kind": "motion-settle",
+      "firstFrame": 299,
+      "anchorFrame": 299,
+      "endFrame": 299,
+      "seconds": 9.966667,
+      "timecode": "00:00:09:29",
+      "engineSampleFrame": 439530,
+      "sample48k": 478400,
+      "engineTick": 19136,
+      "cue": "light upward harmonic latch",
+      "evidence": {
+        "method": "source condition cross-checked against encoded frames"
+      }
+    },
+    {
+      "id": "copy-cut",
+      "label": "AND THE WORDS / montage cut",
+      "kind": "cut",
+      "firstFrame": 360,
+      "anchorFrame": 360,
+      "endFrame": 360,
+      "seconds": 12.0,
+      "timecode": "00:00:12:00",
+      "engineSampleFrame": 529200,
+      "sample48k": 576000,
+      "engineTick": 23040,
+      "cue": "dry stop + felt syllable",
+      "evidence": {
+        "method": "source condition cross-checked against encoded frames"
+      }
+    },
+    {
+      "id": "bio-in",
+      "label": "Bio card opacity/position entrance",
+      "kind": "reveal",
+      "firstFrame": 361,
+      "anchorFrame": 361,
+      "endFrame": 371,
+      "seconds": 12.033333,
+      "timecode": "00:00:12:01",
+      "engineSampleFrame": 530670,
+      "sample48k": 577600,
+      "engineTick": 23104,
+      "cue": "small first step of descending three-note answer",
+      "evidence": {
+        "method": "source condition cross-checked against encoded frames"
+      }
+    },
+    {
+      "id": "messages-in",
+      "label": "Messages card entrance",
+      "kind": "reveal",
+      "firstFrame": 368,
+      "anchorFrame": 368,
+      "endFrame": 378,
+      "seconds": 12.266667,
+      "timecode": "00:00:12:08",
+      "engineSampleFrame": 540960,
+      "sample48k": 588800,
+      "engineTick": 23552,
+      "cue": "second dry step, exact card cadence",
+      "evidence": {
+        "method": "source condition cross-checked against encoded frames"
+      }
+    },
+    {
+      "id": "week-in",
+      "label": "Week 1 card entrance",
+      "kind": "reveal",
+      "firstFrame": 376,
+      "anchorFrame": 376,
+      "endFrame": 386,
+      "seconds": 12.533333,
+      "timecode": "00:00:12:16",
+      "engineSampleFrame": 552720,
+      "sample48k": 601600,
+      "engineTick": 24064,
+      "cue": "third dry step + warm body",
+      "evidence": {
+        "method": "source condition cross-checked against encoded frames"
+      }
+    },
+    {
+      "id": "spanish-cut",
+      "label": "Spanish title / Post movement",
+      "kind": "cut",
+      "firstFrame": 450,
+      "anchorFrame": 450,
+      "endFrame": 459,
+      "seconds": 15.0,
+      "timecode": "00:00:15:00",
+      "engineSampleFrame": 661500,
+      "sample48k": 720000,
+      "engineTick": 28800,
+      "cue": "hook returns in higher register + short inhale",
+      "evidence": {
+        "method": "source condition cross-checked against encoded frames"
+      }
+    },
+    {
+      "id": "es-toggle",
+      "label": "Actual EN to ES selection",
+      "kind": "captured-ui",
+      "firstFrame": 456,
+      "anchorFrame": 456,
+      "endFrame": 456,
+      "seconds": 15.2,
+      "timecode": "00:00:15:06",
+      "engineSampleFrame": 670320,
+      "sample48k": 729600,
+      "engineTick": 29184,
+      "cue": "precise dry switch click",
+      "evidence": {
+        "method": "decoded ES button face crosses mean luma < 110",
+        "measurements": [
+          {
+            "frame": 450,
+            "meanLuma": 243.655
+          },
+          {
+            "frame": 451,
+            "meanLuma": 243.655
+          },
+          {
+            "frame": 452,
+            "meanLuma": 243.679
+          },
+          {
+            "frame": 453,
+            "meanLuma": 243.679
+          },
+          {
+            "frame": 454,
+            "meanLuma": 243.679
+          },
+          {
+            "frame": 455,
+            "meanLuma": 243.679
+          },
+          {
+            "frame": 456,
+            "meanLuma": 62.214
+          },
+          {
+            "frame": 457,
+            "meanLuma": 62.208
+          },
+          {
+            "frame": 458,
+            "meanLuma": 61.75
+          },
+          {
+            "frame": 459,
+            "meanLuma": 61.696
+          },
+          {
+            "frame": 460,
+            "meanLuma": 61.714
+          },
+          {
+            "frame": 461,
+            "meanLuma": 61.673
+          },
+          {
+            "frame": 462,
+            "meanLuma": 61.798
+          },
+          {
+            "frame": 463,
+            "meanLuma": 61.774
+          },
+          {
+            "frame": 464,
+            "meanLuma": 61.881
+          },
+          {
+            "frame": 465,
+            "meanLuma": 61.815
+          },
+          {
+            "frame": 466,
+            "meanLuma": 61.815
+          },
+          {
+            "frame": 467,
+            "meanLuma": 61.815
+          },
+          {
+            "frame": 468,
+            "meanLuma": 61.815
+          },
+          {
+            "frame": 469,
+            "meanLuma": 61.815
+          }
+        ]
+      }
+    },
+    {
+      "id": "spanish-land",
+      "label": "Spanish Post motion settles",
+      "kind": "motion-settle",
+      "firstFrame": 459,
+      "anchorFrame": 459,
+      "endFrame": 459,
+      "seconds": 15.3,
+      "timecode": "00:00:15:09",
+      "engineSampleFrame": 674730,
+      "sample48k": 734400,
+      "engineTick": 29376,
+      "cue": "soft landing, omit if toggle is within two frames",
+      "evidence": {
+        "method": "source condition cross-checked against encoded frames"
+      }
+    },
+    {
+      "id": "cta-cut",
+      "label": "Final CTA hard cut; all CTA text already present",
+      "kind": "cut",
+      "firstFrame": 480,
+      "anchorFrame": 480,
+      "endFrame": 480,
+      "seconds": 16.0,
+      "timecode": "00:00:16:00",
+      "engineSampleFrame": 705600,
+      "sample48k": 768000,
+      "engineTick": 30720,
+      "cue": "resolved root / open fifth, rhythmic layer stops",
+      "evidence": {
+        "method": "source condition cross-checked against encoded frames"
+      }
+    },
+    {
+      "id": "cta-breath",
+      "label": "First decorative sun breath maximum",
+      "kind": "decorative-motion",
+      "firstFrame": 511,
+      "anchorFrame": 511,
+      "endFrame": 511,
+      "seconds": 17.033333,
+      "timecode": "00:00:17:01",
+      "engineSampleFrame": 751170,
+      "sample48k": 817600,
+      "engineTick": 32704,
+      "cue": "quiet residual harmonic answer; no new impact",
+      "evidence": {
+        "method": "source condition cross-checked against encoded frames"
+      }
+    },
+    {
+      "id": "ending",
+      "label": "Natural tail complete; picture still holds",
+      "kind": "audio-release",
+      "firstFrame": 596,
+      "anchorFrame": 596,
+      "endFrame": 599,
+      "seconds": 19.866667,
+      "timecode": "00:00:19:26",
+      "engineSampleFrame": 876120,
+      "sample48k": 953600,
+      "engineTick": 38144,
+      "cue": "finish before frame 600, no hard tail chop",
+      "evidence": {
+        "method": "source condition cross-checked against encoded frames"
+      }
+    }
+  ]
+}

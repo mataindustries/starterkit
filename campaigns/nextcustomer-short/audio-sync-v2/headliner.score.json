@@ -1,0 +1,414 @@
+{
+  "title": "NextCustomer / Paper, Copper, Motion \u2014 picture-locked audio revision",
+  "bpm": 120,
+  "key": "D minor",
+  "seed": 1202602,
+  "instruments": {
+    "felt": {
+      "partials": [
+        1,
+        0.38,
+        0.19,
+        0.04
+      ],
+      "attackSeconds": 0.001,
+      "decaySeconds": 0.075,
+      "sampleSeconds": 0.22,
+      "noise": 0.012
+    },
+    "copper": {
+      "partials": [
+        0.55,
+        0.16,
+        0.33,
+        0.12,
+        0.06,
+        0.08
+      ],
+      "attackSeconds": 0.001,
+      "decaySeconds": 0.13,
+      "sampleSeconds": 0.42,
+      "noise": 0.002
+    },
+    "rubber": {
+      "partials": [
+        1,
+        0.5,
+        0.2,
+        0.05
+      ],
+      "attackSeconds": 0.003,
+      "decaySeconds": 0.1,
+      "sampleSeconds": 0.32,
+      "noise": 0
+    },
+    "reed": {
+      "partials": [
+        0.8,
+        0.14,
+        0.08,
+        0.025
+      ],
+      "attackSeconds": 0.012,
+      "decaySeconds": 0.42,
+      "sampleSeconds": 1.0,
+      "noise": 0.003
+    }
+  },
+  "phrases": {},
+  "sections": [
+    {
+      "id": "picture",
+      "bars": 10,
+      "development": "Locked 600-frame motion: irregular three-syllable hook; source UI hocket; Post/Story impacts; descending copy answers; root-resolved CTA."
+    }
+  ],
+  "tracks": [
+    {
+      "id": "copper",
+      "instrument": "copper",
+      "gainDb": -6,
+      "pan": -0.12,
+      "sections": {
+        "picture": [
+          {
+            "beat": 1.2,
+            "midi": 74,
+            "velocity": 0.84
+          },
+          {
+            "beat": 1.7333333333333334,
+            "midi": 81,
+            "velocity": 0.78
+          },
+          {
+            "beat": 2.2666666666666666,
+            "midi": 77,
+            "velocity": 0.88
+          },
+          {
+            "beat": 6.0,
+            "midi": 62,
+            "velocity": 0.68
+          },
+          {
+            "beat": 6.933333333333334,
+            "midi": 69,
+            "velocity": 0.36
+          },
+          {
+            "beat": 7.466666666666667,
+            "midi": 65,
+            "velocity": 0.42
+          },
+          {
+            "beat": 11.6,
+            "midi": 74,
+            "velocity": 0.62
+          },
+          {
+            "beat": 12.133333333333333,
+            "midi": 81,
+            "velocity": 0.35
+          },
+          {
+            "beat": 12.666666666666666,
+            "midi": 77,
+            "velocity": 0.42
+          },
+          {
+            "beat": 14.0,
+            "midi": 74,
+            "velocity": 0.82
+          },
+          {
+            "beat": 14.533333333333333,
+            "midi": 81,
+            "velocity": 0.55
+          },
+          {
+            "beat": 15.133333333333333,
+            "midi": 77,
+            "velocity": 0.64
+          },
+          {
+            "beat": 16.266666666666666,
+            "midi": 72,
+            "velocity": 0.33
+          },
+          {
+            "beat": 16.8,
+            "midi": 69,
+            "velocity": 0.31
+          },
+          {
+            "beat": 17.333333333333332,
+            "midi": 65,
+            "velocity": 0.32
+          },
+          {
+            "beat": 18.8,
+            "midi": 86,
+            "velocity": 0.66
+          },
+          {
+            "beat": 19.333333333333332,
+            "midi": 81,
+            "velocity": 0.53
+          },
+          {
+            "beat": 19.933333333333334,
+            "midi": 77,
+            "velocity": 0.6
+          },
+          {
+            "beat": 21.2,
+            "midi": 76,
+            "velocity": 0.28
+          },
+          {
+            "beat": 21.733333333333334,
+            "midi": 74,
+            "velocity": 0.3
+          },
+          {
+            "beat": 24.0,
+            "midi": 74,
+            "velocity": 0.7
+          },
+          {
+            "beat": 24.533333333333335,
+            "midi": 72,
+            "velocity": 0.63
+          },
+          {
+            "beat": 25.066666666666666,
+            "midi": 69,
+            "velocity": 0.75
+          },
+          {
+            "beat": 30.0,
+            "midi": 74,
+            "velocity": 0.64
+          },
+          {
+            "beat": 30.4,
+            "midi": 81,
+            "velocity": 0.48
+          },
+          {
+            "beat": 30.6,
+            "midi": 77,
+            "velocity": 0.48
+          }
+        ]
+      }
+    },
+    {
+      "id": "felt",
+      "instrument": "felt",
+      "gainDb": -6,
+      "pan": 0.1,
+      "sections": {
+        "picture": [
+          {
+            "beat": 0.0,
+            "midi": 50,
+            "velocity": 0.6
+          },
+          {
+            "beat": 1.2,
+            "midi": 62,
+            "velocity": 0.38
+          },
+          {
+            "beat": 1.7333333333333334,
+            "midi": 69,
+            "velocity": 0.34
+          },
+          {
+            "beat": 2.2666666666666666,
+            "midi": 65,
+            "velocity": 0.4
+          },
+          {
+            "beat": 6.0,
+            "midi": 62,
+            "velocity": 0.64
+          },
+          {
+            "beat": 8.266666666666667,
+            "midi": 57,
+            "velocity": 0.35
+          },
+          {
+            "beat": 9.333333333333334,
+            "midi": 65,
+            "velocity": 0.59
+          },
+          {
+            "beat": 11.133333333333333,
+            "midi": 74,
+            "velocity": 0.63
+          },
+          {
+            "beat": 11.6,
+            "midi": 62,
+            "velocity": 0.6
+          },
+          {
+            "beat": 13.2,
+            "midi": 69,
+            "velocity": 0.25
+          },
+          {
+            "beat": 14.0,
+            "midi": 62,
+            "velocity": 0.76
+          },
+          {
+            "beat": 15.133333333333333,
+            "midi": 65,
+            "velocity": 0.42
+          },
+          {
+            "beat": 15.8,
+            "midi": 69,
+            "velocity": 0.25
+          },
+          {
+            "beat": 18.8,
+            "midi": 57,
+            "velocity": 0.74
+          },
+          {
+            "beat": 19.933333333333334,
+            "midi": 64,
+            "velocity": 0.38
+          },
+          {
+            "beat": 22.466666666666665,
+            "midi": 69,
+            "velocity": 0.3
+          },
+          {
+            "beat": 24.0,
+            "midi": 62,
+            "velocity": 0.55
+          },
+          {
+            "beat": 24.533333333333335,
+            "midi": 60,
+            "velocity": 0.42
+          },
+          {
+            "beat": 25.066666666666666,
+            "midi": 57,
+            "velocity": 0.5
+          },
+          {
+            "beat": 30.0,
+            "midi": 62,
+            "velocity": 0.57
+          },
+          {
+            "beat": 32.0,
+            "midi": 50,
+            "velocity": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "bass",
+      "instrument": "rubber",
+      "gainDb": -5,
+      "pan": 0,
+      "sections": {
+        "picture": [
+          {
+            "beat": 0.0,
+            "midi": 38,
+            "velocity": 0.75
+          },
+          {
+            "beat": 6.0,
+            "midi": 38,
+            "velocity": 0.8
+          },
+          {
+            "beat": 11.6,
+            "midi": 45,
+            "velocity": 0.62
+          },
+          {
+            "beat": 14.0,
+            "midi": 38,
+            "velocity": 0.95
+          },
+          {
+            "beat": 18.8,
+            "midi": 43,
+            "velocity": 0.92
+          },
+          {
+            "beat": 24.0,
+            "midi": 45,
+            "velocity": 0.58
+          },
+          {
+            "beat": 30.0,
+            "midi": 45,
+            "velocity": 0.63
+          },
+          {
+            "beat": 32.0,
+            "midi": 38,
+            "velocity": 0.72
+          }
+        ]
+      }
+    },
+    {
+      "id": "resolve",
+      "instrument": "reed",
+      "gainDb": -8,
+      "pan": 0,
+      "sections": {
+        "picture": [
+          {
+            "beat": 32.0,
+            "midi": 50,
+            "velocity": 0.62
+          },
+          {
+            "beat": 32.0,
+            "midi": 57,
+            "velocity": 0.42
+          },
+          {
+            "beat": 32.0,
+            "midi": 65,
+            "velocity": 0.35
+          },
+          {
+            "beat": 34.06666666666667,
+            "midi": 64,
+            "velocity": 0.4
+          },
+          {
+            "beat": 36.0,
+            "midi": 62,
+            "velocity": 0.39
+          },
+          {
+            "beat": 36.0,
+            "midi": 69,
+            "velocity": 0.22
+          }
+        ]
+      }
+    }
+  ],
+  "variations": {}
+}
