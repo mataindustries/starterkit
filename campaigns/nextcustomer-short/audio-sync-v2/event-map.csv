@@ -1,0 +1,25 @@
+id,label,kind,firstFrame,anchorFrame,endFrame,seconds,timecode,engineSampleFrame,engineTick,cue
+opening,First-frame YOU RUN THE BUSINESS,static-first-frame,0,0,0,0.0,00:00:00:00,0,0,low stamp + prepared pluck
+type-marketing,MARKETING masked entrance,typography,18,18,27,0.6,00:00:00:18,26460,1152,dry copper/felt signature syllable
+type-shouldnt,SHOULDN’T BE masked entrance,typography,26,26,35,0.866667,00:00:00:26,38220,1664,dry copper/felt signature syllable
+type-job,ANOTHER JOB masked entrance,typography,34,34,43,1.133333,00:00:01:04,49980,2176,dry copper/felt signature syllable
+wipe,Orange wipe into real app,transition,85,85,89,2.833333,00:00:02:25,124950,5440,paper draw accelerating to app cut
+app-cut,ONE BUSINESS / real session cut,cut,90,90,90,3.0,00:00:03:00,132300,5760,focused low arrival + hook answer
+typing,Actual business-name entry,captured-ui,90,93,139,3.1,00:00:03:03,136710,5952,restrained mechanical typing cluster
+button-crop,Cut to Make my kit button,cut,140,140,140,4.666667,00:00:04:20,205800,8960,short paper fold / muted rim
+tap-onset,Tap annotation starts,tap-motion,161,167,173,5.566667,00:00:05:17,245490,10688,single tactile click at ring opacity maximum
+kit-cut,Genuine kit result cut,cut,174,174,174,5.8,00:00:05:24,255780,11136,pitched response + centered knock
+post-cut,Post export + title reveal / zoom,reveal,210,210,227,7.0,00:00:07:00,308700,13440,low body + copper attack; rising paper release
+post-land,Post bloom and rotation settle,motion-settle,227,227,227,7.566667,00:00:07:17,333690,14528,"small resonant latch, lower than reveal impact"
+story-cut,Story export + title reveal / zoom,reveal,282,282,299,9.4,00:00:09:12,414540,18048,different impact: deep bloom + wide glass answer
+story-land,Story bloom and rotation settle,motion-settle,299,299,299,9.966667,00:00:09:29,439530,19136,light upward harmonic latch
+copy-cut,AND THE WORDS / montage cut,cut,360,360,360,12.0,00:00:12:00,529200,23040,dry stop + felt syllable
+bio-in,Bio card opacity/position entrance,reveal,361,361,371,12.033333,00:00:12:01,530670,23104,small first step of descending three-note answer
+messages-in,Messages card entrance,reveal,368,368,378,12.266667,00:00:12:08,540960,23552,"second dry step, exact card cadence"
+week-in,Week 1 card entrance,reveal,376,376,386,12.533333,00:00:12:16,552720,24064,third dry step + warm body
+spanish-cut,Spanish title / Post movement,cut,450,450,459,15.0,00:00:15:00,661500,28800,hook returns in higher register + short inhale
+es-toggle,Actual EN to ES selection,captured-ui,456,456,456,15.2,00:00:15:06,670320,29184,precise dry switch click
+spanish-land,Spanish Post motion settles,motion-settle,459,459,459,15.3,00:00:15:09,674730,29376,"soft landing, omit if toggle is within two frames"
+cta-cut,Final CTA hard cut; all CTA text already present,cut,480,480,480,16.0,00:00:16:00,705600,30720,"resolved root / open fifth, rhythmic layer stops"
+cta-breath,First decorative sun breath maximum,decorative-motion,511,511,511,17.033333,00:00:17:01,751170,32704,quiet residual harmonic answer; no new impact
+ending,Natural tail complete; picture still holds,audio-release,596,596,599,19.866667,00:00:19:26,876120,38144,"finish before frame 600, no hard tail chop"

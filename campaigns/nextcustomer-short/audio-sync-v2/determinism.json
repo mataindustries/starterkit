@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "method": "Fresh DaemonV12 render of frozen project under identical Node/FFmpeg; compare master and all seven canonical PCM stems byte for byte.",
+  "files": {
+    "nextcustomer-sync.project.wav": {
+      "equal": true,
+      "sha256": "c3ad1125121216d87ea8a26d9f72782e908800513516aca871cfa2be4ef68eed"
+    },
+    "nextcustomer-sync.project.stems/bass.wav": {
+      "equal": true,
+      "sha256": "6b554099df294108a88168eb5ba94ea9d1ca472c339de222a29a6ea299044da3"
+    },
+    "nextcustomer-sync.project.stems/contacts.wav": {
+      "equal": true,
+      "sha256": "99131e25e82b34b42aa3e5a606ad18c9f51d0b0b2e9656f498e237d2144b47d3"
+    },
+    "nextcustomer-sync.project.stems/copper.wav": {
+      "equal": true,
+      "sha256": "c7404d39363325113b8c794e40ba77c604c6f9cae517b441f188fac303dd6fc1"
+    },
+    "nextcustomer-sync.project.stems/felt.wav": {
+      "equal": true,
+      "sha256": "b20dba1494060d9b60ed62dfb747dbb2575587986aacef3e6015eadad674cb4a"
+    },
+    "nextcustomer-sync.project.stems/movement.wav": {
+      "equal": true,
+      "sha256": "a2f26e2d2a3c525e49ec9ce3066b09aac9ecdda47ac4e4f695f538512b8537c7"
+    },
+    "nextcustomer-sync.project.stems/resolve.wav": {
+      "equal": true,
+      "sha256": "e541a07fc97f9737eca97f8e4624e67c81326cd876d3685071f50ddbf3c59456"
+    },
+    "nextcustomer-sync.project.stems/typing.wav": {
+      "equal": true,
+      "sha256": "aee2e2ba98e1aff494d1ec8f42dade2843d22a47e7d8b4ba7089c0c05b9182a7"
+    }
+  }
+}

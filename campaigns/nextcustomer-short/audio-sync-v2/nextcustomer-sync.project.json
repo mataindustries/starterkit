@@ -1,0 +1,711 @@
+{
+  "formatVersion": 1,
+  "title": "NextCustomer / Paper, Copper, Motion / sync-v2 owner proof",
+  "bpm": 120,
+  "timeSignature": "4/4",
+  "key": "D minor",
+  "bars": 10,
+  "seed": 1202602,
+  "description": "picture: Locked 600-frame motion: irregular three-syllable hook; source UI hocket; Post/Story impacts; descending copy answers; root-resolved CTA.",
+  "render": {
+    "duration": {
+      "seconds": 20
+    },
+    "tail": "none"
+  },
+  "master": {
+    "gainDb": -3
+  },
+  "tracks": [
+    {
+      "id": "copper",
+      "instrument": {
+        "type": "drumkit",
+        "kit": "assets/copper/kit.json"
+      },
+      "mix": {
+        "gainDb": -6,
+        "pan": -0.12
+      },
+      "clips": [
+        {
+          "bar": 1,
+          "pattern": "picture"
+        }
+      ],
+      "patterns": [
+        {
+          "id": "picture",
+          "bars": 10,
+          "notes": [
+            {
+              "start": "1:2+192/3840",
+              "pitch": "note-74",
+              "velocity": 0.84
+            },
+            {
+              "start": "1:2+704/3840",
+              "pitch": "note-81",
+              "velocity": 0.78
+            },
+            {
+              "start": "1:3+256/3840",
+              "pitch": "note-77",
+              "velocity": 0.88
+            },
+            {
+              "start": "2:3",
+              "pitch": "note-62",
+              "velocity": 0.68
+            },
+            {
+              "start": "2:3+896/3840",
+              "pitch": "note-69",
+              "velocity": 0.36
+            },
+            {
+              "start": "2:4+448/3840",
+              "pitch": "note-65",
+              "velocity": 0.42
+            },
+            {
+              "start": "3:4+576/3840",
+              "pitch": "note-74",
+              "velocity": 0.62
+            },
+            {
+              "start": "4:1+128/3840",
+              "pitch": "note-81",
+              "velocity": 0.35
+            },
+            {
+              "start": "4:1+640/3840",
+              "pitch": "note-77",
+              "velocity": 0.42
+            },
+            {
+              "start": "4:3",
+              "pitch": "note-74",
+              "velocity": 0.82
+            },
+            {
+              "start": "4:3+512/3840",
+              "pitch": "note-81",
+              "velocity": 0.55
+            },
+            {
+              "start": "4:4+128/3840",
+              "pitch": "note-77",
+              "velocity": 0.64
+            },
+            {
+              "start": "5:1+256/3840",
+              "pitch": "note-72",
+              "velocity": 0.33
+            },
+            {
+              "start": "5:1+768/3840",
+              "pitch": "note-69",
+              "velocity": 0.31
+            },
+            {
+              "start": "5:2+320/3840",
+              "pitch": "note-65",
+              "velocity": 0.32
+            },
+            {
+              "start": "5:3+768/3840",
+              "pitch": "note-86",
+              "velocity": 0.66
+            },
+            {
+              "start": "5:4+320/3840",
+              "pitch": "note-81",
+              "velocity": 0.53
+            },
+            {
+              "start": "5:4+896/3840",
+              "pitch": "note-77",
+              "velocity": 0.6
+            },
+            {
+              "start": "6:2+192/3840",
+              "pitch": "note-76",
+              "velocity": 0.28
+            },
+            {
+              "start": "6:2+704/3840",
+              "pitch": "note-74",
+              "velocity": 0.3
+            },
+            {
+              "start": "7:1",
+              "pitch": "note-74",
+              "velocity": 0.7
+            },
+            {
+              "start": "7:1+512/3840",
+              "pitch": "note-72",
+              "velocity": 0.63
+            },
+            {
+              "start": "7:2+64/3840",
+              "pitch": "note-69",
+              "velocity": 0.75
+            },
+            {
+              "start": "8:3",
+              "pitch": "note-74",
+              "velocity": 0.64
+            },
+            {
+              "start": "8:3+384/3840",
+              "pitch": "note-81",
+              "velocity": 0.48
+            },
+            {
+              "start": "8:3+576/3840",
+              "pitch": "note-77",
+              "velocity": 0.48
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "type": "highpass",
+          "frequencyHz": 330
+        },
+        {
+          "type": "reverb",
+          "roomSize": 0.18,
+          "decaySeconds": 0.26,
+          "wet": 0.06
+        }
+      ]
+    },
+    {
+      "id": "felt",
+      "instrument": {
+        "type": "drumkit",
+        "kit": "assets/felt/kit.json"
+      },
+      "mix": {
+        "gainDb": -6,
+        "pan": 0.1
+      },
+      "clips": [
+        {
+          "bar": 1,
+          "pattern": "picture"
+        }
+      ],
+      "patterns": [
+        {
+          "id": "picture",
+          "bars": 10,
+          "notes": [
+            {
+              "start": "1:1",
+              "pitch": "note-50",
+              "velocity": 0.6
+            },
+            {
+              "start": "1:2+192/3840",
+              "pitch": "note-62",
+              "velocity": 0.38
+            },
+            {
+              "start": "1:2+704/3840",
+              "pitch": "note-69",
+              "velocity": 0.34
+            },
+            {
+              "start": "1:3+256/3840",
+              "pitch": "note-65",
+              "velocity": 0.4
+            },
+            {
+              "start": "2:3",
+              "pitch": "note-62",
+              "velocity": 0.64
+            },
+            {
+              "start": "3:1+256/3840",
+              "pitch": "note-57",
+              "velocity": 0.35
+            },
+            {
+              "start": "3:2+320/3840",
+              "pitch": "note-65",
+              "velocity": 0.59
+            },
+            {
+              "start": "3:4+128/3840",
+              "pitch": "note-74",
+              "velocity": 0.63
+            },
+            {
+              "start": "3:4+576/3840",
+              "pitch": "note-62",
+              "velocity": 0.6
+            },
+            {
+              "start": "4:2+192/3840",
+              "pitch": "note-69",
+              "velocity": 0.25
+            },
+            {
+              "start": "4:3",
+              "pitch": "note-62",
+              "velocity": 0.76
+            },
+            {
+              "start": "4:4+128/3840",
+              "pitch": "note-65",
+              "velocity": 0.42
+            },
+            {
+              "start": "4:4+768/3840",
+              "pitch": "note-69",
+              "velocity": 0.25
+            },
+            {
+              "start": "5:3+768/3840",
+              "pitch": "note-57",
+              "velocity": 0.74
+            },
+            {
+              "start": "5:4+896/3840",
+              "pitch": "note-64",
+              "velocity": 0.38
+            },
+            {
+              "start": "6:3+448/3840",
+              "pitch": "note-69",
+              "velocity": 0.3
+            },
+            {
+              "start": "7:1",
+              "pitch": "note-62",
+              "velocity": 0.55
+            },
+            {
+              "start": "7:1+512/3840",
+              "pitch": "note-60",
+              "velocity": 0.42
+            },
+            {
+              "start": "7:2+64/3840",
+              "pitch": "note-57",
+              "velocity": 0.5
+            },
+            {
+              "start": "8:3",
+              "pitch": "note-62",
+              "velocity": 0.57
+            },
+            {
+              "start": "9:1",
+              "pitch": "note-50",
+              "velocity": 0.5
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "type": "highpass",
+          "frequencyHz": 150
+        }
+      ]
+    },
+    {
+      "id": "bass",
+      "instrument": {
+        "type": "drumkit",
+        "kit": "assets/bass/kit.json"
+      },
+      "mix": {
+        "gainDb": -5,
+        "pan": 0
+      },
+      "clips": [
+        {
+          "bar": 1,
+          "pattern": "picture"
+        }
+      ],
+      "patterns": [
+        {
+          "id": "picture",
+          "bars": 10,
+          "notes": [
+            {
+              "start": "1:1",
+              "pitch": "note-38",
+              "velocity": 0.75
+            },
+            {
+              "start": "2:3",
+              "pitch": "note-38",
+              "velocity": 0.8
+            },
+            {
+              "start": "3:4+576/3840",
+              "pitch": "note-45",
+              "velocity": 0.62
+            },
+            {
+              "start": "4:3",
+              "pitch": "note-38",
+              "velocity": 0.95
+            },
+            {
+              "start": "5:3+768/3840",
+              "pitch": "note-43",
+              "velocity": 0.92
+            },
+            {
+              "start": "7:1",
+              "pitch": "note-45",
+              "velocity": 0.58
+            },
+            {
+              "start": "8:3",
+              "pitch": "note-45",
+              "velocity": 0.63
+            },
+            {
+              "start": "9:1",
+              "pitch": "note-38",
+              "velocity": 0.72
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "type": "lowpass",
+          "frequencyHz": 900
+        }
+      ]
+    },
+    {
+      "id": "resolve",
+      "instrument": {
+        "type": "drumkit",
+        "kit": "assets/resolve/kit.json"
+      },
+      "mix": {
+        "gainDb": -8,
+        "pan": 0
+      },
+      "clips": [
+        {
+          "bar": 1,
+          "pattern": "picture"
+        }
+      ],
+      "patterns": [
+        {
+          "id": "picture",
+          "bars": 10,
+          "notes": [
+            {
+              "start": "9:1",
+              "pitch": "note-50",
+              "velocity": 0.62
+            },
+            {
+              "start": "9:1",
+              "pitch": "note-57",
+              "velocity": 0.42
+            },
+            {
+              "start": "9:1",
+              "pitch": "note-65",
+              "velocity": 0.35
+            },
+            {
+              "start": "9:3+64/3840",
+              "pitch": "note-64",
+              "velocity": 0.4
+            },
+            {
+              "start": "10:1",
+              "pitch": "note-62",
+              "velocity": 0.39
+            },
+            {
+              "start": "10:1",
+              "pitch": "note-69",
+              "velocity": 0.22
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "type": "reverb",
+          "roomSize": 0.35,
+          "decaySeconds": 0.65,
+          "wet": 0.14
+        }
+      ]
+    },
+    {
+      "id": "contacts",
+      "instrument": {
+        "type": "drumkit",
+        "kit": "assets/sfx/kit.json"
+      },
+      "mix": {
+        "gainDb": -7,
+        "pan": 0
+      },
+      "patterns": [
+        {
+          "id": "picture",
+          "bars": 10,
+          "notes": [
+            {
+              "start": "1:1",
+              "pitch": "post-body",
+              "velocity": 0.55
+            },
+            {
+              "start": "3:2+320/3840",
+              "pitch": "fold",
+              "velocity": 0.55
+            },
+            {
+              "start": "3:4+128/3840",
+              "pitch": "tap",
+              "velocity": 0.83
+            },
+            {
+              "start": "3:4+576/3840",
+              "pitch": "fold",
+              "velocity": 0.62
+            },
+            {
+              "start": "4:3",
+              "pitch": "post-body",
+              "velocity": 1
+            },
+            {
+              "start": "4:4+128/3840",
+              "pitch": "latch",
+              "velocity": 0.43
+            },
+            {
+              "start": "5:3+768/3840",
+              "pitch": "story-body",
+              "velocity": 1
+            },
+            {
+              "start": "5:4+896/3840",
+              "pitch": "latch",
+              "velocity": 0.38
+            },
+            {
+              "start": "7:1",
+              "pitch": "fold",
+              "velocity": 0.45
+            },
+            {
+              "start": "7:1+512/3840",
+              "pitch": "fold",
+              "velocity": 0.25
+            },
+            {
+              "start": "7:2+64/3840",
+              "pitch": "fold",
+              "velocity": 0.28
+            },
+            {
+              "start": "8:3",
+              "pitch": "fold",
+              "velocity": 0.43
+            },
+            {
+              "start": "8:3+384/3840",
+              "pitch": "tap",
+              "velocity": 0.55
+            },
+            {
+              "start": "9:1",
+              "pitch": "post-body",
+              "velocity": 0.45
+            }
+          ]
+        }
+      ],
+      "clips": [
+        {
+          "bar": 1,
+          "pattern": "picture"
+        }
+      ],
+      "effects": [
+        {
+          "type": "highpass",
+          "frequencyHz": 180
+        }
+      ]
+    },
+    {
+      "id": "movement",
+      "instrument": {
+        "type": "drumkit",
+        "kit": "assets/sfx/kit.json"
+      },
+      "mix": {
+        "gainDb": -9,
+        "pan": 0.1
+      },
+      "patterns": [
+        {
+          "id": "picture",
+          "bars": 10,
+          "notes": [
+            {
+              "start": "2:2+640/3840",
+              "pitch": "wipe",
+              "velocity": 0.85
+            },
+            {
+              "start": "4:2+576/3840",
+              "pitch": "post-air",
+              "velocity": 0.65
+            },
+            {
+              "start": "5:3+256/3840",
+              "pitch": "story-air",
+              "velocity": 0.75
+            },
+            {
+              "start": "8:2+576/3840",
+              "pitch": "post-air",
+              "velocity": 0.35
+            },
+            {
+              "start": "8:4+576/3840",
+              "pitch": "post-air",
+              "velocity": 0.3
+            }
+          ]
+        }
+      ],
+      "clips": [
+        {
+          "bar": 1,
+          "pattern": "picture"
+        }
+      ],
+      "effects": [
+        {
+          "type": "highpass",
+          "frequencyHz": 180
+        }
+      ]
+    },
+    {
+      "id": "typing",
+      "instrument": {
+        "type": "drumkit",
+        "kit": "assets/sfx/kit.json"
+      },
+      "mix": {
+        "gainDb": -12,
+        "pan": -0.1
+      },
+      "patterns": [
+        {
+          "id": "picture",
+          "bars": 10,
+          "notes": [
+            {
+              "start": "2:3+192/3840",
+              "pitch": "tap",
+              "velocity": 0.12
+            },
+            {
+              "start": "2:3+384/3840",
+              "pitch": "tap",
+              "velocity": 0.12
+            },
+            {
+              "start": "2:3+512/3840",
+              "pitch": "tap",
+              "velocity": 0.12
+            },
+            {
+              "start": "2:3+704/3840",
+              "pitch": "tap",
+              "velocity": 0.12
+            },
+            {
+              "start": "2:3+832/3840",
+              "pitch": "tap",
+              "velocity": 0.12
+            },
+            {
+              "start": "2:4+128/3840",
+              "pitch": "tap",
+              "velocity": 0.12
+            },
+            {
+              "start": "2:4+256/3840",
+              "pitch": "tap",
+              "velocity": 0.12
+            },
+            {
+              "start": "2:4+512/3840",
+              "pitch": "tap",
+              "velocity": 0.12
+            },
+            {
+              "start": "2:4+704/3840",
+              "pitch": "tap",
+              "velocity": 0.12
+            },
+            {
+              "start": "2:4+832/3840",
+              "pitch": "tap",
+              "velocity": 0.12
+            },
+            {
+              "start": "3:1+128/3840",
+              "pitch": "tap",
+              "velocity": 0.12
+            },
+            {
+              "start": "3:1+256/3840",
+              "pitch": "tap",
+              "velocity": 0.12
+            },
+            {
+              "start": "3:1+448/3840",
+              "pitch": "tap",
+              "velocity": 0.12
+            }
+          ]
+        }
+      ],
+      "clips": [
+        {
+          "bar": 1,
+          "pattern": "picture"
+        }
+      ],
+      "effects": [
+        {
+          "type": "highpass",
+          "frequencyHz": 180
+        }
+      ]
+    }
+  ]
+}

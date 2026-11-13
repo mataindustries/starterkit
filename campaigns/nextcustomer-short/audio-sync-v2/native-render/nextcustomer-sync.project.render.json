@@ -1,0 +1,2118 @@
+{
+  "engine": {
+    "name": "daemonv12",
+    "version": "0.7.0"
+  },
+  "project": {
+    "file": "nextcustomer-sync.project.json",
+    "sha256": "150b2f10c93def32b73772294e8e578b6aa641e78a17c65590a79167b86c4317",
+    "formatVersion": 1,
+    "seed": 1202602
+  },
+  "midi": {
+    "file": "nextcustomer-sync.project.mid",
+    "sha256": "956a544f84b6eebaf889bd7772ba3ff8df2bb61290266b0568c4d32e551c543d",
+    "bytes": 111,
+    "ppq": 960,
+    "durationTicks": 38400,
+    "durationSeconds": 20,
+    "notes": 0
+  },
+  "renderer": {
+    "name": "daemonv12-production",
+    "version": "2",
+    "settings": {
+      "sampleRate": 44100,
+      "channels": 2,
+      "bitsPerSample": 16,
+      "panLaw": "linear stereo balance; unity center",
+      "order": "source and tail cap, track gain/pan automation, ordered track effects, tail cap, s16 track elements; sum, master gain, ordered master effects, tail cap and final trim/pad, VO ducking, s16 master; trim/pad pre-master stems to master frames",
+      "normalization": false,
+      "dither": false,
+      "automation": "absolute values; step or outgoing linear segment; gain interpolated in dB; rounded sample positions",
+      "reverb": "schroeder-4-comb-2-allpass-v1; finite RT60 tail",
+      "saturation": "tanh-v1; no output compensation",
+      "ducking": "trailing 20ms channel-energy RMS; threshold gate; exponential reduction in dB; v1"
+    }
+  },
+  "gmRenderer": null,
+  "gmSource": null,
+  "soundfont": null,
+  "samples": {
+    "timing": "nearest absolute trigger and fixed boundary, ties later; ceil minimum only without fixed boundary; tick * usPerQuarter * 44100 / 960000000",
+    "assets": [
+      {
+        "file": "assets/bass/kit.json",
+        "sha256": "f31e9df7fc01b187ef69f54258382867aa1b7f1049af07814864f8621f35171d",
+        "bytes": 296,
+        "kind": "drumkit"
+      },
+      {
+        "file": "assets/bass/note-38.wav",
+        "sha256": "168c1b5bf42110cfd3669fd7a7a5d26ca1ccf3185650c2aee1daef0160feace0",
+        "bytes": 28268,
+        "frames": 14112,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/bass/note-43.wav",
+        "sha256": "ca752a2cf40964f0457c6a877e52a9185e65975c2024d000307294275471f299",
+        "bytes": 28268,
+        "frames": 14112,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/bass/note-45.wav",
+        "sha256": "f9553d850247b5ea661393382f99bd5c212340a4c1ab0016f77acb553876ee94",
+        "bytes": 28268,
+        "frames": 14112,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/copper/kit.json",
+        "sha256": "97a1729dfb891a8bf6ea9268e2f93e24ed5ec52b5763cd603152a8276e14b684",
+        "bytes": 800,
+        "kind": "drumkit"
+      },
+      {
+        "file": "assets/copper/note-62.wav",
+        "sha256": "66b16a3c3bba80a29fd209ab167e96df859b34abe71322b4a1ecd6b355e061b7",
+        "bytes": 37088,
+        "frames": 18522,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/copper/note-65.wav",
+        "sha256": "ed9d4c1bd08bd90cb20e895180700893245a3e8d96f0ba2eb35f09c578ad46e1",
+        "bytes": 37088,
+        "frames": 18522,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/copper/note-69.wav",
+        "sha256": "592f990aa10efb9c2b602b00f7c5a61c7a5e5ef7f18021022b6e356e957fa025",
+        "bytes": 37088,
+        "frames": 18522,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/copper/note-72.wav",
+        "sha256": "c0924b36591a8c721cfca9d82ed691aa1dd376df0a795e5305073196fb60465a",
+        "bytes": 37088,
+        "frames": 18522,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/copper/note-74.wav",
+        "sha256": "336224ba1935d60446836433d0f7b7605fcab00bb4190e2179168ded2962a774",
+        "bytes": 37088,
+        "frames": 18522,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/copper/note-76.wav",
+        "sha256": "62f38931de9181fc39573f9186ed3a64ec9c79b1b2c1175b0471512a8179658c",
+        "bytes": 37088,
+        "frames": 18522,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/copper/note-77.wav",
+        "sha256": "dca68400dd92583ab6067acae88a32016ff6c9856f69d80b9da1f79112aaa86a",
+        "bytes": 37088,
+        "frames": 18522,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/copper/note-81.wav",
+        "sha256": "2239933b802fd7453590393943b7f621add6893c50072dbe8cc2da6912792e67",
+        "bytes": 37088,
+        "frames": 18522,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/copper/note-86.wav",
+        "sha256": "476a8d4da621d0d5966ab5cef506a9708a705abb9c1000c1302d21dddb0b3942",
+        "bytes": 37088,
+        "frames": 18522,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/felt/kit.json",
+        "sha256": "416b066a9ff538a3850b5f8ce989d446992d20278f9726df54214306bc8cf768",
+        "bytes": 716,
+        "kind": "drumkit"
+      },
+      {
+        "file": "assets/felt/note-50.wav",
+        "sha256": "53a4558af1a7b7f952243d89f42bd22300e5825a9a174e8be135aef5c96ce049",
+        "bytes": 19448,
+        "frames": 9702,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/felt/note-57.wav",
+        "sha256": "6fd3b330e70272ae1bd27cfa85026167555db9cbe2bcf9b0a99e5b90d56abd13",
+        "bytes": 19448,
+        "frames": 9702,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/felt/note-60.wav",
+        "sha256": "1be29a666dbaa9342b32069eaeac5bc323ac8b452976e5269274c55821f4ac0c",
+        "bytes": 19448,
+        "frames": 9702,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/felt/note-62.wav",
+        "sha256": "883059ee045650bdabea1b30750937f5832cabde3f894493456bc68e7f58c3a2",
+        "bytes": 19448,
+        "frames": 9702,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/felt/note-64.wav",
+        "sha256": "f672b21578dc2a901dafa2915e8ad1da9d26d32b57caa78a055a17c656f1d8b9",
+        "bytes": 19448,
+        "frames": 9702,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/felt/note-65.wav",
+        "sha256": "10ad4a2b2313922773ab1217dad51b895d7cea99436197b9d3de427904f5339f",
+        "bytes": 19448,
+        "frames": 9702,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/felt/note-69.wav",
+        "sha256": "19889a407ff7a228e9cb6b2a1fd976b82123047797a0f44e30607b2b12dc3bdf",
+        "bytes": 19448,
+        "frames": 9702,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/felt/note-74.wav",
+        "sha256": "089842d023b76b0c002019f2f074289c1ea455ab23fb557a0d84d8371af73a95",
+        "bytes": 19448,
+        "frames": 9702,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/resolve/kit.json",
+        "sha256": "e32ae6e249dde7522fae65da74de126f7dac1d7e9adfad8171b14abcf64388f0",
+        "bytes": 548,
+        "kind": "drumkit"
+      },
+      {
+        "file": "assets/resolve/note-50.wav",
+        "sha256": "843e5cb0ae9d962476f6f0bc57ff78aaa34840947c3bd02b63376a2d23a53e28",
+        "bytes": 88244,
+        "frames": 44100,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/resolve/note-57.wav",
+        "sha256": "b5fe7db7aa3a1c7b7e9d5dcb3bee4dbc963d64f7d2df4f30f5f14f49fd4c1ed1",
+        "bytes": 88244,
+        "frames": 44100,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/resolve/note-62.wav",
+        "sha256": "b16904b123615190a3d013bd98281b52f4b2b88eb254c9e944b7738fa6fdc77e",
+        "bytes": 88244,
+        "frames": 44100,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/resolve/note-64.wav",
+        "sha256": "b74e8dce0df511a74032b008f5e99ccf27549c0ecbced1f4bb1e4fb1938fee2c",
+        "bytes": 88244,
+        "frames": 44100,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/resolve/note-65.wav",
+        "sha256": "8470a9ee5559e4f0b797e5e97233bcb4f1bf2ddeca190980c43432728cd11a80",
+        "bytes": 88244,
+        "frames": 44100,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/resolve/note-69.wav",
+        "sha256": "15eb4667ae52d0a2d1a3259933bf608d6100088eea8ad24a87e45433763c4abf",
+        "bytes": 88244,
+        "frames": 44100,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/sfx/fold.wav",
+        "sha256": "1a18f8f05ed52a89727f8667082989f77ca02b5fae2c589719b54b9171e50027",
+        "bytes": 10628,
+        "frames": 5292,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/sfx/kit.json",
+        "sha256": "ff2b71ce4d7b600776436cebf10ebe73851f1e1f7833ae0cce446ef3b5a829bf",
+        "bytes": 708,
+        "kind": "drumkit"
+      },
+      {
+        "file": "assets/sfx/latch.wav",
+        "sha256": "ef1fb84fcc98dc7347ad1b1110b5c2dcc3fc4672a0d2c1299df66aa4a1c87bbc",
+        "bytes": 10628,
+        "frames": 5292,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/sfx/post-air.wav",
+        "sha256": "baebb1521d949657adc2d5de0e5208609c1cfb7eba62e3795906d402a0ca9624",
+        "bytes": 17684,
+        "frames": 8820,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/sfx/post-body.wav",
+        "sha256": "629c178d38dea812450c1373e463b8c0da89578db50b09f178dc8d8f94ebeeb2",
+        "bytes": 31796,
+        "frames": 15876,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/sfx/story-air.wav",
+        "sha256": "01506759fc44a71d2adf598aff0bdd97a5265a0891420f895f3263b0ea55ec85",
+        "bytes": 23564,
+        "frames": 11760,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/sfx/story-body.wav",
+        "sha256": "1fc882bac858554da1490d84bacf2bc570325443fa2bf7b4282d771ee7f8e843",
+        "bytes": 42380,
+        "frames": 21168,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/sfx/tap.wav",
+        "sha256": "cc5c5e3bac6fb7311739508c95d61810acb946e90d3bcfb5a2f603e392545db2",
+        "bytes": 6660,
+        "frames": 3308,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/sfx/wipe.wav",
+        "sha256": "ad186e147e3cdfd16ac2c68597066918af4fda144b941c54ad94a0244c24847d",
+        "bytes": 14744,
+        "frames": 7350,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      }
+    ],
+    "tracks": [
+      {
+        "trackId": "copper",
+        "trackIndex": 0,
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/copper/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/copper/note-74.wav",
+            "tick": 1152,
+            "frame": 26460,
+            "velocity": 0.84
+          },
+          {
+            "file": "assets/copper/note-81.wav",
+            "tick": 1664,
+            "frame": 38220,
+            "velocity": 0.78
+          },
+          {
+            "file": "assets/copper/note-77.wav",
+            "tick": 2176,
+            "frame": 49980,
+            "velocity": 0.88
+          },
+          {
+            "file": "assets/copper/note-62.wav",
+            "tick": 5760,
+            "frame": 132300,
+            "velocity": 0.68
+          },
+          {
+            "file": "assets/copper/note-69.wav",
+            "tick": 6656,
+            "frame": 152880,
+            "velocity": 0.36
+          },
+          {
+            "file": "assets/copper/note-65.wav",
+            "tick": 7168,
+            "frame": 164640,
+            "velocity": 0.42
+          },
+          {
+            "file": "assets/copper/note-74.wav",
+            "tick": 11136,
+            "frame": 255780,
+            "velocity": 0.62
+          },
+          {
+            "file": "assets/copper/note-81.wav",
+            "tick": 11648,
+            "frame": 267540,
+            "velocity": 0.35
+          },
+          {
+            "file": "assets/copper/note-77.wav",
+            "tick": 12160,
+            "frame": 279300,
+            "velocity": 0.42
+          },
+          {
+            "file": "assets/copper/note-74.wav",
+            "tick": 13440,
+            "frame": 308700,
+            "velocity": 0.82
+          },
+          {
+            "file": "assets/copper/note-81.wav",
+            "tick": 13952,
+            "frame": 320460,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/copper/note-77.wav",
+            "tick": 14528,
+            "frame": 333690,
+            "velocity": 0.64
+          },
+          {
+            "file": "assets/copper/note-72.wav",
+            "tick": 15616,
+            "frame": 358680,
+            "velocity": 0.33
+          },
+          {
+            "file": "assets/copper/note-69.wav",
+            "tick": 16128,
+            "frame": 370440,
+            "velocity": 0.31
+          },
+          {
+            "file": "assets/copper/note-65.wav",
+            "tick": 16640,
+            "frame": 382200,
+            "velocity": 0.32
+          },
+          {
+            "file": "assets/copper/note-86.wav",
+            "tick": 18048,
+            "frame": 414540,
+            "velocity": 0.66
+          },
+          {
+            "file": "assets/copper/note-81.wav",
+            "tick": 18560,
+            "frame": 426300,
+            "velocity": 0.53
+          },
+          {
+            "file": "assets/copper/note-77.wav",
+            "tick": 19136,
+            "frame": 439530,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/copper/note-76.wav",
+            "tick": 20352,
+            "frame": 467460,
+            "velocity": 0.28
+          },
+          {
+            "file": "assets/copper/note-74.wav",
+            "tick": 20864,
+            "frame": 479220,
+            "velocity": 0.3
+          },
+          {
+            "file": "assets/copper/note-74.wav",
+            "tick": 23040,
+            "frame": 529200,
+            "velocity": 0.7
+          },
+          {
+            "file": "assets/copper/note-72.wav",
+            "tick": 23552,
+            "frame": 540960,
+            "velocity": 0.63
+          },
+          {
+            "file": "assets/copper/note-69.wav",
+            "tick": 24064,
+            "frame": 552720,
+            "velocity": 0.75
+          },
+          {
+            "file": "assets/copper/note-74.wav",
+            "tick": 28800,
+            "frame": 661500,
+            "velocity": 0.64
+          },
+          {
+            "file": "assets/copper/note-81.wav",
+            "tick": 29184,
+            "frame": 670320,
+            "velocity": 0.48
+          },
+          {
+            "file": "assets/copper/note-77.wav",
+            "tick": 29376,
+            "frame": 674730,
+            "velocity": 0.48
+          }
+        ],
+        "clippedSamples": 0
+      },
+      {
+        "trackId": "felt",
+        "trackIndex": 1,
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/felt/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/felt/note-50.wav",
+            "tick": 0,
+            "frame": 0,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/felt/note-62.wav",
+            "tick": 1152,
+            "frame": 26460,
+            "velocity": 0.38
+          },
+          {
+            "file": "assets/felt/note-69.wav",
+            "tick": 1664,
+            "frame": 38220,
+            "velocity": 0.34
+          },
+          {
+            "file": "assets/felt/note-65.wav",
+            "tick": 2176,
+            "frame": 49980,
+            "velocity": 0.4
+          },
+          {
+            "file": "assets/felt/note-62.wav",
+            "tick": 5760,
+            "frame": 132300,
+            "velocity": 0.64
+          },
+          {
+            "file": "assets/felt/note-57.wav",
+            "tick": 7936,
+            "frame": 182280,
+            "velocity": 0.35
+          },
+          {
+            "file": "assets/felt/note-65.wav",
+            "tick": 8960,
+            "frame": 205800,
+            "velocity": 0.59
+          },
+          {
+            "file": "assets/felt/note-74.wav",
+            "tick": 10688,
+            "frame": 245490,
+            "velocity": 0.63
+          },
+          {
+            "file": "assets/felt/note-62.wav",
+            "tick": 11136,
+            "frame": 255780,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/felt/note-69.wav",
+            "tick": 12672,
+            "frame": 291060,
+            "velocity": 0.25
+          },
+          {
+            "file": "assets/felt/note-62.wav",
+            "tick": 13440,
+            "frame": 308700,
+            "velocity": 0.76
+          },
+          {
+            "file": "assets/felt/note-65.wav",
+            "tick": 14528,
+            "frame": 333690,
+            "velocity": 0.42
+          },
+          {
+            "file": "assets/felt/note-69.wav",
+            "tick": 15168,
+            "frame": 348390,
+            "velocity": 0.25
+          },
+          {
+            "file": "assets/felt/note-57.wav",
+            "tick": 18048,
+            "frame": 414540,
+            "velocity": 0.74
+          },
+          {
+            "file": "assets/felt/note-64.wav",
+            "tick": 19136,
+            "frame": 439530,
+            "velocity": 0.38
+          },
+          {
+            "file": "assets/felt/note-69.wav",
+            "tick": 21568,
+            "frame": 495390,
+            "velocity": 0.3
+          },
+          {
+            "file": "assets/felt/note-62.wav",
+            "tick": 23040,
+            "frame": 529200,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/felt/note-60.wav",
+            "tick": 23552,
+            "frame": 540960,
+            "velocity": 0.42
+          },
+          {
+            "file": "assets/felt/note-57.wav",
+            "tick": 24064,
+            "frame": 552720,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/felt/note-62.wav",
+            "tick": 28800,
+            "frame": 661500,
+            "velocity": 0.57
+          },
+          {
+            "file": "assets/felt/note-50.wav",
+            "tick": 30720,
+            "frame": 705600,
+            "velocity": 0.5
+          }
+        ],
+        "clippedSamples": 0
+      },
+      {
+        "trackId": "bass",
+        "trackIndex": 2,
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/bass/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/bass/note-38.wav",
+            "tick": 0,
+            "frame": 0,
+            "velocity": 0.75
+          },
+          {
+            "file": "assets/bass/note-38.wav",
+            "tick": 5760,
+            "frame": 132300,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/bass/note-45.wav",
+            "tick": 11136,
+            "frame": 255780,
+            "velocity": 0.62
+          },
+          {
+            "file": "assets/bass/note-38.wav",
+            "tick": 13440,
+            "frame": 308700,
+            "velocity": 0.95
+          },
+          {
+            "file": "assets/bass/note-43.wav",
+            "tick": 18048,
+            "frame": 414540,
+            "velocity": 0.92
+          },
+          {
+            "file": "assets/bass/note-45.wav",
+            "tick": 23040,
+            "frame": 529200,
+            "velocity": 0.58
+          },
+          {
+            "file": "assets/bass/note-45.wav",
+            "tick": 28800,
+            "frame": 661500,
+            "velocity": 0.63
+          },
+          {
+            "file": "assets/bass/note-38.wav",
+            "tick": 30720,
+            "frame": 705600,
+            "velocity": 0.72
+          }
+        ],
+        "clippedSamples": 0
+      },
+      {
+        "trackId": "resolve",
+        "trackIndex": 3,
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/resolve/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/resolve/note-50.wav",
+            "tick": 30720,
+            "frame": 705600,
+            "velocity": 0.62
+          },
+          {
+            "file": "assets/resolve/note-57.wav",
+            "tick": 30720,
+            "frame": 705600,
+            "velocity": 0.42
+          },
+          {
+            "file": "assets/resolve/note-65.wav",
+            "tick": 30720,
+            "frame": 705600,
+            "velocity": 0.35
+          },
+          {
+            "file": "assets/resolve/note-64.wav",
+            "tick": 32704,
+            "frame": 751170,
+            "velocity": 0.4
+          },
+          {
+            "file": "assets/resolve/note-62.wav",
+            "tick": 34560,
+            "frame": 793800,
+            "velocity": 0.39
+          },
+          {
+            "file": "assets/resolve/note-69.wav",
+            "tick": 34560,
+            "frame": 793800,
+            "velocity": 0.22
+          }
+        ],
+        "clippedSamples": 0
+      },
+      {
+        "trackId": "contacts",
+        "trackIndex": 4,
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/sfx/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/sfx/post-body.wav",
+            "tick": 0,
+            "frame": 0,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/sfx/fold.wav",
+            "tick": 8960,
+            "frame": 205800,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 10688,
+            "frame": 245490,
+            "velocity": 0.83
+          },
+          {
+            "file": "assets/sfx/fold.wav",
+            "tick": 11136,
+            "frame": 255780,
+            "velocity": 0.62
+          },
+          {
+            "file": "assets/sfx/post-body.wav",
+            "tick": 13440,
+            "frame": 308700,
+            "velocity": 1
+          },
+          {
+            "file": "assets/sfx/latch.wav",
+            "tick": 14528,
+            "frame": 333690,
+            "velocity": 0.43
+          },
+          {
+            "file": "assets/sfx/story-body.wav",
+            "tick": 18048,
+            "frame": 414540,
+            "velocity": 1
+          },
+          {
+            "file": "assets/sfx/latch.wav",
+            "tick": 19136,
+            "frame": 439530,
+            "velocity": 0.38
+          },
+          {
+            "file": "assets/sfx/fold.wav",
+            "tick": 23040,
+            "frame": 529200,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/sfx/fold.wav",
+            "tick": 23552,
+            "frame": 540960,
+            "velocity": 0.25
+          },
+          {
+            "file": "assets/sfx/fold.wav",
+            "tick": 24064,
+            "frame": 552720,
+            "velocity": 0.28
+          },
+          {
+            "file": "assets/sfx/fold.wav",
+            "tick": 28800,
+            "frame": 661500,
+            "velocity": 0.43
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 29184,
+            "frame": 670320,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/sfx/post-body.wav",
+            "tick": 30720,
+            "frame": 705600,
+            "velocity": 0.45
+          }
+        ],
+        "clippedSamples": 0
+      },
+      {
+        "trackId": "movement",
+        "trackIndex": 5,
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/sfx/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/sfx/wipe.wav",
+            "tick": 5440,
+            "frame": 124950,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/sfx/post-air.wav",
+            "tick": 13056,
+            "frame": 299880,
+            "velocity": 0.65
+          },
+          {
+            "file": "assets/sfx/story-air.wav",
+            "tick": 17536,
+            "frame": 402780,
+            "velocity": 0.75
+          },
+          {
+            "file": "assets/sfx/post-air.wav",
+            "tick": 28416,
+            "frame": 652680,
+            "velocity": 0.35
+          },
+          {
+            "file": "assets/sfx/post-air.wav",
+            "tick": 30336,
+            "frame": 696780,
+            "velocity": 0.3
+          }
+        ],
+        "clippedSamples": 0
+      },
+      {
+        "trackId": "typing",
+        "trackIndex": 6,
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/sfx/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 5952,
+            "frame": 136710,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 6144,
+            "frame": 141120,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 6272,
+            "frame": 144060,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 6464,
+            "frame": 148470,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 6592,
+            "frame": 151410,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 6848,
+            "frame": 157290,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 6976,
+            "frame": 160230,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 7232,
+            "frame": 166110,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 7424,
+            "frame": 170520,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 7552,
+            "frame": 173460,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 7808,
+            "frame": 179340,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 7936,
+            "frame": 182280,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 8128,
+            "frame": 186690,
+            "velocity": 0.12
+          }
+        ],
+        "clippedSamples": 0
+      }
+    ]
+  },
+  "timeline": {
+    "authoredDurationTicks": 38400,
+    "authoredFrames": 882000,
+    "duration": {
+      "seconds": 20
+    },
+    "tail": "none",
+    "requestedFinalFrames": 882000,
+    "audioEndFrames": 882000,
+    "resultingFrames": 882000,
+    "rounding": "nearest sample frame; ties later; combined musical timeline + explicit tail rounded once"
+  },
+  "production": {
+    "processor": {
+      "name": "ffmpeg",
+      "version": "7.1.5-0+deb13u1"
+    },
+    "runtime": {
+      "name": "node",
+      "version": "v24.22.1"
+    },
+    "tracks": [
+      {
+        "trackId": "copper",
+        "gainDb": -6,
+        "pan": -0.12,
+        "effects": [
+          {
+            "type": "highpass",
+            "frequencyHz": 330
+          },
+          {
+            "type": "reverb",
+            "roomSize": 0.18,
+            "decaySeconds": 0.26,
+            "wet": 0.06
+          }
+        ],
+        "clippedSamples": 0,
+        "preClipPeakDbfs": -19.081334
+      },
+      {
+        "trackId": "felt",
+        "gainDb": -6,
+        "pan": 0.1,
+        "effects": [
+          {
+            "type": "highpass",
+            "frequencyHz": 150
+          }
+        ],
+        "clippedSamples": 0,
+        "preClipPeakDbfs": -18.032753
+      },
+      {
+        "trackId": "bass",
+        "gainDb": -5,
+        "pan": 0,
+        "effects": [
+          {
+            "type": "lowpass",
+            "frequencyHz": 900
+          }
+        ],
+        "clippedSamples": 0,
+        "preClipPeakDbfs": -17.035913
+      },
+      {
+        "trackId": "resolve",
+        "gainDb": -8,
+        "pan": 0,
+        "effects": [
+          {
+            "type": "reverb",
+            "roomSize": 0.35,
+            "decaySeconds": 0.65,
+            "wet": 0.14
+          }
+        ],
+        "clippedSamples": 0,
+        "preClipPeakDbfs": -22.144482
+      },
+      {
+        "trackId": "contacts",
+        "gainDb": -7,
+        "pan": 0,
+        "effects": [
+          {
+            "type": "highpass",
+            "frequencyHz": 180
+          }
+        ],
+        "clippedSamples": 0,
+        "preClipPeakDbfs": -12.97658
+      },
+      {
+        "trackId": "movement",
+        "gainDb": -9,
+        "pan": 0.1,
+        "effects": [
+          {
+            "type": "highpass",
+            "frequencyHz": 180
+          }
+        ],
+        "clippedSamples": 0,
+        "preClipPeakDbfs": -18.772755
+      },
+      {
+        "trackId": "typing",
+        "gainDb": -12,
+        "pan": -0.1,
+        "effects": [
+          {
+            "type": "highpass",
+            "frequencyHz": 180
+          }
+        ],
+        "clippedSamples": 0,
+        "preClipPeakDbfs": -34.772615
+      }
+    ],
+    "master": {
+      "gainDb": -3,
+      "effects": [],
+      "clippedSamples": 0,
+      "preClipPeakDbfs": -11.283683
+    },
+    "stemAlignment": "trim/pad to master frames; post-track, pre-master gain/effects/ducking"
+  },
+  "mix": {
+    "clippedSamples": 0,
+    "gm": "sum processed independent tracks",
+    "samples": "sum exported track PCM"
+  },
+  "wav": {
+    "file": "nextcustomer-sync.project.wav",
+    "sha256": "c3ad1125121216d87ea8a26d9f72782e908800513516aca871cfa2be4ef68eed",
+    "bytes": 3528044,
+    "frames": 882000,
+    "sampleRate": 44100,
+    "channels": 2,
+    "bitsPerSample": 16,
+    "durationSeconds": 20
+  },
+  "stems": [
+    {
+      "trackId": "copper",
+      "trackIndex": 0,
+      "sample": {
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/copper/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/copper/note-74.wav",
+            "tick": 1152,
+            "frame": 26460,
+            "velocity": 0.84
+          },
+          {
+            "file": "assets/copper/note-81.wav",
+            "tick": 1664,
+            "frame": 38220,
+            "velocity": 0.78
+          },
+          {
+            "file": "assets/copper/note-77.wav",
+            "tick": 2176,
+            "frame": 49980,
+            "velocity": 0.88
+          },
+          {
+            "file": "assets/copper/note-62.wav",
+            "tick": 5760,
+            "frame": 132300,
+            "velocity": 0.68
+          },
+          {
+            "file": "assets/copper/note-69.wav",
+            "tick": 6656,
+            "frame": 152880,
+            "velocity": 0.36
+          },
+          {
+            "file": "assets/copper/note-65.wav",
+            "tick": 7168,
+            "frame": 164640,
+            "velocity": 0.42
+          },
+          {
+            "file": "assets/copper/note-74.wav",
+            "tick": 11136,
+            "frame": 255780,
+            "velocity": 0.62
+          },
+          {
+            "file": "assets/copper/note-81.wav",
+            "tick": 11648,
+            "frame": 267540,
+            "velocity": 0.35
+          },
+          {
+            "file": "assets/copper/note-77.wav",
+            "tick": 12160,
+            "frame": 279300,
+            "velocity": 0.42
+          },
+          {
+            "file": "assets/copper/note-74.wav",
+            "tick": 13440,
+            "frame": 308700,
+            "velocity": 0.82
+          },
+          {
+            "file": "assets/copper/note-81.wav",
+            "tick": 13952,
+            "frame": 320460,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/copper/note-77.wav",
+            "tick": 14528,
+            "frame": 333690,
+            "velocity": 0.64
+          },
+          {
+            "file": "assets/copper/note-72.wav",
+            "tick": 15616,
+            "frame": 358680,
+            "velocity": 0.33
+          },
+          {
+            "file": "assets/copper/note-69.wav",
+            "tick": 16128,
+            "frame": 370440,
+            "velocity": 0.31
+          },
+          {
+            "file": "assets/copper/note-65.wav",
+            "tick": 16640,
+            "frame": 382200,
+            "velocity": 0.32
+          },
+          {
+            "file": "assets/copper/note-86.wav",
+            "tick": 18048,
+            "frame": 414540,
+            "velocity": 0.66
+          },
+          {
+            "file": "assets/copper/note-81.wav",
+            "tick": 18560,
+            "frame": 426300,
+            "velocity": 0.53
+          },
+          {
+            "file": "assets/copper/note-77.wav",
+            "tick": 19136,
+            "frame": 439530,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/copper/note-76.wav",
+            "tick": 20352,
+            "frame": 467460,
+            "velocity": 0.28
+          },
+          {
+            "file": "assets/copper/note-74.wav",
+            "tick": 20864,
+            "frame": 479220,
+            "velocity": 0.3
+          },
+          {
+            "file": "assets/copper/note-74.wav",
+            "tick": 23040,
+            "frame": 529200,
+            "velocity": 0.7
+          },
+          {
+            "file": "assets/copper/note-72.wav",
+            "tick": 23552,
+            "frame": 540960,
+            "velocity": 0.63
+          },
+          {
+            "file": "assets/copper/note-69.wav",
+            "tick": 24064,
+            "frame": 552720,
+            "velocity": 0.75
+          },
+          {
+            "file": "assets/copper/note-74.wav",
+            "tick": 28800,
+            "frame": 661500,
+            "velocity": 0.64
+          },
+          {
+            "file": "assets/copper/note-81.wav",
+            "tick": 29184,
+            "frame": 670320,
+            "velocity": 0.48
+          },
+          {
+            "file": "assets/copper/note-77.wav",
+            "tick": 29376,
+            "frame": 674730,
+            "velocity": 0.48
+          }
+        ],
+        "clippedSamples": 0
+      },
+      "renderer": {
+        "name": "daemonv12-pcm",
+        "version": "1",
+        "settings": {
+          "sampleRate": 44100,
+          "channels": 2,
+          "bitsPerSample": 16,
+          "velocity": "round(sample * velocity)",
+          "mix": "integer sum, saturate s16",
+          "resampling": false
+        }
+      },
+      "wav": {
+        "file": "nextcustomer-sync.project.stems/copper.wav",
+        "sha256": "c7404d39363325113b8c794e40ba77c604c6f9cae517b441f188fac303dd6fc1",
+        "bytes": 3528044,
+        "frames": 882000,
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "durationSeconds": 20
+      }
+    },
+    {
+      "trackId": "felt",
+      "trackIndex": 1,
+      "sample": {
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/felt/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/felt/note-50.wav",
+            "tick": 0,
+            "frame": 0,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/felt/note-62.wav",
+            "tick": 1152,
+            "frame": 26460,
+            "velocity": 0.38
+          },
+          {
+            "file": "assets/felt/note-69.wav",
+            "tick": 1664,
+            "frame": 38220,
+            "velocity": 0.34
+          },
+          {
+            "file": "assets/felt/note-65.wav",
+            "tick": 2176,
+            "frame": 49980,
+            "velocity": 0.4
+          },
+          {
+            "file": "assets/felt/note-62.wav",
+            "tick": 5760,
+            "frame": 132300,
+            "velocity": 0.64
+          },
+          {
+            "file": "assets/felt/note-57.wav",
+            "tick": 7936,
+            "frame": 182280,
+            "velocity": 0.35
+          },
+          {
+            "file": "assets/felt/note-65.wav",
+            "tick": 8960,
+            "frame": 205800,
+            "velocity": 0.59
+          },
+          {
+            "file": "assets/felt/note-74.wav",
+            "tick": 10688,
+            "frame": 245490,
+            "velocity": 0.63
+          },
+          {
+            "file": "assets/felt/note-62.wav",
+            "tick": 11136,
+            "frame": 255780,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/felt/note-69.wav",
+            "tick": 12672,
+            "frame": 291060,
+            "velocity": 0.25
+          },
+          {
+            "file": "assets/felt/note-62.wav",
+            "tick": 13440,
+            "frame": 308700,
+            "velocity": 0.76
+          },
+          {
+            "file": "assets/felt/note-65.wav",
+            "tick": 14528,
+            "frame": 333690,
+            "velocity": 0.42
+          },
+          {
+            "file": "assets/felt/note-69.wav",
+            "tick": 15168,
+            "frame": 348390,
+            "velocity": 0.25
+          },
+          {
+            "file": "assets/felt/note-57.wav",
+            "tick": 18048,
+            "frame": 414540,
+            "velocity": 0.74
+          },
+          {
+            "file": "assets/felt/note-64.wav",
+            "tick": 19136,
+            "frame": 439530,
+            "velocity": 0.38
+          },
+          {
+            "file": "assets/felt/note-69.wav",
+            "tick": 21568,
+            "frame": 495390,
+            "velocity": 0.3
+          },
+          {
+            "file": "assets/felt/note-62.wav",
+            "tick": 23040,
+            "frame": 529200,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/felt/note-60.wav",
+            "tick": 23552,
+            "frame": 540960,
+            "velocity": 0.42
+          },
+          {
+            "file": "assets/felt/note-57.wav",
+            "tick": 24064,
+            "frame": 552720,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/felt/note-62.wav",
+            "tick": 28800,
+            "frame": 661500,
+            "velocity": 0.57
+          },
+          {
+            "file": "assets/felt/note-50.wav",
+            "tick": 30720,
+            "frame": 705600,
+            "velocity": 0.5
+          }
+        ],
+        "clippedSamples": 0
+      },
+      "renderer": {
+        "name": "daemonv12-pcm",
+        "version": "1",
+        "settings": {
+          "sampleRate": 44100,
+          "channels": 2,
+          "bitsPerSample": 16,
+          "velocity": "round(sample * velocity)",
+          "mix": "integer sum, saturate s16",
+          "resampling": false
+        }
+      },
+      "wav": {
+        "file": "nextcustomer-sync.project.stems/felt.wav",
+        "sha256": "b20dba1494060d9b60ed62dfb747dbb2575587986aacef3e6015eadad674cb4a",
+        "bytes": 3528044,
+        "frames": 882000,
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "durationSeconds": 20
+      }
+    },
+    {
+      "trackId": "bass",
+      "trackIndex": 2,
+      "sample": {
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/bass/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/bass/note-38.wav",
+            "tick": 0,
+            "frame": 0,
+            "velocity": 0.75
+          },
+          {
+            "file": "assets/bass/note-38.wav",
+            "tick": 5760,
+            "frame": 132300,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/bass/note-45.wav",
+            "tick": 11136,
+            "frame": 255780,
+            "velocity": 0.62
+          },
+          {
+            "file": "assets/bass/note-38.wav",
+            "tick": 13440,
+            "frame": 308700,
+            "velocity": 0.95
+          },
+          {
+            "file": "assets/bass/note-43.wav",
+            "tick": 18048,
+            "frame": 414540,
+            "velocity": 0.92
+          },
+          {
+            "file": "assets/bass/note-45.wav",
+            "tick": 23040,
+            "frame": 529200,
+            "velocity": 0.58
+          },
+          {
+            "file": "assets/bass/note-45.wav",
+            "tick": 28800,
+            "frame": 661500,
+            "velocity": 0.63
+          },
+          {
+            "file": "assets/bass/note-38.wav",
+            "tick": 30720,
+            "frame": 705600,
+            "velocity": 0.72
+          }
+        ],
+        "clippedSamples": 0
+      },
+      "renderer": {
+        "name": "daemonv12-pcm",
+        "version": "1",
+        "settings": {
+          "sampleRate": 44100,
+          "channels": 2,
+          "bitsPerSample": 16,
+          "velocity": "round(sample * velocity)",
+          "mix": "integer sum, saturate s16",
+          "resampling": false
+        }
+      },
+      "wav": {
+        "file": "nextcustomer-sync.project.stems/bass.wav",
+        "sha256": "6b554099df294108a88168eb5ba94ea9d1ca472c339de222a29a6ea299044da3",
+        "bytes": 3528044,
+        "frames": 882000,
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "durationSeconds": 20
+      }
+    },
+    {
+      "trackId": "resolve",
+      "trackIndex": 3,
+      "sample": {
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/resolve/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/resolve/note-50.wav",
+            "tick": 30720,
+            "frame": 705600,
+            "velocity": 0.62
+          },
+          {
+            "file": "assets/resolve/note-57.wav",
+            "tick": 30720,
+            "frame": 705600,
+            "velocity": 0.42
+          },
+          {
+            "file": "assets/resolve/note-65.wav",
+            "tick": 30720,
+            "frame": 705600,
+            "velocity": 0.35
+          },
+          {
+            "file": "assets/resolve/note-64.wav",
+            "tick": 32704,
+            "frame": 751170,
+            "velocity": 0.4
+          },
+          {
+            "file": "assets/resolve/note-62.wav",
+            "tick": 34560,
+            "frame": 793800,
+            "velocity": 0.39
+          },
+          {
+            "file": "assets/resolve/note-69.wav",
+            "tick": 34560,
+            "frame": 793800,
+            "velocity": 0.22
+          }
+        ],
+        "clippedSamples": 0
+      },
+      "renderer": {
+        "name": "daemonv12-pcm",
+        "version": "1",
+        "settings": {
+          "sampleRate": 44100,
+          "channels": 2,
+          "bitsPerSample": 16,
+          "velocity": "round(sample * velocity)",
+          "mix": "integer sum, saturate s16",
+          "resampling": false
+        }
+      },
+      "wav": {
+        "file": "nextcustomer-sync.project.stems/resolve.wav",
+        "sha256": "e541a07fc97f9737eca97f8e4624e67c81326cd876d3685071f50ddbf3c59456",
+        "bytes": 3528044,
+        "frames": 882000,
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "durationSeconds": 20
+      }
+    },
+    {
+      "trackId": "contacts",
+      "trackIndex": 4,
+      "sample": {
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/sfx/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/sfx/post-body.wav",
+            "tick": 0,
+            "frame": 0,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/sfx/fold.wav",
+            "tick": 8960,
+            "frame": 205800,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 10688,
+            "frame": 245490,
+            "velocity": 0.83
+          },
+          {
+            "file": "assets/sfx/fold.wav",
+            "tick": 11136,
+            "frame": 255780,
+            "velocity": 0.62
+          },
+          {
+            "file": "assets/sfx/post-body.wav",
+            "tick": 13440,
+            "frame": 308700,
+            "velocity": 1
+          },
+          {
+            "file": "assets/sfx/latch.wav",
+            "tick": 14528,
+            "frame": 333690,
+            "velocity": 0.43
+          },
+          {
+            "file": "assets/sfx/story-body.wav",
+            "tick": 18048,
+            "frame": 414540,
+            "velocity": 1
+          },
+          {
+            "file": "assets/sfx/latch.wav",
+            "tick": 19136,
+            "frame": 439530,
+            "velocity": 0.38
+          },
+          {
+            "file": "assets/sfx/fold.wav",
+            "tick": 23040,
+            "frame": 529200,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/sfx/fold.wav",
+            "tick": 23552,
+            "frame": 540960,
+            "velocity": 0.25
+          },
+          {
+            "file": "assets/sfx/fold.wav",
+            "tick": 24064,
+            "frame": 552720,
+            "velocity": 0.28
+          },
+          {
+            "file": "assets/sfx/fold.wav",
+            "tick": 28800,
+            "frame": 661500,
+            "velocity": 0.43
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 29184,
+            "frame": 670320,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/sfx/post-body.wav",
+            "tick": 30720,
+            "frame": 705600,
+            "velocity": 0.45
+          }
+        ],
+        "clippedSamples": 0
+      },
+      "renderer": {
+        "name": "daemonv12-pcm",
+        "version": "1",
+        "settings": {
+          "sampleRate": 44100,
+          "channels": 2,
+          "bitsPerSample": 16,
+          "velocity": "round(sample * velocity)",
+          "mix": "integer sum, saturate s16",
+          "resampling": false
+        }
+      },
+      "wav": {
+        "file": "nextcustomer-sync.project.stems/contacts.wav",
+        "sha256": "99131e25e82b34b42aa3e5a606ad18c9f51d0b0b2e9656f498e237d2144b47d3",
+        "bytes": 3528044,
+        "frames": 882000,
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "durationSeconds": 20
+      }
+    },
+    {
+      "trackId": "movement",
+      "trackIndex": 5,
+      "sample": {
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/sfx/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/sfx/wipe.wav",
+            "tick": 5440,
+            "frame": 124950,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/sfx/post-air.wav",
+            "tick": 13056,
+            "frame": 299880,
+            "velocity": 0.65
+          },
+          {
+            "file": "assets/sfx/story-air.wav",
+            "tick": 17536,
+            "frame": 402780,
+            "velocity": 0.75
+          },
+          {
+            "file": "assets/sfx/post-air.wav",
+            "tick": 28416,
+            "frame": 652680,
+            "velocity": 0.35
+          },
+          {
+            "file": "assets/sfx/post-air.wav",
+            "tick": 30336,
+            "frame": 696780,
+            "velocity": 0.3
+          }
+        ],
+        "clippedSamples": 0
+      },
+      "renderer": {
+        "name": "daemonv12-pcm",
+        "version": "1",
+        "settings": {
+          "sampleRate": 44100,
+          "channels": 2,
+          "bitsPerSample": 16,
+          "velocity": "round(sample * velocity)",
+          "mix": "integer sum, saturate s16",
+          "resampling": false
+        }
+      },
+      "wav": {
+        "file": "nextcustomer-sync.project.stems/movement.wav",
+        "sha256": "a2f26e2d2a3c525e49ec9ce3066b09aac9ecdda47ac4e4f695f538512b8537c7",
+        "bytes": 3528044,
+        "frames": 882000,
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "durationSeconds": 20
+      }
+    },
+    {
+      "trackId": "typing",
+      "trackIndex": 6,
+      "sample": {
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/sfx/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 5952,
+            "frame": 136710,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 6144,
+            "frame": 141120,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 6272,
+            "frame": 144060,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 6464,
+            "frame": 148470,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 6592,
+            "frame": 151410,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 6848,
+            "frame": 157290,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 6976,
+            "frame": 160230,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 7232,
+            "frame": 166110,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 7424,
+            "frame": 170520,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 7552,
+            "frame": 173460,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 7808,
+            "frame": 179340,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 7936,
+            "frame": 182280,
+            "velocity": 0.12
+          },
+          {
+            "file": "assets/sfx/tap.wav",
+            "tick": 8128,
+            "frame": 186690,
+            "velocity": 0.12
+          }
+        ],
+        "clippedSamples": 0
+      },
+      "renderer": {
+        "name": "daemonv12-pcm",
+        "version": "1",
+        "settings": {
+          "sampleRate": 44100,
+          "channels": 2,
+          "bitsPerSample": 16,
+          "velocity": "round(sample * velocity)",
+          "mix": "integer sum, saturate s16",
+          "resampling": false
+        }
+      },
+      "wav": {
+        "file": "nextcustomer-sync.project.stems/typing.wav",
+        "sha256": "aee2e2ba98e1aff494d1ec8f42dade2843d22a47e7d8b4ba7089c0c05b9182a7",
+        "bytes": 3528044,
+        "frames": 882000,
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "durationSeconds": 20
+      }
+    }
+  ],
+  "audioTool": {
+    "name": "ffmpeg",
+    "version": "7.1.5-0+deb13u1"
+  },
+  "analysis": {
+    "master": {
+      "durationSeconds": 20,
+      "frames": 882000,
+      "sampleRate": 44100,
+      "channels": 2,
+      "bitsPerSample": 16,
+      "format": "pcm_s16le",
+      "peakDbfs": -11.28322,
+      "rmsDbfs": -37.823858,
+      "fullScaleSamples": 0,
+      "clipping": false,
+      "integratedLufs": -33.93,
+      "loudnessRangeLu": 11.5,
+      "truePeakDbfs": -11.28
+    },
+    "tracks": [
+      {
+        "trackId": "copper",
+        "analysis": {
+          "durationSeconds": 20,
+          "frames": 882000,
+          "sampleRate": 44100,
+          "channels": 2,
+          "bitsPerSample": 16,
+          "format": "pcm_s16le",
+          "peakDbfs": -19.0822,
+          "rmsDbfs": -42.439429,
+          "fullScaleSamples": 0,
+          "clipping": false,
+          "integratedLufs": -35.39,
+          "loudnessRangeLu": 4.5,
+          "truePeakDbfs": -19.02
+        }
+      },
+      {
+        "trackId": "felt",
+        "analysis": {
+          "durationSeconds": 20,
+          "frames": 882000,
+          "sampleRate": 44100,
+          "channels": 2,
+          "bitsPerSample": 16,
+          "format": "pcm_s16le",
+          "peakDbfs": -18.032162,
+          "rmsDbfs": -42.472606,
+          "fullScaleSamples": 0,
+          "clipping": false,
+          "integratedLufs": -36.53,
+          "loudnessRangeLu": 5.7,
+          "truePeakDbfs": -18.03
+        }
+      },
+      {
+        "trackId": "bass",
+        "analysis": {
+          "durationSeconds": 20,
+          "frames": 882000,
+          "sampleRate": 44100,
+          "channels": 2,
+          "bitsPerSample": 16,
+          "format": "pcm_s16le",
+          "peakDbfs": -17.03498,
+          "rmsDbfs": -39.747264,
+          "fullScaleSamples": 0,
+          "clipping": false,
+          "integratedLufs": -31.85,
+          "loudnessRangeLu": 5.2,
+          "truePeakDbfs": -17.03
+        }
+      },
+      {
+        "trackId": "resolve",
+        "analysis": {
+          "durationSeconds": 20,
+          "frames": 882000,
+          "sampleRate": 44100,
+          "channels": 2,
+          "bitsPerSample": 16,
+          "format": "pcm_s16le",
+          "peakDbfs": -22.144199,
+          "rmsDbfs": -47.299757,
+          "fullScaleSamples": 0,
+          "clipping": false,
+          "integratedLufs": -37.66,
+          "loudnessRangeLu": 4.6,
+          "truePeakDbfs": -22.13
+        }
+      },
+      {
+        "trackId": "contacts",
+        "analysis": {
+          "durationSeconds": 20,
+          "frames": 882000,
+          "sampleRate": 44100,
+          "channels": 2,
+          "bitsPerSample": 16,
+          "format": "pcm_s16le",
+          "peakDbfs": -12.976164,
+          "rmsDbfs": -42.588891,
+          "fullScaleSamples": 0,
+          "clipping": false,
+          "integratedLufs": -33.79,
+          "loudnessRangeLu": 11.5,
+          "truePeakDbfs": -12.98
+        }
+      },
+      {
+        "trackId": "movement",
+        "analysis": {
+          "durationSeconds": 20,
+          "frames": 882000,
+          "sampleRate": 44100,
+          "channels": 2,
+          "bitsPerSample": 16,
+          "format": "pcm_s16le",
+          "peakDbfs": -18.772961,
+          "rmsDbfs": -51.22445,
+          "fullScaleSamples": 0,
+          "clipping": false,
+          "integratedLufs": -36.32,
+          "loudnessRangeLu": 12.1,
+          "truePeakDbfs": -18.58
+        }
+      },
+      {
+        "trackId": "typing",
+        "analysis": {
+          "durationSeconds": 20,
+          "frames": 882000,
+          "sampleRate": 44100,
+          "channels": 2,
+          "bitsPerSample": 16,
+          "format": "pcm_s16le",
+          "peakDbfs": -34.774975,
+          "rmsDbfs": -65.988345,
+          "fullScaleSamples": 0,
+          "clipping": false,
+          "integratedLufs": -50.46,
+          "loudnessRangeLu": 6.4,
+          "truePeakDbfs": -34.78
+        }
+      }
+    ]
+  }
+}

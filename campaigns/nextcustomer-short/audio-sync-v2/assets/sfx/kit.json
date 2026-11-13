@@ -1,0 +1,45 @@
+{
+  "formatVersion": 1,
+  "samples": [
+    {
+      "name": "tap",
+      "file": "tap.wav",
+      "pitch": 0
+    },
+    {
+      "name": "post-body",
+      "file": "post-body.wav",
+      "pitch": 1
+    },
+    {
+      "name": "story-body",
+      "file": "story-body.wav",
+      "pitch": 2
+    },
+    {
+      "name": "latch",
+      "file": "latch.wav",
+      "pitch": 3
+    },
+    {
+      "name": "fold",
+      "file": "fold.wav",
+      "pitch": 4
+    },
+    {
+      "name": "wipe",
+      "file": "wipe.wav",
+      "pitch": 5
+    },
+    {
+      "name": "post-air",
+      "file": "post-air.wav",
+      "pitch": 6
+    },
+    {
+      "name": "story-air",
+      "file": "story-air.wav",
+      "pitch": 7
+    }
+  ]
+}
