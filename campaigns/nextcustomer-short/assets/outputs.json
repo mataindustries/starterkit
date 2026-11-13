@@ -1,0 +1,202 @@
+{
+  "en": {
+    "state": {
+      "lang": "en",
+      "name": "Luna Cleaning",
+      "service": "cleaning",
+      "other": "",
+      "area": "San Gabriel Valley",
+      "desc": "",
+      "phone": "(626) 555-0142",
+      "handle": "",
+      "web": "",
+      "email": "",
+      "owner": "",
+      "customer": "",
+      "review": "",
+      "kind": "photo",
+      "tpl": 0,
+      "pal": 0,
+      "hlIdx": 0,
+      "ctaIdx": 0,
+      "headline": "",
+      "cta": "",
+      "hlEdited": false,
+      "ctaEdited": false,
+      "screen": "kit",
+      "tab": "g"
+    },
+    "headline": "Come home to clean.",
+    "cta": "Message us for a quote",
+    "copy": {
+      "bio": "House cleaning in San Gabriel Valley\nHome cleaning for busy households\nMessage us for a quote · (626) 555-0142",
+      "about": "Luna Cleaning offers home cleaning in San Gabriel Valley and nearby areas.\n\nHome cleaning for busy households. Kitchens, bathrooms, floors, and the little details that make a place feel fresh.\n\nTo request a quote, call or text (626) 555-0142.",
+      "msgs": [
+        {
+          "t": "First introduction",
+          "x": "Hi [Name], this is Luna Cleaning. I offer home cleaning in San Gabriel Valley. If you ever need a hand, I'd be glad to send you a quote. Just reply with how many bedrooms and bathrooms you have, and whether you want a regular or a deep clean. Thank you!"
+        },
+        {
+          "t": "Estimate follow-up",
+          "x": "Hi [Name], this is Luna Cleaning. I'm following up on the quote I sent for [job]. Do you have any questions, or would you like to pick a date? No pressure. Thanks for considering me."
+        },
+        {
+          "t": "Appointment reminder",
+          "x": "Hi [Name], just a friendly reminder from Luna Cleaning: your appointment is on [day] at [time] at [address]. If anything needs special care, or pets will be home, give me a heads-up. Reply here to confirm, or let me know if you need to reschedule. See you then!"
+        },
+        {
+          "t": "Review request",
+          "x": "Hi [Name], thank you for choosing Luna Cleaning! Would you mind leaving a short, honest review about your experience? It helps a small local business like mine more than you know.\n[review link]\nThank you!"
+        },
+        {
+          "t": "Referral request",
+          "x": "Hi [Name], thanks again for choosing Luna Cleaning. If you know a neighbor, friend, or family member who could use home cleaning, I'd really appreciate you passing along my info: (626) 555-0142. Referrals mean a lot to a small business like mine."
+        }
+      ],
+      "ideas": [
+        {
+          "t": "Introduce yourself",
+          "w": "A photo of you or your hands at work, plus two lines about who you are and where you work.",
+          "h": "Daylight, phone at eye level, simple background. People hire people, so let them see you.",
+          "c": "Hi San Gabriel Valley! I'm the person behind Luna Cleaning. I offer home cleaning in San Gabriel Valley. Have a question or need a quote? Send me a message anytime."
+        },
+        {
+          "t": "Before & after",
+          "w": "Two photos of a kitchen or bathroom you cleaned, side by side.",
+          "h": "Same spot, same angle, before and after. Ask the client first, and leave out faces, house numbers, and license plates.",
+          "c": "Before → after: [what you did, in a few words]. Need something similar in San Gabriel Valley? Send me a message."
+        },
+        {
+          "t": "One quick tip",
+          "w": "A 15 to 30 second vertical video sharing one two-minute habit that keeps a bathroom cleaner between visits.",
+          "h": "Hold the phone upright, talk to the camera, and keep it to one tip. Add captions because many people watch with the sound off.",
+          "c": "Quick tip: [your tip]. Save this for later, and send it to someone who could use it."
+        },
+        {
+          "t": "Behind the scenes",
+          "w": "A photo or short clip of your cleaning caddy and supplies.",
+          "h": "Lay everything out neatly, or film yourself loading up in the morning. Real beats perfect.",
+          "c": "What I bring to every job. Questions about how I work? Ask away. I'm happy to explain."
+        },
+        {
+          "t": "Answer a common question",
+          "w": "Explain the difference between a regular clean and a deep clean.",
+          "h": "Write the question in big text over a clean photo, or answer it in a short talking video.",
+          "c": "People ask me this a lot: [question]. Here's the short answer: [answer]."
+        },
+        {
+          "t": "Where you work",
+          "w": "Show the neighborhoods you serve around San Gabriel Valley.",
+          "h": "Post a photo of a local street or landmark. Share it in community groups only where the rules allow business posts.",
+          "c": "Now booking in San Gabriel Valley. If you're nearby and need home cleaning, send me a message."
+        },
+        {
+          "t": "Say thank you",
+          "w": "Thank the people who supported you this week, and invite customers to leave an honest review.",
+          "h": "A simple photo of you or your work. Never post a customer's name or home without permission.",
+          "c": "Thank you to everyone who has supported Luna Cleaning. If I've worked for you, an honest review helps a small business more than you know."
+        }
+      ]
+    }
+  },
+  "es": {
+    "state": {
+      "lang": "es",
+      "name": "Luna Cleaning",
+      "service": "cleaning",
+      "other": "",
+      "area": "San Gabriel Valley",
+      "desc": "",
+      "phone": "(626) 555-0142",
+      "handle": "",
+      "web": "",
+      "email": "",
+      "owner": "",
+      "customer": "",
+      "review": "",
+      "kind": "photo",
+      "tpl": 0,
+      "pal": 0,
+      "hlIdx": 0,
+      "ctaIdx": 0,
+      "headline": "",
+      "cta": "",
+      "hlEdited": false,
+      "ctaEdited": false,
+      "screen": "kit",
+      "tab": "g"
+    },
+    "headline": "Llegue a una casa limpia.",
+    "cta": "Escríbanos para cotizar",
+    "copy": {
+      "bio": "Limpieza de casas en San Gabriel Valley\nLimpieza de casas para familias ocupadas\nEscríbanos para cotizar · (626) 555-0142",
+      "about": "Luna Cleaning ofrece limpieza de casas en San Gabriel Valley y sus alrededores.\n\nLimpieza de casas para familias ocupadas: cocinas, baños, pisos y esos detalles que hacen que todo se sienta fresco.\n\nPara pedir una cotización, llame o mande mensaje al (626) 555-0142.",
+      "msgs": [
+        {
+          "t": "Primer mensaje de presentación",
+          "x": "Hola, [Nombre]. Le escribo de Luna Cleaning. Ofrezco limpieza de casas en San Gabriel Valley. Si algún día necesita ayuda, con gusto le mando una cotización. Solo respóndame con cuántas recámaras y baños tiene, y si busca una limpieza regular o profunda. ¡Gracias!"
+        },
+        {
+          "t": "Seguimiento de cotización",
+          "x": "Hola, [Nombre]. Le escribo de Luna Cleaning. Quería dar seguimiento a la cotización que le envié para [trabajo]. ¿Tiene alguna pregunta o le gustaría agendar una fecha? Sin ningún compromiso. ¡Gracias por tomarme en cuenta!"
+        },
+        {
+          "t": "Recordatorio de cita",
+          "x": "Hola, [Nombre]. Le escribo de Luna Cleaning para recordarle su cita el [día] a las [hora] en [dirección]. Si hay algo que necesite cuidado especial, o si va a haber mascotas en casa, dígamelo con tiempo. Confírmeme respondiendo a este mensaje, o avíseme si necesita cambiar la fecha. ¡Nos vemos pronto!"
+        },
+        {
+          "t": "Pedir una reseña",
+          "x": "Hola, [Nombre]. ¡Muchas gracias por elegir a Luna Cleaning! ¿Me haría el favor de dejar una reseña breve y honesta sobre su experiencia? Para un negocio pequeño y local como el mío, ayuda muchísimo.\n[enlace para reseñas]\n¡Gracias!"
+        },
+        {
+          "t": "Pedir recomendaciones",
+          "x": "Hola, [Nombre]. Gracias otra vez por elegir a Luna Cleaning. Si conoce a algún vecino, amigo o familiar que necesite limpieza de casas, le agradecería mucho que le pasara mi información: (626) 555-0142. Las recomendaciones significan mucho para un negocio pequeño como el mío."
+        }
+      ],
+      "ideas": [
+        {
+          "t": "Preséntese",
+          "w": "Una foto suya (o de sus manos trabajando) y dos líneas: quién es y dónde trabaja.",
+          "h": "Con luz natural, el teléfono a la altura de los ojos y un fondo sencillo. La gente contrata a personas: deje que lo conozcan.",
+          "c": "¡Hola, San Gabriel Valley! Soy quien está detrás de Luna Cleaning. Ofrezco limpieza de casas en San Gabriel Valley. ¿Tiene alguna pregunta o quiere una cotización? Mándeme un mensaje cuando guste."
+        },
+        {
+          "t": "Antes y después",
+          "w": "Dos fotos de una cocina o un baño que limpió, lado a lado.",
+          "h": "Mismo lugar, mismo ángulo, antes y después. Pida permiso al cliente y no muestre caras, números de casa ni placas.",
+          "c": "Antes → después: [lo que hizo, en pocas palabras]. ¿Necesita algo parecido en San Gabriel Valley? Mándeme un mensaje."
+        },
+        {
+          "t": "Un consejo rápido",
+          "w": "Un video vertical de 15 a 30 segundos compartiendo un hábito de dos minutos que mantiene el baño más limpio entre visitas.",
+          "h": "Teléfono en vertical, hable a la cámara y comparta un solo consejo. Agregue subtítulos: mucha gente ve los videos sin sonido.",
+          "c": "Consejo rápido: [su consejo]. Guárdelo para después y compártalo con alguien que lo necesite."
+        },
+        {
+          "t": "Detrás de cámaras",
+          "w": "Una foto o un video corto de sus productos y herramientas de limpieza.",
+          "h": "Acomode todo con orden o grábese cargando el equipo en la mañana. Mejor real que perfecto.",
+          "c": "Esto es lo que llevo a cada trabajo. ¿Tiene preguntas sobre cómo trabajo? Con gusto le explico."
+        },
+        {
+          "t": "Responda una pregunta común",
+          "w": "Explique la diferencia entre una limpieza regular y una limpieza profunda.",
+          "h": "Escriba la pregunta en letras grandes sobre una foto limpia, o respóndala en un video corto.",
+          "c": "Me preguntan mucho esto: [pregunta]. La respuesta corta: [respuesta]."
+        },
+        {
+          "t": "Dónde trabaja",
+          "w": "Muestre las zonas donde da servicio cerca de San Gabriel Valley.",
+          "h": "Publique una foto de una calle o un lugar conocido de la zona. Compártala en grupos de la comunidad solo si sus reglas permiten publicaciones de negocios.",
+          "c": "Ya estoy agendando trabajos en San Gabriel Valley. Si vive cerca y necesita limpieza de casas, mándeme un mensaje."
+        },
+        {
+          "t": "Dé las gracias",
+          "w": "Agradezca a quienes lo apoyaron esta semana e invite a sus clientes a dejar una reseña honesta.",
+          "h": "Una foto sencilla suya o de su trabajo. Nunca publique el nombre o la casa de un cliente sin su permiso.",
+          "c": "Gracias a todos los que han apoyado a Luna Cleaning. Si ya trabajé para usted, una reseña honesta ayuda muchísimo a un negocio pequeño."
+        }
+      ]
+    }
+  }
+}
