@@ -1,0 +1,45 @@
+{
+  "formatVersion": 1,
+  "samples": [
+    {
+      "name": "note-35",
+      "pitch": 35,
+      "file": "note-35.wav"
+    },
+    {
+      "name": "note-40",
+      "pitch": 40,
+      "file": "note-40.wav"
+    },
+    {
+      "name": "note-42",
+      "pitch": 42,
+      "file": "note-42.wav"
+    },
+    {
+      "name": "note-44",
+      "pitch": 44,
+      "file": "note-44.wav"
+    },
+    {
+      "name": "note-45",
+      "pitch": 45,
+      "file": "note-45.wav"
+    },
+    {
+      "name": "note-47",
+      "pitch": 47,
+      "file": "note-47.wav"
+    },
+    {
+      "name": "note-49",
+      "pitch": 49,
+      "file": "note-49.wav"
+    },
+    {
+      "name": "note-52",
+      "pitch": 52,
+      "file": "note-52.wav"
+    }
+  ]
+}

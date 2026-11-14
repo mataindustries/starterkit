@@ -1,0 +1,18 @@
+{
+  "master": {
+    "durationSeconds": 7.9,
+    "frames": 348390,
+    "sampleRate": 44100,
+    "channels": 2,
+    "bitsPerSample": 16,
+    "format": "pcm_s16le",
+    "peakDbfs": -1.508774,
+    "rmsDbfs": -16.727425,
+    "fullScaleSamples": 0,
+    "clipping": false,
+    "integratedLufs": -14.63,
+    "loudnessRangeLu": 1.8,
+    "truePeakDbfs": -1.51
+  },
+  "tracks": []
+}

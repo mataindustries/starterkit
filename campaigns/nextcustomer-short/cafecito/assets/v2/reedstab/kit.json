@@ -1,0 +1,35 @@
+{
+  "formatVersion": 1,
+  "samples": [
+    {
+      "name": "note-71",
+      "pitch": 71,
+      "file": "note-71.wav"
+    },
+    {
+      "name": "note-75",
+      "pitch": 75,
+      "file": "note-75.wav"
+    },
+    {
+      "name": "note-76",
+      "pitch": 76,
+      "file": "note-76.wav"
+    },
+    {
+      "name": "note-78",
+      "pitch": 78,
+      "file": "note-78.wav"
+    },
+    {
+      "name": "note-80",
+      "pitch": 80,
+      "file": "note-80.wav"
+    },
+    {
+      "name": "note-83",
+      "pitch": 83,
+      "file": "note-83.wav"
+    }
+  ]
+}

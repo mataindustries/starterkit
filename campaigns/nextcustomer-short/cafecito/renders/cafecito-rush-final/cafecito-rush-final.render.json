@@ -1,0 +1,2421 @@
+{
+  "engine": {
+    "name": "daemonv12",
+    "version": "0.7.0"
+  },
+  "project": {
+    "file": "cafecito-rush-final.json",
+    "sha256": "aa567661d1a423715d44beb9974aa1bbc9a674365368fffc3499b77c5931f977",
+    "formatVersion": 1,
+    "seed": 1201
+  },
+  "midi": {
+    "file": "cafecito-rush-final.mid",
+    "sha256": "96797dfa5835674bb6e4ca3fd2fb0115a1136a1558bbf861ce8ee233cd12d9fe",
+    "bytes": 100,
+    "ppq": 960,
+    "durationTicks": 42240,
+    "durationSeconds": 19.99998,
+    "notes": 0
+  },
+  "renderer": {
+    "name": "daemonv12-production",
+    "version": "2",
+    "settings": {
+      "sampleRate": 44100,
+      "channels": 2,
+      "bitsPerSample": 16,
+      "panLaw": "linear stereo balance; unity center",
+      "order": "source and tail cap, track gain/pan automation, ordered track effects, tail cap, s16 track elements; sum, master gain, ordered master effects, tail cap and final trim/pad, VO ducking, s16 master; trim/pad pre-master stems to master frames",
+      "normalization": false,
+      "dither": false,
+      "automation": "absolute values; step or outgoing linear segment; gain interpolated in dB; rounded sample positions",
+      "reverb": "schroeder-4-comb-2-allpass-v1; finite RT60 tail",
+      "saturation": "tanh-v1; no output compensation",
+      "ducking": "trailing 20ms channel-energy RMS; threshold gate; exponential reduction in dB; v1"
+    }
+  },
+  "gmRenderer": null,
+  "gmSource": null,
+  "soundfont": null,
+  "samples": {
+    "timing": "nearest absolute trigger and fixed boundary, ties later; ceil minimum only without fixed boundary; tick * usPerQuarter * 44100 / 960000000",
+    "assets": [
+      {
+        "file": "assets/v2/bass/kit.json",
+        "sha256": "36282758c5be11a23496cb0db745688e8fe933a9842424ed46850239eaa141c0",
+        "bytes": 723,
+        "kind": "drumkit"
+      },
+      {
+        "file": "assets/v2/bass/note-35.wav",
+        "sha256": "799bb938937c60e7b2dc63189d3241e7bd651048a10c82765872a1833184066b",
+        "bytes": 44144,
+        "frames": 22050,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/bass/note-40.wav",
+        "sha256": "4109b7357909ffd46759985ebfcf76badbaf8f6b3ca88d1265342cb5aab6487e",
+        "bytes": 44144,
+        "frames": 22050,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/bass/note-42.wav",
+        "sha256": "76f5c07d16ac2766f34d022d31521c94be40ae20ed0642c0c4660bae1ee5bf7f",
+        "bytes": 44144,
+        "frames": 22050,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/bass/note-44.wav",
+        "sha256": "d9ec75fa2d7f36bc3762219fad52dafbb2cda21dc974a10ba5e383a81ec18abc",
+        "bytes": 44144,
+        "frames": 22050,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/bass/note-45.wav",
+        "sha256": "693fb708faeb24c6d1c00ec63aa1775e6dacc8b91e63bab3b81918e9a47a95c0",
+        "bytes": 44144,
+        "frames": 22050,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/bass/note-47.wav",
+        "sha256": "f31cd201cc2cd6a890edd286d8b05dc3ea0c272b9e35d722fe08649102aadb83",
+        "bytes": 44144,
+        "frames": 22050,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/bass/note-49.wav",
+        "sha256": "feb2b27ed1235225dad403f4f41ddda5e1133970c0604d82133642ed4d0927ed",
+        "bytes": 44144,
+        "frames": 22050,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/bass/note-52.wav",
+        "sha256": "5e49b33c1f0887472c2c48a24c6fc0ff292d829d780239161b2be405a0a171f7",
+        "bytes": 44144,
+        "frames": 22050,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/pad/kit.json",
+        "sha256": "8b5cca2f83262a22ee414daf1a5e2a63026cb4618c696ae40d701e0ef98f2663",
+        "bytes": 978,
+        "kind": "drumkit"
+      },
+      {
+        "file": "assets/v2/pad/note-47.wav",
+        "sha256": "368d10fa8e4a0d837cb9db0133b28c06738698bfb446abcd36dc7f15a96d17fb",
+        "bytes": 194084,
+        "frames": 97020,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/pad/note-51.wav",
+        "sha256": "f43b6f5cc6a5853272a56e6984c3a9fcf15c58a2e93dd413b0b58b593b4ffe6a",
+        "bytes": 194084,
+        "frames": 97020,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/pad/note-52.wav",
+        "sha256": "c5aefa8aa4136c7b73e921eb66d3b5521524efd0a42cdaadb70e929bde51c757",
+        "bytes": 194084,
+        "frames": 97020,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/pad/note-54.wav",
+        "sha256": "2405aa5ac57699354479ffc3d1b46224bcbe7040f146cc60da83b6dc0745778b",
+        "bytes": 194084,
+        "frames": 97020,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/pad/note-56.wav",
+        "sha256": "9f50e939288eaa98ccd2a7ac88761589ea1be9959df37e957dc003458d6c10fa",
+        "bytes": 194084,
+        "frames": 97020,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/pad/note-57.wav",
+        "sha256": "290ce82884c0b3c1f4e9354142d7e03a534851ea786f527899059756a11ad0f7",
+        "bytes": 194084,
+        "frames": 97020,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/pad/note-59.wav",
+        "sha256": "6e45cc61e7f92b4083456d7ce7c3300f88a168cb8185971ac569a12441e4517d",
+        "bytes": 194084,
+        "frames": 97020,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/pad/note-61.wav",
+        "sha256": "3137af9121530ade17a04c811a9f067a372b7e37926e1a47e85a129f0c3c7f72",
+        "bytes": 194084,
+        "frames": 97020,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/pad/note-63.wav",
+        "sha256": "a585ea2b89173a0bdc33c600aa3ad24230fa8d913dc6dd944db246e03c0e4cd1",
+        "bytes": 194084,
+        "frames": 97020,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/pad/note-64.wav",
+        "sha256": "a13cb21011c97588b0c2228f8fc05236d11e2d0539191c52a9f42b6f3e1caf80",
+        "bytes": 194084,
+        "frames": 97020,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/pad/note-66.wav",
+        "sha256": "52570f292480d5a80413139270ed46ecc43d730555ca59d48187c8fdcb32a8d2",
+        "bytes": 194084,
+        "frames": 97020,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/perc/bell.wav",
+        "sha256": "e09ab74bf427f603db37599f62d38b0315c759fb4607ee07ba4acd2f192d7ded",
+        "bytes": 61782,
+        "frames": 30869,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/perc/brush.wav",
+        "sha256": "2514acbe0a4d736c80142d9725c70b2e7f7f7af30ef206470048b40cf469920e",
+        "bytes": 28268,
+        "frames": 14112,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/perc/clap.wav",
+        "sha256": "ae93a75ee3f0dfecc9414632f07003ea8018c363bfaf4df5be5afd23aa26583e",
+        "bytes": 19448,
+        "frames": 9702,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/perc/cup.wav",
+        "sha256": "bbeba662e2212ff003c312b518a1908196f145a6386d92dd3b5ed3e0fc9497df",
+        "bytes": 15920,
+        "frames": 7938,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/perc/hat.wav",
+        "sha256": "cad6665ec2bd678d61afffefdf14677f1986c4f5d989b6ac830e9d68f4e74d9e",
+        "bytes": 6218,
+        "frames": 3087,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/perc/kick.wav",
+        "sha256": "7740902403a80edec55482bc9e613c3e355bae93a5e9bfc50f188998241c066e",
+        "bytes": 24740,
+        "frames": 12348,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/perc/kit.json",
+        "sha256": "34b4c3ebb19b8bca309696ad3182b1f7def3dfb6187fbf5dee6a3cfc7e0bcffa",
+        "bytes": 918,
+        "kind": "drumkit"
+      },
+      {
+        "file": "assets/v2/perc/knock.wav",
+        "sha256": "93c5e4fbe9188bf538702b81ca0d0805516bb5a34631e41234fe0240cd875709",
+        "bytes": 12392,
+        "frames": 6174,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/perc/shaker.wav",
+        "sha256": "7ba8ed4c0c5920718493a1a6a40b584b76fd9f2faa5a91e86890ba5387249b37",
+        "bytes": 15920,
+        "frames": 7938,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/perc/snap.wav",
+        "sha256": "0f0737b405e6d2ca16b77c71329464bcf6a9474c992da91cee5a5946d8d62c29",
+        "bytes": 7982,
+        "frames": 3969,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/perc/spoon.wav",
+        "sha256": "c85115617a0317fe90fc18b10f2d1445dd1740e85b3759edc6a3094d88d92159",
+        "bytes": 8864,
+        "frames": 4410,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/perc/wood.wav",
+        "sha256": "ce1b398a191b6e9dceafee9e1d4ab24dff2ca6783a081a97e03122f536d3e729",
+        "bytes": 10628,
+        "frames": 5292,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/reedstab/kit.json",
+        "sha256": "f2ca2990aa6b57f41952ce537b0caaa886a517506de223c1390ddd8d04942b8f",
+        "bytes": 553,
+        "kind": "drumkit"
+      },
+      {
+        "file": "assets/v2/reedstab/note-71.wav",
+        "sha256": "4a155ffd3cd007f223b68838e2d61d81056916981007dd4bf2c18ee6d4afcdf0",
+        "bytes": 83834,
+        "frames": 41895,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/reedstab/note-75.wav",
+        "sha256": "566ca07b5f3d8a7ab169363f254e15bfc06c5e388d7fc884665af774ae0dd88f",
+        "bytes": 83834,
+        "frames": 41895,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/reedstab/note-76.wav",
+        "sha256": "999ee8f3dd3db9d4537d8e297adbb405ab56e2053d9d683f87c881832e878e82",
+        "bytes": 83834,
+        "frames": 41895,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/reedstab/note-78.wav",
+        "sha256": "f1f06d3ef12a5dc7c8dd233aa7bfa490176366caad5082d744270db886295adc",
+        "bytes": 83834,
+        "frames": 41895,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/reedstab/note-80.wav",
+        "sha256": "f82bb33203001d9854c9cbce8fd40ca860e61f9837500707018bd553c263f166",
+        "bytes": 83834,
+        "frames": 41895,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/reedstab/note-83.wav",
+        "sha256": "62817c13d15ee5b6ad28b9ec39e89ada068288ed3d9ee5b45141d957e7ad2bb7",
+        "bytes": 83834,
+        "frames": 41895,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/warmkeys/kit.json",
+        "sha256": "81c5683694bf52202875e45d724b4d52c1bd80a1839703d682cf0dfb301ca1b1",
+        "bytes": 978,
+        "kind": "drumkit"
+      },
+      {
+        "file": "assets/v2/warmkeys/note-52.wav",
+        "sha256": "507288d9be38b18430c841ff64a12f82862c1ff1ac9356966bcaafec4f1bc086",
+        "bytes": 123522,
+        "frames": 61739,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/warmkeys/note-57.wav",
+        "sha256": "ad5b092990320e3d9acb2011e83fea850c5d8c62b9564c9ad4e75c4ec2887ef1",
+        "bytes": 123522,
+        "frames": 61739,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/warmkeys/note-61.wav",
+        "sha256": "d78012f89067affba010eff8be02d6975198c3c6c84f1e51dbb6f9a8e737b139",
+        "bytes": 123522,
+        "frames": 61739,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/warmkeys/note-64.wav",
+        "sha256": "1f19d500585f4fdbed0c7012e823812a8b3360803668de3a5d8109f455736347",
+        "bytes": 123522,
+        "frames": 61739,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/warmkeys/note-66.wav",
+        "sha256": "eabce4f082fab8c192fcc1ac14f0da48243adf8522fc8aa3e957a50947e34d8f",
+        "bytes": 123522,
+        "frames": 61739,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/warmkeys/note-68.wav",
+        "sha256": "f6f16d1fe24d45133848084d9b518f6297b355440e9fd7b6427d98ac4db7d2b4",
+        "bytes": 123522,
+        "frames": 61739,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/warmkeys/note-69.wav",
+        "sha256": "e49bfa533b6441f05e33610b82a3e76dbad3da4312f7992a71b072b8263783b1",
+        "bytes": 123522,
+        "frames": 61739,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/warmkeys/note-71.wav",
+        "sha256": "43054c66d97e52e97f9c23388bfaf6988a849d7893305ed3e1c229330bdcc20d",
+        "bytes": 123522,
+        "frames": 61739,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/warmkeys/note-73.wav",
+        "sha256": "946aaf09d7a9c8ac957185c019dfd2c6d15c66d26d5cf0166976a9b70bb7cd68",
+        "bytes": 123522,
+        "frames": 61739,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/warmkeys/note-74.wav",
+        "sha256": "48f28b5c241167f5873e7c9c59d15836bdaaca984e0ead89283e1912c7ef6502",
+        "bytes": 123522,
+        "frames": 61739,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/warmkeys/note-76.wav",
+        "sha256": "55b964c8c9a98ffff2199446fa65e59a7041b72b4ebb2b8e301379c5d69baf09",
+        "bytes": 123522,
+        "frames": 61739,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/woodpluck/kit.json",
+        "sha256": "0b1492ae6ab8c1f919ffe5b36ffd2ff9554445793104c7cfdb0ade3f896072f5",
+        "bytes": 1063,
+        "kind": "drumkit"
+      },
+      {
+        "file": "assets/v2/woodpluck/note-64.wav",
+        "sha256": "2f4424a0ad552dc3000d717831b20b0652ef37a9be5a9905b8d6662e885c75b4",
+        "bytes": 52964,
+        "frames": 26460,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/woodpluck/note-66.wav",
+        "sha256": "619467605c12a16b169076e56342cff56404fdfe90a155091a1ccc10c3f7ebd7",
+        "bytes": 52964,
+        "frames": 26460,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/woodpluck/note-68.wav",
+        "sha256": "a35c4d3088e19818fade44dd3626601a259756cff904070dc4ec9336539fd903",
+        "bytes": 52964,
+        "frames": 26460,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/woodpluck/note-71.wav",
+        "sha256": "85e90e3817f6c5e990e1d1ab69e1b9718355d7b4a70ac08bdbfa2db112735604",
+        "bytes": 52964,
+        "frames": 26460,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/woodpluck/note-73.wav",
+        "sha256": "ff02a9491e623f16cd1e63c6534ea3fb7ba1f6647972f1a2f7092d545cd74a88",
+        "bytes": 52964,
+        "frames": 26460,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/woodpluck/note-76.wav",
+        "sha256": "3d563e850cc02add0703c8d032b1a67e5fdb2cc77b0aca16c1bb31a464f7faf2",
+        "bytes": 52964,
+        "frames": 26460,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/woodpluck/note-78.wav",
+        "sha256": "4b79c81b5e908a6a4727c823cbb5d16196ac1bdfade2bf0af093b2e60729b3d4",
+        "bytes": 52964,
+        "frames": 26460,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/woodpluck/note-80.wav",
+        "sha256": "a8e610b514bdfc5fbcf5296f4c68fbc7cb8ae0d2cae98334f6b9ded0df55cb70",
+        "bytes": 52964,
+        "frames": 26460,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/woodpluck/note-83.wav",
+        "sha256": "a27a61cb8f5cc97fe6a4109dcd6b3eb857bbd3b3819a82767d6036219629976f",
+        "bytes": 52964,
+        "frames": 26460,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/woodpluck/note-85.wav",
+        "sha256": "2c88bb23eb021aa49a6fe01aa77214de8930e4a2551c84b9fdb8bb06ab66c226",
+        "bytes": 52964,
+        "frames": 26460,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/woodpluck/note-86.wav",
+        "sha256": "70ca966371c496a02c3fef71741f28737a5d95e3d78b9856d172162ae4f4c23d",
+        "bytes": 52964,
+        "frames": 26460,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/v2/woodpluck/note-88.wav",
+        "sha256": "175efb32b9d40272ba473ef9f4ca0cfcc93b22d7d6b1efa57cbf6df953cac960",
+        "bytes": 52964,
+        "frames": 26460,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      }
+    ],
+    "tracks": [
+      {
+        "trackId": "lead",
+        "trackIndex": 0,
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/v2/woodpluck/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/v2/woodpluck/note-76.wav",
+            "tick": 0,
+            "frame": 0,
+            "velocity": 0.92
+          },
+          {
+            "file": "assets/v2/woodpluck/note-80.wav",
+            "tick": 480,
+            "frame": 10023,
+            "velocity": 0.82
+          },
+          {
+            "file": "assets/v2/woodpluck/note-83.wav",
+            "tick": 960,
+            "frame": 20045,
+            "velocity": 0.95
+          },
+          {
+            "file": "assets/v2/woodpluck/note-80.wav",
+            "tick": 1680,
+            "frame": 35080,
+            "velocity": 0.78
+          },
+          {
+            "file": "assets/v2/woodpluck/note-78.wav",
+            "tick": 2400,
+            "frame": 50114,
+            "velocity": 0.82
+          },
+          {
+            "file": "assets/v2/woodpluck/note-76.wav",
+            "tick": 2880,
+            "frame": 60136,
+            "velocity": 0.86
+          },
+          {
+            "file": "assets/v2/woodpluck/note-76.wav",
+            "tick": 3840,
+            "frame": 80182,
+            "velocity": 0.88
+          },
+          {
+            "file": "assets/v2/woodpluck/note-80.wav",
+            "tick": 4320,
+            "frame": 90204,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/v2/woodpluck/note-83.wav",
+            "tick": 4800,
+            "frame": 100227,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/v2/woodpluck/note-85.wav",
+            "tick": 5520,
+            "frame": 115261,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/woodpluck/note-83.wav",
+            "tick": 6240,
+            "frame": 130295,
+            "velocity": 0.82
+          },
+          {
+            "file": "assets/v2/woodpluck/note-73.wav",
+            "tick": 7680,
+            "frame": 160363,
+            "velocity": 0.78
+          },
+          {
+            "file": "assets/v2/woodpluck/note-76.wav",
+            "tick": 9120,
+            "frame": 190432,
+            "velocity": 0.75
+          },
+          {
+            "file": "assets/v2/woodpluck/note-78.wav",
+            "tick": 9600,
+            "frame": 200454,
+            "velocity": 0.78
+          },
+          {
+            "file": "assets/v2/woodpluck/note-76.wav",
+            "tick": 11040,
+            "frame": 230522,
+            "velocity": 0.72
+          },
+          {
+            "file": "assets/v2/woodpluck/note-76.wav",
+            "tick": 11520,
+            "frame": 240545,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/woodpluck/note-80.wav",
+            "tick": 12480,
+            "frame": 260591,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/woodpluck/note-83.wav",
+            "tick": 13440,
+            "frame": 280636,
+            "velocity": 0.88
+          },
+          {
+            "file": "assets/v2/woodpluck/note-85.wav",
+            "tick": 14160,
+            "frame": 295670,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/woodpluck/note-76.wav",
+            "tick": 16000,
+            "frame": 334091,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/v2/woodpluck/note-88.wav",
+            "tick": 16320,
+            "frame": 340772,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/v2/woodpluck/note-85.wav",
+            "tick": 16800,
+            "frame": 350795,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/woodpluck/note-83.wav",
+            "tick": 17280,
+            "frame": 360818,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/woodpluck/note-80.wav",
+            "tick": 18000,
+            "frame": 375852,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/v2/woodpluck/note-83.wav",
+            "tick": 18240,
+            "frame": 380863,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/woodpluck/note-83.wav",
+            "tick": 20640,
+            "frame": 430977,
+            "velocity": 0.82
+          },
+          {
+            "file": "assets/v2/woodpluck/note-80.wav",
+            "tick": 21120,
+            "frame": 441000,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/v2/woodpluck/note-83.wav",
+            "tick": 22080,
+            "frame": 461045,
+            "velocity": 0.82
+          },
+          {
+            "file": "assets/v2/woodpluck/note-76.wav",
+            "tick": 25344,
+            "frame": 529199,
+            "velocity": 0.75
+          },
+          {
+            "file": "assets/v2/woodpluck/note-73.wav",
+            "tick": 26880,
+            "frame": 561272,
+            "velocity": 0.78
+          },
+          {
+            "file": "assets/v2/woodpluck/note-76.wav",
+            "tick": 27360,
+            "frame": 571295,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/v2/woodpluck/note-80.wav",
+            "tick": 27840,
+            "frame": 581318,
+            "velocity": 0.82
+          },
+          {
+            "file": "assets/v2/woodpluck/note-78.wav",
+            "tick": 28800,
+            "frame": 601363,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/v2/woodpluck/note-76.wav",
+            "tick": 29760,
+            "frame": 621408,
+            "velocity": 0.78
+          },
+          {
+            "file": "assets/v2/woodpluck/note-85.wav",
+            "tick": 31680,
+            "frame": 661499,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/v2/woodpluck/note-88.wav",
+            "tick": 32160,
+            "frame": 671522,
+            "velocity": 0.88
+          },
+          {
+            "file": "assets/v2/woodpluck/note-85.wav",
+            "tick": 32640,
+            "frame": 681545,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/woodpluck/note-83.wav",
+            "tick": 33360,
+            "frame": 696579,
+            "velocity": 0.82
+          },
+          {
+            "file": "assets/v2/woodpluck/note-80.wav",
+            "tick": 33600,
+            "frame": 701590,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/v2/woodpluck/note-76.wav",
+            "tick": 35520,
+            "frame": 741681,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/v2/woodpluck/note-80.wav",
+            "tick": 36000,
+            "frame": 751704,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/woodpluck/note-83.wav",
+            "tick": 36480,
+            "frame": 761727,
+            "velocity": 0.92
+          },
+          {
+            "file": "assets/v2/woodpluck/note-80.wav",
+            "tick": 37440,
+            "frame": 781772,
+            "velocity": 0.82
+          },
+          {
+            "file": "assets/v2/woodpluck/note-76.wav",
+            "tick": 38400,
+            "frame": 801817,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/v2/woodpluck/note-83.wav",
+            "tick": 39360,
+            "frame": 821863,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/v2/woodpluck/note-88.wav",
+            "tick": 39840,
+            "frame": 831886,
+            "velocity": 0.95
+          }
+        ],
+        "clippedSamples": 0
+      },
+      {
+        "trackId": "warmkeys",
+        "trackIndex": 1,
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/v2/warmkeys/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/v2/warmkeys/note-64.wav",
+            "tick": 0,
+            "frame": 0,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/v2/warmkeys/note-68.wav",
+            "tick": 1920,
+            "frame": 40091,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/v2/warmkeys/note-66.wav",
+            "tick": 3840,
+            "frame": 80182,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/v2/warmkeys/note-71.wav",
+            "tick": 5760,
+            "frame": 120273,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/v2/warmkeys/note-64.wav",
+            "tick": 7680,
+            "frame": 160363,
+            "velocity": 0.7
+          },
+          {
+            "file": "assets/v2/warmkeys/note-68.wav",
+            "tick": 8160,
+            "frame": 170386,
+            "velocity": 0.65
+          },
+          {
+            "file": "assets/v2/warmkeys/note-71.wav",
+            "tick": 8640,
+            "frame": 180409,
+            "velocity": 0.7
+          },
+          {
+            "file": "assets/v2/warmkeys/note-68.wav",
+            "tick": 9360,
+            "frame": 195443,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/warmkeys/note-66.wav",
+            "tick": 9600,
+            "frame": 200454,
+            "velocity": 0.65
+          },
+          {
+            "file": "assets/v2/warmkeys/note-64.wav",
+            "tick": 10560,
+            "frame": 220500,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/warmkeys/note-64.wav",
+            "tick": 11520,
+            "frame": 240545,
+            "velocity": 0.68
+          },
+          {
+            "file": "assets/v2/warmkeys/note-66.wav",
+            "tick": 12000,
+            "frame": 250568,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/warmkeys/note-68.wav",
+            "tick": 12480,
+            "frame": 260591,
+            "velocity": 0.65
+          },
+          {
+            "file": "assets/v2/warmkeys/note-71.wav",
+            "tick": 13440,
+            "frame": 280636,
+            "velocity": 0.68
+          },
+          {
+            "file": "assets/v2/warmkeys/note-64.wav",
+            "tick": 15360,
+            "frame": 320727,
+            "velocity": 0.7
+          },
+          {
+            "file": "assets/v2/warmkeys/note-68.wav",
+            "tick": 15360,
+            "frame": 320727,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/warmkeys/note-71.wav",
+            "tick": 15360,
+            "frame": 320727,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/warmkeys/note-69.wav",
+            "tick": 17280,
+            "frame": 360818,
+            "velocity": 0.65
+          },
+          {
+            "file": "assets/v2/warmkeys/note-73.wav",
+            "tick": 17280,
+            "frame": 360818,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/warmkeys/note-64.wav",
+            "tick": 21120,
+            "frame": 441000,
+            "velocity": 0.65
+          },
+          {
+            "file": "assets/v2/warmkeys/note-68.wav",
+            "tick": 21120,
+            "frame": 441000,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/v2/warmkeys/note-71.wav",
+            "tick": 21120,
+            "frame": 441000,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/v2/warmkeys/note-57.wav",
+            "tick": 23040,
+            "frame": 481090,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/warmkeys/note-61.wav",
+            "tick": 24000,
+            "frame": 501136,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/v2/warmkeys/note-76.wav",
+            "tick": 25344,
+            "frame": 529199,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/warmkeys/note-73.wav",
+            "tick": 25920,
+            "frame": 541227,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/warmkeys/note-71.wav",
+            "tick": 26880,
+            "frame": 561272,
+            "velocity": 0.62
+          },
+          {
+            "file": "assets/v2/warmkeys/note-69.wav",
+            "tick": 27840,
+            "frame": 581318,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/warmkeys/note-73.wav",
+            "tick": 28320,
+            "frame": 591340,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/warmkeys/note-76.wav",
+            "tick": 28800,
+            "frame": 601363,
+            "velocity": 0.65
+          },
+          {
+            "file": "assets/v2/warmkeys/note-71.wav",
+            "tick": 29760,
+            "frame": 621408,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/warmkeys/note-64.wav",
+            "tick": 30720,
+            "frame": 641454,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/warmkeys/note-68.wav",
+            "tick": 30720,
+            "frame": 641454,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/v2/warmkeys/note-73.wav",
+            "tick": 32640,
+            "frame": 681545,
+            "velocity": 0.65
+          },
+          {
+            "file": "assets/v2/warmkeys/note-64.wav",
+            "tick": 34560,
+            "frame": 721636,
+            "velocity": 0.7
+          },
+          {
+            "file": "assets/v2/warmkeys/note-68.wav",
+            "tick": 34560,
+            "frame": 721636,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/warmkeys/note-71.wav",
+            "tick": 34560,
+            "frame": 721636,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/warmkeys/note-69.wav",
+            "tick": 35520,
+            "frame": 741681,
+            "velocity": 0.65
+          },
+          {
+            "file": "assets/v2/warmkeys/note-73.wav",
+            "tick": 35520,
+            "frame": 741681,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/warmkeys/note-66.wav",
+            "tick": 36480,
+            "frame": 761727,
+            "velocity": 0.65
+          },
+          {
+            "file": "assets/v2/warmkeys/note-71.wav",
+            "tick": 36480,
+            "frame": 761727,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/warmkeys/note-74.wav",
+            "tick": 36480,
+            "frame": 761727,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/v2/warmkeys/note-64.wav",
+            "tick": 37440,
+            "frame": 781772,
+            "velocity": 0.7
+          },
+          {
+            "file": "assets/v2/warmkeys/note-68.wav",
+            "tick": 37440,
+            "frame": 781772,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/warmkeys/note-71.wav",
+            "tick": 37440,
+            "frame": 781772,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/warmkeys/note-52.wav",
+            "tick": 38400,
+            "frame": 801817,
+            "velocity": 0.7
+          },
+          {
+            "file": "assets/v2/warmkeys/note-64.wav",
+            "tick": 38400,
+            "frame": 801817,
+            "velocity": 0.65
+          },
+          {
+            "file": "assets/v2/warmkeys/note-68.wav",
+            "tick": 38400,
+            "frame": 801817,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/warmkeys/note-71.wav",
+            "tick": 38400,
+            "frame": 801817,
+            "velocity": 0.6
+          }
+        ],
+        "clippedSamples": 116
+      },
+      {
+        "trackId": "pad",
+        "trackIndex": 2,
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/v2/pad/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/v2/pad/note-52.wav",
+            "tick": 14784,
+            "frame": 308700,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/pad/note-56.wav",
+            "tick": 14784,
+            "frame": 308700,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/v2/pad/note-59.wav",
+            "tick": 14784,
+            "frame": 308700,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/v2/pad/note-64.wav",
+            "tick": 14784,
+            "frame": 308700,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/pad/note-52.wav",
+            "tick": 15360,
+            "frame": 320727,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/v2/pad/note-59.wav",
+            "tick": 15360,
+            "frame": 320727,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/pad/note-47.wav",
+            "tick": 19840,
+            "frame": 414272,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/pad/note-51.wav",
+            "tick": 19840,
+            "frame": 414272,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/v2/pad/note-54.wav",
+            "tick": 19840,
+            "frame": 414272,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/v2/pad/note-59.wav",
+            "tick": 19840,
+            "frame": 414272,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/pad/note-52.wav",
+            "tick": 21120,
+            "frame": 441000,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/pad/note-59.wav",
+            "tick": 21120,
+            "frame": 441000,
+            "velocity": 0.4
+          },
+          {
+            "file": "assets/v2/pad/note-52.wav",
+            "tick": 31680,
+            "frame": 661499,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/v2/pad/note-56.wav",
+            "tick": 31680,
+            "frame": 661499,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/pad/note-59.wav",
+            "tick": 31680,
+            "frame": 661499,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/pad/note-52.wav",
+            "tick": 33792,
+            "frame": 705599,
+            "velocity": 0.65
+          },
+          {
+            "file": "assets/v2/pad/note-56.wav",
+            "tick": 33792,
+            "frame": 705599,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/v2/pad/note-59.wav",
+            "tick": 33792,
+            "frame": 705599,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/v2/pad/note-64.wav",
+            "tick": 33792,
+            "frame": 705599,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/v2/pad/note-57.wav",
+            "tick": 35520,
+            "frame": 741681,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/v2/pad/note-61.wav",
+            "tick": 35520,
+            "frame": 741681,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/pad/note-64.wav",
+            "tick": 35520,
+            "frame": 741681,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/pad/note-59.wav",
+            "tick": 36480,
+            "frame": 761727,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/v2/pad/note-63.wav",
+            "tick": 36480,
+            "frame": 761727,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/pad/note-66.wav",
+            "tick": 36480,
+            "frame": 761727,
+            "velocity": 0.45
+          }
+        ],
+        "clippedSamples": 0
+      },
+      {
+        "trackId": "reedstab",
+        "trackIndex": 3,
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/v2/reedstab/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/v2/reedstab/note-76.wav",
+            "tick": 14784,
+            "frame": 308700,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/v2/reedstab/note-80.wav",
+            "tick": 14784,
+            "frame": 308700,
+            "velocity": 0.7
+          },
+          {
+            "file": "assets/v2/reedstab/note-83.wav",
+            "tick": 14784,
+            "frame": 308700,
+            "velocity": 0.7
+          },
+          {
+            "file": "assets/v2/reedstab/note-71.wav",
+            "tick": 19840,
+            "frame": 414272,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/reedstab/note-75.wav",
+            "tick": 19840,
+            "frame": 414272,
+            "velocity": 0.75
+          },
+          {
+            "file": "assets/v2/reedstab/note-78.wav",
+            "tick": 19840,
+            "frame": 414272,
+            "velocity": 0.75
+          },
+          {
+            "file": "assets/v2/reedstab/note-76.wav",
+            "tick": 33792,
+            "frame": 705599,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/reedstab/note-80.wav",
+            "tick": 33792,
+            "frame": 705599,
+            "velocity": 0.75
+          },
+          {
+            "file": "assets/v2/reedstab/note-83.wav",
+            "tick": 33792,
+            "frame": 705599,
+            "velocity": 0.75
+          }
+        ],
+        "clippedSamples": 0
+      },
+      {
+        "trackId": "bass",
+        "trackIndex": 4,
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/v2/bass/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/v2/bass/note-40.wav",
+            "tick": 0,
+            "frame": 0,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/v2/bass/note-40.wav",
+            "tick": 1680,
+            "frame": 35080,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/v2/bass/note-47.wav",
+            "tick": 1920,
+            "frame": 40091,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/bass/note-45.wav",
+            "tick": 3360,
+            "frame": 70159,
+            "velocity": 0.75
+          },
+          {
+            "file": "assets/v2/bass/note-40.wav",
+            "tick": 3840,
+            "frame": 80182,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/v2/bass/note-42.wav",
+            "tick": 5520,
+            "frame": 115261,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/v2/bass/note-47.wav",
+            "tick": 6336,
+            "frame": 132300,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/v2/bass/note-49.wav",
+            "tick": 7200,
+            "frame": 150341,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/v2/bass/note-40.wav",
+            "tick": 7680,
+            "frame": 160363,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/v2/bass/note-40.wav",
+            "tick": 9360,
+            "frame": 195443,
+            "velocity": 0.82
+          },
+          {
+            "file": "assets/v2/bass/note-47.wav",
+            "tick": 9600,
+            "frame": 200454,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/bass/note-45.wav",
+            "tick": 11040,
+            "frame": 230522,
+            "velocity": 0.78
+          },
+          {
+            "file": "assets/v2/bass/note-40.wav",
+            "tick": 11520,
+            "frame": 240545,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/v2/bass/note-47.wav",
+            "tick": 12480,
+            "frame": 260591,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/bass/note-49.wav",
+            "tick": 13440,
+            "frame": 280636,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/bass/note-52.wav",
+            "tick": 14160,
+            "frame": 295670,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/v2/bass/note-40.wav",
+            "tick": 14784,
+            "frame": 308700,
+            "velocity": 0.95
+          },
+          {
+            "file": "assets/v2/bass/note-40.wav",
+            "tick": 15360,
+            "frame": 320727,
+            "velocity": 0.92
+          },
+          {
+            "file": "assets/v2/bass/note-47.wav",
+            "tick": 16800,
+            "frame": 350795,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/bass/note-45.wav",
+            "tick": 17280,
+            "frame": 360818,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/bass/note-49.wav",
+            "tick": 18000,
+            "frame": 375852,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/v2/bass/note-40.wav",
+            "tick": 18240,
+            "frame": 380863,
+            "velocity": 0.88
+          },
+          {
+            "file": "assets/v2/bass/note-35.wav",
+            "tick": 19200,
+            "frame": 400909,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/v2/bass/note-35.wav",
+            "tick": 19840,
+            "frame": 414272,
+            "velocity": 0.95
+          },
+          {
+            "file": "assets/v2/bass/note-42.wav",
+            "tick": 20160,
+            "frame": 420954,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/bass/note-40.wav",
+            "tick": 21120,
+            "frame": 441000,
+            "velocity": 0.88
+          },
+          {
+            "file": "assets/v2/bass/note-47.wav",
+            "tick": 22080,
+            "frame": 461045,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/bass/note-45.wav",
+            "tick": 23040,
+            "frame": 481090,
+            "velocity": 0.7
+          },
+          {
+            "file": "assets/v2/bass/note-45.wav",
+            "tick": 25344,
+            "frame": 529199,
+            "velocity": 0.75
+          },
+          {
+            "file": "assets/v2/bass/note-45.wav",
+            "tick": 26880,
+            "frame": 561272,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/v2/bass/note-52.wav",
+            "tick": 27840,
+            "frame": 581318,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/v2/bass/note-47.wav",
+            "tick": 28800,
+            "frame": 601363,
+            "velocity": 0.82
+          },
+          {
+            "file": "assets/v2/bass/note-40.wav",
+            "tick": 29760,
+            "frame": 621408,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/bass/note-40.wav",
+            "tick": 30720,
+            "frame": 641454,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/v2/bass/note-40.wav",
+            "tick": 31680,
+            "frame": 661499,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/v2/bass/note-47.wav",
+            "tick": 32640,
+            "frame": 681545,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/bass/note-40.wav",
+            "tick": 33792,
+            "frame": 705599,
+            "velocity": 0.95
+          },
+          {
+            "file": "assets/v2/bass/note-40.wav",
+            "tick": 34560,
+            "frame": 721636,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/v2/bass/note-45.wav",
+            "tick": 35520,
+            "frame": 741681,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/bass/note-47.wav",
+            "tick": 36480,
+            "frame": 761727,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/bass/note-40.wav",
+            "tick": 37440,
+            "frame": 781772,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/v2/bass/note-40.wav",
+            "tick": 38400,
+            "frame": 801817,
+            "velocity": 0.95
+          }
+        ],
+        "clippedSamples": 0
+      },
+      {
+        "trackId": "perc",
+        "trackIndex": 5,
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/v2/perc/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/v2/perc/kick.wav",
+            "tick": 0,
+            "frame": 0,
+            "velocity": 0.92
+          },
+          {
+            "file": "assets/v2/perc/hat.wav",
+            "tick": 480,
+            "frame": 10023,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/perc/clap.wav",
+            "tick": 960,
+            "frame": 20045,
+            "velocity": 0.82
+          },
+          {
+            "file": "assets/v2/perc/kick.wav",
+            "tick": 1440,
+            "frame": 30068,
+            "velocity": 0.68
+          },
+          {
+            "file": "assets/v2/perc/hat.wav",
+            "tick": 1440,
+            "frame": 30068,
+            "velocity": 0.4
+          },
+          {
+            "file": "assets/v2/perc/cup.wav",
+            "tick": 1680,
+            "frame": 35080,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/perc/kick.wav",
+            "tick": 1920,
+            "frame": 40091,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/perc/hat.wav",
+            "tick": 2400,
+            "frame": 50114,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/perc/shaker.wav",
+            "tick": 2640,
+            "frame": 55125,
+            "velocity": 0.42
+          },
+          {
+            "file": "assets/v2/perc/clap.wav",
+            "tick": 2880,
+            "frame": 60136,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/perc/hat.wav",
+            "tick": 3360,
+            "frame": 70159,
+            "velocity": 0.4
+          },
+          {
+            "file": "assets/v2/perc/spoon.wav",
+            "tick": 3600,
+            "frame": 75170,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/v2/perc/kick.wav",
+            "tick": 3840,
+            "frame": 80182,
+            "velocity": 0.92
+          },
+          {
+            "file": "assets/v2/perc/hat.wav",
+            "tick": 4320,
+            "frame": 90204,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/perc/snap.wav",
+            "tick": 4800,
+            "frame": 100227,
+            "velocity": 0.82
+          },
+          {
+            "file": "assets/v2/perc/kick.wav",
+            "tick": 5280,
+            "frame": 110250,
+            "velocity": 0.68
+          },
+          {
+            "file": "assets/v2/perc/hat.wav",
+            "tick": 5280,
+            "frame": 110250,
+            "velocity": 0.4
+          },
+          {
+            "file": "assets/v2/perc/cup.wav",
+            "tick": 5520,
+            "frame": 115261,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/perc/kick.wav",
+            "tick": 5760,
+            "frame": 120273,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/perc/hat.wav",
+            "tick": 6240,
+            "frame": 130295,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/perc/shaker.wav",
+            "tick": 6480,
+            "frame": 135307,
+            "velocity": 0.42
+          },
+          {
+            "file": "assets/v2/perc/snap.wav",
+            "tick": 6720,
+            "frame": 140318,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/perc/hat.wav",
+            "tick": 7200,
+            "frame": 150341,
+            "velocity": 0.4
+          },
+          {
+            "file": "assets/v2/perc/spoon.wav",
+            "tick": 7440,
+            "frame": 155352,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/v2/perc/kick.wav",
+            "tick": 7680,
+            "frame": 160363,
+            "velocity": 0.92
+          },
+          {
+            "file": "assets/v2/perc/hat.wav",
+            "tick": 8160,
+            "frame": 170386,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/perc/clap.wav",
+            "tick": 8640,
+            "frame": 180409,
+            "velocity": 0.82
+          },
+          {
+            "file": "assets/v2/perc/kick.wav",
+            "tick": 9120,
+            "frame": 190432,
+            "velocity": 0.68
+          },
+          {
+            "file": "assets/v2/perc/hat.wav",
+            "tick": 9120,
+            "frame": 190432,
+            "velocity": 0.4
+          },
+          {
+            "file": "assets/v2/perc/cup.wav",
+            "tick": 9360,
+            "frame": 195443,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/perc/kick.wav",
+            "tick": 9600,
+            "frame": 200454,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/perc/hat.wav",
+            "tick": 10080,
+            "frame": 210477,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/perc/shaker.wav",
+            "tick": 10320,
+            "frame": 215488,
+            "velocity": 0.42
+          },
+          {
+            "file": "assets/v2/perc/clap.wav",
+            "tick": 10560,
+            "frame": 220500,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/perc/hat.wav",
+            "tick": 11040,
+            "frame": 230522,
+            "velocity": 0.4
+          },
+          {
+            "file": "assets/v2/perc/spoon.wav",
+            "tick": 11280,
+            "frame": 235534,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/v2/perc/kick.wav",
+            "tick": 11520,
+            "frame": 240545,
+            "velocity": 0.92
+          },
+          {
+            "file": "assets/v2/perc/cup.wav",
+            "tick": 11760,
+            "frame": 245557,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/v2/perc/hat.wav",
+            "tick": 12000,
+            "frame": 250568,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/perc/knock.wav",
+            "tick": 12240,
+            "frame": 255579,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/perc/snap.wav",
+            "tick": 12480,
+            "frame": 260591,
+            "velocity": 0.82
+          },
+          {
+            "file": "assets/v2/perc/kick.wav",
+            "tick": 12960,
+            "frame": 270613,
+            "velocity": 0.68
+          },
+          {
+            "file": "assets/v2/perc/hat.wav",
+            "tick": 12960,
+            "frame": 270613,
+            "velocity": 0.4
+          },
+          {
+            "file": "assets/v2/perc/cup.wav",
+            "tick": 13200,
+            "frame": 275625,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/perc/kick.wav",
+            "tick": 13440,
+            "frame": 280636,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/perc/hat.wav",
+            "tick": 13920,
+            "frame": 290659,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/perc/shaker.wav",
+            "tick": 14160,
+            "frame": 295670,
+            "velocity": 0.42
+          },
+          {
+            "file": "assets/v2/perc/snap.wav",
+            "tick": 14400,
+            "frame": 300682,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/perc/hat.wav",
+            "tick": 14880,
+            "frame": 310704,
+            "velocity": 0.4
+          },
+          {
+            "file": "assets/v2/perc/spoon.wav",
+            "tick": 15120,
+            "frame": 315716,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/v2/perc/kick.wav",
+            "tick": 15360,
+            "frame": 320727,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/v2/perc/shaker.wav",
+            "tick": 15840,
+            "frame": 330750,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/v2/perc/knock.wav",
+            "tick": 16000,
+            "frame": 334091,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/v2/perc/clap.wav",
+            "tick": 16320,
+            "frame": 340772,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/perc/shaker.wav",
+            "tick": 16800,
+            "frame": 350795,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/perc/kick.wav",
+            "tick": 17280,
+            "frame": 360818,
+            "velocity": 0.88
+          },
+          {
+            "file": "assets/v2/perc/shaker.wav",
+            "tick": 17760,
+            "frame": 370841,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/v2/perc/clap.wav",
+            "tick": 18240,
+            "frame": 380863,
+            "velocity": 0.88
+          },
+          {
+            "file": "assets/v2/perc/wood.wav",
+            "tick": 18720,
+            "frame": 390886,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/perc/spoon.wav",
+            "tick": 18960,
+            "frame": 395897,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/v2/perc/kick.wav",
+            "tick": 19200,
+            "frame": 400909,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/v2/perc/shaker.wav",
+            "tick": 19680,
+            "frame": 410931,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/v2/perc/wood.wav",
+            "tick": 20160,
+            "frame": 420954,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/v2/perc/kick.wav",
+            "tick": 21120,
+            "frame": 441000,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/perc/bell.wav",
+            "tick": 21120,
+            "frame": 441000,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/v2/perc/shaker.wav",
+            "tick": 21600,
+            "frame": 451022,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/v2/perc/clap.wav",
+            "tick": 22080,
+            "frame": 461045,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/perc/spoon.wav",
+            "tick": 22800,
+            "frame": 476079,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/v2/perc/brush.wav",
+            "tick": 23040,
+            "frame": 481090,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/perc/cup.wav",
+            "tick": 24000,
+            "frame": 501136,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/v2/perc/knock.wav",
+            "tick": 25344,
+            "frame": 529199,
+            "velocity": 0.7
+          },
+          {
+            "file": "assets/v2/perc/spoon.wav",
+            "tick": 25920,
+            "frame": 541227,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/v2/perc/kick.wav",
+            "tick": 26880,
+            "frame": 561272,
+            "velocity": 0.75
+          },
+          {
+            "file": "assets/v2/perc/shaker.wav",
+            "tick": 27360,
+            "frame": 571295,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/perc/snap.wav",
+            "tick": 27840,
+            "frame": 581318,
+            "velocity": 0.7
+          },
+          {
+            "file": "assets/v2/perc/kick.wav",
+            "tick": 28800,
+            "frame": 601363,
+            "velocity": 0.72
+          },
+          {
+            "file": "assets/v2/perc/shaker.wav",
+            "tick": 29280,
+            "frame": 611386,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/perc/snap.wav",
+            "tick": 29760,
+            "frame": 621408,
+            "velocity": 0.72
+          },
+          {
+            "file": "assets/v2/perc/cup.wav",
+            "tick": 30480,
+            "frame": 636443,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/v2/perc/kick.wav",
+            "tick": 30720,
+            "frame": 641454,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/v2/perc/hat.wav",
+            "tick": 31200,
+            "frame": 651477,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/perc/clap.wav",
+            "tick": 31680,
+            "frame": 661499,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/perc/spoon.wav",
+            "tick": 32064,
+            "frame": 669518,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/v2/perc/kick.wav",
+            "tick": 32640,
+            "frame": 681545,
+            "velocity": 0.88
+          },
+          {
+            "file": "assets/v2/perc/hat.wav",
+            "tick": 33120,
+            "frame": 691567,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/perc/clap.wav",
+            "tick": 33600,
+            "frame": 701590,
+            "velocity": 0.88
+          },
+          {
+            "file": "assets/v2/perc/cup.wav",
+            "tick": 34320,
+            "frame": 716624,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/v2/perc/shaker.wav",
+            "tick": 35040,
+            "frame": 731658,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/v2/perc/snap.wav",
+            "tick": 35520,
+            "frame": 741681,
+            "velocity": 0.75
+          },
+          {
+            "file": "assets/v2/perc/shaker.wav",
+            "tick": 36000,
+            "frame": 751704,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/perc/shaker.wav",
+            "tick": 36960,
+            "frame": 771749,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/v2/perc/snap.wav",
+            "tick": 37440,
+            "frame": 781772,
+            "velocity": 0.75
+          },
+          {
+            "file": "assets/v2/perc/shaker.wav",
+            "tick": 37920,
+            "frame": 791795,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/v2/perc/shaker.wav",
+            "tick": 38400,
+            "frame": 801817,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/v2/perc/cup.wav",
+            "tick": 39840,
+            "frame": 831886,
+            "velocity": 0.6
+          }
+        ],
+        "clippedSamples": 0
+      }
+    ]
+  },
+  "timeline": {
+    "authoredDurationTicks": 42240,
+    "authoredFrames": 881999,
+    "duration": {
+      "seconds": 20
+    },
+    "tail": "none",
+    "requestedFinalFrames": 882000,
+    "audioEndFrames": 881999,
+    "resultingFrames": 882000,
+    "rounding": "nearest sample frame; ties later; combined musical timeline + explicit tail rounded once"
+  },
+  "production": {
+    "processor": {
+      "name": "ffmpeg",
+      "version": "6.1.1-3ubuntu5"
+    },
+    "runtime": {
+      "name": "node",
+      "version": "v24.22.2"
+    },
+    "tracks": [
+      {
+        "trackId": "lead",
+        "gainDb": -5,
+        "pan": -0.06,
+        "effects": [
+          {
+            "type": "reverb",
+            "roomSize": 0.22,
+            "decaySeconds": 0.35,
+            "wet": 0.07
+          }
+        ],
+        "clippedSamples": 0,
+        "preClipPeakDbfs": -2.342475
+      },
+      {
+        "trackId": "warmkeys",
+        "gainDb": -6,
+        "pan": 0.05,
+        "effects": [
+          {
+            "type": "reverb",
+            "roomSize": 0.22,
+            "decaySeconds": 0.35,
+            "wet": 0.07
+          }
+        ],
+        "clippedSamples": 116,
+        "preClipPeakDbfs": 1.47291
+      },
+      {
+        "trackId": "pad",
+        "gainDb": -11,
+        "pan": 0,
+        "effects": [],
+        "clippedSamples": 0,
+        "preClipPeakDbfs": -4.60775
+      },
+      {
+        "trackId": "reedstab",
+        "gainDb": -7,
+        "pan": 0.03,
+        "effects": [
+          {
+            "type": "reverb",
+            "roomSize": 0.22,
+            "decaySeconds": 0.35,
+            "wet": 0.07
+          }
+        ],
+        "clippedSamples": 0,
+        "preClipPeakDbfs": -1.054876
+      },
+      {
+        "trackId": "bass",
+        "gainDb": -5,
+        "pan": 0,
+        "effects": [],
+        "clippedSamples": 0,
+        "preClipPeakDbfs": -3.154967
+      },
+      {
+        "trackId": "perc",
+        "gainDb": -7,
+        "pan": 0,
+        "effects": [],
+        "clippedSamples": 0,
+        "preClipPeakDbfs": -5.751124
+      }
+    ],
+    "master": {
+      "gainDb": -7.5,
+      "effects": [],
+      "clippedSamples": 0,
+      "preClipPeakDbfs": -1.71885
+    },
+    "stemAlignment": "trim/pad to master frames; post-track, pre-master gain/effects/ducking"
+  },
+  "mix": {
+    "clippedSamples": 0,
+    "gm": "sum processed independent tracks",
+    "samples": "sum exported track PCM"
+  },
+  "wav": {
+    "file": "cafecito-rush-final.wav",
+    "sha256": "4de7fd0f93d1e1689ffa16b613e24c25cb56f6b48058b271737bec6e97dc6e08",
+    "bytes": 3528044,
+    "frames": 882000,
+    "sampleRate": 44100,
+    "channels": 2,
+    "bitsPerSample": 16,
+    "durationSeconds": 20
+  },
+  "audioTool": {
+    "name": "ffmpeg",
+    "version": "6.1.1-3ubuntu5"
+  },
+  "analysis": {
+    "master": {
+      "durationSeconds": 20,
+      "frames": 882000,
+      "sampleRate": 44100,
+      "channels": 2,
+      "bitsPerSample": 16,
+      "format": "pcm_s16le",
+      "peakDbfs": -1.718798,
+      "rmsDbfs": -17.128715,
+      "fullScaleSamples": 0,
+      "clipping": false,
+      "integratedLufs": -14.57,
+      "loudnessRangeLu": 3.4,
+      "truePeakDbfs": -1.72
+    },
+    "tracks": []
+  },
+  "mp3": {
+    "file": "cafecito-rush-final.mp3",
+    "sha256": "42487a4ad4d0c3fd73b7eae9372017f5294ab707afef0049ba4b966fae21b37e",
+    "bytes": 481533,
+    "codec": "libmp3lame",
+    "bitrateKbps": 192
+  }
+}

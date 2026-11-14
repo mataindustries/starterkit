@@ -1,0 +1,60 @@
+{
+  "formatVersion": 1,
+  "samples": [
+    {
+      "name": "kick",
+      "pitch": 36,
+      "file": "kick.wav"
+    },
+    {
+      "name": "clap",
+      "pitch": 37,
+      "file": "clap.wav"
+    },
+    {
+      "name": "hat",
+      "pitch": 38,
+      "file": "hat.wav"
+    },
+    {
+      "name": "shaker",
+      "pitch": 39,
+      "file": "shaker.wav"
+    },
+    {
+      "name": "cup",
+      "pitch": 40,
+      "file": "cup.wav"
+    },
+    {
+      "name": "spoon",
+      "pitch": 41,
+      "file": "spoon.wav"
+    },
+    {
+      "name": "bell",
+      "pitch": 42,
+      "file": "bell.wav"
+    },
+    {
+      "name": "snap",
+      "pitch": 43,
+      "file": "snap.wav"
+    },
+    {
+      "name": "knock",
+      "pitch": 44,
+      "file": "knock.wav"
+    },
+    {
+      "name": "wood",
+      "pitch": 45,
+      "file": "wood.wav"
+    },
+    {
+      "name": "brush",
+      "pitch": 46,
+      "file": "brush.wav"
+    }
+  ]
+}

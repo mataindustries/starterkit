@@ -1,0 +1,976 @@
+{
+  "engine": {
+    "name": "daemonv12",
+    "version": "0.7.0"
+  },
+  "project": {
+    "file": "a-cafecito-rush.json",
+    "sha256": "0644932271af97fe53509f87034d05d465bc3850a321a518f27a1ddc828505cd",
+    "formatVersion": 1,
+    "seed": 1101
+  },
+  "midi": {
+    "file": "a-cafecito-rush.mid",
+    "sha256": "2fd91dd9de6801b0886485e94484c4f811175d068e50a45ead87c0452d516658",
+    "bytes": 87,
+    "ppq": 960,
+    "durationTicks": 15360,
+    "durationSeconds": 7.27272,
+    "notes": 0
+  },
+  "renderer": {
+    "name": "daemonv12-production",
+    "version": "2",
+    "settings": {
+      "sampleRate": 44100,
+      "channels": 2,
+      "bitsPerSample": 16,
+      "panLaw": "linear stereo balance; unity center",
+      "order": "source and tail cap, track gain/pan automation, ordered track effects, tail cap, s16 track elements; sum, master gain, ordered master effects, tail cap and final trim/pad, VO ducking, s16 master; trim/pad pre-master stems to master frames",
+      "normalization": false,
+      "dither": false,
+      "automation": "absolute values; step or outgoing linear segment; gain interpolated in dB; rounded sample positions",
+      "reverb": "schroeder-4-comb-2-allpass-v1; finite RT60 tail",
+      "saturation": "tanh-v1; no output compensation",
+      "ducking": "trailing 20ms channel-energy RMS; threshold gate; exponential reduction in dB; v1"
+    }
+  },
+  "gmRenderer": null,
+  "gmSource": null,
+  "soundfont": null,
+  "samples": {
+    "timing": "nearest absolute trigger and fixed boundary, ties later; ceil minimum only without fixed boundary; tick * usPerQuarter * 44100 / 960000000",
+    "assets": [
+      {
+        "file": "assets/bass/kit.json",
+        "sha256": "5d6c3448b152f31aae09ca4984ee17532d2d5db53103cc40180ba4580fe15f9e",
+        "bytes": 808,
+        "kind": "drumkit"
+      },
+      {
+        "file": "assets/bass/note-35.wav",
+        "sha256": "c06c3ea2199dcdda2aa9ee02fe36bd68d1232bd3eb5d87986c8af10e82aaaa5a",
+        "bytes": 35324,
+        "frames": 17640,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/bass/note-40.wav",
+        "sha256": "4407d182b4ca477e56ee25ff3bd92289494d614bf999a066a6b43cee2ca97c4a",
+        "bytes": 35324,
+        "frames": 17640,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/bass/note-42.wav",
+        "sha256": "eb955569d684ff13f369ccd97d529c08685966d9fa6bd7c41b31e2e534ac5c06",
+        "bytes": 35324,
+        "frames": 17640,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/bass/note-43.wav",
+        "sha256": "eb58747d10b8dd1e3c8e714e00f450f238e5cdbc7f182ad644c55ee3b1284e00",
+        "bytes": 35324,
+        "frames": 17640,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/bass/note-45.wav",
+        "sha256": "a949b36b3b0312ed9823217ec72128bf20824d09cbf8391c92ff3e276e4fbb10",
+        "bytes": 35324,
+        "frames": 17640,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/bass/note-47.wav",
+        "sha256": "a5effdacdc9cbf9d291e2a9a1cb6e2ee602baae427c14b8b59240dfad915e2dc",
+        "bytes": 35324,
+        "frames": 17640,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/bass/note-49.wav",
+        "sha256": "e266090a4cf685bd559b96fe94a57a4a02a7b7f76db333e2cdbbb804b662268d",
+        "bytes": 35324,
+        "frames": 17640,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/bass/note-50.wav",
+        "sha256": "5bbf0af16b68228ecb54c45f4b1f23b984ce3b292ad82bd5d73b6150f2232ca1",
+        "bytes": 35324,
+        "frames": 17640,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/bass/note-52.wav",
+        "sha256": "f38f2d5080f2bc31ef79324b341eae69ada9f1ffb029fa69cbe0d85d4a680eef",
+        "bytes": 35324,
+        "frames": 17640,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/perc/bell.wav",
+        "sha256": "e09ab74bf427f603db37599f62d38b0315c759fb4607ee07ba4acd2f192d7ded",
+        "bytes": 61782,
+        "frames": 30869,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/perc/clap.wav",
+        "sha256": "de8733c381ffc7e93ec41a2d0ce3ee5c731e1e209f1f60d793480b530bf9c331",
+        "bytes": 19448,
+        "frames": 9702,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/perc/cup.wav",
+        "sha256": "b48510d3a1b6685896d47f78aa7024fa9c926204bb449bd2d02c22359e7914cd",
+        "bytes": 15920,
+        "frames": 7938,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/perc/hat.wav",
+        "sha256": "50eff7602a4b598f1478fd1354edd2ebfd6732218a1b53f508938f98a776e4aa",
+        "bytes": 6218,
+        "frames": 3087,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/perc/kick.wav",
+        "sha256": "7740902403a80edec55482bc9e613c3e355bae93a5e9bfc50f188998241c066e",
+        "bytes": 24740,
+        "frames": 12348,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/perc/kit.json",
+        "sha256": "8cfa0aa47841ac98ed66d25df8f6dc57d596babff53b62bddc157d589f229961",
+        "bytes": 758,
+        "kind": "drumkit"
+      },
+      {
+        "file": "assets/perc/knock.wav",
+        "sha256": "73d3e82a03afb06635bf764d5f86dfa4c1d81621df0b9566cd564fb647ccf47f",
+        "bytes": 12392,
+        "frames": 6174,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/perc/shaker.wav",
+        "sha256": "702fc4f8a962c5628a861fba294eeadb19e12d6bc4b8396d57e104434829b5e8",
+        "bytes": 14156,
+        "frames": 7056,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/perc/snap.wav",
+        "sha256": "ee08237f0823cd88c9948068635f621987464af49883c427af63fd96e6b7505e",
+        "bytes": 7982,
+        "frames": 3969,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/perc/spoon.wav",
+        "sha256": "9461a6881abcd32b58395c89ddff4b0f3c4651fa17df72c638ded787506db273",
+        "bytes": 8864,
+        "frames": 4410,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/pluck/kit.json",
+        "sha256": "2122b32c6c3b8619a2094f8e75b3e1848665011085209dba19c6393acc4397fb",
+        "bytes": 808,
+        "kind": "drumkit"
+      },
+      {
+        "file": "assets/pluck/note-71.wav",
+        "sha256": "2b949e448093526314b8d463f25871631ecfb9d32f4deaccd2968737b749492a",
+        "bytes": 48554,
+        "frames": 24255,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/pluck/note-73.wav",
+        "sha256": "0c6d0e8be5b1149a0e10f29b74b015cad6d871ddf7ed6d1ddcb63680af818221",
+        "bytes": 48554,
+        "frames": 24255,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/pluck/note-76.wav",
+        "sha256": "92a4b72580b5c011c917afed2568eaa1fbda96601542cbf17630484e93728c87",
+        "bytes": 48554,
+        "frames": 24255,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/pluck/note-78.wav",
+        "sha256": "f84ea6d44c22036eb4a9b4637c6dd8d5f75acc812b471ba15a32f8c3ea277583",
+        "bytes": 48554,
+        "frames": 24255,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/pluck/note-80.wav",
+        "sha256": "ae74094c5b2e6c4575d0ffc433a728884423e04b84424880a2391a7b2f7ebe8e",
+        "bytes": 48554,
+        "frames": 24255,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/pluck/note-81.wav",
+        "sha256": "5a115f96dd1b0e18e0a195de550a933cd0ad871a59cf8319f0b3fd95e68cb5d2",
+        "bytes": 48554,
+        "frames": 24255,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/pluck/note-83.wav",
+        "sha256": "2f516d74474d9906cb8da8442bc0a99ea584d7a1c93c7fa40b998daadfbc99aa",
+        "bytes": 48554,
+        "frames": 24255,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/pluck/note-85.wav",
+        "sha256": "b454def5a52d15c774c8e973dfee12c8d98d1927c7fa563d0136b9e28732ec42",
+        "bytes": 48554,
+        "frames": 24255,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      },
+      {
+        "file": "assets/pluck/note-88.wav",
+        "sha256": "21796547c2753d7a717af28edd3e1128acd01d72c66c07c888588b49398b7725",
+        "bytes": 48554,
+        "frames": 24255,
+        "channels": 1,
+        "sampleRate": 44100,
+        "bitsPerSample": 16
+      }
+    ],
+    "tracks": [
+      {
+        "trackId": "pluck",
+        "trackIndex": 0,
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/pluck/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/pluck/note-76.wav",
+            "tick": 0,
+            "frame": 0,
+            "velocity": 0.92
+          },
+          {
+            "file": "assets/pluck/note-80.wav",
+            "tick": 480,
+            "frame": 10023,
+            "velocity": 0.82
+          },
+          {
+            "file": "assets/pluck/note-83.wav",
+            "tick": 960,
+            "frame": 20045,
+            "velocity": 0.95
+          },
+          {
+            "file": "assets/pluck/note-80.wav",
+            "tick": 1680,
+            "frame": 35080,
+            "velocity": 0.78
+          },
+          {
+            "file": "assets/pluck/note-78.wav",
+            "tick": 2400,
+            "frame": 50114,
+            "velocity": 0.82
+          },
+          {
+            "file": "assets/pluck/note-76.wav",
+            "tick": 2880,
+            "frame": 60136,
+            "velocity": 0.86
+          },
+          {
+            "file": "assets/pluck/note-76.wav",
+            "tick": 3840,
+            "frame": 80182,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/pluck/note-80.wav",
+            "tick": 4320,
+            "frame": 90204,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/pluck/note-83.wav",
+            "tick": 4800,
+            "frame": 100227,
+            "velocity": 0.92
+          },
+          {
+            "file": "assets/pluck/note-85.wav",
+            "tick": 5520,
+            "frame": 115261,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/pluck/note-81.wav",
+            "tick": 6240,
+            "frame": 130295,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/pluck/note-80.wav",
+            "tick": 6720,
+            "frame": 140318,
+            "velocity": 0.78
+          },
+          {
+            "file": "assets/pluck/note-71.wav",
+            "tick": 7680,
+            "frame": 160363,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/pluck/note-76.wav",
+            "tick": 8400,
+            "frame": 175398,
+            "velocity": 0.75
+          },
+          {
+            "file": "assets/pluck/note-80.wav",
+            "tick": 9120,
+            "frame": 190432,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/pluck/note-78.wav",
+            "tick": 9600,
+            "frame": 200454,
+            "velocity": 0.75
+          },
+          {
+            "file": "assets/pluck/note-76.wav",
+            "tick": 10320,
+            "frame": 215488,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/pluck/note-73.wav",
+            "tick": 11040,
+            "frame": 230522,
+            "velocity": 0.7
+          },
+          {
+            "file": "assets/pluck/note-76.wav",
+            "tick": 11520,
+            "frame": 240545,
+            "velocity": 0.95
+          },
+          {
+            "file": "assets/pluck/note-80.wav",
+            "tick": 11520,
+            "frame": 240545,
+            "velocity": 0.7
+          },
+          {
+            "file": "assets/pluck/note-83.wav",
+            "tick": 11520,
+            "frame": 240545,
+            "velocity": 0.7
+          },
+          {
+            "file": "assets/pluck/note-85.wav",
+            "tick": 12960,
+            "frame": 270613,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/pluck/note-83.wav",
+            "tick": 13440,
+            "frame": 280636,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/pluck/note-80.wav",
+            "tick": 14160,
+            "frame": 295670,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/pluck/note-76.wav",
+            "tick": 14400,
+            "frame": 300682,
+            "velocity": 0.9
+          }
+        ],
+        "clippedSamples": 4
+      },
+      {
+        "trackId": "bass",
+        "trackIndex": 1,
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/bass/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/bass/note-40.wav",
+            "tick": 0,
+            "frame": 0,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/bass/note-40.wav",
+            "tick": 1680,
+            "frame": 35080,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/bass/note-47.wav",
+            "tick": 1920,
+            "frame": 40091,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/bass/note-45.wav",
+            "tick": 3360,
+            "frame": 70159,
+            "velocity": 0.75
+          },
+          {
+            "file": "assets/bass/note-40.wav",
+            "tick": 3840,
+            "frame": 80182,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/bass/note-42.wav",
+            "tick": 5520,
+            "frame": 115261,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/bass/note-47.wav",
+            "tick": 5760,
+            "frame": 120273,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/bass/note-49.wav",
+            "tick": 7200,
+            "frame": 150341,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/bass/note-40.wav",
+            "tick": 7680,
+            "frame": 160363,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/bass/note-47.wav",
+            "tick": 8640,
+            "frame": 180409,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/bass/note-50.wav",
+            "tick": 10320,
+            "frame": 215488,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/bass/note-49.wav",
+            "tick": 10560,
+            "frame": 220500,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/bass/note-40.wav",
+            "tick": 11520,
+            "frame": 240545,
+            "velocity": 0.95
+          },
+          {
+            "file": "assets/bass/note-47.wav",
+            "tick": 13440,
+            "frame": 280636,
+            "velocity": 0.8
+          },
+          {
+            "file": "assets/bass/note-40.wav",
+            "tick": 14400,
+            "frame": 300682,
+            "velocity": 0.9
+          }
+        ],
+        "clippedSamples": 0
+      },
+      {
+        "trackId": "perc",
+        "trackIndex": 2,
+        "instrument": {
+          "type": "drumkit",
+          "kit": "assets/perc/kit.json"
+        },
+        "triggers": [
+          {
+            "file": "assets/perc/kick.wav",
+            "tick": 0,
+            "frame": 0,
+            "velocity": 0.95
+          },
+          {
+            "file": "assets/perc/hat.wav",
+            "tick": 480,
+            "frame": 10023,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/perc/clap.wav",
+            "tick": 960,
+            "frame": 20045,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/perc/kick.wav",
+            "tick": 1440,
+            "frame": 30068,
+            "velocity": 0.7
+          },
+          {
+            "file": "assets/perc/hat.wav",
+            "tick": 1440,
+            "frame": 30068,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/perc/cup.wav",
+            "tick": 1680,
+            "frame": 35080,
+            "velocity": 0.65
+          },
+          {
+            "file": "assets/perc/kick.wav",
+            "tick": 1920,
+            "frame": 40091,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/perc/hat.wav",
+            "tick": 2400,
+            "frame": 50114,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/perc/clap.wav",
+            "tick": 2880,
+            "frame": 60136,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/perc/hat.wav",
+            "tick": 3360,
+            "frame": 70159,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/perc/shaker.wav",
+            "tick": 3600,
+            "frame": 75170,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/perc/spoon.wav",
+            "tick": 3600,
+            "frame": 75170,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/perc/kick.wav",
+            "tick": 3840,
+            "frame": 80182,
+            "velocity": 0.95
+          },
+          {
+            "file": "assets/perc/hat.wav",
+            "tick": 4320,
+            "frame": 90204,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/perc/clap.wav",
+            "tick": 4800,
+            "frame": 100227,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/perc/kick.wav",
+            "tick": 5280,
+            "frame": 110250,
+            "velocity": 0.7
+          },
+          {
+            "file": "assets/perc/hat.wav",
+            "tick": 5280,
+            "frame": 110250,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/perc/cup.wav",
+            "tick": 5520,
+            "frame": 115261,
+            "velocity": 0.65
+          },
+          {
+            "file": "assets/perc/kick.wav",
+            "tick": 5760,
+            "frame": 120273,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/perc/hat.wav",
+            "tick": 6240,
+            "frame": 130295,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/perc/clap.wav",
+            "tick": 6720,
+            "frame": 140318,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/perc/hat.wav",
+            "tick": 7200,
+            "frame": 150341,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/perc/shaker.wav",
+            "tick": 7440,
+            "frame": 155352,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/perc/spoon.wav",
+            "tick": 7440,
+            "frame": 155352,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/perc/kick.wav",
+            "tick": 7680,
+            "frame": 160363,
+            "velocity": 0.95
+          },
+          {
+            "file": "assets/perc/hat.wav",
+            "tick": 8160,
+            "frame": 170386,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/perc/clap.wav",
+            "tick": 8640,
+            "frame": 180409,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/perc/kick.wav",
+            "tick": 9120,
+            "frame": 190432,
+            "velocity": 0.7
+          },
+          {
+            "file": "assets/perc/hat.wav",
+            "tick": 9120,
+            "frame": 190432,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/perc/cup.wav",
+            "tick": 9360,
+            "frame": 195443,
+            "velocity": 0.65
+          },
+          {
+            "file": "assets/perc/kick.wav",
+            "tick": 9600,
+            "frame": 200454,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/perc/hat.wav",
+            "tick": 10080,
+            "frame": 210477,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/perc/clap.wav",
+            "tick": 10560,
+            "frame": 220500,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/perc/hat.wav",
+            "tick": 11040,
+            "frame": 230522,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/perc/spoon.wav",
+            "tick": 11280,
+            "frame": 235534,
+            "velocity": 0.6
+          },
+          {
+            "file": "assets/perc/kick.wav",
+            "tick": 11520,
+            "frame": 240545,
+            "velocity": 0.95
+          },
+          {
+            "file": "assets/perc/hat.wav",
+            "tick": 12000,
+            "frame": 250568,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/perc/clap.wav",
+            "tick": 12480,
+            "frame": 260591,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/perc/kick.wav",
+            "tick": 12960,
+            "frame": 270613,
+            "velocity": 0.7
+          },
+          {
+            "file": "assets/perc/hat.wav",
+            "tick": 12960,
+            "frame": 270613,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/perc/cup.wav",
+            "tick": 13200,
+            "frame": 275625,
+            "velocity": 0.65
+          },
+          {
+            "file": "assets/perc/kick.wav",
+            "tick": 13440,
+            "frame": 280636,
+            "velocity": 0.85
+          },
+          {
+            "file": "assets/perc/hat.wav",
+            "tick": 13920,
+            "frame": 290659,
+            "velocity": 0.5
+          },
+          {
+            "file": "assets/perc/clap.wav",
+            "tick": 14400,
+            "frame": 300682,
+            "velocity": 0.9
+          },
+          {
+            "file": "assets/perc/hat.wav",
+            "tick": 14880,
+            "frame": 310704,
+            "velocity": 0.45
+          },
+          {
+            "file": "assets/perc/bell.wav",
+            "tick": 14880,
+            "frame": 310704,
+            "velocity": 0.55
+          },
+          {
+            "file": "assets/perc/cup.wav",
+            "tick": 15120,
+            "frame": 315716,
+            "velocity": 0.7
+          },
+          {
+            "file": "assets/perc/spoon.wav",
+            "tick": 15120,
+            "frame": 315716,
+            "velocity": 0.6
+          }
+        ],
+        "clippedSamples": 0
+      }
+    ]
+  },
+  "timeline": {
+    "authoredDurationTicks": 15360,
+    "authoredFrames": 320727,
+    "duration": {
+      "seconds": 7.6
+    },
+    "tail": "none",
+    "requestedFinalFrames": 335160,
+    "audioEndFrames": 320727,
+    "resultingFrames": 335160,
+    "rounding": "nearest sample frame; ties later; combined musical timeline + explicit tail rounded once"
+  },
+  "production": {
+    "processor": {
+      "name": "ffmpeg",
+      "version": "6.1.1-3ubuntu5"
+    },
+    "runtime": {
+      "name": "node",
+      "version": "v24.22.2"
+    },
+    "tracks": [
+      {
+        "trackId": "pluck",
+        "gainDb": -5,
+        "pan": -0.08,
+        "effects": [
+          {
+            "type": "reverb",
+            "roomSize": 0.22,
+            "decaySeconds": 0.35,
+            "wet": 0.08
+          }
+        ],
+        "clippedSamples": 4,
+        "preClipPeakDbfs": 0.474285
+      },
+      {
+        "trackId": "bass",
+        "gainDb": -5,
+        "pan": 0,
+        "effects": [],
+        "clippedSamples": 0,
+        "preClipPeakDbfs": -3.476356
+      },
+      {
+        "trackId": "perc",
+        "gainDb": -7,
+        "pan": 0.06,
+        "effects": [],
+        "clippedSamples": 0,
+        "preClipPeakDbfs": -6.638641
+      }
+    ],
+    "master": {
+      "gainDb": -3,
+      "effects": [],
+      "clippedSamples": 0,
+      "preClipPeakDbfs": -0.317823
+    },
+    "stemAlignment": "trim/pad to master frames; post-track, pre-master gain/effects/ducking"
+  },
+  "mix": {
+    "clippedSamples": 0,
+    "gm": "sum processed independent tracks",
+    "samples": "sum exported track PCM"
+  },
+  "wav": {
+    "file": "a-cafecito-rush.wav",
+    "sha256": "98b52de710f5cd18e288f6f83d224f01a13f9f6666e215de7984576f1b1e1e55",
+    "bytes": 1340684,
+    "frames": 335160,
+    "sampleRate": 44100,
+    "channels": 2,
+    "bitsPerSample": 16,
+    "durationSeconds": 7.6
+  },
+  "audioTool": {
+    "name": "ffmpeg",
+    "version": "6.1.1-3ubuntu5"
+  },
+  "analysis": {
+    "master": {
+      "durationSeconds": 7.6,
+      "frames": 335160,
+      "sampleRate": 44100,
+      "channels": 2,
+      "bitsPerSample": 16,
+      "format": "pcm_s16le",
+      "peakDbfs": -0.317731,
+      "rmsDbfs": -16.750677,
+      "fullScaleSamples": 0,
+      "clipping": false,
+      "integratedLufs": -14.51,
+      "loudnessRangeLu": 0.8,
+      "truePeakDbfs": -0.31
+    },
+    "tracks": []
+  },
+  "mp3": {
+    "file": "a-cafecito-rush.mp3",
+    "sha256": "f31a30a704c6d7953afc18fd706694002ce8918e63463b72d5d86cf300294e70",
+    "bytes": 183737,
+    "codec": "libmp3lame",
+    "bitrateKbps": 192
+  }
+}
