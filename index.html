@@ -401,7 +401,7 @@ handyman:{
 other:{
  en:{label:"",noun:"",hl:["Local {s}, done with care.","{S} for your neighborhood.","{S}, made easy."],desc:"",
   job:"a recent job",tip:"one helpful tip about {s}",tools:"your tools and setup",faq:"what a typical job includes",quote:"a few details about what you need",prep:""},
- es:{label:"",noun:"",hl:["{S} local, hecho con cuidado.","{S} para su vecindario.","{S}, sin complicaciones."],desc:"",
+ es:{label:"",noun:"",hl:["{S} cerca de usted, con atención y cuidado.","{S} para su vecindario.","{S}, sin complicaciones."],desc:"",
   job:"un trabajo reciente",tip:"un consejo útil sobre {s}",tools:"sus herramientas y su equipo",faq:"qué incluye un trabajo típico",quote:"algunos detalles de lo que necesita",prep:""}}
 };
 const CTAS={en:["Message us for a quote","Call or text to book","Book your first visit","Ask about availability"],
@@ -680,23 +680,27 @@ const WEAK=/^(a|al|an|and|as|at|by|con|de|del|e|el|en|for|from|in|la|las|los|mi|
 function dpBreak(c,w,o,s,K){const n=w.length;if(n<K)return null;setF(c,o,s);const sp=c.measureText(" ").width,ww=w.map(x=>c.measureText(x).width),bare=x=>x.replace(/[^\p{L}&]/gu,"");
   const lw=(i,j)=>{let t=(j-i-1)*sp;for(let k=i;k<j;k++)t+=ww[k];return t},T=lw(0,n)/K;
   const cost=(i,j,last)=>{const x=lw(i,j);if(x>o.maxW)return 1e9;let p=((x-T)/T)**2;
-    if(!last){const e=bare(w[j-1]);if(WEAK.test(e))p+=.35;if(ARTICLE.test(e))p+=.35;if(/[,.;:!?]$/.test(w[j-1]))p-=.12}if(last&&j-i===1&&n>2)p+=bare(w[i]).length<=5?.6:.25;return p};
+    if(!last){const e=bare(w[j-1]);if(WEAK.test(e))p+=.35;if(ARTICLE.test(e))p+=.35;if(/[,.;:!?]$/.test(w[j-1]))p-=.12}if(last&&j-i===1&&n>2)p+=bare(w[i]).length<=5?.6:.25;
+    if(w[i]==="·"||w[j-1]==="·")p+=1;return p};
   const B=[...Array(K+1)].map(()=>new Array(n+1).fill(1e9)),P=[...Array(K+1)].map(()=>new Array(n+1).fill(-1));B[0][0]=0;
   for(let k=1;k<=K;k++)for(let j=k;j<=n;j++)for(let i=k-1;i<j;i++){if(B[k-1][i]>=1e9)continue;const v=B[k-1][i]+cost(i,j,k===K&&j===n);if(v<B[k][j]){B[k][j]=v;P[k][j]=i}}
   if(B[K][n]>=1e9){resetLS(c);return null}const L=[];for(let k=K,j=n;k>0;k--){const i=P[k][j];L.unshift(w.slice(i,j).join(" "));j=i}
   const ok=L.every(l=>c.measureText(l).width<=o.maxW+.5);resetLS(c);return ok?{cost:B[K][n],lines:L}:null}
-/* Same line count, better breaks (used for the wordmark). */
-function shapeLines(c,text,f){const K=f.lines.length;if(K<2||/\n/.test(String(text))||/…$/.test(f.lines[K-1]))return balance(c,text,f);
-  const w=clean(f.o.upper?String(text).toUpperCase():text).split(" ");if(w.length>30)return balance(c,text,f);
-  const r=dpBreak(c,w,f.o,f.size,K);return r?Object.assign({},f,{lines:r.lines}):balance(c,text,f)}
+/* Same number of lines per paragraph, better breaks (wordmark, service · area, contacts, and
+   headlines the owner broke by hand). */
+function shapeLines(c,text,f){const n=f.lines.length;if(n<2||/…$/.test(f.lines[n-1]))return f;
+  const T=f.o.upper?String(text).toUpperCase():String(text);setF(c,f.o,f.size);const P=T.split("\n").map(clean).filter(Boolean),K=P.map(p=>wrap(c,p,f.o.maxW).length);resetLS(c);
+  if(K.reduce((a,b)=>a+b,0)!==n)return balance(c,text,f);const L=[];
+  for(let i=0;i<P.length;i++){if(K[i]<2){L.push(P[i]);continue}const w=P[i].split(" "),r=w.length<=30&&dpBreak(c,w,f.o,f.size,K[i]);if(!r)return balance(c,text,f);L.push(...r.lines)}
+  return Object.assign({},f,{lines:L})}
 /* Headline: the largest size that fits the height, then sizes down to 75% of it with the fewest
    lines or one more; keeps the arrangement that reads best (a smaller size costs a little). */
 function setHead(c,text,o,maxH,lh){const hOf=(s,k)=>LCAP*s+(k-1)*s*lh;let f,s=o.max;
   for(let i=0;i<40;i++){f=fit(c,text,Object.assign({},o,{max:s}));if(hOf(f.size,f.lines.length)<=maxH||f.size<=o.min)break;s=Math.max(o.min,f.size-Math.max(2,Math.round(f.size*.05)))}
-  const w=clean(text).split(" "),s0=f.size;if(/\n/.test(String(text))||/…$/.test(f.lines[f.lines.length-1])||w.length>30)return balance(c,text,f);let best=null;
+  const w=clean(text).split(" "),s0=f.size;if(/\n/.test(String(text))||/…$/.test(f.lines[f.lines.length-1])||w.length>30)return shapeLines(c,text,f);let best=null;
   for(let x=s0;x>=Math.max(o.min,s0*.75)-.01;x-=Math.max(1,s0*.02)){const fs=Math.round(x);setF(c,o,fs);const kmin=wrap(c,text,o.maxW).length;resetLS(c);
     for(let k=kmin;k<=Math.min(o.lines,kmin+1);k++){if(hOf(fs,k)>maxH&&!(fs===s0&&k===f.lines.length))continue;const r=dpBreak(c,w,o,fs,k);if(!r)continue;
-      const score=r.cost+2.5*(1-fs/s0)+.1*k;if(!best||score<best.score-1e-9)best={score,lines:r.lines,size:fs}}}
+      const score=r.cost+2.5*(1-fs/s0)+.2*k;if(!best||score<best.score-1e-9)best={score,lines:r.lines,size:fs}}}
   return best?{lines:best.lines,size:best.size,o:f.o}:balance(c,text,f)}
 /* Logo check, cached per image: transparent? light-coloured? its background colour, and the box
    that holds the mark (so empty margins around an uploaded logo can be trimmed). */
@@ -712,10 +716,10 @@ function logoInfo(img){let r=LOGOINFO.get(img);if(r)return r;const iw=img.width,
   LOGOINFO.set(img,r);return r}
 /* Contacts on one line when it stays large, else split between items (never after a "·"), else one per line. */
 const LSEP="   ·   ";
-function ctFit(c,cs,o,sep=LSEP){const one=fit(c,cs.join(sep),Object.assign({},o,{lines:1})),ok=f=>{setF(c,f.o,f.size);const r=f.lines.every(l=>!/…$/.test(l)&&c.measureText(l).width<=f.o.maxW+.5);resetLS(c);return r};
-  if(cs.length<2||(one.size>=o.max*.86&&ok(one)))return one;let best=null;
-  for(let k=1;k<cs.length;k++){const f=fit(c,cs.slice(0,k).join(sep)+"\n"+cs.slice(k).join(sep),Object.assign({},o,{lines:2}));if(ok(f)&&(!best||f.size>best.size))best=f}
-  if(best&&(best.size>one.size+2||!ok(one)))return best;return ok(one)?one:fit(c,cs.join("\n"),Object.assign({},o,{lines:cs.length+1}))}
+function ctFit(c,cs,o,sep=LSEP){const F=(t,lines)=>Object.assign(fit(c,t,Object.assign({},o,{lines})),{text:t}),ok=f=>{setF(c,f.o,f.size);const r=f.lines.every(l=>!/…$/.test(l)&&c.measureText(l).width<=f.o.maxW+.5);resetLS(c);return r};
+  const one=F(cs.join(sep),1);if(ok(one)&&(cs.length<2||one.size>=o.max*.86))return one;let best=null;
+  for(let k=1;k<cs.length;k++){const f=F(cs.slice(0,k).join(sep)+"\n"+cs.slice(k).join(sep),2);if(ok(f)&&(!best||f.size>best.size))best=f}
+  if(best&&(best.size>one.size+2||!ok(one)))return best;return ok(one)?one:F(cs.join("\n"),cs.length*2)}
 /* Monogram seal: initials in the display serif inside a double hairline ring. */
 function seal(c,d,cx,cy,r,ink){c.save();c.strokeStyle=rgba(ink,.6);c.lineWidth=2;c.beginPath();c.arc(cx,cy,r,0,Math.PI*2);c.stroke();
   c.lineWidth=1.25;c.strokeStyle=rgba(ink,.38);c.beginPath();c.arc(cx,cy,r-15,0,Math.PI*2);c.stroke();c.restore();
@@ -731,17 +735,26 @@ function tLuxury(c,d,F){
   /* Photo: ivory page, type on top, picture bleeding off the bottom. No photo: a dusty-tone card, everything centred. */
   c.fillStyle=photo?X.bg:X.tone;c.fillRect(0,0,W,H);
   if(!photo){const g=c.createRadialGradient(cx,H*.42,0,cx,H*.42,H*.75);g.addColorStop(0,"rgba(255,255,255,.22)");g.addColorStop(1,"rgba(255,255,255,0)");c.fillStyle=g;c.fillRect(0,0,W,H)}
-  /* Measure every block first; the headline gets whatever room is left. */
-  const nm=shapeLines(c,d.name,fit(c,d.name,{fam:LUX,w:500,maxW:CW,lines:2,max:48*u,min:24,track:.16,upper:true}));
-  const fo=ctFit(c,[d.label,d.area].filter(Boolean),{fam:SANS,w:400,maxW:CW-96,max:23*u,min:17*u,track:.2,upper:true},"  ·  ");
-  const cta=fit(c,d.cta,{fam:SANS,w:600,maxW:CW-170,lines:1,max:25*u,min:17,track:.16,upper:true}),ctaH=Math.round(cta.size*3.2);
-  const ct=cs.length?ctFit(c,cs,{fam:SANS,w:400,maxW:CW,max:31*u,min:21}):null;
+  /* Measure every block first; the headline gets whatever room is left. Sizes are set for a 360 px
+     wide phone, where a canvas px is a third of a screen px: service · area ≥ 10 px, call to action
+     ≥ 11 px and contacts ≥ 12 px on screen whenever the text allows. */
+  const nmO={fam:LUX,w:500,maxW:CW,lines:2,max:48*u,min:28,track:.16,upper:true};let nm=fit(c,d.name,nmO);
+  if(nm.lines.length>1){const one=fit(c,d.name,Object.assign({},nmO,{lines:1}));if(!/…$/.test(one.lines[0])&&one.size>=nmO.max*.85)nm=one} // keep the wordmark on one line when it costs ≤ 15%
+  nm=shapeLines(c,d.name,nm);
+  const fo0=ctFit(c,[d.label,d.area].filter(Boolean),{fam:SANS,w:400,maxW:CW-96,max:30*u,min:25*u,track:.14,upper:true},"  ·  "),fo=shapeLines(c,fo0.text,fo0);
+  /* Call to action: the largest size whose text, padding and arrow (5.4 × size) fit the measure;
+     a very long one wraps to two even lines in the same button rather than shrinking or being cut. */
+  const co={fam:SANS,w:600,lines:1,track:.12,upper:true,min:25*u};setF(c,co,100);const k=c.measureText(String(d.cta).toUpperCase()).width/100;resetLS(c);
+  const s1=Math.max(co.min,Math.min(33*u,Math.floor(CW/(k+5.4))));let cta=fit(c,d.cta,Object.assign({},co,{max:s1,maxW:CW-Math.ceil(5.4*s1)}));
+  if(/…$/.test(cta.lines[cta.lines.length-1])){const m2=30*u;cta=shapeLines(c,d.cta,fit(c,d.cta,Object.assign({},co,{lines:2,max:m2,maxW:CW-Math.ceil(5.4*m2)})))}
+  const ctaH=Math.round(cta.size*(2.75+(cta.lines.length-1)*1.35));
+  const ct0=cs.length?ctFit(c,cs,{fam:SANS,w:400,maxW:CW,max:37*u,min:27*u}):null,ct=ct0&&shapeLines(c,ct0.text,ct0);
   let em=0,lb=null;
   if(logo){const li=logoInfo(d.img),sw=li.box[2],sh=li.box[3],bw=story?440:380,bh=story?260:220,bare=li.alpha&&!li.light,pad=bare?0:Math.round(bh*.16),s=Math.min((bw-2*pad)/sw,(bh-2*pad)/sh);
     lb={src:li.box,w:sw*s,h:sh*s,pad,fill:bare?null:li.alpha?ink:li.bg};em=lb.h+2*pad}
   else if(!photo)em=2*(story?122:94);
   const G={em:62*v,fo:30*v,hl:76*v,cta:60*v,ct:34*v,media:72*v};
-  const nmH=LCAP*nm.size+(nm.lines.length-1)*nm.size*1.22,foH=CAP*fo.size+(fo.lines.length-1)*fo.size*1.5,ctH=ct?CAP*ct.size+(ct.lines.length-1)*ct.size*1.45:0;
+  const nmH=LCAP*nm.size+(nm.lines.length-1)*nm.size*1.22,foH=CAP*fo.size+(fo.lines.length-1)*fo.size*1.45,ctH=ct?CAP*ct.size+(ct.lines.length-1)*ct.size*1.45:0;
   /* lead: on the photo layout the wordmark opens the page, so its accents (Á, É) stay inside the safe area. */
   const lead=photo?nm.size*.23:0,zoneBot=photo?H-(story?820:520)-G.media:bot;
   const fixed=lead+(em?em+G.em:0)+nmH+G.fo+foH+G.hl+G.cta+ctaH+(ct?G.ct+ctH:0),avail=zoneBot-top-fixed;
@@ -753,14 +766,14 @@ function tLuxury(c,d,F){
   else if(em){seal(c,d,cx,y+em/2,em/2,ink);y+=em+G.em}
   /* Masthead: wordmark, then service · area on a hairline. */
   y=drawC(c,nm,cx,y-off(nm.size),ink,1.22)+G.fo;
-  const fb=drawC(c,fo,cx,y,rgba(ink,.68),1.5),fw=inkW(fo,fo.lines[0]),rl=(CW-fw)/2-30,ry=Math.round(fb-fo.size*CAP/2);
+  const fb=drawC(c,fo,cx,y,rgba(ink,.8),1.45),fw=inkW(fo,fo.lines[0]),rl=(CW-fw)/2-30,ry=Math.round(fb-fo.size*CAP/2);
   if(fo.lines.length===1&&rl>=48){c.fillStyle=rgba(ink,.3);c.fillRect(M,ry,rl,1.5);c.fillRect(W-M-rl,ry,rl,1.5)}
   /* Headline, then a quiet outlined call to action and the contact line. */
   y=drawC(c,hl,cx,fb+G.hl-off(hl.size),ink,1.06)+G.cta;
-  const tw=inkW(cta,cta.lines[0]),aw=Math.round(cta.size*1.9),gap=Math.round(cta.size*.9),px=Math.round(cta.size*1.8),bw=Math.min(CW,tw+gap+aw+2*px),bx=Math.round(cx-bw/2);
-  c.strokeStyle=ink;c.lineWidth=2;c.strokeRect(bx+1,y+1,bw-2,ctaH-2);bound(y,y+ctaH);
-  draw(c,cta,bx+px,y+(ctaH-cta.size*CAP)/2,ink);harrow(c,bx+px+tw+gap,y+ctaH/2,aw,ink,Math.max(1.5,cta.size*.075));
-  y+=ctaH;if(ct)y=drawC(c,ct,cx,y+G.ct,rgba(ink,.82),1.45);
+  const tw=Math.max(...cta.lines.map(l=>inkW(cta,l))),aw=Math.round(cta.size*1.6),gap=Math.round(cta.size*.8),px=Math.round(cta.size*1.5),bw=Math.min(CW,tw+gap+aw+2*px),bx=Math.round(cx-bw/2),lw=Math.max(2,cta.size*.08);
+  c.strokeStyle=ink;c.lineWidth=lw;c.strokeRect(bx+lw/2,y+lw/2,bw-lw,ctaH-lw);bound(y,y+ctaH);
+  const cbh=CAP*cta.size+(cta.lines.length-1)*cta.size*1.35;drawC(c,cta,bx+px+tw/2,y+(ctaH-cbh)/2,ink,1.35);harrow(c,bx+px+tw+gap,y+ctaH/2,aw,ink,Math.max(1.75,cta.size*.07));
+  y+=ctaH;if(ct)y=drawC(c,ct,cx,y+G.ct,rgba(ink,.9),1.45);
   /* The picture bleeds to the bottom edge; in Stories the reply bar only ever covers picture, never text. */
   if(photo){const mT=Math.round(y+G.media);coverAt(c,d.img,0,mT,W,H-mT)}}
 
@@ -972,6 +985,11 @@ async function selfTest(){
   await run("Regression · Spanish speaks to customers as usted, never tú",async()=>{const re=/\b(m[aá]ndame|ll[aá]mame|escr[ií]beme|av[ií]same|cont[aá]ctanos|ll[aá]manos|escr[ií]benos|m[aá]ndanos|tienes|quieres|necesitas|puedes|estás|tu (casa|carro|jard[ií]n|patio|cita)|te (mando|escribo|recuerdo|agradezco))\b/i;
     const es=[];ORDER.forEach(svc=>{const d=deriveData(Object.assign({},DEF,full,{lang:"es",service:svc}),null),C=buildCopy(d);es.push(C.bio,C.about,...C.msgs.map(m=>m.x),...C.ideas.flatMap(i=>[i.w,i.h,i.c]),...d.hls,...d.ctas,d.desc)});
     es.push(...Object.values(UI.es).filter(v=>typeof v==="string"));const hit=es.find(t=>re.test(t));return[!hit,hit&&hit.slice(0,90)]});
+  await run("Regression · Spanish headlines for typed-in services read correctly for feminine, masculine and plural services",async()=>{const bad=[];
+    const want={"Clínica estética":"Clínica estética cerca de usted, con atención y cuidado.","Diseño de interiores":"Diseño de interiores cerca de usted, con atención y cuidado.","Bienes raíces":"Bienes raíces cerca de usted, con atención y cuidado."};
+    for(const[other,first]of Object.entries(want)){const d=deriveData(Object.assign({},DEF,{lang:"es",service:"other",other}),null);if(d.hls[0]!==first)bad.push(d.hls[0]);
+      d.hls.forEach(h=>{if(/\b(hech[oa]s?|list[oa]s?|nuev[oa]s?|buen[oa]s?|complet[oa]s?|local(es)?)\b/i.test(h.replace(other,"")))bad.push(h)})}
+    return[!bad.length,bad.slice(0,3).join(" | ")]});
   await run("Regression · Sharing falls back to saving when sharing is missing or fails, stays quiet on cancel",async()=>{
     const f=new File([new Uint8Array([137,80,78,71])],"t.png",{type:"image/png"});const err=n=>Object.assign(new Error(n),{name:n});let got=null;
     const cases=[[null,"fallback"],[{},"fallback"],[{share:async()=>{}},"fallback"],[{canShare:()=>false,share:async()=>{}},"fallback"],[{canShare:()=>{throw err("TypeError")},share:async()=>{}},"fallback"],
@@ -1010,7 +1028,7 @@ async function selfTest(){
   const luxSets=[["spa/en",{name:"Aura Skin Studio",service:"other",other:"Med spa",area:"Pasadena",phone:"6265550142",handle:"auraskin",lang:"en",hlEdited:true,headline:"Skin care, thoughtfully done."}],
     ["realtor/es",{name:"Haven Bienes Raíces",service:"other",other:"Bienes raíces",area:"San Marino",phone:"6265550187",web:"havenhomes.com",lang:"es",ctaIdx:3,hlEdited:true,headline:"Casas con carácter y mucha luz."}],
     ["long/en",Object.assign({},full,longBiz,{lang:"en"})],["long/es",Object.assign({},full,longBiz,{lang:"es"})],
-    ["max/es",{name:"Clínica de Estética Integral María Fernanda y Asociados",service:"other",other:"Tratamientos faciales y corporales",area:"Ciudad Satélite, Naucalpan, Tlalnepantla y Cuautitlán",phone:"+52 55 1234 5678 ext 123",handle:"clinicaesteticaintegralmariafernanda",web:"clinicaesteticaintegralmariafernanda.com.mx",email:"citas@clinicaesteticaintegralmariafernanda.mx",lang:"es",hlEdited:true,headline:"Tratamientos faciales personalizados,\nen un espacio tranquilo y discreto para usted.",ctaEdited:true,cta:"Llámenos hoy para agendar su valoración"}]];
+    ["max/es",{name:"Clínica de Estética Integral María Fernanda y Asociados",service:"other",other:"Tratamientos faciales, corporales y más",area:"Ciudad Satélite, Naucalpan, Tlalnepantla y Cuautitlán",phone:"+52 55 1234 5678 ext 123",handle:"clinicaesteticaintegralmariafernandayasociados",web:"clinicaesteticaintegralmariafernanda.com.mx/reservaciones",email:"citas.clinicaesteticaintegral@mariafernandayasociados.mx",lang:"es",hlEdited:true,headline:"Tratamientos faciales personalizados,\nen un espacio tranquilo y discreto para usted.",ctaEdited:true,cta:"Llámenos hoy para agendar su valoración"}]];
   const luxImgs=[["none",null,"photo"],["photo",photo,"photo"],["portrait",portrait,"photo"],["logo",logo,"logo"],["solid-logo",solidLogo,"logo"]];
   const luxRender=(v,img,kind,H)=>{const cv=document.createElement("canvas");cv.width=1080;cv.height=H;const c=cv.getContext("2d"),log=spy(c),d=deriveData(Object.assign({},DEF,v,{kind}),img);return{cv,log,d,b:render(c,1080,H,d,LUXI)}};
   await run("Luxury: EN/ES × post/story × no image/photo/portrait/logo/solid logo × normal/long/maximum details: text stays in the safe area and side margins, never on the photo, nothing cut off",async()=>{const bad=[];let n=0;
@@ -1038,6 +1056,13 @@ async function selfTest(){
       const last=hl[hl.length-1]||"",lone=hl.length>1&&!/\s/.test(last)&&bare(last).length<=5,weak=hl.slice(0,-1).some(l=>ARTICLE.test(bare(l.split(" ").pop())));
       if(lone||weak)bad.push(`${lang}/${service}/${i}/${H}: "${hl.join(" / ")}"`)}
     return[!bad.length,bad.slice(0,3).join(" | ")||n+" headlines"]});
+  await run("Luxury: readable on a 360 px wide phone: contacts ≥ 12 px, call to action ≥ 11 px, service · area ≥ 10 px on screen (realistic details); long details never below 8 px",async()=>{const bad=[],css=r=>+(r.font.match(/([\d.]+)px/)||[0,0])[1]/3;
+    for(const[sn,v]of luxSets.slice(0,2))for(const[vn,img,kind]of luxImgs)for(const H of[1350,1920]){const{log,d}=luxRender(v,img,kind,H),cts=clean(contacts(d).join(" · ")),fol=clean([d.label,d.area].filter(Boolean).join(" · ").toUpperCase());
+      const min={contact:12,cta:11,folio:10},got={contact:99,cta:99,folio:99};
+      log.text.forEach(r=>{const t=clean(r.t);if(/^600 /.test(r.font))got.cta=Math.min(got.cta,css(r));else if(/Inter/.test(r.font)){if(cts.includes(t))got.contact=Math.min(got.contact,css(r));else if(fol.includes(t))got.folio=Math.min(got.folio,css(r))}});
+      for(const k in min)if(got[k]<min[k]-.05)bad.push(`${sn}/${vn}/${H}: ${k} ${got[k].toFixed(1)} px`)}
+    for(const[sn,v]of luxSets.slice(2))for(const H of[1350,1920]){const{log}=luxRender(v,photo,"photo",H);log.text.forEach(r=>{if(/Inter/.test(r.font)&&css(r)<8-.05)bad.push(`${sn}/${H}: "${r.t.slice(0,24)}" ${css(r).toFixed(1)} px`)})}
+    return[!bad.length,bad.slice(0,3).join(" | ")]});
   await run("Luxury: restrained colour: muted plate tint (≤ 30% saturation) and readable text (WCAG AA) for every palette",async()=>{const bad=[];
     const lum=h=>{const v=[1,3,5].map(i=>parseInt(h.slice(i,i+2),16)/255).map(x=>x<=.03928?x/12.92:Math.pow((x+.055)/1.055,2.4));return .2126*v[0]+.7152*v[1]+.0722*v[2]};
     const cr=(a,b)=>{const x=lum(a),y=lum(b);return(Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
