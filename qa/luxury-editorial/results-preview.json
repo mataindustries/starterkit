@@ -1,0 +1,369 @@
+{
+  "url": "https://claude-happy-hawking-061jpq.nextcustomer.pages.dev",
+  "page": {
+    "bytes": 376070,
+    "fonts": 7
+  },
+  "chromium": "153.0.8010.12",
+  "renderMs": {
+    "editorial": 4.2,
+    "poster": 4,
+    "grid": 8.4,
+    "luxury": 8.7
+  },
+  "baseline": null,
+  "passed": 70,
+  "total": 70,
+  "results": [
+    {
+      "name": "Deployed copy · https://claude-happy-hawking-061jpq.nextcustomer.pages.dev answers 200 with the production headers",
+      "pass": true,
+      "info": "200 text/html; charset=utf-8"
+    },
+    {
+      "name": "Deployed copy · serves the same index.html as this checkout",
+      "pass": true,
+      "info": "376070 bytes"
+    },
+    {
+      "name": "#selftest · UI text: Spanish covers every English string",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Service copy: every service has complete EN + ES",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Copy: 5 messages, 7 ideas, bio ≤ 150 chars, no broken blanks (24 combinations)",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Honesty: no invented offers, discounts, rankings or star ratings",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Review requests: no incentives and no “only if you were happy” gating",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Regression · Every trade gets its own quote question and appointment prep (EN/ES)",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Regression · Bio keeps a short description line for every trade instead of dropping it",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Regression · Spanish speaks to customers as usted, never tú",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Regression · Spanish headlines for typed-in services read correctly for feminine, masculine and plural services",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Regression · Sharing falls back to saving when sharing is missing or fails, stays quiet on cancel",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Camera capture: separate rear-camera input leaves gallery upload available",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Marketing templates: no em dashes in generated captions, bios, messages or headlines",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Contact info: nothing appears that the owner didn't type",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Helpers: phone, handle, website and initials formatting",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Privacy: page policy blocks every network request",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Fonts: all seven embedded typefaces loaded",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Text fitting: very long text stays inside its box",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Graphics: 4 styles × post/story × no image/photo/logo × EN/ES, long names, all inside safe areas",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Luxury: EN/ES × post/story × no image/photo/portrait/logo/solid logo × normal/long/maximum details: text stays in the safe area and side margins, never on the photo, nothing cut off",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Luxury: draws only what the owner typed (no added claims, prices, badges or fixed slogans)",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Luxury: edited headline and call to action appear on post and story (EN/ES); defaults show when not edited",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Luxury: headline line breaks read naturally: no short word alone on the last line, no line ending in “the”, “your”, “la”, “su”… (every built-in headline, EN/ES, post/story)",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Luxury: readable on a 360 px wide phone: contacts ≥ 12 px, call to action ≥ 11 px, service · area ≥ 10 px on screen (realistic details); long details never below 8 px",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Luxury: restrained colour: muted plate tint (≤ 30% saturation) and readable text (WCAG AA) for every palette",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Luxury: logos are trimmed to their mark; transparent logos sit on the card, solid ones keep their own background",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Luxury: listed in the style picker in EN/ES; saved style numbers keep their meaning; unknown ones fall back to Editorial",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Regression · Before & after: empty, side-by-side and stacked layouts, EN/ES, inside the frame, exports a 1080 × 1350 PNG",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Export: post saves as a 1080 × 1350 PNG",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Export: story saves as a 1080 × 1920 PNG",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Luxury export: post saves as a 1080 × 1350 PNG, with and without a photo",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Luxury export: story saves as a 1080 × 1920 PNG, with and without a photo",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · no page errors and no outside requests",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "UI 320px EN · picker lists Editorial,Poster,Grid,Luxury, Luxury selected, equal columns, labels not clipped, no sideways scroll",
+      "pass": true,
+      "info": "columns 67.8/67.8/67.8/67.8px"
+    },
+    {
+      "name": "UI 320px EN · Save image (post) downloads a real 1080 × 1350 PNG named …-post-luxury.png",
+      "pass": true,
+      "info": "aura-skin-studio-post-luxury.png 1080×1350"
+    },
+    {
+      "name": "UI 320px EN · Save image (story) downloads a real 1080 × 1920 PNG named …-story-luxury.png",
+      "pass": true,
+      "info": "aura-skin-studio-story-luxury.png 1080×1920"
+    },
+    {
+      "name": "UI 320px EN · after reload, Luxury, the edited headline and the CTA are still there",
+      "pass": true,
+      "info": "tpl=3"
+    },
+    {
+      "name": "UI 320px EN · no page errors, no outside requests",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "UI 320px ES · picker lists Editorial,Cartel,Cuadrícula,Lujo, Luxury selected, equal columns, labels not clipped, no sideways scroll",
+      "pass": true,
+      "info": "columns 67.8/67.8/67.8/67.8px"
+    },
+    {
+      "name": "UI 320px ES · Save image (post) downloads a real 1080 × 1350 PNG named …-post-luxury.png",
+      "pass": true,
+      "info": "aura-skin-studio-post-luxury.png 1080×1350"
+    },
+    {
+      "name": "UI 320px ES · Save image (story) downloads a real 1080 × 1920 PNG named …-story-luxury.png",
+      "pass": true,
+      "info": "aura-skin-studio-story-luxury.png 1080×1920"
+    },
+    {
+      "name": "UI 320px ES · after reload, Luxury, the edited headline and the CTA are still there",
+      "pass": true,
+      "info": "tpl=3"
+    },
+    {
+      "name": "UI 320px ES · no page errors, no outside requests",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "UI 360px EN · picker lists Editorial,Poster,Grid,Luxury, Luxury selected, equal columns, labels not clipped, no sideways scroll",
+      "pass": true,
+      "info": "columns 73.3/73.3/73.3/73.3px"
+    },
+    {
+      "name": "UI 360px EN · Save image (post) downloads a real 1080 × 1350 PNG named …-post-luxury.png",
+      "pass": true,
+      "info": "aura-skin-studio-post-luxury.png 1080×1350"
+    },
+    {
+      "name": "UI 360px EN · Save image (story) downloads a real 1080 × 1920 PNG named …-story-luxury.png",
+      "pass": true,
+      "info": "aura-skin-studio-story-luxury.png 1080×1920"
+    },
+    {
+      "name": "UI 360px EN · after reload, Luxury, the edited headline and the CTA are still there",
+      "pass": true,
+      "info": "tpl=3"
+    },
+    {
+      "name": "UI 360px EN · no page errors, no outside requests",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "UI 360px ES · picker lists Editorial,Cartel,Cuadrícula,Lujo, Luxury selected, equal columns, labels not clipped, no sideways scroll",
+      "pass": true,
+      "info": "columns 73.3/73.3/73.3/73.3px"
+    },
+    {
+      "name": "UI 360px ES · Save image (post) downloads a real 1080 × 1350 PNG named …-post-luxury.png",
+      "pass": true,
+      "info": "aura-skin-studio-post-luxury.png 1080×1350"
+    },
+    {
+      "name": "UI 360px ES · Save image (story) downloads a real 1080 × 1920 PNG named …-story-luxury.png",
+      "pass": true,
+      "info": "aura-skin-studio-story-luxury.png 1080×1920"
+    },
+    {
+      "name": "UI 360px ES · after reload, Luxury, the edited headline and the CTA are still there",
+      "pass": true,
+      "info": "tpl=3"
+    },
+    {
+      "name": "UI 360px ES · no page errors, no outside requests",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "UI 412px EN · picker lists Editorial,Poster,Grid,Luxury, Luxury selected, equal columns, labels not clipped, no sideways scroll",
+      "pass": true,
+      "info": "columns 86.3/86.3/86.3/86.3px"
+    },
+    {
+      "name": "UI 412px EN · Save image (post) downloads a real 1080 × 1350 PNG named …-post-luxury.png",
+      "pass": true,
+      "info": "aura-skin-studio-post-luxury.png 1080×1350"
+    },
+    {
+      "name": "UI 412px EN · Save image (story) downloads a real 1080 × 1920 PNG named …-story-luxury.png",
+      "pass": true,
+      "info": "aura-skin-studio-story-luxury.png 1080×1920"
+    },
+    {
+      "name": "UI 412px EN · after reload, Luxury, the edited headline and the CTA are still there",
+      "pass": true,
+      "info": "tpl=3"
+    },
+    {
+      "name": "UI 412px EN · no page errors, no outside requests",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "UI 412px ES · picker lists Editorial,Cartel,Cuadrícula,Lujo, Luxury selected, equal columns, labels not clipped, no sideways scroll",
+      "pass": true,
+      "info": "columns 86.3/86.3/86.3/86.3px"
+    },
+    {
+      "name": "UI 412px ES · Save image (post) downloads a real 1080 × 1350 PNG named …-post-luxury.png",
+      "pass": true,
+      "info": "aura-skin-studio-post-luxury.png 1080×1350"
+    },
+    {
+      "name": "UI 412px ES · Save image (story) downloads a real 1080 × 1920 PNG named …-story-luxury.png",
+      "pass": true,
+      "info": "aura-skin-studio-story-luxury.png 1080×1920"
+    },
+    {
+      "name": "UI 412px ES · after reload, Luxury, the edited headline and the CTA are still there",
+      "pass": true,
+      "info": "tpl=3"
+    },
+    {
+      "name": "UI 412px ES · no page errors, no outside requests",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Upload photo-interior.jpg · detected as photo, Luxury preview changes, story still saves 1080 × 1920",
+      "pass": true,
+      "info": "kind=photo 1080×1920"
+    },
+    {
+      "name": "Upload logo-alpha.png · detected as logo, Luxury preview changes, story still saves 1080 × 1920",
+      "pass": true,
+      "info": "kind=logo 1080×1920"
+    },
+    {
+      "name": "Upload logo-white.jpg · detected as logo, Luxury preview changes, story still saves 1080 × 1920",
+      "pass": true,
+      "info": "kind=logo 1080×1920"
+    },
+    {
+      "name": "Upload · removing the image brings back the no-photo Luxury card",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Upload · no page errors, no outside requests",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Timing · Luxury redraw (post + story + thumbnail) costs no more than 2× the slowest existing style",
+      "pass": true,
+      "info": "ms: editorial 4.2, poster 4.0, grid 8.4, luxury 8.7"
+    }
+  ]
+}
