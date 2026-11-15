@@ -6,8 +6,20 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; font-src data:; img-src data: blob:; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#F3EEE6">
-<meta name="description" content="Free starter kit for local service businesses. Make a flyer, an Instagram story, your bio, customer texts and a week of post ideas on your phone, in English or Spanish.">
-<title>Starter Kit · Free marketing for local service businesses</title>
+<meta name="description" content="NextCustomer is a free marketing kit for local service businesses. Make a post, an Instagram story, your bio, customer texts and a week of post ideas on your phone, in English or Spanish.">
+<meta name="application-name" content="NextCustomer">
+<meta name="apple-mobile-web-app-title" content="NextCustomer">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NextCustomer">
+<meta property="og:title" content="NextCustomer · Free marketing kit for local service businesses">
+<meta property="og:description" content="Make a post, a story, your bio, customer texts and a week of post ideas on your phone, in English or Spanish. No sign-up. Nothing leaves your phone.">
+<meta property="og:url" content="https://nextcustomer.pages.dev/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_MX">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NextCustomer · Free marketing kit for local service businesses">
+<meta name="twitter:description" content="Make a post, a story, your bio, customer texts and a week of post ideas on your phone, in English or Spanish.">
+<title>NextCustomer · Free marketing kit for local service businesses</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23171512'/%3E%3Cpath d='M14 40a18 18 0 0 1 36 0z' fill='%23E2542B'/%3E%3C/svg%3E">
 <style>
 /* Inter & Inter Display (rsms.me/inter) and Lora (Cyreal), SIL Open Font License 1.1. Latin subsets, embedded so nothing is fetched. */
@@ -33,7 +45,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .top{position:sticky;top:0;z-index:30;background:rgba(243,238,230,.9);-webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
 .top .in{max-width:560px;height:60px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:10px;font:600 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase}
+.brand{display:flex;align-items:center;gap:10px;font:700 18px/1 var(--display);letter-spacing:-.015em}
 .brand i{width:26px;height:26px;border-radius:50%;background:var(--ink);position:relative;overflow:hidden;flex:none}
 .brand i:after{content:"";position:absolute;left:5px;right:5px;top:13px;height:16px;border-radius:16px 16px 0 0;background:var(--accent)}
 .seg{display:inline-flex;border:1px solid var(--line2);border-radius:999px;padding:3px;background:var(--card)}
@@ -152,7 +164,7 @@ mark{background:rgba(226,84,43,.14);color:inherit;border-radius:4px;padding:0 2p
 </head>
 <body>
 <header class="top"><div class="in">
-  <div class="brand"><i aria-hidden="true"></i><span data-i="appName">Starter Kit</span></div>
+  <div class="brand"><i aria-hidden="true"></i><span data-i="appName">NextCustomer</span></div>
   <div class="seg" role="group" aria-label="Language / Idioma">
     <button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="es" aria-pressed="false">ES</button>
   </div>
@@ -289,7 +301,7 @@ const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>Array.from(r.quer
    by hand; nothing is generated at runtime and nothing leaves the device.
    ===================================================================== */
 const UI={
-en:{appName:"Starter Kit",eyebrow:"Free · No sign-up · Stays on your phone",
+en:{appName:"NextCustomer",docTitle:"NextCustomer · Free marketing kit for local service businesses",eyebrow:"Free marketing kit · No sign-up · Stays on your phone",
 h1:"Your business, ready to post in <em>five minutes.</em>",
 lede:"A flyer, a story, your bio, customer texts and a week of post ideas. All from a few details.",
 examples:"Examples",s1:"Your business",s2:"How customers reach you",s3:"Logo or photo",optional:"Optional",
@@ -314,7 +326,7 @@ persT:"Personalize",l_owner:"Your first name",l_customer:"Customer's name",l_rev
 persHint:"Optional. Anything in [brackets] is a blank to fill in before you send.",
 weekIntro:"Seven posts you can make with just your phone. No ad budget needed.",
 postL:"Post",howL:"How",capL:"Caption starter",day:"Day",
-made:"Made with ENM Ventures",local:"Your info stays on this device.",clear:"Clear my info",clear2:"Tap again to clear everything",cleared:"Cleared",
+made:"NextCustomer · Made with ENM Ventures",local:"Your info stays on this device.",clear:"Clear my info",clear2:"Tap again to clear everything",cleared:"Cleared",
 inapp:"To save images, open this page in Chrome: tap ⋮ then “Open in Chrome”.",
 noContact:"Tip: add a phone number or handle (step 02) so customers can reach you.",
 g_area:"Service area",g_call:"Call / Text",g_online:"Online",g_email:"Email",g_before:"Before",g_after:"After",
@@ -322,7 +334,7 @@ openImg:"Trouble saving? Open the image",holdHint:"Press and hold the image, the
 baT:"Before & after post",baHint:"Use two real photos of the same job, taken from the same spot. Don't edit the after photo to look better than the work. Ask the client first, and leave out faces, house numbers and license plates. These photos aren't saved after you close the page.",
 baBefore:"+ Before photo",baAfter:"+ After photo",cap_ba:"Before & after · 1080 × 1350",baNeed:"Add a before photo and an after photo first.",
 yourBiz:"Your business"},
-es:{appName:"Kit de Inicio",eyebrow:"Gratis · Sin registrarse · Todo se queda en su teléfono",
+es:{appName:"NextCustomer",docTitle:"NextCustomer · Kit de marketing gratis para negocios locales de servicios",eyebrow:"Kit de marketing gratis · Sin registro · Se queda en su teléfono",
 h1:"Su negocio, listo para publicar en <em>cinco minutos.</em>",
 lede:"Un flyer, una historia, su perfil, mensajes para clientes y una semana de ideas para publicar, con solo unos datos.",
 examples:"Ejemplos",s1:"Su negocio",s2:"Cómo lo contactan",s3:"Logo o foto",optional:"Opcional",
@@ -347,7 +359,7 @@ persT:"Personalizar",l_owner:"Su nombre",l_customer:"Nombre del cliente",l_revie
 persHint:"Opcional. Lo que está entre [corchetes] es un espacio para llenar antes de enviar.",
 weekIntro:"Siete publicaciones que puede hacer solo con su teléfono. Sin pagar anuncios.",
 postL:"Qué publicar",howL:"Cómo",capL:"Texto para empezar",day:"Día",
-made:"Hecho con ENM Ventures",local:"Sus datos se quedan en este dispositivo.",clear:"Borrar mis datos",clear2:"Toque otra vez para borrar todo",cleared:"Datos borrados",
+made:"NextCustomer · Hecho con ENM Ventures",local:"Sus datos se quedan en este dispositivo.",clear:"Borrar mis datos",clear2:"Toque otra vez para borrar todo",cleared:"Datos borrados",
 inapp:"Para guardar imágenes, abra esta página en Chrome: toque ⋮ y luego “Abrir en Chrome”.",
 noContact:"Consejo: agregue un teléfono o una cuenta (paso 02) para que los clientes lo puedan contactar.",
 g_area:"Zona de servicio",g_call:"Llame o escriba",g_online:"En línea",g_email:"Correo",g_before:"Antes",g_after:"Después",
@@ -706,7 +718,7 @@ function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clea
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 const markBlanks=s=>esc(s).replace(/\[[^\]\n]{1,40}\]/g,"<mark>$&</mark>");
 
-function applyI18n(){const S=T();document.documentElement.lang=st.lang;
+function applyI18n(){const S=T();document.documentElement.lang=st.lang;document.title=S.docTitle;
   $$("[data-i]").forEach(el=>{const v=S[el.dataset.i];if(typeof v==="string")el.textContent=v});
   $$("[data-ih]").forEach(el=>{el.innerHTML=S[el.dataset.ih]});
   $$("[data-ph]").forEach(el=>{el.placeholder=S[el.dataset.ph]});
@@ -829,7 +841,7 @@ if(st.screen==="kit"&&clean(st.name))show("kit");else{st.screen="setup";$("#setu
    SELF-TEST · open this page with #selftest at the end of the address.
    ===================================================================== */
 async function selfTest(){
-  const box=$("#selftest");box.hidden=false;box.innerHTML="<h2>Self-test</h2><p>Running…</p>";
+  const box=$("#selftest");box.hidden=false;box.innerHTML="<h2>NextCustomer self-test</h2><p>Running…</p>";
   const R=[];const ok=(n,c,info)=>R.push({n,pass:!!c,info:c?"":(info||"")});
   const run=async(n,fn)=>{try{const[r,info]=await fn();ok(n,r,info)}catch(e){ok(n,false,e.message)}};
   const full={name:"Bright Path Cleaning",area:"Glendora",phone:"6265550123",handle:"brightpath",web:"https://www.brightpath.com/",email:"hi@brightpath.com",owner:"Sergio",customer:"María",review:"https://g.page/r/example",other:"pool cleaning"};
@@ -898,7 +910,7 @@ async function selfTest(){
   await run("Export: post saves as a 1080 × 1350 PNG",()=>exp(1080,1350));
   await run("Export: story saves as a 1080 × 1920 PNG",()=>exp(1080,1920));
   const pass=R.filter(r=>r.pass).length;window.__selftest={pass,total:R.length,results:R};
-  box.innerHTML=`<h2>Self-test</h2><p><b>${pass} of ${R.length} passed</b> · ${esc(navigator.userAgent.replace(/^.*?\) /,""))}</p><ol>${R.map(r=>`<li class="${r.pass?"pass":"fail"}"><b>${r.pass?"✓":"✗"}</b>${esc(r.n)}${r.info?`<small>${esc(String(r.info))}</small>`:""}</li>`).join("")}</ol><p><a href="${esc(location.pathname)}" style="color:inherit">← Back to the app</a></p>`;
+  box.innerHTML=`<h2>NextCustomer self-test</h2><p><b>${pass} of ${R.length} passed</b> · ${esc(navigator.userAgent.replace(/^.*?\) /,""))}</p><ol>${R.map(r=>`<li class="${r.pass?"pass":"fail"}"><b>${r.pass?"✓":"✗"}</b>${esc(r.n)}${r.info?`<small>${esc(String(r.info))}</small>`:""}</li>`).join("")}</ol><p><a href="${esc(location.pathname)}" style="color:inherit">← Back to the app</a></p>`;
 }
 })();
 </script>

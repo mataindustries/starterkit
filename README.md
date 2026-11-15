@@ -1,4 +1,6 @@
-# ENM Starter Kit — free marketing tool for new local service businesses
+# NextCustomer · free marketing kit for local service businesses
+
+Live at https://nextcustomer.pages.dev. (The repository is still named `starterkit`, the app's earlier working name.)
 
 One file: `index.html` (about 300 KB). No login, database, tracking, AI, paid APIs, or outside requests. The fonts are built into the file, so the page works the same on every phone and never loads anything from another server.
 
@@ -54,4 +56,4 @@ Before sharing publicly: run `#selftest` in Android Chrome, export and open a po
 - In Stories, the bottom ~340 px is deliberately left empty because Instagram's reply bar covers it.
 - Fonts: Inter, Inter Display and Lora are used under the SIL Open Font License 1.1 and subset to Latin characters. Other scripts fall back to the phone's own fonts.
 
-Made with ENM Ventures.
+NextCustomer · Made with ENM Ventures.
