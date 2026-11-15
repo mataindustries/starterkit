@@ -1,19 +1,25 @@
 {
+  "url": null,
   "page": {
-    "bytes": 376070,
+    "bytes": 415323,
     "fonts": 7
   },
   "chromium": "153.0.8010.12",
   "renderMs": {
-    "editorial": 6.4,
-    "poster": 5.5,
-    "grid": 8.4,
-    "luxury": 7.2
+    "editorial": 4,
+    "poster": 4.1,
+    "grid": 9,
+    "luxury": 10.1
   },
-  "baseline": "main-index.html",
-  "passed": 70,
-  "total": 70,
+  "baseline": "main.html",
+  "passed": 170,
+  "total": 170,
   "results": [
+    {
+      "name": "Static · no outside resources or network APIs in index.html (fetch, XHR, sockets, beacons, imports, remote src/href), 7 embedded fonts, page policy unchanged",
+      "pass": true,
+      "info": "none found; 415323 bytes (+39253 vs baseline)"
+    },
     {
       "name": "#selftest · UI text: Spanish covers every English string",
       "pass": true,
@@ -85,6 +91,41 @@
       "info": ""
     },
     {
+      "name": "#selftest · Goals · three goals named in EN and ES (Sell now / Conseguir clientes, Show proof / Mostrar mi trabajo, Build brand / Darme a conocer), each with its own headline and call-to-action ideas",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Goals · every goal × service × EN/ES × full/minimal details (72 combinations) makes 7 complete ideas, none repeated, with no broken blanks",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Goals · the three plans are really different: no idea, how-to or caption shared between goals or copied from the general plan, and each mixes at least 5 kinds of post",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Goals · honest copy: no invented discounts, prices, urgency, testimonials, results, ratings or credentials (EN/ES); customer words appear only as [blanks]",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Goals · Spanish speaks as usted, writes “del”/“al” (never “de el”), and typed-in services of any gender or number never sit next to an article or adjective that would have to agree (EN never says “a real estate”)",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Goals · the graphics headline and call to action follow the goal, but anything the owner typed stays; bio, about and messages are the same for every goal",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Goals · with no goal (or a saved value this version doesn't know) the kit is exactly the original: same Week 1, headline, call to action, bio and messages",
+      "pass": true,
+      "info": ""
+    },
+    {
       "name": "#selftest · Privacy: page policy blocks every network request",
       "pass": true,
       "info": ""
@@ -141,6 +182,16 @@
     },
     {
       "name": "#selftest · Luxury: listed in the style picker in EN/ES; saved style numbers keep their meaning; unknown ones fall back to Editorial",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Goals · graphics: every goal headline and call to action is drawn in full and inside the safe area in all 4 styles (goal × service × EN/ES × style; post or story; no image, photo or logo; very long details)",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Goals · Luxury: every goal headline breaks naturally (EN/ES, post and story, with and without a photo): no short word alone at the end, no line ending in “the”, “your”, “la”, “su”…",
       "pass": true,
       "info": ""
     },
@@ -325,6 +376,451 @@
       "info": ""
     },
     {
+      "name": "Goals 320px EN · selector shows Sell now,Show proof,Build brand: none picked, 3 equal columns, taps ≥ 48 px tall, labels fit, above the tabs on the first screen, no sideways scroll",
+      "pass": true,
+      "info": "93.3 × 50 px, 13px text"
+    },
+    {
+      "name": "Goals 320px EN · before picking a goal: Week 1 is the general plan, the usual headline and CTA, the \"optional\" hint",
+      "pass": true,
+      "info": "Introduce yourself"
+    },
+    {
+      "name": "Goals 320px EN · tap \"Sell now\": Week 1 has its own 7 ideas, headline and CTA switch to its suggestions, the graphics redraw",
+      "pass": true,
+      "info": "Spotlight one service · “Regular or deep clean? Book it by message.” · Ask for your quote"
+    },
+    {
+      "name": "Goals 320px EN · tap \"Show proof\": Week 1 has its own 7 ideas, headline and CTA switch to its suggestions, the graphics redraw",
+      "pass": true,
+      "info": "One finished job · “See the work before you book.” · Ask to see more of our work"
+    },
+    {
+      "name": "Goals 320px EN · tap \"Build brand\": Week 1 has its own 7 ideas, headline and CTA switch to its suggestions, the graphics redraw",
+      "pass": true,
+      "info": "Who's behind the business · “Hi, neighbors. Nice to meet you.” · Follow for more tips"
+    },
+    {
+      "name": "Goals 320px EN · the three goals give three different weeks, none the general plan",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 320px EN · after typing a headline, switching goal keeps it (CTA and Week 1 still follow the goal)",
+      "pass": true,
+      "info": "Week 1 updated. What you typed stays."
+    },
+    {
+      "name": "Goals 320px EN · “Another idea” for the CTA cycles through the goal's own suggestions",
+      "pass": true,
+      "info": "Book an appointment"
+    },
+    {
+      "name": "Goals 320px EN · Save image (post) with a goal: real 1080 × 1350 PNG, same file name as before",
+      "pass": true,
+      "info": "bright-path-cleaning-post-editorial.png 1080×1350"
+    },
+    {
+      "name": "Goals 320px EN · Save image (story) with a goal: real 1080 × 1920 PNG, same file name as before",
+      "pass": true,
+      "info": "bright-path-cleaning-story-editorial.png 1080×1920"
+    },
+    {
+      "name": "Goals 320px EN · Week 1 “Copy caption” copies the Day 1 caption of the chosen goal",
+      "pass": true,
+      "info": "Now booking [service] in Glendora. It includes [what's inclu"
+    },
+    {
+      "name": "Goals 320px EN · after reload: the goal, its Week 1, the typed headline and the chosen CTA are all still there",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 320px EN · tapping the chosen goal again goes back to the general plan and keeps the typed headline",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 320px EN · no page errors, no outside requests",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 320px ES · selector shows Conseguir clientes,Mostrar mi trabajo,Darme a conocer: none picked, 3 equal columns, taps ≥ 48 px tall, labels fit, above the tabs on the first screen, no sideways scroll",
+      "pass": true,
+      "info": "93.3 × 50 px, 13px text"
+    },
+    {
+      "name": "Goals 320px ES · before picking a goal: Week 1 is the general plan, the usual headline and CTA, the \"optional\" hint",
+      "pass": true,
+      "info": "Preséntese"
+    },
+    {
+      "name": "Goals 320px ES · tap \"Conseguir clientes\": Week 1 has its own 7 ideas, headline and CTA switch to its suggestions, the graphics redraw",
+      "pass": true,
+      "info": "Destaque un servicio · “¿Limpieza regular o profunda? Agende por mensaje.” · Pida su cotización"
+    },
+    {
+      "name": "Goals 320px ES · tap \"Mostrar mi trabajo\": Week 1 has its own 7 ideas, headline and CTA switch to its suggestions, the graphics redraw",
+      "pass": true,
+      "info": "Un trabajo terminado · “Vea el trabajo antes de agendar.” · Pida ver más de nuestro trabajo"
+    },
+    {
+      "name": "Goals 320px ES · tap \"Darme a conocer\": Week 1 has its own 7 ideas, headline and CTA switch to its suggestions, the graphics redraw",
+      "pass": true,
+      "info": "Quién está detrás del negocio · “Hola, vecinos. Mucho gusto.” · Síganos para más consejos"
+    },
+    {
+      "name": "Goals 320px ES · the three goals give three different weeks, none the general plan",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 320px ES · after typing a headline, switching goal keeps it (CTA and Week 1 still follow the goal)",
+      "pass": true,
+      "info": "Semana 1 actualizada. Su texto no cambia."
+    },
+    {
+      "name": "Goals 320px ES · “Another idea” for the CTA cycles through the goal's own suggestions",
+      "pass": true,
+      "info": "Agende su cita"
+    },
+    {
+      "name": "Goals 320px ES · Save image (post) with a goal: real 1080 × 1350 PNG, same file name as before",
+      "pass": true,
+      "info": "bright-path-cleaning-post-editorial.png 1080×1350"
+    },
+    {
+      "name": "Goals 320px ES · Save image (story) with a goal: real 1080 × 1920 PNG, same file name as before",
+      "pass": true,
+      "info": "bright-path-cleaning-story-editorial.png 1080×1920"
+    },
+    {
+      "name": "Goals 320px ES · Week 1 “Copy caption” copies the Day 1 caption of the chosen goal",
+      "pass": true,
+      "info": "Ya estoy agendando [servicio] en Glendora. Incluye [qué incl"
+    },
+    {
+      "name": "Goals 320px ES · after reload: the goal, its Week 1, the typed headline and the chosen CTA are all still there",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 320px ES · tapping the chosen goal again goes back to the general plan and keeps the typed headline",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 320px ES · no page errors, no outside requests",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 360px EN · selector shows Sell now,Show proof,Build brand: none picked, 3 equal columns, taps ≥ 48 px tall, labels fit, above the tabs on the first screen, no sideways scroll",
+      "pass": true,
+      "info": "101.3 × 50 px, 14px text"
+    },
+    {
+      "name": "Goals 360px EN · before picking a goal: Week 1 is the general plan, the usual headline and CTA, the \"optional\" hint",
+      "pass": true,
+      "info": "Introduce yourself"
+    },
+    {
+      "name": "Goals 360px EN · tap \"Sell now\": Week 1 has its own 7 ideas, headline and CTA switch to its suggestions, the graphics redraw",
+      "pass": true,
+      "info": "Spotlight one service · “Regular or deep clean? Book it by message.” · Ask for your quote"
+    },
+    {
+      "name": "Goals 360px EN · tap \"Show proof\": Week 1 has its own 7 ideas, headline and CTA switch to its suggestions, the graphics redraw",
+      "pass": true,
+      "info": "One finished job · “See the work before you book.” · Ask to see more of our work"
+    },
+    {
+      "name": "Goals 360px EN · tap \"Build brand\": Week 1 has its own 7 ideas, headline and CTA switch to its suggestions, the graphics redraw",
+      "pass": true,
+      "info": "Who's behind the business · “Hi, neighbors. Nice to meet you.” · Follow for more tips"
+    },
+    {
+      "name": "Goals 360px EN · the three goals give three different weeks, none the general plan",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 360px EN · after typing a headline, switching goal keeps it (CTA and Week 1 still follow the goal)",
+      "pass": true,
+      "info": "Week 1 updated. What you typed stays."
+    },
+    {
+      "name": "Goals 360px EN · “Another idea” for the CTA cycles through the goal's own suggestions",
+      "pass": true,
+      "info": "Book an appointment"
+    },
+    {
+      "name": "Goals 360px EN · Save image (post) with a goal: real 1080 × 1350 PNG, same file name as before",
+      "pass": true,
+      "info": "bright-path-cleaning-post-editorial.png 1080×1350"
+    },
+    {
+      "name": "Goals 360px EN · Save image (story) with a goal: real 1080 × 1920 PNG, same file name as before",
+      "pass": true,
+      "info": "bright-path-cleaning-story-editorial.png 1080×1920"
+    },
+    {
+      "name": "Goals 360px EN · Week 1 “Copy caption” copies the Day 1 caption of the chosen goal",
+      "pass": true,
+      "info": "Now booking [service] in Glendora. It includes [what's inclu"
+    },
+    {
+      "name": "Goals 360px EN · after reload: the goal, its Week 1, the typed headline and the chosen CTA are all still there",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 360px EN · tapping the chosen goal again goes back to the general plan and keeps the typed headline",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 360px EN · no page errors, no outside requests",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 360px ES · selector shows Conseguir clientes,Mostrar mi trabajo,Darme a conocer: none picked, 3 equal columns, taps ≥ 48 px tall, labels fit, above the tabs on the first screen, no sideways scroll",
+      "pass": true,
+      "info": "101.3 × 50 px, 14px text"
+    },
+    {
+      "name": "Goals 360px ES · before picking a goal: Week 1 is the general plan, the usual headline and CTA, the \"optional\" hint",
+      "pass": true,
+      "info": "Preséntese"
+    },
+    {
+      "name": "Goals 360px ES · tap \"Conseguir clientes\": Week 1 has its own 7 ideas, headline and CTA switch to its suggestions, the graphics redraw",
+      "pass": true,
+      "info": "Destaque un servicio · “¿Limpieza regular o profunda? Agende por mensaje.” · Pida su cotización"
+    },
+    {
+      "name": "Goals 360px ES · tap \"Mostrar mi trabajo\": Week 1 has its own 7 ideas, headline and CTA switch to its suggestions, the graphics redraw",
+      "pass": true,
+      "info": "Un trabajo terminado · “Vea el trabajo antes de agendar.” · Pida ver más de nuestro trabajo"
+    },
+    {
+      "name": "Goals 360px ES · tap \"Darme a conocer\": Week 1 has its own 7 ideas, headline and CTA switch to its suggestions, the graphics redraw",
+      "pass": true,
+      "info": "Quién está detrás del negocio · “Hola, vecinos. Mucho gusto.” · Síganos para más consejos"
+    },
+    {
+      "name": "Goals 360px ES · the three goals give three different weeks, none the general plan",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 360px ES · after typing a headline, switching goal keeps it (CTA and Week 1 still follow the goal)",
+      "pass": true,
+      "info": "Semana 1 actualizada. Su texto no cambia."
+    },
+    {
+      "name": "Goals 360px ES · “Another idea” for the CTA cycles through the goal's own suggestions",
+      "pass": true,
+      "info": "Agende su cita"
+    },
+    {
+      "name": "Goals 360px ES · Save image (post) with a goal: real 1080 × 1350 PNG, same file name as before",
+      "pass": true,
+      "info": "bright-path-cleaning-post-editorial.png 1080×1350"
+    },
+    {
+      "name": "Goals 360px ES · Save image (story) with a goal: real 1080 × 1920 PNG, same file name as before",
+      "pass": true,
+      "info": "bright-path-cleaning-story-editorial.png 1080×1920"
+    },
+    {
+      "name": "Goals 360px ES · Week 1 “Copy caption” copies the Day 1 caption of the chosen goal",
+      "pass": true,
+      "info": "Ya estoy agendando [servicio] en Glendora. Incluye [qué incl"
+    },
+    {
+      "name": "Goals 360px ES · after reload: the goal, its Week 1, the typed headline and the chosen CTA are all still there",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 360px ES · tapping the chosen goal again goes back to the general plan and keeps the typed headline",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 360px ES · no page errors, no outside requests",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 412px EN · selector shows Sell now,Show proof,Build brand: none picked, 3 equal columns, taps ≥ 48 px tall, labels fit, above the tabs on the first screen, no sideways scroll",
+      "pass": true,
+      "info": "118.7 × 50 px, 14px text"
+    },
+    {
+      "name": "Goals 412px EN · before picking a goal: Week 1 is the general plan, the usual headline and CTA, the \"optional\" hint",
+      "pass": true,
+      "info": "Introduce yourself"
+    },
+    {
+      "name": "Goals 412px EN · tap \"Sell now\": Week 1 has its own 7 ideas, headline and CTA switch to its suggestions, the graphics redraw",
+      "pass": true,
+      "info": "Spotlight one service · “Regular or deep clean? Book it by message.” · Ask for your quote"
+    },
+    {
+      "name": "Goals 412px EN · tap \"Show proof\": Week 1 has its own 7 ideas, headline and CTA switch to its suggestions, the graphics redraw",
+      "pass": true,
+      "info": "One finished job · “See the work before you book.” · Ask to see more of our work"
+    },
+    {
+      "name": "Goals 412px EN · tap \"Build brand\": Week 1 has its own 7 ideas, headline and CTA switch to its suggestions, the graphics redraw",
+      "pass": true,
+      "info": "Who's behind the business · “Hi, neighbors. Nice to meet you.” · Follow for more tips"
+    },
+    {
+      "name": "Goals 412px EN · the three goals give three different weeks, none the general plan",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 412px EN · after typing a headline, switching goal keeps it (CTA and Week 1 still follow the goal)",
+      "pass": true,
+      "info": "Week 1 updated. What you typed stays."
+    },
+    {
+      "name": "Goals 412px EN · “Another idea” for the CTA cycles through the goal's own suggestions",
+      "pass": true,
+      "info": "Book an appointment"
+    },
+    {
+      "name": "Goals 412px EN · Save image (post) with a goal: real 1080 × 1350 PNG, same file name as before",
+      "pass": true,
+      "info": "bright-path-cleaning-post-editorial.png 1080×1350"
+    },
+    {
+      "name": "Goals 412px EN · Save image (story) with a goal: real 1080 × 1920 PNG, same file name as before",
+      "pass": true,
+      "info": "bright-path-cleaning-story-editorial.png 1080×1920"
+    },
+    {
+      "name": "Goals 412px EN · Week 1 “Copy caption” copies the Day 1 caption of the chosen goal",
+      "pass": true,
+      "info": "Now booking [service] in Glendora. It includes [what's inclu"
+    },
+    {
+      "name": "Goals 412px EN · after reload: the goal, its Week 1, the typed headline and the chosen CTA are all still there",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 412px EN · tapping the chosen goal again goes back to the general plan and keeps the typed headline",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 412px EN · no page errors, no outside requests",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 412px ES · selector shows Conseguir clientes,Mostrar mi trabajo,Darme a conocer: none picked, 3 equal columns, taps ≥ 48 px tall, labels fit, above the tabs on the first screen, no sideways scroll",
+      "pass": true,
+      "info": "118.7 × 50 px, 14px text"
+    },
+    {
+      "name": "Goals 412px ES · before picking a goal: Week 1 is the general plan, the usual headline and CTA, the \"optional\" hint",
+      "pass": true,
+      "info": "Preséntese"
+    },
+    {
+      "name": "Goals 412px ES · tap \"Conseguir clientes\": Week 1 has its own 7 ideas, headline and CTA switch to its suggestions, the graphics redraw",
+      "pass": true,
+      "info": "Destaque un servicio · “¿Limpieza regular o profunda? Agende por mensaje.” · Pida su cotización"
+    },
+    {
+      "name": "Goals 412px ES · tap \"Mostrar mi trabajo\": Week 1 has its own 7 ideas, headline and CTA switch to its suggestions, the graphics redraw",
+      "pass": true,
+      "info": "Un trabajo terminado · “Vea el trabajo antes de agendar.” · Pida ver más de nuestro trabajo"
+    },
+    {
+      "name": "Goals 412px ES · tap \"Darme a conocer\": Week 1 has its own 7 ideas, headline and CTA switch to its suggestions, the graphics redraw",
+      "pass": true,
+      "info": "Quién está detrás del negocio · “Hola, vecinos. Mucho gusto.” · Síganos para más consejos"
+    },
+    {
+      "name": "Goals 412px ES · the three goals give three different weeks, none the general plan",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 412px ES · after typing a headline, switching goal keeps it (CTA and Week 1 still follow the goal)",
+      "pass": true,
+      "info": "Semana 1 actualizada. Su texto no cambia."
+    },
+    {
+      "name": "Goals 412px ES · “Another idea” for the CTA cycles through the goal's own suggestions",
+      "pass": true,
+      "info": "Agende su cita"
+    },
+    {
+      "name": "Goals 412px ES · Save image (post) with a goal: real 1080 × 1350 PNG, same file name as before",
+      "pass": true,
+      "info": "bright-path-cleaning-post-editorial.png 1080×1350"
+    },
+    {
+      "name": "Goals 412px ES · Save image (story) with a goal: real 1080 × 1920 PNG, same file name as before",
+      "pass": true,
+      "info": "bright-path-cleaning-story-editorial.png 1080×1920"
+    },
+    {
+      "name": "Goals 412px ES · Week 1 “Copy caption” copies the Day 1 caption of the chosen goal",
+      "pass": true,
+      "info": "Ya estoy agendando [servicio] en Glendora. Incluye [qué incl"
+    },
+    {
+      "name": "Goals 412px ES · after reload: the goal, its Week 1, the typed headline and the chosen CTA are all still there",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 412px ES · tapping the chosen goal again goes back to the general plan and keeps the typed headline",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals 412px ES · no page errors, no outside requests",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Goals · with “Show proof” picked, a photo upload is detected and drawn in Luxury, and the story still saves 1080 × 1920",
+      "pass": true,
+      "info": "proof/photo 1080×1920"
+    },
+    {
+      "name": "Goals · with a goal picked, the before & after post (Show proof, day 2) saves a real 1080 × 1350 PNG",
+      "pass": true,
+      "info": "arroyo-yard-care-before-after.png 1080×1350"
+    },
+    {
+      "name": "Goals · uploads with a goal: no page errors, no outside requests",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "Legacy data · a kit saved before goals opens with no goal picked and the general Week 1",
+      "pass": true,
+      "info": "Limpieza con atención a cada detalle."
+    },
+    {
+      "name": "Legacy data · same saved kit, old page vs this page: Week 1, bio, messages, headline, CTA and both Luxury graphics are identical",
+      "pass": true,
+      "info": "Week 1, bio, messages, headline, CTA, post, story"
+    },
+    {
       "name": "Upload photo-interior.jpg · detected as photo, Luxury preview changes, story still saves 1080 × 1920",
       "pass": true,
       "info": "kind=photo 1080×1920"
@@ -352,12 +848,17 @@
     {
       "name": "Timing · Luxury redraw (post + story + thumbnail) costs no more than 2× the slowest existing style",
       "pass": true,
-      "info": "ms: editorial 6.4, poster 5.5, grid 8.4, luxury 7.2"
+      "info": "ms: editorial 4.0, poster 4.1, grid 9.0, luxury 10.1"
     },
     {
-      "name": "Regression · Editorial, Poster, Grid (and before/after) are pixel-identical to the baseline page",
+      "name": "Regression · all 4 graphics styles (Luxury included) and before/after are pixel-identical to the baseline page",
       "pass": true,
-      "info": "109 renders compared, 0 differ"
+      "info": "145 renders compared, 0 differ"
+    },
+    {
+      "name": "Regression · with no goal picked, every bio, about, message, Week 1 idea, headline and CTA matches the baseline page word for word",
+      "pass": true,
+      "info": "128 states compared, 0 differ"
     },
     {
       "name": "Regression · the example fan on the setup screen is unchanged",
