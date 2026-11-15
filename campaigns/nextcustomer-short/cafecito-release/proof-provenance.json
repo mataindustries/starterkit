@@ -1,0 +1,60 @@
+{
+  "startingCommit": "a0162f10111cf1237410d97631727e2df4b75139",
+  "kind": "proof",
+  "picture": {
+    "path": "nextcustomer_launch_short_proof_540x960.mp4",
+    "sha256": "30ce1bce6b5065690b8697fa8825542738b75f5706239c169a591eb31b2da968"
+  },
+  "audio": {
+    "path": "cafecito/renders/cafecito-rush-final/cafecito-rush-final.wav",
+    "sha256": "4de7fd0f93d1e1689ffa16b613e24c25cb56f6b48058b271737bec6e97dc6e08"
+  },
+  "composition": {
+    "path": "cafecito/cafecito-rush-final.json",
+    "sha256": "aa567661d1a423715d44beb9974aa1bbc9a674365368fffc3499b77c5931f977"
+  },
+  "output": {
+    "path": "nextcustomer_cafecito_rush_proof_540x960.mp4",
+    "sha256": "e030093d22917cb8248fbb1d0b383875c10da37126e08cd5e7a079ee15f6d3d0",
+    "bytes": 1058355
+  },
+  "edits": "None: no shift, trim within the 20s master, gain, EQ, dynamics, tempo or note changes. Only 44.1 to 48 kHz resampling and AAC encoding.",
+  "command": [
+    "ffmpeg",
+    "-v",
+    "error",
+    "-xerror",
+    "-y",
+    "-i",
+    "/workspace/starterkit/campaigns/nextcustomer-short/nextcustomer_launch_short_proof_540x960.mp4",
+    "-i",
+    "/workspace/starterkit/campaigns/nextcustomer-short/cafecito/renders/cafecito-rush-final/cafecito-rush-final.wav",
+    "-map",
+    "0:v:0",
+    "-map",
+    "1:a:0",
+    "-map_metadata",
+    "-1",
+    "-c:v",
+    "copy",
+    "-c:a",
+    "aac",
+    "-profile:a",
+    "aac_low",
+    "-b:a",
+    "256k",
+    "-ar",
+    "48000",
+    "-ac",
+    "2",
+    "-t",
+    "20",
+    "-movflags",
+    "+faststart",
+    "-metadata",
+    "title=NextCustomer - CAFECITO RUSH - owner review",
+    "-metadata",
+    "comment=Approved picture stream copied; Wonder lossless CAFECITO master; no musical edits; publication pending owner review.",
+    "/workspace/starterkit/campaigns/nextcustomer-short/cafecito-release/nextcustomer_cafecito_rush_proof_540x960.mp4"
+  ]
+}

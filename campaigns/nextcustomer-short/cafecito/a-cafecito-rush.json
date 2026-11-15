@@ -1,0 +1,544 @@
+{
+  "formatVersion": 1,
+  "title": "CAFECITO A - Cafecito Rush (sketch)",
+  "bpm": 132,
+  "timeSignature": "4/4",
+  "key": "E major",
+  "bars": 4,
+  "seed": 1101,
+  "description": "Sketch A: opening hook 0-1.4s (E5-G#5-B5), syncopated cup/spoon groove; ~5.5s tap/kit-reveal lift = bar4 hook octave + E-major stab. NOT SOLECITO (new key/hook). Film: 0-3 hook, 3s app groove, 5.57 tap in bar4 lift.",
+  "render": {
+    "duration": {
+      "seconds": 7.6
+    },
+    "tail": "none"
+  },
+  "master": {
+    "gainDb": -3
+  },
+  "tracks": [
+    {
+      "id": "pluck",
+      "instrument": {
+        "type": "drumkit",
+        "kit": "assets/pluck/kit.json"
+      },
+      "mix": {
+        "gainDb": -5,
+        "pan": -0.08
+      },
+      "clips": [
+        {
+          "bar": 1,
+          "pattern": "main"
+        }
+      ],
+      "patterns": [
+        {
+          "id": "main",
+          "bars": 4,
+          "notes": [
+            {
+              "start": "1:1",
+              "pitch": "note-76",
+              "velocity": 0.92
+            },
+            {
+              "start": "1:1+1/8",
+              "pitch": "note-80",
+              "velocity": 0.82
+            },
+            {
+              "start": "1:2",
+              "pitch": "note-83",
+              "velocity": 0.95
+            },
+            {
+              "start": "1:2+3/16",
+              "pitch": "note-80",
+              "velocity": 0.78
+            },
+            {
+              "start": "1:3+1/8",
+              "pitch": "note-78",
+              "velocity": 0.82
+            },
+            {
+              "start": "1:4",
+              "pitch": "note-76",
+              "velocity": 0.86
+            },
+            {
+              "start": "2:1",
+              "pitch": "note-76",
+              "velocity": 0.9
+            },
+            {
+              "start": "2:1+1/8",
+              "pitch": "note-80",
+              "velocity": 0.8
+            },
+            {
+              "start": "2:2",
+              "pitch": "note-83",
+              "velocity": 0.92
+            },
+            {
+              "start": "2:2+3/16",
+              "pitch": "note-85",
+              "velocity": 0.85
+            },
+            {
+              "start": "2:3+1/8",
+              "pitch": "note-81",
+              "velocity": 0.8
+            },
+            {
+              "start": "2:4",
+              "pitch": "note-80",
+              "velocity": 0.78
+            },
+            {
+              "start": "3:1",
+              "pitch": "note-71",
+              "velocity": 0.8
+            },
+            {
+              "start": "3:1+3/16",
+              "pitch": "note-76",
+              "velocity": 0.75
+            },
+            {
+              "start": "3:2+1/8",
+              "pitch": "note-80",
+              "velocity": 0.8
+            },
+            {
+              "start": "3:3",
+              "pitch": "note-78",
+              "velocity": 0.75
+            },
+            {
+              "start": "3:3+3/16",
+              "pitch": "note-76",
+              "velocity": 0.8
+            },
+            {
+              "start": "3:4+1/8",
+              "pitch": "note-73",
+              "velocity": 0.7
+            },
+            {
+              "start": "4:1",
+              "pitch": "note-76",
+              "velocity": 0.95
+            },
+            {
+              "start": "4:1",
+              "pitch": "note-80",
+              "velocity": 0.7
+            },
+            {
+              "start": "4:1",
+              "pitch": "note-83",
+              "velocity": 0.7
+            },
+            {
+              "start": "4:2+1/8",
+              "pitch": "note-85",
+              "velocity": 0.9
+            },
+            {
+              "start": "4:3",
+              "pitch": "note-83",
+              "velocity": 0.85
+            },
+            {
+              "start": "4:3+3/16",
+              "pitch": "note-80",
+              "velocity": 0.8
+            },
+            {
+              "start": "4:4",
+              "pitch": "note-76",
+              "velocity": 0.9
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "type": "reverb",
+          "roomSize": 0.22,
+          "decaySeconds": 0.35,
+          "wet": 0.08
+        }
+      ]
+    },
+    {
+      "id": "bass",
+      "instrument": {
+        "type": "drumkit",
+        "kit": "assets/bass/kit.json"
+      },
+      "mix": {
+        "gainDb": -5,
+        "pan": 0
+      },
+      "clips": [
+        {
+          "bar": 1,
+          "pattern": "main"
+        }
+      ],
+      "patterns": [
+        {
+          "id": "main",
+          "bars": 4,
+          "notes": [
+            {
+              "start": "1:1",
+              "pitch": "note-40",
+              "velocity": 0.9
+            },
+            {
+              "start": "1:2+3/16",
+              "pitch": "note-40",
+              "velocity": 0.8
+            },
+            {
+              "start": "1:3",
+              "pitch": "note-47",
+              "velocity": 0.85
+            },
+            {
+              "start": "1:4+1/8",
+              "pitch": "note-45",
+              "velocity": 0.75
+            },
+            {
+              "start": "2:1",
+              "pitch": "note-40",
+              "velocity": 0.9
+            },
+            {
+              "start": "2:2+3/16",
+              "pitch": "note-42",
+              "velocity": 0.8
+            },
+            {
+              "start": "2:3",
+              "pitch": "note-47",
+              "velocity": 0.85
+            },
+            {
+              "start": "2:4+1/8",
+              "pitch": "note-49",
+              "velocity": 0.8
+            },
+            {
+              "start": "3:1",
+              "pitch": "note-40",
+              "velocity": 0.9
+            },
+            {
+              "start": "3:2",
+              "pitch": "note-47",
+              "velocity": 0.8
+            },
+            {
+              "start": "3:3+3/16",
+              "pitch": "note-50",
+              "velocity": 0.85
+            },
+            {
+              "start": "3:4",
+              "pitch": "note-49",
+              "velocity": 0.85
+            },
+            {
+              "start": "4:1",
+              "pitch": "note-40",
+              "velocity": 0.95
+            },
+            {
+              "start": "4:3",
+              "pitch": "note-47",
+              "velocity": 0.8
+            },
+            {
+              "start": "4:4",
+              "pitch": "note-40",
+              "velocity": 0.9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "perc",
+      "instrument": {
+        "type": "drumkit",
+        "kit": "assets/perc/kit.json"
+      },
+      "mix": {
+        "gainDb": -7,
+        "pan": 0.06
+      },
+      "clips": [
+        {
+          "bar": 1,
+          "pattern": "main"
+        }
+      ],
+      "patterns": [
+        {
+          "id": "main",
+          "bars": 4,
+          "notes": [
+            {
+              "start": "1:1",
+              "pitch": "kick",
+              "velocity": 0.95
+            },
+            {
+              "start": "1:2+1/8",
+              "pitch": "kick",
+              "velocity": 0.7
+            },
+            {
+              "start": "1:3",
+              "pitch": "kick",
+              "velocity": 0.85
+            },
+            {
+              "start": "1:2",
+              "pitch": "clap",
+              "velocity": 0.85
+            },
+            {
+              "start": "1:4",
+              "pitch": "clap",
+              "velocity": 0.9
+            },
+            {
+              "start": "1:1+1/8",
+              "pitch": "hat",
+              "velocity": 0.5
+            },
+            {
+              "start": "1:2+1/8",
+              "pitch": "hat",
+              "velocity": 0.45
+            },
+            {
+              "start": "1:3+1/8",
+              "pitch": "hat",
+              "velocity": 0.5
+            },
+            {
+              "start": "1:4+1/8",
+              "pitch": "hat",
+              "velocity": 0.45
+            },
+            {
+              "start": "1:2+3/16",
+              "pitch": "cup",
+              "velocity": 0.65
+            },
+            {
+              "start": "1:4+3/16",
+              "pitch": "spoon",
+              "velocity": 0.6
+            },
+            {
+              "start": "2:1",
+              "pitch": "kick",
+              "velocity": 0.95
+            },
+            {
+              "start": "2:2+1/8",
+              "pitch": "kick",
+              "velocity": 0.7
+            },
+            {
+              "start": "2:3",
+              "pitch": "kick",
+              "velocity": 0.85
+            },
+            {
+              "start": "2:2",
+              "pitch": "clap",
+              "velocity": 0.85
+            },
+            {
+              "start": "2:4",
+              "pitch": "clap",
+              "velocity": 0.9
+            },
+            {
+              "start": "2:1+1/8",
+              "pitch": "hat",
+              "velocity": 0.5
+            },
+            {
+              "start": "2:2+1/8",
+              "pitch": "hat",
+              "velocity": 0.45
+            },
+            {
+              "start": "2:3+1/8",
+              "pitch": "hat",
+              "velocity": 0.5
+            },
+            {
+              "start": "2:4+1/8",
+              "pitch": "hat",
+              "velocity": 0.45
+            },
+            {
+              "start": "2:2+3/16",
+              "pitch": "cup",
+              "velocity": 0.65
+            },
+            {
+              "start": "2:4+3/16",
+              "pitch": "spoon",
+              "velocity": 0.6
+            },
+            {
+              "start": "3:1",
+              "pitch": "kick",
+              "velocity": 0.95
+            },
+            {
+              "start": "3:2+1/8",
+              "pitch": "kick",
+              "velocity": 0.7
+            },
+            {
+              "start": "3:3",
+              "pitch": "kick",
+              "velocity": 0.85
+            },
+            {
+              "start": "3:2",
+              "pitch": "clap",
+              "velocity": 0.85
+            },
+            {
+              "start": "3:4",
+              "pitch": "clap",
+              "velocity": 0.9
+            },
+            {
+              "start": "3:1+1/8",
+              "pitch": "hat",
+              "velocity": 0.5
+            },
+            {
+              "start": "3:2+1/8",
+              "pitch": "hat",
+              "velocity": 0.45
+            },
+            {
+              "start": "3:3+1/8",
+              "pitch": "hat",
+              "velocity": 0.5
+            },
+            {
+              "start": "3:4+1/8",
+              "pitch": "hat",
+              "velocity": 0.45
+            },
+            {
+              "start": "3:2+3/16",
+              "pitch": "cup",
+              "velocity": 0.65
+            },
+            {
+              "start": "3:4+3/16",
+              "pitch": "spoon",
+              "velocity": 0.6
+            },
+            {
+              "start": "4:1",
+              "pitch": "kick",
+              "velocity": 0.95
+            },
+            {
+              "start": "4:2+1/8",
+              "pitch": "kick",
+              "velocity": 0.7
+            },
+            {
+              "start": "4:3",
+              "pitch": "kick",
+              "velocity": 0.85
+            },
+            {
+              "start": "4:2",
+              "pitch": "clap",
+              "velocity": 0.85
+            },
+            {
+              "start": "4:4",
+              "pitch": "clap",
+              "velocity": 0.9
+            },
+            {
+              "start": "4:1+1/8",
+              "pitch": "hat",
+              "velocity": 0.5
+            },
+            {
+              "start": "4:2+1/8",
+              "pitch": "hat",
+              "velocity": 0.45
+            },
+            {
+              "start": "4:3+1/8",
+              "pitch": "hat",
+              "velocity": 0.5
+            },
+            {
+              "start": "4:4+1/8",
+              "pitch": "hat",
+              "velocity": 0.45
+            },
+            {
+              "start": "4:2+3/16",
+              "pitch": "cup",
+              "velocity": 0.65
+            },
+            {
+              "start": "4:4+3/16",
+              "pitch": "spoon",
+              "velocity": 0.6
+            },
+            {
+              "start": "1:4+3/16",
+              "pitch": "shaker",
+              "velocity": 0.5
+            },
+            {
+              "start": "2:4+3/16",
+              "pitch": "shaker",
+              "velocity": 0.5
+            },
+            {
+              "start": "4:4+1/8",
+              "pitch": "bell",
+              "velocity": 0.55
+            },
+            {
+              "start": "4:4+3/16",
+              "pitch": "cup",
+              "velocity": 0.7
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
