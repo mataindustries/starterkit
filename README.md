@@ -1,6 +1,6 @@
 # ENM Starter Kit — free marketing tool for new local service businesses
 
-One file: `index.html` (about 370 KB). No login, database, tracking, AI, paid APIs, or outside requests. The fonts are built into the file, so the page works the same on every phone and never loads anything from another server.
+One file: `index.html` (about 415 KB). No login, database, tracking, AI, paid APIs, or outside requests. The fonts are built into the file, so the page works the same on every phone and never loads anything from another server.
 
 ## What an owner gets
 - **Post (1080 × 1350 PNG)** in 4 styles (Editorial, Poster, Grid and Luxury Editorial), with 5 color sets, an editable headline and call to action, and their own logo or photo if they add one.
@@ -10,19 +10,25 @@ One file: `index.html` (about 370 KB). No login, database, tracking, AI, paid AP
 - **Bio**: an Instagram bio (150 characters or fewer) and a longer "About" for a Google Business Profile or Facebook page.
 - **5 customer messages**: introduction, estimate follow-up, appointment reminder, review request (no incentives, and it asks everyone, not only happy customers) and referral request.
 - **Week 1**: 7 post ideas, each with what to post, how to shoot it on a phone and a starter caption.
+- **Goal for the week (optional)**: above the tabs, the owner can tap **Sell now** (*Conseguir clientes*), **Show proof** (*Mostrar mi trabajo*) or **Build brand** (*Darme a conocer*). Each goal gives its own 7-day plan, phone how-tos and starter captions, plus its own headline and call-to-action ideas for the graphics:
+  - **Sell now**: specific services, how to get a quote, real openings, what affects the price, what to expect, an easy way to book.
+  - **Show proof**: the owner's own finished-job photos, a real before & after, process clips, close-ups, real customer words (only with permission), and honest fallbacks when there are no photos or reviews yet.
+  - **Build brand**: who's behind the business, a useful tip, what they really do differently, their part of town, a day on the job, a myth cleared up, and the real reason behind the name.
+  - A headline or call to action the owner typed is never replaced, and the bio and messages stay the same. Tapping the chosen goal again goes back to the general plan, which is exactly the kit as it was before goals were added. Nothing is invented: prices, openings, reviews and results are [blanks] for the owner's real details. See `qa/goals/COMPARISON.md`.
 - Everything is available in English or natural Mexican Spanish (*usted* with customers). Service types: house cleaning, landscaping, mobile detailing, pressure washing, handyman, or anything else the owner types in.
 
 ## Using it on Android (owner instructions)
 1. Open the link in **Chrome**. Links opened inside Instagram or Facebook can't save files; if that happens, the page shows a banner telling the owner to tap ⋮ → *Open in Chrome*.
 2. Type your business name and tap what you do. Everything else is optional.
 3. Tap **Make my kit**.
-4. On **Graphics**, pick a style and colors, then tap **Save image** (it goes to your Downloads folder) or **Share** (uses Android's share sheet where supported; if sharing fails, save the PNG and attach it manually).
-5. On **Bio**, **Messages** and **Week 1**, tap **Copy** and paste wherever you need it. Fill in anything shown in [brackets] before you send.
+4. Optional: under **Your goal this week**, tap what you need most right now. Your headline ideas and Week 1 change to match; tap it again to go back.
+5. On **Graphics**, pick a style and colors, then tap **Save image** (it goes to your Downloads folder) or **Share** (uses Android's share sheet where supported; if sharing fails, save the PNG and attach it manually).
+6. On **Bio**, **Messages** and **Week 1**, tap **Copy** and paste wherever you need it. Fill in anything shown in [brackets] before you send.
 
 Your details are saved only on this phone, so the kit is still there when you come back. **Clear my info** at the bottom of the page erases it (tap twice).
 
 ## Tests
-Open the page with `#selftest` at the end of the address, for example `https://your-site.pages.dev/#selftest`. It runs 31 checks in your phone's browser and lists pass or fail for each:
+Open the page with `#selftest` at the end of the address, for example `https://your-site.pages.dev/#selftest`. It runs 40 checks in your phone's browser and lists pass or fail for each:
 - Every English string has a Spanish version, and every service type has complete copy.
 - All 24 combinations of language × service × full or minimal details produce 5 messages, 7 ideas and a bio of 150 characters or fewer, with no "undefined" or broken blanks.
 - No invented discounts, "free", "#1", "best", star ratings, "licensed/insured" or similar claims anywhere in the copy.
@@ -43,6 +49,15 @@ Open the page with `#selftest` at the end of the address, for example `https://y
   - logos are trimmed to their mark;
   - the style is listed in both languages.
 - Exports (Luxury included, with and without a photo) are real PNGs at exactly 1080 × 1350 and 1080 × 1920.
+- Marketing goals get 9 more checks:
+  - all three goals are named in both languages and suggest their own headlines and calls to action;
+  - every goal × service × language × full or minimal details (72 combinations) makes 7 complete ideas, none repeated, with no broken blanks;
+  - the three plans share no idea, how-to or caption with each other or with the general plan, and each mixes at least 5 kinds of post (photo, video, carousel, Story, slides, app graphic, screenshot);
+  - no invented discounts, prices, urgency, testimonials, results, ratings or credentials, and customer words only ever appear as [blanks];
+  - Spanish uses *usted* and *del*/*al*, and typed-in services of any gender or number read correctly;
+  - goal headlines and calls to action are drawn in full inside the safe area in all 4 styles, and break naturally in Luxury;
+  - a headline or call to action the owner typed is never replaced, and the bio and messages are the same for every goal;
+  - with no goal, or a saved value the page doesn't know, the kit is exactly the original.
 
 Latest automated run: 31/31 built-in self-tests and 70/70 headless checks pass (`qa/run-checks.cjs` in Chromium at 320, 360 and 412px, English and Spanish). The headless checks cover the full owner flow with the Luxury style: pick it, edit, save both images, upload a photo and two logos, and reload. They also confirm that the other styles are pixel-identical to the previous version. An earlier pass, before Luxury was added, also covered the full flow in desktop Chrome at phone sizes: fill in the form, try all 3 styles, save, upload a photo and a logo (each was detected correctly), switch to Spanish, use every tab, reload, and confirm the details persist. Sharing to installed Android apps and real camera uploads still require manual phone testing.
 
@@ -50,6 +65,7 @@ Developer checks (optional, on a computer with Node and Playwright):
 - `node qa/run-checks.cjs` runs the self-test plus the real owner flow, uploads and exports in headless Chromium.
 - `node qa/contact-sheet.cjs` redraws the review sheets.
 - `node qa/phone-view.cjs` exports a sample post and story through the app and shows them at real phone width.
+- `node qa/goal-compare.cjs` writes the three-goal comparison for one fictional business (`qa/goals/`).
 
 See `qa/README.md`.
 
@@ -64,12 +80,12 @@ Keep Cloudflare Web Analytics turned off for this project. The page policy would
 The app only needs `index.html` and `_headers`. The `campaigns/` and `qa/` folders are for production and review and are not used by the page.
 
 ## Editing the copy
-All wording is in the `<script>` near the top of the file: `UI` holds the interface text, `SV` holds per-service headlines, descriptions and post-idea details, and `CTAS` holds calls to action. `buildCopy()` assembles the bio, messages and ideas. Edit in `index.html`, then run `#selftest` again.
+All wording is in the `<script>` near the top of the file: `UI` holds the interface text, `SV` holds per-service headlines, descriptions and post-idea details, and `CTAS` holds calls to action. `buildCopy()` assembles the bio, messages and ideas. `GOALS` holds the three marketing goals (names, hints, headline and call-to-action ideas), `goalIdeas()` writes each goal's Week 1, and each service in `SV` also has a Sell headline (`sell`), example services (`menu`) and a work step to film (`step`). Edit in `index.html`, then run `#selftest` again.
 
 The graphics styles are the drawing functions `tEditorial`, `tPoster`, `tGrid` and `tLuxury`, listed in `TPL`. Owners' phones save the chosen style by its position, so add new styles at the end.
 
 ## Real Android launch gate
-Before sharing publicly: run `#selftest` in Android Chrome, export and open a post and Story, test sharing/cancel/fallback with installed apps, upload gallery and camera images, review Spanish outputs, confirm settings survive reopening Chrome, test the before/after layout, and try the Luxury style with a real photo and a real logo.
+Before sharing publicly: run `#selftest` in Android Chrome, export and open a post and Story, test sharing/cancel/fallback with installed apps, upload gallery and camera images, review Spanish outputs, confirm settings survive reopening Chrome, test the before/after layout, try the Luxury style with a real photo and a real logo, and pick each goal and read its Week 1 in both languages.
 
 ## Known limits
 - Some Samsung phones save photos as HEIC, which Chrome can't open. The app shows a message asking for a JPG or PNG.
