@@ -7,6 +7,7 @@ One file: `index.html` (about 300 KB). No login, database, tracking, AI, paid AP
 ## What an owner gets
 - **Post (1080 × 1350 PNG)** in 3 styles (Editorial, Poster, Grid), with 5 color sets, an editable headline and call to action, and their own logo or photo if they add one.
 - **Story (1080 × 1920 PNG)** in the same style. Text stays out of the areas Instagram covers at the top and bottom.
+- **Seasonal presets (optional)** on the Graphics tab: *Thank You, Neighbors* (Thanksgiving season), *Shop Small / Apoye lo local* (Small Business Saturday) and *Holiday Ready / Todo listo para las fiestas* (trade-specific headlines for cleaners, detailers, landscapers, pressure washers and handymen). Each adds a seasonal label and a stamp with the business name to all 3 styles, offers 3 headlines and 3 calls to action, and a matching caption to copy. The owner can edit the headline, call to action, business name and photo right there. Each season remembers its own edits, and "Everyday" brings back the regular kit. The presets never mention sales, discounts, dates, availability, credentials or testimonials.
 - **Before/after**: a separate image layout for two genuine owner-provided photos, with permission from the client. Photos used for this layout are not saved to the device by the app.
 - **Bio**: an Instagram bio (150 characters or fewer) and a longer "About" for a Google Business Profile or Facebook page.
 - **5 customer messages**: introduction, estimate follow-up, appointment reminder, review request (no incentives, and it asks everyone, not only happy customers) and referral request.
@@ -23,7 +24,7 @@ One file: `index.html` (about 300 KB). No login, database, tracking, AI, paid AP
 Your details are saved only on this phone, so the kit is still there when you come back. **Clear my info** at the bottom of the page erases it (tap twice).
 
 ## Tests
-Open the page with `#selftest` at the end of the address, for example `https://your-site.pages.dev/#selftest`. It runs 18 checks in your phone's browser and lists pass or fail for each:
+Open the page with `#selftest` at the end of the address, for example `https://your-site.pages.dev/#selftest`. It runs 25 checks in your phone's browser and lists pass or fail for each:
 - Every English string has a Spanish version, and every service type has complete copy.
 - All 24 combinations of language × service × full or minimal details produce 5 messages, 7 ideas and a bio of 150 characters or fewer, with no "undefined" or broken blanks.
 - No invented discounts, "free", "#1", "best", star ratings, "licensed/insured" or similar claims anywhere in the copy.
@@ -34,6 +35,7 @@ Open the page with `#selftest` at the end of the address, for example `https://y
 - Long text shrinks to fit its box.
 - 36 renders (3 styles × post/story × no image/photo/logo × EN/ES, with a very long name and service area) all draw inside their safe areas.
 - Exports are real PNGs at exactly 1080 × 1350 and 1080 × 1920.
+- Seasonal presets: every preset × service × language × full/minimal details has 3 headlines, 3 calls to action and a caption with no broken blanks or em dashes; Holiday Ready has its own headlines per trade; no sales, availability, testimonials or *tú*; 108 seasonal renders stay inside their safe areas; seasonal exports keep their PNG sizes.
 
 Opus reported 18/18 built-in self-tests and 50/50 browser checks passing in desktop Chrome with phone-sized viewports (320, 360 and 412px). Sharing to installed Android apps and real camera uploads still require manual phone testing. I also ran the full flow there: fill in the form, try all 3 styles, save, upload a photo and a logo (each was detected correctly), switch to Spanish, use every tab, reload, and confirm the details persist.
 
@@ -46,7 +48,7 @@ It's a static file, so any static host works. Cloudflare Pages is free and fits 
 Keep Cloudflare Web Analytics turned off for this project. The page policy would block it anyway, and the promise is no tracking.
 
 ## Editing the copy
-All wording is in the `<script>` near the top of the file: `UI` holds the interface text, `SV` holds per-service headlines, descriptions and post-idea details, and `CTAS` holds calls to action. `buildCopy()` assembles the bio, messages and ideas. Edit in `index.html`, then run `#selftest` again.
+All wording is in the `<script>` near the top of the file: `UI` holds the interface text, `SV` holds per-service headlines, descriptions and post-idea details, `CTAS` holds calls to action, and `SEASON` holds the seasonal presets. `buildCopy()` assembles the bio, messages and ideas. Edit in `index.html`, then run `#selftest` again.
 
 ## Real Android launch gate
 Before sharing publicly: run `#selftest` in Android Chrome, export and open a post and Story, test sharing/cancel/fallback with installed apps, upload gallery and camera images, review Spanish outputs, confirm settings survive reopening Chrome, and test the before/after layout.
