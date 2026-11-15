@@ -1,15 +1,15 @@
 {
   "url": null,
   "page": {
-    "bytes": 415323,
+    "bytes": 416571,
     "fonts": 7
   },
   "chromium": "153.0.8010.12",
   "renderMs": {
-    "editorial": 4,
-    "poster": 4.1,
-    "grid": 9,
-    "luxury": 10.1
+    "editorial": 4.7,
+    "poster": 4.7,
+    "grid": 9.5,
+    "luxury": 11.7
   },
   "baseline": "main.html",
   "passed": 170,
@@ -18,7 +18,7 @@
     {
       "name": "Static · no outside resources or network APIs in index.html (fetch, XHR, sockets, beacons, imports, remote src/href), 7 embedded fonts, page policy unchanged",
       "pass": true,
-      "info": "none found; 415323 bytes (+39253 vs baseline)"
+      "info": "none found; 416571 bytes (+1248 vs baseline)"
     },
     {
       "name": "#selftest · UI text: Spanish covers every English string",
@@ -848,7 +848,7 @@
     {
       "name": "Timing · Luxury redraw (post + story + thumbnail) costs no more than 2× the slowest existing style",
       "pass": true,
-      "info": "ms: editorial 4.0, poster 4.1, grid 9.0, luxury 10.1"
+      "info": "ms: editorial 4.7, poster 4.7, grid 9.5, luxury 11.7"
     },
     {
       "name": "Regression · all 4 graphics styles (Luxury included) and before/after are pixel-identical to the baseline page",
