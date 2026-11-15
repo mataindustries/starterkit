@@ -6,8 +6,20 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; font-src data:; img-src data: blob:; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#F3EEE6">
-<meta name="description" content="Free starter kit for local service businesses. Make a flyer, an Instagram story, your bio, customer texts and a week of post ideas on your phone, in English or Spanish.">
-<title>Starter Kit · Free marketing for local service businesses</title>
+<meta name="description" content="NextCustomer is a free marketing kit for local service businesses. Make a post, an Instagram story, your bio, customer texts and a week of post ideas on your phone, in English or Spanish.">
+<meta name="application-name" content="NextCustomer">
+<meta name="apple-mobile-web-app-title" content="NextCustomer">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NextCustomer">
+<meta property="og:title" content="NextCustomer · Free marketing kit for local service businesses">
+<meta property="og:description" content="Make a post, a story, your bio, customer texts and a week of post ideas on your phone, in English or Spanish. No sign-up. Nothing leaves your phone.">
+<meta property="og:url" content="https://nextcustomer.pages.dev/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_MX">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NextCustomer · Free marketing kit for local service businesses">
+<meta name="twitter:description" content="Make a post, a story, your bio, customer texts and a week of post ideas on your phone, in English or Spanish.">
+<title>NextCustomer · Free marketing kit for local service businesses</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23171512'/%3E%3Cpath d='M14 40a18 18 0 0 1 36 0z' fill='%23E2542B'/%3E%3C/svg%3E">
 <style>
 /* Inter & Inter Display (rsms.me/inter) and Lora (Cyreal), SIL Open Font License 1.1. Latin subsets, embedded so nothing is fetched. */
@@ -33,7 +45,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .top{position:sticky;top:0;z-index:30;background:rgba(243,238,230,.9);-webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
 .top .in{max-width:560px;height:60px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:10px;font:600 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase}
+.brand{display:flex;align-items:center;gap:10px;font:700 18px/1 var(--display);letter-spacing:-.015em}
 .brand i{width:26px;height:26px;border-radius:50%;background:var(--ink);position:relative;overflow:hidden;flex:none}
 .brand i:after{content:"";position:absolute;left:5px;right:5px;top:13px;height:16px;border-radius:16px 16px 0 0;background:var(--accent)}
 .seg{display:inline-flex;border:1px solid var(--line2);border-radius:999px;padding:3px;background:var(--card)}
@@ -97,6 +109,13 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 .tpl span{display:block;font:600 12.5px/1 var(--sans);padding:10px 2px 0;color:var(--ink2)}
 .tpl[aria-pressed=true] span{color:var(--ink)}
 .sw{display:flex;gap:10px;flex-wrap:wrap}
+.seasons .chip{display:inline-flex;align-items:center;gap:8px}
+.seasons .chip i{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none}
+.seasons .chip[aria-checked=true] i{background:var(--paper)}
+.shint{margin:12px 0 0}
+.gphoto{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.gphoto img{width:52px;height:52px;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:#fff}
+.gphoto .btn{flex:1 1 130px;padding:0 12px}
 .sw button{width:48px;height:48px;border-radius:50%;border:2px solid transparent;padding:3px;background:none}
 .sw button i{display:block;width:100%;height:100%;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
 .sw button[aria-pressed=true]{border-color:var(--ink)}
@@ -152,7 +171,7 @@ mark{background:rgba(226,84,43,.14);color:inherit;border-radius:4px;padding:0 2p
 </head>
 <body>
 <header class="top"><div class="in">
-  <div class="brand"><i aria-hidden="true"></i><span data-i="appName">Starter Kit</span></div>
+  <div class="brand"><i aria-hidden="true"></i><span data-i="appName">NextCustomer</span></div>
   <div class="seg" role="group" aria-label="Language / Idioma">
     <button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="es" aria-pressed="false">ES</button>
   </div>
@@ -227,8 +246,16 @@ mark{background:rgba(226,84,43,.14);color:inherit;border-radius:4px;padding:0 2p
 
   <div class="panel" id="p_g" role="tabpanel">
     <p class="warn" id="noContact" hidden data-i="noContact"></p>
+    <div class="ctl"><span class="lbl" id="lbl_season" data-i="season"></span><div class="chips seasons" id="seasons" role="radiogroup" aria-labelledby="lbl_season"></div><p class="hint shint" id="seasonHint"></p></div>
     <div class="ctl"><span class="lbl" data-i="style"></span><div class="tpls" id="tpls"></div></div>
     <div class="ctl"><span class="lbl" data-i="colors"></span><div class="sw" id="sw"></div></div>
+    <label class="field"><span data-i="l_name"></span><input id="f_gname" type="text" maxlength="60" autocomplete="off"></label>
+    <div class="field"><span class="lbl" data-i="l_gimg"></span>
+      <div class="gphoto"><img id="gimg" alt="" hidden>
+        <label class="btn sm" for="f_file2"><span id="glabel" data-i="l_upload"></span></label><input id="f_file2" type="file" accept="image/*" class="vh" tabindex="-1">
+        <label class="btn sm" for="f_camera2"><span data-i="l_capture"></span></label><input id="f_camera2" type="file" accept="image/*" capture="environment" class="vh" tabindex="-1">
+      </div>
+    </div>
     <label class="field"><span data-i="l_head"></span><textarea id="f_head" rows="2" maxlength="90"></textarea></label>
     <div class="rowend"><span></span><button type="button" class="link" id="b_head">↻ <span data-i="another"></span></button></div>
     <label class="field"><span data-i="l_cta"></span><input id="f_cta" type="text" maxlength="40" autocomplete="off"></label>
@@ -240,6 +267,7 @@ mark{background:rgba(226,84,43,.14);color:inherit;border-radius:4px;padding:0 2p
     <figure class="preview story"><canvas id="c_story" width="1080" height="1920" role="img"></canvas><figcaption data-i="cap_story"></figcaption></figure>
     <div class="actions"><button type="button" class="btn primary" data-save="story" data-i="save"></button><button type="button" class="btn" data-share="story" data-i="share"></button></div>
     <p class="fb"><button type="button" class="link" data-open="story" data-i="openImg"></button></p>
+    <div id="out_season"></div>
     <section class="card ba" id="ba">
       <h3 data-i="baT"></h3>
       <p class="hint" data-i="baHint"></p>
@@ -289,7 +317,7 @@ const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>Array.from(r.quer
    by hand; nothing is generated at runtime and nothing leaves the device.
    ===================================================================== */
 const UI={
-en:{appName:"Starter Kit",eyebrow:"Free · No sign-up · Stays on your phone",
+en:{appName:"NextCustomer",docTitle:"NextCustomer · Free marketing kit for local service businesses",eyebrow:"Free marketing kit · No sign-up · Stays on your phone",
 h1:"Your business, ready to post in <em>five minutes.</em>",
 lede:"A flyer, a story, your bio, customer texts and a week of post ideas. All from a few details.",
 examples:"Examples",s1:"Your business",s2:"How customers reach you",s3:"Logo or photo",optional:"Optional",
@@ -314,15 +342,18 @@ persT:"Personalize",l_owner:"Your first name",l_customer:"Customer's name",l_rev
 persHint:"Optional. Anything in [brackets] is a blank to fill in before you send.",
 weekIntro:"Seven posts you can make with just your phone. No ad budget needed.",
 postL:"Post",howL:"How",capL:"Caption starter",day:"Day",
-made:"Made with ENM Ventures",local:"Your info stays on this device.",clear:"Clear my info",clear2:"Tap again to clear everything",cleared:"Cleared",
+made:"NextCustomer · Made with ENM Ventures",local:"Your info stays on this device.",clear:"Clear my info",clear2:"Tap again to clear everything",cleared:"Cleared",
 inapp:"To save images, open this page in Chrome: tap ⋮ then “Open in Chrome”.",
 noContact:"Tip: add a phone number or handle (step 02) so customers can reach you.",
 g_area:"Service area",g_call:"Call / Text",g_online:"Online",g_email:"Email",g_before:"Before",g_after:"After",
 openImg:"Trouble saving? Open the image",holdHint:"Press and hold the image, then tap “Download image.”",close:"Close",
 baT:"Before & after post",baHint:"Use two real photos of the same job, taken from the same spot. Don't edit the after photo to look better than the work. Ask the client first, and leave out faces, house numbers and license plates. These photos aren't saved after you close the page.",
 baBefore:"+ Before photo",baAfter:"+ After photo",cap_ba:"Before & after · 1080 × 1350",baNeed:"Add a before photo and an after photo first.",
-yourBiz:"Your business"},
-es:{appName:"Kit de Inicio",eyebrow:"Gratis · Sin registrarse · Todo se queda en su teléfono",
+yourBiz:"Your business",
+season:"Seasonal",s_none:"Everyday",seasonNone:"Optional. Pick a season to change the headline, call to action and graphics.",
+seasonNote:"You can edit the headline and call to action below. Only mention dates, prices or offers you really have.",
+capSeason:"Caption to post with it",l_gimg:"Photo or logo"},
+es:{appName:"NextCustomer",docTitle:"NextCustomer · Kit de marketing gratis para negocios locales de servicios",eyebrow:"Kit de marketing gratis · Sin registro · Se queda en su teléfono",
 h1:"Su negocio, listo para publicar en <em>cinco minutos.</em>",
 lede:"Un flyer, una historia, su perfil, mensajes para clientes y una semana de ideas para publicar, con solo unos datos.",
 examples:"Ejemplos",s1:"Su negocio",s2:"Cómo lo contactan",s3:"Logo o foto",optional:"Opcional",
@@ -347,14 +378,17 @@ persT:"Personalizar",l_owner:"Su nombre",l_customer:"Nombre del cliente",l_revie
 persHint:"Opcional. Lo que está entre [corchetes] es un espacio para llenar antes de enviar.",
 weekIntro:"Siete publicaciones que puede hacer solo con su teléfono. Sin pagar anuncios.",
 postL:"Qué publicar",howL:"Cómo",capL:"Texto para empezar",day:"Día",
-made:"Hecho con ENM Ventures",local:"Sus datos se quedan en este dispositivo.",clear:"Borrar mis datos",clear2:"Toque otra vez para borrar todo",cleared:"Datos borrados",
+made:"NextCustomer · Hecho con ENM Ventures",local:"Sus datos se quedan en este dispositivo.",clear:"Borrar mis datos",clear2:"Toque otra vez para borrar todo",cleared:"Datos borrados",
 inapp:"Para guardar imágenes, abra esta página en Chrome: toque ⋮ y luego “Abrir en Chrome”.",
 noContact:"Consejo: agregue un teléfono o una cuenta (paso 02) para que los clientes lo puedan contactar.",
 g_area:"Zona de servicio",g_call:"Llame o escriba",g_online:"En línea",g_email:"Correo",g_before:"Antes",g_after:"Después",
 openImg:"¿No se guardó? Abra la imagen",holdHint:"Mantenga presionada la imagen y toque “Descargar imagen”.",close:"Cerrar",
 baT:"Publicación de antes y después",baHint:"Use dos fotos reales del mismo trabajo, tomadas desde el mismo lugar. No edite la foto de después para que se vea mejor que el trabajo real. Pida permiso al cliente y no muestre caras, números de casa ni placas. Estas fotos no se guardan al cerrar la página.",
 baBefore:"+ Foto de antes",baAfter:"+ Foto de después",cap_ba:"Antes y después · 1080 × 1350",baNeed:"Primero agregue una foto de antes y una de después.",
-yourBiz:"Su negocio"}
+yourBiz:"Su negocio",
+season:"Temporada",s_none:"Todo el año",seasonNone:"Opcional. Elija una temporada para cambiar el título, el llamado a la acción y los gráficos.",
+seasonNote:"Puede editar el título y el llamado a la acción abajo. Mencione solo fechas, precios u ofertas que de verdad tenga.",
+capSeason:"Texto para acompañar su publicación",l_gimg:"Foto o logo"}
 };
 
 const ORDER=["cleaning","landscaping","detailing","pressure","handyman","other"];
@@ -405,6 +439,51 @@ other:{
 };
 const CTAS={en:["Message us for a quote","Call or text to book","Book your first visit","Ask about availability"],
             es:["Escríbanos para cotizar","Llame o mande mensaje","Agende su primera visita","Pregunte por disponibilidad"]};
+/* Seasonal presets. Optional. Hand-written EN + Mexican Spanish (usted).
+   No sales, discounts, dates, availability, credentials or testimonials:
+   the owner adds those only if they are real. {where} = first town in the
+   service area (or a neutral fallback), {in} = " in <area>", {quote} = the
+   trade's quote question. */
+const SEASONS=["thanks","shop","ready"],SEASON_SLUG={thanks:"thank-you",shop:"shop-small",ready:"holiday-ready"};
+const SEASON={
+thanks:{
+ en:{name:"Thank You, Neighbors",about:"A thank-you post for your customers during Thanksgiving season.",kicker:"Thanksgiving season",ring:"Thank you, neighbors",word:"Thanks",where:"the neighborhood",
+  hl:["Thank you, neighbors.","Thankful for every customer in {where}.","This season, we're grateful for you."],
+  cta:["Message us anytime","Tell a neighbor about us","Thank you for choosing local"],
+  cap:"Thank you to every customer who has chosen {name}. A small local business runs on neighbors like you, and we don't take that for granted. If someone you know could use {noun}, we'd be grateful if you passed along our info."},
+ es:{name:"Gracias, vecinos",about:"Una publicación para agradecer a sus clientes en la temporada de Acción de Gracias.",kicker:"Temporada de Acción de Gracias",ring:"Gracias, vecinos",word:"Gracias",where:"nuestra comunidad",
+  hl:["Gracias, vecinos.","Agradecidos con cada cliente de {where}.","En esta temporada, gracias por su preferencia."],
+  cta:["Escríbanos cuando guste","Recomiéndenos con un vecino","Gracias por preferir lo local"],
+  cap:"Gracias a cada cliente que ha elegido a {name}. Un negocio pequeño y local sigue adelante gracias a vecinos como usted, y eso no lo damos por hecho. Si conoce a alguien que necesite {noun}, le agradeceríamos mucho que le pasara nuestros datos."}},
+shop:{
+ en:{name:"Shop Small",about:"Small Business Saturday messaging that reminds people you're a local business.",kicker:"Small Business Saturday",ring:"Shop small • Hire local",word:"Local",where:"your neighborhood",
+  hl:["Shop small. Hire local.","Support small. Support {where}.","When you hire local, your neighborhood grows."],
+  cta:["Follow us and share","Message us for a quote","Tag a local business you love"],
+  cap:"This Small Business Saturday, thank you for supporting local. {name} is a small local business offering {noun}{in}, and every call, review and referral makes a real difference. Tag a local business you love in the comments."},
+ es:{name:"Apoye lo local",about:"Mensajes para el Sábado de Pequeños Negocios (Small Business Saturday) que recuerdan que usted es un negocio local.",kicker:"Sábado de Pequeños Negocios",ring:"Apoye lo local",word:"Local",where:"su comunidad",
+  hl:["Apoye lo local, apoye a su vecino.","Los negocios pequeños hacen grande a {where}.","Cuando contrata local, crece su comunidad."],
+  cta:["Síganos y comparta","Escríbanos para cotizar","Etiquete a un negocio local"],
+  cap:"Este Sábado de Pequeños Negocios (Small Business Saturday), gracias por apoyar lo local. {name} es un negocio pequeño y local que ofrece {noun}{in}, y cada llamada, reseña y recomendación hace una gran diferencia. Etiquete en los comentarios a un negocio local que le guste."}},
+ready:{
+ en:{name:"Holiday Ready",about:"A seasonal service post for the weeks before the holidays.",kicker:"This holiday season",ring:"Holiday ready",word:"Ready",where:"",
+  hl:{cleaning:["Holiday guests coming? Let's get your home ready.","A clean home before the holidays.","You host the holidays. We'll handle the cleaning."],
+   detailing:["Holiday road trip? Start with a clean car.","Holiday ready, inside and out.","A fresh, clean car for the holiday drive."],
+   landscaping:["Holiday ready, from the curb up.","A tidy yard before the holidays.","Welcome guests with a yard that's ready."],
+   pressure:["Clean driveway, warm welcome.","Holiday ready, from the driveway in.","Fresh walkways before the guests arrive."],
+   handyman:["Finish the to-do list before the holidays.","Holiday ready, one fix at a time.","Small fixes done before guests arrive."],
+   other:["Holiday ready with local {s}.","Get ready for the holidays.","{S} before the holidays."]},
+  cta:["Ask about availability","Message us for a quote","Ask about holiday dates"],
+  cap:"Getting ready for the holidays? {name} offers {noun}{in}. Message us for a quote and to ask about scheduling."},
+ es:{name:"Todo listo para las fiestas",about:"Una publicación de temporada para las semanas antes de las fiestas.",kicker:"Esta temporada de fiestas",ring:"Todo listo para las fiestas",word:"Listo",where:"",
+  hl:{cleaning:["¿Visitas en las fiestas? Dejemos su casa lista.","Su casa limpia antes de las fiestas.","Usted recibe a la familia. Nosotros limpiamos."],
+   detailing:["¿Viaje en las fiestas? Empiece con su carro limpio.","Listo para las fiestas, por dentro y por fuera.","Su carro limpio para salir en las fiestas."],
+   landscaping:["Su jardín listo para las fiestas.","Un jardín arreglado antes de las fiestas.","Reciba a sus visitas con un jardín listo."],
+   pressure:["Entrada limpia, bienvenida cálida.","Todo listo para las fiestas, desde la entrada.","Banquetas limpias antes de que lleguen las visitas."],
+   handyman:["Termine sus pendientes antes de las fiestas.","Listo para las fiestas, un arreglo a la vez.","Esos arreglos, listos antes de que lleguen las visitas."],
+   other:["Todo listo para las fiestas con {s} local.","Prepárese para las fiestas.","{S} antes de las fiestas."]},
+  cta:["Pregunte por disponibilidad","Escríbanos para cotizar","Pregunte por fechas para las fiestas"],
+  cap:"¿Ya se está preparando para las fiestas? {name} ofrece {noun}{in}. Escríbanos para pedir una cotización y consultar fechas."}}
+};
 const PALS=[
  {en:"Terracotta",es:"Terracota",paper:"#F4EEE4",ink:"#1C1813",accent:"#EE6A3B"},
  {en:"Pine & lime",es:"Pino y lima",paper:"#EEF0E5",ink:"#13291F",accent:"#C5E36B"},
@@ -435,7 +514,10 @@ function deriveData(s,img){
   const label=svc==="other"?(capFirst(other)||(L==="es"?"Servicios locales":"Local services")):S.label;
   const noun=svc==="other"?(other?lowerFirst(other):(L==="es"?"servicios locales":"local services")):S.noun;
   const sub=t=>t.replace(/\{S\}/g,capFirst(noun)).replace(/\{s\}/g,noun);
-  const hls=S.hl.map(sub),ctas=CTAS[L];
+  const sk=SEASON[s.season]?s.season:"",Z=sk?SEASON[sk][L]:null;
+  const town=clean(s.area).split(/,|&|\s\+\s|\s(?:and|y)\s/i)[0].trim();
+  const subZ=t=>sub(t).replace(/\{where\}/g,town||(Z&&Z.where)||"");
+  const hls=Z?(Array.isArray(Z.hl)?Z.hl:Z.hl[svc]).map(subZ):S.hl.map(sub),ctas=Z?Z.cta:CTAS[L];
   const ownHead=String(s.headline||"").split("\n").map(clean).filter(Boolean).join("\n");
   const pi=s.pal>=0&&s.pal<PALS.length?s.pal:PAL_DEFAULT[svc];
   return{lang:L,service:svc,name:clean(s.name)||UI[L].yourBiz,label,noun,area:clean(s.area),
@@ -444,6 +526,7 @@ function deriveData(s,img){
     phone:formatPhone(s.phone),handle:normHandle(s.handle),web:normWeb(s.web),email:clean(s.email),
     owner:clean(s.owner),customer:clean(s.customer),review:clean(s.review),initials:initials(s.name||label),
     pal:PALS[pi],palIdx:pi,img:img||null,kind:s.kind==="logo"?"logo":"photo",
+    season:Z?{key:sk,name:Z.name,about:Z.about,kicker:Z.kicker,ring:Z.ring,word:Z.word,cap:Z.cap}:null,
     x:{job:sub(S.job),tip:sub(S.tip),tools:sub(S.tools),faq:sub(S.faq),quote:sub(S.quote),prep:sub(S.prep)}};
 }
 function shortLine(t,max){t=clean(t);if(!t)return"";const s=t.split(/(?<=[.!?])\s/)[0].replace(/[.!?]+$/,"");if(s.length<=max)return s;
@@ -501,7 +584,8 @@ function buildCopy(d){
    {t:"Where you work",w:`Show the neighborhoods you serve${d.area?` around ${d.area}`:""}.`,h:"Post a photo of a local street or landmark. Share it in community groups only where the rules allow business posts.",c:`Now booking${inArea}. If you're nearby and need ${d.noun}, send me a message.`},
    {t:"Say thank you",w:"Thank the people who supported you this week, and invite customers to leave an honest review.",h:"A simple photo of you or your work. Never post a customer's name or home without permission.",c:`Thank you to everyone who has supported ${d.name}. If I've worked for you, an honest review helps a small business more than you know.`}
   ];
-  return{bio,about,msgs,ideas};
+  const season=d.season?d.season.cap.replace(/\{name\}/g,d.name).replace(/\{noun\}/g,d.noun).replace(/\{in\}/g,inArea).replace(/\{quote\}/g,d.x.quote):"";
+  return{bio,about,msgs,ideas,season};
 }
 
 /* =====================================================================
@@ -546,20 +630,26 @@ function sun(c,x,y,w,h,P){const r=Math.min(w*.4,h*.96),cx=x+w/2,base=y+h;
   c.fillStyle=P.ink;c.fillRect(x,base-1,w,2)}
 
 /* Circular stamp with the service and area set around the edge. */
-function badge(c,d,cx,cy,r,ring,P,logo){
-  c.save();c.fillStyle=P.accent;c.beginPath();c.arc(cx,cy,r,0,Math.PI*2);c.fill();
+function badge(c,d,cx,cy,r,ring,P,logo,opt){opt=opt||{};const fg=opt.fg||P.ink;
+  c.save();c.fillStyle=opt.fill||P.accent;c.beginPath();c.arc(cx,cy,r,0,Math.PI*2);c.fill();
   const o={fam:SANS,w:600,track:.1};let fs=Math.max(11,r*.115),txt=(ring||d.name).toUpperCase();const sep="   •   ";
   const R=()=>r-fs*1.3;setF(c,o,fs);let circ=2*Math.PI*R(),uw=c.measureText(txt+sep).width;
-  if(uw>circ){txt=(d.label||d.name).toUpperCase();uw=c.measureText(txt+sep).width}
+  if(uw>circ){txt=(opt.alt||d.label||d.name).toUpperCase();uw=c.measureText(txt+sep).width}
   while(uw>circ&&fs>9){fs-=1;setF(c,o,fs);circ=2*Math.PI*R();uw=c.measureText(txt+sep).width}
   const full=[...(txt+sep).repeat(Math.max(1,Math.floor(circ/uw)))],ws=full.map(ch=>c.measureText(ch).width),extra=(circ-ws.reduce((a,b)=>a+b,0))/full.length;
-  c.fillStyle=P.ink;c.textAlign="center";c.textBaseline="middle";let a=-Math.PI/2;const rad=R();
+  c.fillStyle=fg;c.textAlign="center";c.textBaseline="middle";let a=-Math.PI/2;const rad=R();
   full.forEach((ch,i)=>{const st=(ws[i]+extra)/rad;a+=st/2;c.save();c.translate(cx+rad*Math.cos(a),cy+rad*Math.sin(a));c.rotate(a+Math.PI/2);c.fillText(ch,0,0);c.restore();a+=st/2});
-  resetLS(c);const ir=r-fs*2.65;c.strokeStyle=P.ink;c.lineWidth=Math.max(1.5,r*.012);c.beginPath();c.arc(cx,cy,ir,0,Math.PI*2);c.stroke();
+  resetLS(c);const ir=r-fs*2.65;c.strokeStyle=fg;c.lineWidth=Math.max(1.5,r*.012);c.beginPath();c.arc(cx,cy,ir,0,Math.PI*2);c.stroke();
   if(logo){c.fillStyle=P.paper;c.beginPath();c.arc(cx,cy,ir-8,0,Math.PI*2);c.fill();const s=(ir-8)*1.22;contain(c,d.img,cx-s/2,cy-s/2,s,s)}
+  else if(opt.word){const f=fit(c,opt.word,{fam:SERIF,w:600,it:true,maxW:ir*1.5,lines:1,max:ir*.62,min:10,track:-.01});setF(c,f.o,f.size);c.fillStyle=opt.wordColor||fg;c.textAlign="center";c.textBaseline="alphabetic";c.fillText(f.lines[0],cx,cy+f.size*CAP/2);resetLS(c)}
   else mono(c,d,cx,cy,ir*1.32,ir*.98,DISPLAY,900,P.ink);
   c.restore();bound(cy-r,cy+r)}
 
+/* Seasonal kicker: small accent dot + tracked uppercase label. Returns the bottom. */
+function kicker(c,text,x,y,maxW,col,dot,story){const s0=story?24:21,f=fit(c,text,{fam:SANS,w:700,maxW:maxW-s0*1.2,lines:1,max:s0,min:13,track:.16,upper:true});
+  const r=f.size*.34;c.fillStyle=dot;c.beginPath();c.arc(x+r,y+f.size*CAP/2,r,0,Math.PI*2);c.fill();return draw(c,f,x+r*2+f.size*.6,y,col)}
+/* Seasonal seal: the stamp, with the preset phrase and the business name around it. */
+function seal(c,d,cx,cy,r,P,fill,fg,wordColor,logo){badge(c,d,cx,cy,r,[d.season.ring,d.name].join("  •  "),P,logo,{fill,fg,wordColor,alt:d.season.ring,word:d.season.word})}
 function chip(c,text,x,y,bg,fg,o,h,px,maxW){const f=fit(c,text,Object.assign({maxW:maxW-px*2,lines:1},o));setF(c,f.o,f.size);
   const w=Math.min(maxW,c.measureText(f.lines[0]).width+px*2);resetLS(c);c.fillStyle=bg;rr(c,x,y,w,h,h/2);c.fill();draw(c,f,x+px,y+(h-f.size*CAP)/2,fg);bound(y,y+h);return h}
 
@@ -576,7 +666,8 @@ function tEditorial(c,d,F){
   if(logo)contain(c,d.img,mx,my,mk,mk);else{c.fillStyle=P.accent;c.beginPath();c.arc(mx+mk/2,my+mk/2,mk/2,0,Math.PI*2);c.fill();mono(c,d,mx+mk/2,my+mk/2,mk*.6,mk*.42,SERIF,600,P.ink)}
   bound(my,my+mk);
   const ry=Math.max(b+nm.size*.3,my+mk)+34;c.fillStyle=P.ink;c.fillRect(M,ry,CW,2);
-  const hTop=ry+(story?74:58),cs=contacts(d),p={};let fy=bot;
+  let hTop=ry+(story?74:58);const cs=contacts(d),p={};let fy=bot;
+  if(d.season)hTop=kicker(c,d.season.kicker,M,ry+(story?52:40),CW,rgba(P.ink,.74),P.accent,story)+(story?56:40);
   if(cs.length>1){p.sec=fit(c,cs.slice(1).join("   ·   "),{fam:SANS,w:400,maxW:CW,lines:2,max:28,min:19});fy-=blockH(p.sec,1.36);p.secY=fy;fy-=24}
   if(cs.length){p.pri=fit(c,cs[0],{fam:DISPLAY,w:700,maxW:CW,lines:1,max:54,min:30,track:-.01});fy-=blockH(p.pri,1);p.priY=fy;fy-=44}
   const cta=fit(c,d.cta+"  →",{fam:SANS,w:600,maxW:CW-88,lines:1,max:31,min:20}),pillH=86;fy-=pillH;p.pillY=fy;fy-=50;
@@ -584,8 +675,9 @@ function tEditorial(c,d,F){
   const minMid=photo?(story?560:330):(story?340:150);
   const hl=fitBox(c,d.headline,{fam:SERIF,w:600,maxW:CW,lines:story?5:4,max:story?128:120,min:58,track:-.015},1.06,fy-hTop-minMid);
   const hb=draw(c,hl,M,hTop,P.ink,1.06),mTop=hb+hl.size*.3+44,mH=fy-mTop;
-  if(photo&&mH>140){c.save();if(mH>=CW*.62){const r=CW/2;c.beginPath();c.moveTo(M,mTop+mH);c.lineTo(M,mTop+r);c.arc(M+r,mTop+r,r,Math.PI,0);c.lineTo(M+CW,mTop+mH);c.closePath()}else rr(c,M,mTop,CW,mH,26);c.clip();cover(c,d.img,M,mTop,CW,mH);c.restore()}
-  else if(mH>110)sun(c,M,mTop,CW,mH,P);
+  if(photo&&mH>140){c.save();if(mH>=CW*.62){const r=CW/2;c.beginPath();c.moveTo(M,mTop+mH);c.lineTo(M,mTop+r);c.arc(M+r,mTop+r,r,Math.PI,0);c.lineTo(M+CW,mTop+mH);c.closePath()}else rr(c,M,mTop,CW,mH,26);c.clip();cover(c,d.img,M,mTop,CW,mH);c.restore();
+    if(d.season){const r=Math.min(story?168:134,mH*.4);if(r>=64)seal(c,d,M+CW-r-24,mTop+mH-r-24,r,P,P.ink,P.paper,P.accent)}}
+  else if(mH>110){sun(c,M,mTop,CW,mH,P);if(d.season){const r=Math.min(story?168:134,mH/2-4);if(r>=64)seal(c,d,M+CW-r,mTop+r,r,P,P.ink,P.paper,P.accent)}}
   if(p.desc)draw(c,p.desc,M,p.descY,rgba(P.ink,.76),1.42);
   setF(c,cta.o,cta.size);const pw=Math.min(CW,c.measureText(cta.lines[0]).width+88);resetLS(c);
   c.fillStyle=P.ink;rr(c,M,p.pillY,pw,pillH,pillH/2);c.fill();draw(c,cta,M+44,p.pillY+(pillH-cta.size*CAP)/2,P.paper);
@@ -600,7 +692,8 @@ function tPoster(c,d,F){
   const eye=fit(c,[d.label,d.area].filter(Boolean).join("  ·  "),{fam:SANS,w:600,maxW:CW,lines:1,max:21,min:14,track:.16,upper:true});
   b=draw(c,eye,M,b+nm.size*.28+22,rgba(P.paper,.62));
   const ry=b+34;c.fillStyle=rgba(P.paper,.2);c.fillRect(M,ry,CW,2);
-  const hTop=ry+(story?72:54),cs=contacts(d),p={};let fy=bot;
+  let hTop=ry+(story?72:54);const cs=contacts(d),p={};let fy=bot;
+  if(d.season)hTop=kicker(c,d.season.kicker,M,ry+(story?50:38),CW,rgba(P.paper,.78),P.accent,story)+(story?54:38);
   if(cs.length>1){p.sec=fit(c,cs.slice(1).join("   ·   "),{fam:SANS,w:600,maxW:CW,lines:2,max:26,min:18});fy-=blockH(p.sec,1.36);p.secY=fy;fy-=22}
   if(cs.length){p.pri=fit(c,cs[0],{fam:DISPLAY,w:900,maxW:CW,lines:1,max:68,min:32,track:-.01});fy-=blockH(p.pri,1);p.priY=fy;fy-=34}
   p.cta=fit(c,d.cta+"  →",{fam:SANS,w:600,maxW:CW,lines:2,max:25,min:17,track:.14,upper:true});fy-=blockH(p.cta,1.3);p.ctaY=fy;
@@ -610,9 +703,10 @@ function tPoster(c,d,F){
   const hl=fitBox(c,d.headline,{fam:DISPLAY,w:900,maxW:CW,lines:story?6:5,max:story?164:156,min:62,track:-.02,upper:true},.93,fy-hTop-minMid);
   const hb=draw(c,hl,M,hTop,P.paper,.93,"left",P.accent),mTop=hb+hl.size*.2+52,mH=fy-mTop;
   const ring=[d.label,d.area].filter(Boolean).join("  •  ");
-  if(photo&&mH>140){c.save();rr(c,M,mTop,CW,mH,28);c.clip();cover(c,d.img,M,mTop,CW,mH);c.restore();const r=Math.min(138,mH*.36);badge(c,d,M+CW-r-26,mTop+mH-r-26,r,ring,P,false)}
+  const stamp=(cx,cy,r,lg)=>d.season?seal(c,d,cx,cy,r,P,P.accent,P.ink,P.ink,lg):badge(c,d,cx,cy,r,ring,P,lg);
+  if(photo&&mH>140){c.save();rr(c,M,mTop,CW,mH,28);c.clip();cover(c,d.img,M,mTop,CW,mH);c.restore();const r=Math.min(d.season?152:138,mH*.36);stamp(M+CW-r-26,mTop+mH-r-26,r,false)}
   else if(mH>150){const r=Math.min(mH/2-6,236),cx=W/2,cy=mTop+mH/2;c.save();c.beginPath();c.rect(0,mTop-24,W,mH+48);c.clip();c.strokeStyle=rgba(P.paper,.09);c.lineWidth=2;
-    for(let k=1;k<=7;k++){c.beginPath();c.arc(cx,cy,r+k*34,0,Math.PI*2);c.stroke()}c.restore();badge(c,d,cx,cy,r,ring,P,logo)}
+    for(let k=1;k<=7;k++){c.beginPath();c.arc(cx,cy,r+k*34,0,Math.PI*2);c.stroke()}c.restore();stamp(cx,cy,r,logo)}
   c.fillStyle=P.accent;c.fillRect(0,bandTop,W,H-bandTop);
   if(p.desc)draw(c,p.desc,M,p.descY,rgba(P.paper,.8),1.42);
   draw(c,p.cta,M,p.ctaY,rgba(P.ink,.8),1.3);if(p.pri)draw(c,p.pri,M,p.priY,P.ink);if(p.sec)draw(c,p.sec,M,p.secY,rgba(P.ink,.8),1.36)}
@@ -629,8 +723,9 @@ function tGrid(c,d,F){
     p.vh=Math.max(...p.cols.map(o=>blockH(o.v,1.15)));p.lh=p.cols[0].l.size*CAP;fy-=2+28+p.lh+18+p.vh;p.gridY=fy;p.cw=cw;p.gap=gap;fy-=56}
   if(d.desc){p.desc=fit(c,d.desc,{fam:SANS,w:400,maxW:CW,lines:3,max:30,min:22});fy-=blockH(p.desc,1.42);p.descY=fy;fy-=56}
   const minVis=story?top+560:(photo?470:400);
-  const hl=fitBox(c,d.headline,{fam:DISPLAY,w:700,maxW:CW,lines:3,max:story?108:98,min:52,track:-.025},1.02,fy-minVis-70);
-  const hY=fy-blockH(hl,1.02),vb=hY-70;
+  const kH=d.season?(story?24:21)*CAP+30:0;
+  const hl=fitBox(c,d.headline,{fam:DISPLAY,w:700,maxW:CW,lines:3,max:story?108:98,min:52,track:-.025},1.02,fy-minVis-70-kH);
+  const hY=fy-blockH(hl,1.02),vb=hY-(d.season?56:70)-kH;
   c.save();c.beginPath();c.rect(0,0,W,vb);c.clip();
   if(photo){cover(c,d.img,0,0,W,vb);const g=c.createLinearGradient(0,0,0,top+240);g.addColorStop(0,rgba(P.ink,.3));g.addColorStop(1,rgba(P.ink,0));c.fillStyle=g;c.fillRect(0,0,W,top+240)}
   else{c.fillStyle=P.accent;c.fillRect(0,0,W,vb);c.fillStyle=rgba(P.ink,.13);for(let i=0;i<=3;i++)c.fillRect(Math.round(M+CW*i/3)-1,0,2,vb);
@@ -642,6 +737,8 @@ function tGrid(c,d,F){
   const chipMax=CW-(lg?lg+28:0);
   const h1=chip(c,d.name,M,top,P.paper,P.ink,{fam:DISPLAY,w:700,max:30,min:18,track:-.005},68,28,chipMax);
   chip(c,d.label,M,top+h1+12,P.ink,P.paper,{fam:SANS,w:600,max:19,min:12,track:.14,upper:true},50,22,chipMax);
+  if(d.season){const sTop=top+(lg?lg:130)+28,r=Math.min(story?176:140,(vb-36-sTop)/2);if(r>=64)seal(c,d,W-M-r,vb-36-r,r,P,P.paper,P.ink,P.ink,false);
+    kicker(c,d.season.kicker,M,hY-kH,CW,rgba(P.ink,.74),P.ink,story)}
   draw(c,hl,M,hY,P.ink,1.02);
   if(p.desc)draw(c,p.desc,M,p.descY,rgba(P.ink,.74),1.42);
   if(p.cols){c.fillStyle=P.ink;c.fillRect(M,p.gridY,CW,2);p.cols.forEach((o,i)=>{const x=M+i*(p.cw+p.gap);
@@ -682,11 +779,11 @@ function render(c,W,H,d,t){BB={top:1e9,bottom:-1e9};c.save();c.textAlign="left";
    ===================================================================== */
 const KEY="enm-starter-v1",IKEY="enm-starter-v1-img";
 const DEF={lang:"en",name:"",service:"cleaning",other:"",area:"",desc:"",phone:"",handle:"",web:"",email:"",owner:"",customer:"",review:"",
-  kind:"photo",tpl:0,pal:-1,hlIdx:0,ctaIdx:0,headline:"",cta:"",hlEdited:false,ctaEdited:false,screen:"setup",tab:"g"};
+  kind:"photo",tpl:0,pal:-1,hlIdx:0,ctaIdx:0,headline:"",cta:"",hlEdited:false,ctaEdited:false,screen:"setup",tab:"g",season:"",sx:null};
 const FONT_SPECS=['900 40px "Inter Display"','700 40px "Inter Display"','400 40px "Inter"','600 40px "Inter"','600 40px "Lora"','italic 500 40px "Lora"'];
 const fontsReady=(document.fonts&&document.fonts.load)?Promise.all(FONT_SPECS.map(s=>document.fonts.load(s))).catch(()=>{}):Promise.resolve();
 
-const API={UI,SV,CTAS,PALS,ORDER,DEF,deriveData,buildCopy,render,tBA,shareFlow,fit,setF,resetLS,formatPhone,normHandle,normWeb,initials,DISPLAY,SANS,SERIF,FONT_SPECS,fontsReady};
+const API={UI,SV,CTAS,SEASON,SEASONS,PALS,ORDER,DEF,deriveData,buildCopy,render,tBA,shareFlow,fit,setF,resetLS,formatPhone,normHandle,normWeb,initials,DISPLAY,SANS,SERIF,FONT_SPECS,fontsReady};
 window.ENMStarter=API;
 if(location.hash==="#selftest"){selfTest();return}
 if(window.__ENM_NO_APP)return;
@@ -706,13 +803,16 @@ function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clea
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 const markBlanks=s=>esc(s).replace(/\[[^\]\n]{1,40}\]/g,"<mark>$&</mark>");
 
-function applyI18n(){const S=T();document.documentElement.lang=st.lang;
+function applyI18n(){const S=T();document.documentElement.lang=st.lang;document.title=S.docTitle;
   $$("[data-i]").forEach(el=>{const v=S[el.dataset.i];if(typeof v==="string")el.textContent=v});
   $$("[data-ih]").forEach(el=>{el.innerHTML=S[el.dataset.ih]});
   $$("[data-ph]").forEach(el=>{el.placeholder=S[el.dataset.ph]});
   $$("[data-lang]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===st.lang)));
-  $("#uplabel").textContent=IMG?S.change:S.l_upload;
-  buildChips();buildTplButtons();buildSwatches();descPlaceholder();heroFan()}
+  $("#uplabel").textContent=$("#glabel").textContent=IMG?S.change:S.l_upload;
+  buildChips();buildSeasons();buildTplButtons();buildSwatches();descPlaceholder();heroFan()}
+function buildSeasons(){const L=st.lang,k0=SEASON[st.season]?st.season:"";
+  $("#seasons").innerHTML=[""].concat(SEASONS).map(k=>`<button type="button" class="chip" role="radio" data-season="${k}" aria-checked="${k===k0}">${k?"<i aria-hidden=\"true\"></i>":""}${esc(k?SEASON[k][L].name:T().s_none)}</button>`).join("");
+  $("#seasonHint").textContent=k0?SEASON[k0][L].about+" "+T().seasonNote:T().seasonNone}
 function buildChips(){const box=$("#chips");box.innerHTML=ORDER.map(k=>`<button type="button" class="chip" role="radio" data-svc="${k}" aria-checked="${k===st.service}">${esc(CHIPS[st.lang][k])}</button>`).join("");
   $("#f_other").hidden=st.service!=="other"}
 function descPlaceholder(){const d=deriveData(Object.assign({},st,{desc:""}),null);$("#f_desc").placeholder=d.desc||T().l_desc}
@@ -744,14 +844,16 @@ function toCanvas(src,max){const w=src.naturalWidth||src.width,h=src.naturalHeig
   c.width=Math.max(1,Math.round(w*s));c.height=Math.max(1,Math.round(h*s));const x=c.getContext("2d");x.imageSmoothingQuality="high";x.drawImage(src,0,0,c.width,c.height);return c}
 function hasAlpha(c){try{const a=c.getContext("2d").getImageData(0,0,c.width,c.height).data;for(let i=3;i<a.length;i+=28)if(a[i]<240)return true}catch(e){}return false}
 function persistImg(){try{if(IMG)localStorage.setItem(IKEY,IMG.toDataURL(IMGALPHA?"image/png":"image/jpeg",.86));else localStorage.removeItem(IKEY)}catch(e){try{localStorage.removeItem(IKEY)}catch(_){}}}
-function imgUI(){$("#imgbox").hidden=!IMG;$("#uplabel").textContent=IMG?T().change:T().l_upload;
-  if(IMG)$("#imgprev").src=toCanvas(IMG,160).toDataURL("image/png");$$("#kindseg button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.kind===st.kind)))}
+function imgUI(){$("#imgbox").hidden=!IMG;$("#gimg").hidden=!IMG;$("#uplabel").textContent=$("#glabel").textContent=IMG?T().change:T().l_upload;
+  if(IMG)$("#imgprev").src=$("#gimg").src=toCanvas(IMG,160).toDataURL("image/png");$$("#kindseg button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.kind===st.kind)))}
 async function receiveBusinessImage(e){const f=e.target.files&&e.target.files[0];e.target.value="";if(!f)return;
   try{const im=await loadImage(f),big=toCanvas(im,1600);IMGALPHA=hasAlpha(big);const w=im.naturalWidth,h=im.naturalHeight;
     st.kind=IMGALPHA||(Math.abs(w/h-1)<.2&&Math.max(w,h)<=1200)?"logo":"photo";IMG=st.kind==="logo"?toCanvas(im,900):big;
     persistImg();imgUI();save();schedule()}catch(err){toast(T().imgErr)}}
 $("#f_file").addEventListener("change",receiveBusinessImage);
 $("#f_camera").addEventListener("change",receiveBusinessImage);
+$("#f_file2").addEventListener("change",receiveBusinessImage);
+$("#f_camera2").addEventListener("change",receiveBusinessImage);
 $("#kindseg").addEventListener("click",e=>{const b=e.target.closest("[data-kind]");if(!b)return;st.kind=b.dataset.kind;imgUI();save();schedule()});
 $("#b_rmimg").addEventListener("click",()=>{IMG=null;IMGALPHA=false;persistImg();imgUI();schedule()});
 
@@ -764,18 +866,25 @@ function setTab(t){st.tab=t;$$(".tab").forEach(b=>b.setAttribute("aria-selected"
 $$(".tab").forEach(b=>b.addEventListener("click",()=>{setTab(b.dataset.tab);const y=$("#kitTitle").getBoundingClientRect().top+window.scrollY-70;if(window.scrollY>y)window.scrollTo(0,y)}));
 $("#tpls").addEventListener("click",e=>{const b=e.target.closest("[data-tpl]");if(!b)return;st.tpl=+b.dataset.tpl;$$("#tpls .tpl").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));save();renderAll()});
 $("#sw").addEventListener("click",e=>{const b=e.target.closest("[data-pal]");if(!b)return;st.pal=+b.dataset.pal;$$("#sw button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));save();renderAll()});
+/* Each season keeps its own headline and call to action, so switching back restores the owner's edits. */
+const SXF=["headline","cta","hlEdited","ctaEdited","hlIdx","ctaIdx"];
+$("#seasons").addEventListener("click",e=>{const b=e.target.closest("[data-season]");if(!b)return;const k=SEASON[b.dataset.season]?b.dataset.season:"",cur=SEASON[st.season]?st.season:"";if(k===cur)return;
+  const sx=Object.assign({},st.sx);sx[cur||"base"]=Object.fromEntries(SXF.map(f=>[f,st[f]]));
+  Object.assign(st,{headline:"",cta:"",hlEdited:false,ctaEdited:false,hlIdx:0,ctaIdx:0},sx[k||"base"]||{},{season:k,sx});
+  buildSeasons();save();renderAll()});
+const fGname=$("#f_gname");fGname.addEventListener("input",()=>{st.name=fGname.value;$("#f_name").value=fGname.value;save();schedule()});
 const fHead=$("#f_head"),fCta=$("#f_cta");
 fHead.addEventListener("input",()=>{st.headline=fHead.value;st.hlEdited=true;save();schedule()});
 fCta.addEventListener("input",()=>{st.cta=fCta.value;st.ctaEdited=true;save();schedule()});
 $("#b_head").addEventListener("click",()=>{st.hlIdx=(st.hlIdx+(st.hlEdited?0:1))%3;st.hlEdited=false;save();renderAll()});
-$("#b_cta").addEventListener("click",()=>{st.ctaIdx=(st.ctaIdx+(st.ctaEdited?0:1))%CTAS.en.length;st.ctaEdited=false;save();renderAll()});
+$("#b_cta").addEventListener("click",()=>{st.ctaIdx=(st.ctaIdx+(st.ctaEdited?0:1))%deriveData(st,null).ctas.length;st.ctaEdited=false;save();renderAll()});
 
 /* rendering */
 let rT,bT,RV=0;const BLOB={};
 function schedule(){clearTimeout(rT);rT=setTimeout(renderAll,140)}
 function renderAll(){if(st.screen!=="kit")return;fontsReady.then(()=>{
   const d=deriveData(st,IMG),S=T();
-  if(document.activeElement!==fHead)fHead.value=d.headline;if(document.activeElement!==fCta)fCta.value=d.cta;
+  if(document.activeElement!==fHead)fHead.value=d.headline;if(document.activeElement!==fCta)fCta.value=d.cta;if(document.activeElement!==fGname)fGname.value=st.name||"";
   $("#kitTitle").textContent=d.name;$("#kitSub").textContent=[d.label,d.area].filter(Boolean).join(" · ");
   $("#noContact").hidden=!!contacts(d).length;
   ["post","story"].forEach(k=>{const cv=CV[k],c=cv.getContext("2d");c.setTransform(1,0,0,1,0,0);render(c,cv.width,cv.height,d,st.tpl);cv.setAttribute("aria-label",d.headline)});
@@ -788,7 +897,8 @@ function renderAll(){if(st.screen!=="kit")return;fontsReady.then(()=>{
 const TEXTS={};
 function actions(id,label){return`<div class="mini"><button type="button" class="btn sm primary" data-copy="${id}">${esc(label||T().copy)}</button>${canShareText?`<button type="button" class="btn sm" data-sharetext="${id}">${esc(T().share)}</button>`:""}</div>`}
 function renderText(d,S){const C=buildCopy(d);
-  TEXTS.bio=C.bio;TEXTS.about=C.about;
+  TEXTS.bio=C.bio;TEXTS.about=C.about;TEXTS.season=C.season;
+  $("#out_season").innerHTML=C.season?`<article class="out"><p class="meta">${esc(d.season.name)}</p><h3>${esc(S.capSeason)}</h3><p class="txt">${esc(C.season)}</p>${actions("season",S.copyCap)}</article>`:"";
   $("#out_b").innerHTML=`<article class="out"><h3>${esc(S.bioT)}</h3><p class="sub">${esc(S.chars.replace("{n}",C.bio.length))}</p><p class="txt">${esc(C.bio)}</p>${actions("bio")}</article>`+
     `<article class="out"><h3>${esc(S.aboutT)}</h3><p class="sub">${esc(S.aboutM)}</p><p class="txt">${esc(C.about)}</p>${actions("about")}</article>`;
   $("#out_m").innerHTML=C.msgs.map((m,i)=>{TEXTS["m"+i]=m.x;return`<article class="out"><p class="meta">${String(i+1).padStart(2,"0")}</p><h3>${esc(m.t)}</h3><p class="txt">${markBlanks(m.x)}</p>${actions("m"+i)}</article>`}).join("");
@@ -801,7 +911,7 @@ document.addEventListener("click",async e=>{
   const sv=e.target.closest("[data-save]");if(sv){saveImg(sv.dataset.save);return}
   const sh=e.target.closest("[data-share]");if(sh){shareImg(sh.dataset.share);return}
   const op=e.target.closest("[data-open]");if(op)openImg(op.dataset.open)});
-function fname(k){const d=deriveData(st,IMG);const slug=d.name.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,40)||"my-business";return k==="ba"?`${slug}-before-after.png`:`${slug}-${k}-${TPLID[st.tpl]}.png`}
+function fname(k){const d=deriveData(st,IMG);const slug=d.name.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,40)||"my-business";return k==="ba"?`${slug}-before-after.png`:`${slug}-${k}-${d.season?SEASON_SLUG[d.season.key]+"-":""}${TPLID[st.tpl]}.png`}
 function blobFor(k){return BLOB[k]?Promise.resolve(BLOB[k]):new Promise(r=>CV[k].toBlob(r,"image/png"))}
 const baReady=k=>k!=="ba"||(BA.before&&BA.after)||(toast(T().baNeed),false);
 async function saveImg(k,quiet){if(!baReady(k))return;const b=await blobFor(k);if(!b)return;const u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download=fname(k);document.body.appendChild(a);a.click();
@@ -829,7 +939,7 @@ if(st.screen==="kit"&&clean(st.name))show("kit");else{st.screen="setup";$("#setu
    SELF-TEST · open this page with #selftest at the end of the address.
    ===================================================================== */
 async function selfTest(){
-  const box=$("#selftest");box.hidden=false;box.innerHTML="<h2>Self-test</h2><p>Running…</p>";
+  const box=$("#selftest");box.hidden=false;box.innerHTML="<h2>NextCustomer self-test</h2><p>Running…</p>";
   const R=[];const ok=(n,c,info)=>R.push({n,pass:!!c,info:c?"":(info||"")});
   const run=async(n,fn)=>{try{const[r,info]=await fn();ok(n,r,info)}catch(e){ok(n,false,e.message)}};
   const full={name:"Bright Path Cleaning",area:"Glendora",phone:"6265550123",handle:"brightpath",web:"https://www.brightpath.com/",email:"hi@brightpath.com",owner:"Sergio",customer:"María",review:"https://g.page/r/example",other:"pool cleaning"};
@@ -845,6 +955,24 @@ async function selfTest(){
       if(!C.bio||!C.about||C.msgs.some(m=>!m.x)||C.ideas.some(i=>!i.c))bad.push(`${lang}/${service}/${vn}: empty text`);
       tx.filter(Boolean).forEach(t=>{if(/undefined|null|NaN|[{}]|\s[,.](\s|$)| {2}/.test(t))bad.push(`${lang}/${service}/${vn}: "${String(t).slice(0,70)}"`)})}
     return[!bad.length,bad.slice(0,3).join(" | ")]});
+  await run("Seasonal presets: 3 presets × 6 services × EN/ES × full/minimal give 3 headlines, 3 calls to action and a caption, with no broken blanks or em dashes",async()=>{const bad=[];
+    for(const season of SEASONS)for(const lang of["en","es"])for(const service of ORDER)for(const[vn,v]of[["full",full],["minimal",minimal]]){
+      const d=deriveData(Object.assign({},DEF,v,{lang,service,season}),null),C=buildCopy(d),z=d.season;
+      const tx=[C.season,...d.hls,...d.ctas,z.name,z.about,z.kicker,z.ring,z.word,d.headline,d.cta];all.push(...tx);
+      if(d.hls.length!==3||d.ctas.length!==3||!C.season||!z.kicker||!z.ring||!z.word)bad.push(`${season}/${lang}/${service}/${vn}: counts`);
+      if(d.headline!==d.hls[0])bad.push(`${season}/${lang}/${service}: default headline`);
+      tx.forEach(t=>{if(!t||/undefined|null|NaN|[{}]|\s[,.](\s|$)| {2}|—/.test(t))bad.push(`${season}/${lang}/${service}/${vn}: "${String(t).slice(0,70)}"`)})}
+    const none=deriveData(Object.assign({},DEF,full,{season:"nope"}),null);if(none.season||buildCopy(none).season)bad.push("unknown season should fall back to everyday");
+    return[!bad.length,bad.slice(0,3).join(" | ")]});
+  await run("Seasonal presets: Holiday Ready speaks to cleaners, detailers and landscapers with their own headlines",async()=>{const bad=[];
+    for(const lang of["en","es"]){const h=k=>deriveData(Object.assign({},DEF,full,{lang,service:k,season:"ready"}),null).hls.join("|");
+      const set=new Set(["cleaning","detailing","landscaping","pressure","handyman"].map(h));if(set.size!==5)bad.push(lang)}return[!bad.length,bad.join(", ")]});
+  await run("Seasonal presets: no invented sales, availability, testimonials or tú in Spanish",async()=>{
+    const re=/(\$|%|\b(limited|limitad\w*|spots? left|últimos lugares|book now|hurry|last chance|última oportunidad|special|especial\w*|deal|gift|regalo|testimonial|testimonio|we're open|abiert[oa]s?|open on|guaranteed|now booking|ya estoy agendando)\b|["“”])/i;
+    const tu=/\b(m[aá]ndame|ll[aá]mame|escr[ií]beme|av[ií]same|s[ií]guenos|cont[aá]ctanos|ll[aá]manos|escr[ií]benos|m[aá]ndanos|recomi[eé]ndanos|etiqueta|comparte|ap[oó]ya|tienes|quieres|necesitas|puedes|est[aá]s|conoces|te (mando|escribo|recuerdo|agradezco)|tu (casa|carro|jard[ií]n|patio|negocio))\b/i;let hit=null;
+    for(const season of SEASONS)for(const lang of["en","es"])for(const service of ORDER){const d=deriveData(Object.assign({},DEF,full,{lang,service,season}),null);
+      for(const t of[buildCopy(d).season,...d.hls,...d.ctas,d.season.about,d.season.kicker])if(re.test(t)||(lang==="es"&&tu.test(t))){hit=hit||`${season}/${lang}: ${t.slice(0,80)}`}}
+    return[!hit,hit]});
   await run("Honesty: no invented offers, discounts, rankings or star ratings",async()=>{const re=/\b(free|gratis|discount\w*|descuento\w*|% off|sale|oferta|promo\w*|guarantee[ds]?|garant\w*|warrant\w*|cheapest|lowest|best|mejor(es)? precio|el mejor|la mejor|#1|n[uú]mero uno|5[- ]star|cinco estrellas|stars?|estrellas|rated|award\w*|premiad\w*|certified|certificad\w*|licen[sc]ed|licenciad\w*|insured|bonded|asegurad\w*|official|oficial|authorized|autorizad\w*|affiliat\w*|partner\w*|socio|trusted|de confianza|satisf\w*|years of experience|años de experiencia|\d+\+? (clients|customers|homes|cars|clientes|casas|carros)|like new|como nuev\w*)\b/i;const hit=all.find(t=>re.test(t));return[!hit,hit]});
   await run("Review requests: no incentives and no “only if you were happy” gating",async()=>{const re=/(gift|discount|coupon|raffle|reward|prize|entry|regalo|descuento|cup[oó]n|rifa|premio|if you were happy|if you're happy|si qued[oó] content|si le gust[oó])/i;
     const bad=["en","es"].flatMap(l=>ORDER.map(s=>buildCopy(deriveData(Object.assign({},DEF,full,{lang:l,service:s}),null)).msgs[3].x)).filter(t=>re.test(t));return[!bad.length,bad[0]]});
@@ -865,7 +993,7 @@ async function selfTest(){
       [{canShare:()=>true,share:async()=>{throw err("AbortError")}},"cancelled"],[{canShare:()=>true,share:async o=>{got=o}},"shared"]];
     const res=[];for(const[n,want]of cases){const r=await shareFlow(n,f);if(r!==want)res.push(`${want}≠${r}`)}
     return[!res.length&&got&&got.files&&got.files[0]===f&&!("text" in got),res.join(", ")||"payload"]});
-  await run("Camera capture: separate rear-camera input leaves gallery upload available",async()=>{const cam=$("#f_camera"),gallery=$("#f_file");return[!!cam&&cam.getAttribute("capture")==="environment"&&cam.accept==="image/*"&&gallery.accept==="image/*"&&gallery.getAttribute("capture")===null,"native picker must still be checked on Android"]});
+  await run("Camera capture: separate rear-camera input leaves gallery upload available (setup and Graphics)",async()=>{const ok=[["f_camera","f_file"],["f_camera2","f_file2"]].every(([a,b])=>{const cam=$("#"+a),gallery=$("#"+b);return!!cam&&!!gallery&&cam.getAttribute("capture")==="environment"&&cam.accept==="image/*"&&gallery.accept==="image/*"&&gallery.getAttribute("capture")===null});return[ok,"native picker must still be checked on Android"]});
   await run("Marketing templates: no em dashes in generated captions, bios, messages or headlines",async()=>{const bad=[];for(const lang of["en","es"])for(const service of ORDER){const d=deriveData(Object.assign({},DEF,full,{lang,service,desc:""}),null),c=buildCopy(d);for(const z of[c.bio,c.about,...c.msgs.map(x=>x.x),...c.ideas.flatMap(x=>[x.w,x.h,x.c]),...d.hls,...d.ctas,d.desc])if(z.includes("—"))bad.push(lang+"/"+service+": "+z.slice(0,55))}return[bad.length===0,bad.slice(0,3).join(" | ")]});
   await run("Contact info: nothing appears that the owner didn't type",async()=>{const d=deriveData(Object.assign({},DEF,{name:"Solo Co",lang:"en"}),null),C=buildCopy(d);const t=[C.bio,C.about,...C.msgs.map(m=>m.x)].join(" ");return[!/\(\d{3}\)|@|\.com|https?:/.test(t),t.slice(0,80)]});
   await run("Helpers: phone, handle, website and initials formatting",async()=>[formatPhone("626 555 0123")==="(626) 555-0123"&&formatPhone("+1 626-555-0123")==="(626) 555-0123"&&normHandle("https://instagram.com/brightpath/")==="@brightpath"&&normHandle("@@abc")==="@abc"&&normWeb("https://www.Brightpath.com/")==="Brightpath.com"&&initials("The Bright Path Cleaning LLC")==="BP"&&initials("Limpieza Brillante")==="LB","mismatch"]);
@@ -885,6 +1013,13 @@ async function selfTest(){
       const b=render(c,W,H,d,t);n++;const lo=H===1920?240:60,hi=H===1920?H-300:H-60;
       if(b.top<lo||b.bottom>hi)bad.push(`${TPLID[t]}/${vn}/${H}/${lang}: ${Math.round(b.top)}–${Math.round(b.bottom)}`);if(!varied(cv))bad.push(`${TPLID[t]}/${vn}/${H}: blank`)}
     return[!bad.length,bad.slice(0,3).join(" | ")||n+" renders"]});
+  await run("Seasonal graphics: 3 presets × 3 styles × post/story × no image/photo/logo × EN/ES, long names, all inside safe areas",async()=>{const bad=[];let n=0;
+    for(const season of SEASONS)for(let t=0;t<3;t++)for(const[vn,img,kind]of[["none",null,"photo"],["photo",photo,"photo"],["logo",logo,"logo"]])for(const[W,H]of[[1080,1350],[1080,1920]])for(const lang of["en","es"]){
+      const cv=document.createElement("canvas");cv.width=W;cv.height=H;const c=cv.getContext("2d");
+      const d=deriveData(Object.assign({},DEF,full,{name:"Hermanos Mata Landscaping & Tree Service of the San Gabriel Valley",area:"Glendora, Azusa, San Dimas, La Verne & Claremont",lang,service:"landscaping",kind,tpl:t,season,hlIdx:1}),img);
+      const b=render(c,W,H,d,t);n++;const lo=H===1920?240:60,hi=H===1920?H-300:H-60;
+      if(b.top<lo||b.bottom>hi)bad.push(`${season}/${TPLID[t]}/${vn}/${H}/${lang}: ${Math.round(b.top)}–${Math.round(b.bottom)}`);if(!varied(cv))bad.push(`${season}/${TPLID[t]}/${vn}/${H}: blank`)}
+    return[!bad.length,bad.slice(0,3).join(" | ")||n+" renders"]});
   await run("Regression · Before & after: empty, side-by-side and stacked layouts, EN/ES, inside the frame, exports a 1080 × 1350 PNG",async()=>{const bad=[];
     const tall=document.createElement("canvas");tall.width=900;tall.height=1200;{const c=tall.getContext("2d");c.fillStyle="#7a8b6a";c.fillRect(0,0,900,1200);c.fillStyle="#d9c7a0";c.fillRect(100,300,700,700)}
     for(const[vn,bf,af,stack]of[["empty",null,null,false],["portrait",tall,tall,false],["landscape",photo,photo,true],["mixed",tall,photo,false]])for(const lang of["en","es"])for(const v of[full,minimal]){
@@ -897,8 +1032,12 @@ async function selfTest(){
     const b=await new Promise(r=>cv.toBlob(r,"image/png"));const bm=await createImageBitmap(b);return[b.type==="image/png"&&b.size>20000&&bm.width===W&&bm.height===H,`${b.type} ${b.size}B ${bm.width}×${bm.height}`]};
   await run("Export: post saves as a 1080 × 1350 PNG",()=>exp(1080,1350));
   await run("Export: story saves as a 1080 × 1920 PNG",()=>exp(1080,1920));
+  await run("Export: seasonal post and story save as 1080 × 1350 and 1080 × 1920 PNGs",async()=>{const out=[];let ok=true;
+    for(const[W,H,season,t]of[[1080,1350,"thanks",0],[1080,1920,"shop",2],[1080,1350,"ready",1]]){const cv=document.createElement("canvas");cv.width=W;cv.height=H;
+      render(cv.getContext("2d"),W,H,deriveData(Object.assign({},DEF,full,{season}),null),t);const b=await new Promise(r=>cv.toBlob(r,"image/png")),bm=await createImageBitmap(b);
+      if(!(b.type==="image/png"&&b.size>20000&&bm.width===W&&bm.height===H))ok=false;out.push(`${season} ${bm.width}×${bm.height}`)}return[ok,out.join(", ")]});
   const pass=R.filter(r=>r.pass).length;window.__selftest={pass,total:R.length,results:R};
-  box.innerHTML=`<h2>Self-test</h2><p><b>${pass} of ${R.length} passed</b> · ${esc(navigator.userAgent.replace(/^.*?\) /,""))}</p><ol>${R.map(r=>`<li class="${r.pass?"pass":"fail"}"><b>${r.pass?"✓":"✗"}</b>${esc(r.n)}${r.info?`<small>${esc(String(r.info))}</small>`:""}</li>`).join("")}</ol><p><a href="${esc(location.pathname)}" style="color:inherit">← Back to the app</a></p>`;
+  box.innerHTML=`<h2>NextCustomer self-test</h2><p><b>${pass} of ${R.length} passed</b> · ${esc(navigator.userAgent.replace(/^.*?\) /,""))}</p><ol>${R.map(r=>`<li class="${r.pass?"pass":"fail"}"><b>${r.pass?"✓":"✗"}</b>${esc(r.n)}${r.info?`<small>${esc(String(r.info))}</small>`:""}</li>`).join("")}</ol><p><a href="${esc(location.pathname)}" style="color:inherit">← Back to the app</a></p>`;
 }
 })();
 </script>
