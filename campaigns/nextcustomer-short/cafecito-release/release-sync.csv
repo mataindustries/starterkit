@@ -1,0 +1,25 @@
+event,label,visualFrame,visualSeconds,policy,track,sample,cueSeconds,scheduledOffsetMs,AACOffsetSamples,AACCorrelation
+opening,First-frame YOU RUN THE BUSINESS,0,0.0,Signature hook establishes groove.,lead,note-76.wav,0.0,0.0,0,0.998565
+type-marketing,MARKETING masked entrance,18,0.6,Carried by groove/phrase; no dedicated sync hit or timing change.,,,,,0,0.998479
+type-shouldnt,SHOULDN’T BE masked entrance,26,0.8666666666666667,Carried by groove/phrase; no dedicated sync hit or timing change.,,,,,0,0.999954
+type-job,ANOTHER JOB masked entrance,34,1.1333333333333333,Carried by groove/phrase; no dedicated sync hit or timing change.,,,,,0,0.998146
+wipe,Orange wipe into real app,85,2.8333333333333335,Carried by groove/phrase; no dedicated sync hit or timing change.,,,,,0,0.999977
+app-cut,ONE BUSINESS / real session cut,90,3.0,Carried by groove/phrase; no dedicated sync hit or timing change.,,,,,0,0.999244
+typing,Actual business-name entry,93,3.1,Carried by groove/phrase; no dedicated sync hit or timing change.,,,,,0,0.993241
+button-crop,Cut to Make my kit button,140,4.666666666666667,Carried by groove/phrase; no dedicated sync hit or timing change.,,,,,0,0.999919
+tap-onset,Tap annotation starts,167,5.566666666666666,Cup accent at Make my kit tap maximum.,perc,cup.wav,5.568186,1.519,0,0.998218
+kit-cut,Genuine kit result cut,174,5.8,Knock response at genuine kit cut.,perc,knock.wav,5.795442,-4.558,0,0.998535
+post-cut,Post export + title reveal / zoom,210,7.0,E-major payoff with bass and pad; keep groove.,reedstab,note-76.wav,7.0,0.0,0,0.999616
+post-land,Post bloom and rotation settle,227,7.566666666666666,Quiet knock and pluck settling response.,perc,knock.wav,7.57576,9.093,0,0.997197
+story-cut,Story export + title reveal / zoom,282,9.4,Contrasting B-major payoff; keep groove.,reedstab,note-71.wav,9.393923,-6.077,0,0.99816
+story-land,Story bloom and rotation settle,299,9.966666666666667,Carried by groove/phrase; no dedicated sync hit or timing change.,,,,,0,0.99984
+copy-cut,AND THE WORDS / montage cut,360,12.0,One phrase for the words/cards section.,lead,note-76.wav,11.999977,-0.023,0,0.976942
+bio-in,Bio card opacity/position entrance,361,12.033333333333333,Carried by groove/phrase; no dedicated sync hit or timing change.,,,,,0,0.99999
+messages-in,Messages card entrance,368,12.266666666666667,Carried by groove/phrase; no dedicated sync hit or timing change.,,,,,0,0.999919
+week-in,Week 1 card entrance,376,12.533333333333333,Carried by groove/phrase; no dedicated sync hit or timing change.,,,,,0,0.999992
+spanish-cut,Spanish title / Post movement,450,15.0,Existing film section: signature returns; no new language version.,lead,note-85.wav,14.999977,-0.023,0,0.994152
+es-toggle,Actual EN to ES selection,456,15.2,Existing toggle spoon accent; no new language version.,perc,spoon.wav,15.181814,-18.186,0,0.999803
+spanish-land,Spanish Post motion settles,459,15.3,Carried by groove/phrase; no dedicated sync hit or timing change.,,,,,0,0.999985
+cta-cut,Final CTA hard cut; all CTA text already present,480,16.0,"E-major resolution, then existing celebration/tail.",reedstab,note-76.wav,15.999977,-0.023,0,0.998727
+cta-breath,First decorative sun breath maximum,511,17.033333333333335,Carried by groove/phrase; no dedicated sync hit or timing change.,,,,,0,0.998211
+ending,Natural tail complete; picture still holds,596,19.866666666666667,Natural tail: last onset 18.864s; hold picture through frame 599.,,,,,,

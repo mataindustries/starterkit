@@ -1,0 +1,146 @@
+{
+  "status": "PASS",
+  "browserVersion": "156.0.8078.79",
+  "viewport": {
+    "width": 412,
+    "height": 915
+  },
+  "errors": [],
+  "results": [
+    {
+      "src": "nextcustomer_cafecito_rush_proof_540x960.mp4",
+      "ended": true,
+      "currentTime": 20,
+      "duration": 20,
+      "width": 540,
+      "height": 960,
+      "muted": false,
+      "volume": 1,
+      "playbackRate": 1,
+      "error": null,
+      "audioDecodedBytes": 649703,
+      "totalFrames": 600,
+      "droppedFrames": 0,
+      "sha256": "e030093d22917cb8248fbb1d0b383875c10da37126e08cd5e7a079ee15f6d3d0",
+      "seeks": [
+        {
+          "frame": 140,
+          "actualSeconds": 4.666666
+        },
+        {
+          "frame": 167,
+          "actualSeconds": 5.566666
+        },
+        {
+          "frame": 174,
+          "actualSeconds": 5.8
+        },
+        {
+          "frame": 210,
+          "actualSeconds": 7
+        },
+        {
+          "frame": 227,
+          "actualSeconds": 7.566666
+        },
+        {
+          "frame": 282,
+          "actualSeconds": 9.4
+        },
+        {
+          "frame": 299,
+          "actualSeconds": 9.966666
+        },
+        {
+          "frame": 360,
+          "actualSeconds": 12
+        },
+        {
+          "frame": 450,
+          "actualSeconds": 15
+        },
+        {
+          "frame": 456,
+          "actualSeconds": 15.2
+        },
+        {
+          "frame": 480,
+          "actualSeconds": 16
+        },
+        {
+          "frame": 599,
+          "actualSeconds": 19.966666
+        }
+      ],
+      "pass": true
+    },
+    {
+      "src": "nextcustomer_cafecito_rush_release_1080x1920.mp4",
+      "ended": true,
+      "currentTime": 20,
+      "duration": 20,
+      "width": 1080,
+      "height": 1920,
+      "muted": false,
+      "volume": 1,
+      "playbackRate": 1,
+      "error": null,
+      "audioDecodedBytes": 649703,
+      "totalFrames": 600,
+      "droppedFrames": 0,
+      "sha256": "9cbab07659a0e8c46acee9b8b284677c0aaabfd5c07317cbf9e971af38422114",
+      "seeks": [
+        {
+          "frame": 140,
+          "actualSeconds": 4.666666
+        },
+        {
+          "frame": 167,
+          "actualSeconds": 5.566666
+        },
+        {
+          "frame": 174,
+          "actualSeconds": 5.8
+        },
+        {
+          "frame": 210,
+          "actualSeconds": 7
+        },
+        {
+          "frame": 227,
+          "actualSeconds": 7.566666
+        },
+        {
+          "frame": 282,
+          "actualSeconds": 9.4
+        },
+        {
+          "frame": 299,
+          "actualSeconds": 9.966666
+        },
+        {
+          "frame": 360,
+          "actualSeconds": 12
+        },
+        {
+          "frame": 450,
+          "actualSeconds": 15
+        },
+        {
+          "frame": 456,
+          "actualSeconds": 15.2
+        },
+        {
+          "frame": 480,
+          "actualSeconds": 16
+        },
+        {
+          "frame": 599,
+          "actualSeconds": 19.966666
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "method": "Continuous 1x unmuted desktop Chromium playback followed by anchor seeks. No human listening or physical Android-device test claimed."
+}
