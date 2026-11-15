@@ -2,8 +2,8 @@
 
 Ready for final owner audiovisual review; publication is not authorized by this package.
 
-- [Android-friendly 1080×1920 MP4 download](https://github.com/mataindustries/starterkit/raw/refs/heads/release/nextcustomer-cafecito-rush/campaigns/nextcustomer-short/cafecito-release/nextcustomer_cafecito_rush_release_1080x1920.mp4)
-- [540×960 audiovisual proof](https://github.com/mataindustries/starterkit/raw/refs/heads/release/nextcustomer-cafecito-rush/campaigns/nextcustomer-short/cafecito-release/nextcustomer_cafecito_rush_proof_540x960.mp4)
+- [Android-friendly 1080×1920 MP4 download](https://raw.githubusercontent.com/mataindustries/starterkit/refs/heads/release/nextcustomer-cafecito-rush/campaigns/nextcustomer-short/cafecito-release/nextcustomer_cafecito_rush_release_1080x1920.mp4)
+- [540×960 audiovisual proof](https://raw.githubusercontent.com/mataindustries/starterkit/refs/heads/release/nextcustomer-cafecito-rush/campaigns/nextcustomer-short/cafecito-release/nextcustomer_cafecito_rush_proof_540x960.mp4)
 - [Concise QA report](QA_REPORT.md) · [Decoded event review](decoded-event-review.png)
 - [Approved Wonder lossless master](../cafecito/renders/cafecito-rush-final/cafecito-rush-final.wav) · [Composition](../cafecito/cafecito-rush-final.json) · [Composition source](../cafecito/compose_gate2.py)
 

@@ -13,6 +13,7 @@
 | Encoded level | −14.57 LUFS, −1.72 dBTP; no new full-scale samples; final 100ms below −70 dBFS |
 | Decode / timing | Full FFmpeg decode without errors; no missing picture frames; both streams start at 0; container ends at 20s |
 | Android compatibility | H.264 High/yuv420p (proof level 3.1, release level 4.0), AAC-LC stereo 48 kHz, MP4 faststart |
+| Remote delivery | Direct raw 1080 MP4 returned HTTP 200; 1,913,544 bytes; downloaded SHA-256 matches release candidate |
 | Browser playback | Both files completed at 1× with audio enabled in Chromium 156; 600 frames each, zero dropped frames, no errors; 12 anchor seeks each passed |
 
 AAC raw decoding includes 512 padding samples beyond the 960,000-sample presentation timeline. The MP4 duration/edit metadata presents exactly 20s; waveform correlation verifies that AAC priming does not shift the soundtrack. No use of `-shortest` or picture frame-rate conversion.
