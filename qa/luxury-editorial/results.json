@@ -1,18 +1,18 @@
 {
   "page": {
-    "bytes": 372453,
+    "bytes": 376070,
     "fonts": 7
   },
   "chromium": "153.0.8010.12",
   "renderMs": {
-    "editorial": 3.6,
-    "poster": 3.8,
-    "grid": 7.5,
-    "luxury": 6.6
+    "editorial": 6.4,
+    "poster": 5.5,
+    "grid": 8.4,
+    "luxury": 7.2
   },
   "baseline": "main-index.html",
-  "passed": 68,
-  "total": 68,
+  "passed": 70,
+  "total": 70,
   "results": [
     {
       "name": "#selftest · UI text: Spanish covers every English string",
@@ -51,6 +51,11 @@
     },
     {
       "name": "#selftest · Regression · Spanish speaks to customers as usted, never tú",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Regression · Spanish headlines for typed-in services read correctly for feminine, masculine and plural services",
       "pass": true,
       "info": ""
     },
@@ -116,6 +121,11 @@
     },
     {
       "name": "#selftest · Luxury: headline line breaks read naturally: no short word alone on the last line, no line ending in “the”, “your”, “la”, “su”… (every built-in headline, EN/ES, post/story)",
+      "pass": true,
+      "info": ""
+    },
+    {
+      "name": "#selftest · Luxury: readable on a 360 px wide phone: contacts ≥ 12 px, call to action ≥ 11 px, service · area ≥ 10 px on screen (realistic details); long details never below 8 px",
       "pass": true,
       "info": ""
     },
@@ -342,7 +352,7 @@
     {
       "name": "Timing · Luxury redraw (post + story + thumbnail) costs no more than 2× the slowest existing style",
       "pass": true,
-      "info": "ms: editorial 3.6, poster 3.8, grid 7.5, luxury 6.6"
+      "info": "ms: editorial 6.4, poster 5.5, grid 8.4, luxury 7.2"
     },
     {
       "name": "Regression · Editorial, Poster, Grid (and before/after) are pixel-identical to the baseline page",

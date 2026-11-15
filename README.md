@@ -22,11 +22,12 @@ One file: `index.html` (about 370 KB). No login, database, tracking, AI, paid AP
 Your details are saved only on this phone, so the kit is still there when you come back. **Clear my info** at the bottom of the page erases it (tap twice).
 
 ## Tests
-Open the page with `#selftest` at the end of the address, for example `https://your-site.pages.dev/#selftest`. It runs 29 checks in your phone's browser and lists pass or fail for each:
+Open the page with `#selftest` at the end of the address, for example `https://your-site.pages.dev/#selftest`. It runs 31 checks in your phone's browser and lists pass or fail for each:
 - Every English string has a Spanish version, and every service type has complete copy.
 - All 24 combinations of language × service × full or minimal details produce 5 messages, 7 ideas and a bio of 150 characters or fewer, with no "undefined" or broken blanks.
 - No invented discounts, "free", "#1", "best", star ratings, "licensed/insured" or similar claims anywhere in the copy.
 - Review requests contain no incentives and no "if you were happy" gating.
+- Spanish headlines for typed-in services read correctly whatever the service's gender or number (for example *clínica*, *diseño*, *bienes raíces*).
 - No contact details appear that the owner didn't type.
 - Phone, handle, website and initials formatting work.
 - The page policy blocks all network requests, and all 7 embedded fonts load.
@@ -34,6 +35,7 @@ Open the page with `#selftest` at the end of the address, for example `https://y
 - 48 renders (4 styles × post/story × no image/photo/logo × EN/ES, with a very long name and service area) all draw inside their safe areas.
 - Luxury Editorial gets 50 more renders: EN/ES × post/story × no image, landscape or portrait photo, transparent or solid logo × normal, long and maximum-length details. These checks confirm that:
   - text stays inside the safe area and side margins, never on the photo, and nothing is cut off;
+  - on a 360 px wide phone the contacts show at 12 px or more, the call to action at 11 px or more and service · area at 10 px or more;
   - it draws only text the owner typed;
   - edited headlines and calls to action appear;
   - built-in headlines break naturally in both languages;
@@ -42,11 +44,12 @@ Open the page with `#selftest` at the end of the address, for example `https://y
   - the style is listed in both languages.
 - Exports (Luxury included, with and without a photo) are real PNGs at exactly 1080 × 1350 and 1080 × 1920.
 
-Latest automated run: 29/29 built-in self-tests and 68/68 headless checks pass (`qa/run-checks.cjs` in Chromium at 320, 360 and 412px, English and Spanish). The headless checks cover the full owner flow with the Luxury style: pick it, edit, save both images, upload a photo and two logos, and reload. They also confirm that the other styles are pixel-identical to the previous version. An earlier pass, before Luxury was added, also covered the full flow in desktop Chrome at phone sizes: fill in the form, try all 3 styles, save, upload a photo and a logo (each was detected correctly), switch to Spanish, use every tab, reload, and confirm the details persist. Sharing to installed Android apps and real camera uploads still require manual phone testing.
+Latest automated run: 31/31 built-in self-tests and 70/70 headless checks pass (`qa/run-checks.cjs` in Chromium at 320, 360 and 412px, English and Spanish). The headless checks cover the full owner flow with the Luxury style: pick it, edit, save both images, upload a photo and two logos, and reload. They also confirm that the other styles are pixel-identical to the previous version. An earlier pass, before Luxury was added, also covered the full flow in desktop Chrome at phone sizes: fill in the form, try all 3 styles, save, upload a photo and a logo (each was detected correctly), switch to Spanish, use every tab, reload, and confirm the details persist. Sharing to installed Android apps and real camera uploads still require manual phone testing.
 
 Developer checks (optional, on a computer with Node and Playwright):
 - `node qa/run-checks.cjs` runs the self-test plus the real owner flow, uploads and exports in headless Chromium.
 - `node qa/contact-sheet.cjs` redraws the review sheets.
+- `node qa/phone-view.cjs` exports a sample post and story through the app and shows them at real phone width.
 
 See `qa/README.md`.
 

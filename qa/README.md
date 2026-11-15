@@ -28,5 +28,14 @@ node qa/contact-sheet.cjs
 
 Redraws the review sheets in `qa/luxury-editorial/` with the app's own drawing code.
 
+```bash
+git show 3a79c2d:index.html > /tmp/before.html && node qa/phone-view.cjs --before /tmp/before.html
+```
+
+Exports a realistic Luxury post and story through the real app (fill in, upload, Save image). It then
+shows them 360 px wide, as on an Android phone, with the on-screen size of every text element, and
+writes `sample-post.png`, `sample-story.png` and `phone-view-360.png`. `--before` is optional and adds
+an older copy of the page that already has Luxury; 3a79c2d is the version before the readability pass.
+
 `fixtures/` holds synthetic stand-in photos and logos (no real people, places or brands). Rebuild them
 with `python3 qa/fixtures/make_fixtures.py` (needs numpy and Pillow).
