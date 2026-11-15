@@ -1,0 +1,55 @@
+{
+  "raw": {
+    "input_i": "-33.93",
+    "input_tp": "-11.28",
+    "input_lra": "11.50",
+    "input_thresh": "-45.17",
+    "output_i": "-18.89",
+    "output_tp": "-2.00",
+    "output_lra": "2.80",
+    "output_thresh": "-29.72",
+    "normalization_type": "dynamic",
+    "target_offset": "1.89"
+  },
+  "listeningWav": {
+    "input_i": "-18.67",
+    "input_tp": "-2.29",
+    "input_lra": "7.90",
+    "input_thresh": "-29.52",
+    "output_i": "-17.87",
+    "output_tp": "-2.00",
+    "output_lra": "3.10",
+    "output_thresh": "-28.54",
+    "normalization_type": "dynamic",
+    "target_offset": "0.87"
+  },
+  "encodedProof": {
+    "input_i": "-18.69",
+    "input_tp": "-1.84",
+    "input_lra": "7.90",
+    "input_thresh": "-29.57",
+    "output_i": "-17.88",
+    "output_tp": "-2.00",
+    "output_lra": "3.00",
+    "output_thresh": "-28.58",
+    "normalization_type": "dynamic",
+    "target_offset": "0.88"
+  },
+  "processing": "loudnorm=I=-17:TP=-2:LRA=9:measured_I=-33.93:measured_TP=-11.28:measured_LRA=11.50:measured_thresh=-45.17:offset=1.89:linear=true,volume=-0.3dB",
+  "picturePolicy": "-c:v copy from approved 540\u00d7960 proof; no visual renderer invoked",
+  "samplePrecision": "Daemon native sources and render are PCM16/44.1 kHz. Delivery mastering is 48 kHz PCM24; this does not recover precision absent from native sources.",
+  "files": {
+    "nextcustomer_audio_sync_v2.wav": {
+      "bytes": 5760102,
+      "sha256": "77383dd45a773e0d773d84e0e7c9245b2daf235d7250126a0ade1d2939775fe7"
+    },
+    "nextcustomer_audio_sync_v2_proof_540x960.mp4": {
+      "bytes": 775793,
+      "sha256": "d258b2d8a802133ebbdaa7a72d1cc3b5b10b12fdfc2e83d03e7138bed806943a"
+    },
+    "nextcustomer_audio_sync_v2.mp3": {
+      "bytes": 481580,
+      "sha256": "f540e0407d3a82951e25e49360a5586cd65f2a8b33e6cf0bf216cb7f4b55db29"
+    }
+  }
+}

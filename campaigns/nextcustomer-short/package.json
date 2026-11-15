@@ -1,0 +1,17 @@
+{
+  "name": "nextcustomer-launch-short",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Reproducible media-only production for starterkit issue #2",
+  "scripts": {
+    "capture": "node capture.cjs",
+    "audio": "python3 sound.py",
+    "proof": "node render.cjs proof",
+    "final": "node render.cjs final",
+    "qa": "python3 qa.py"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100",
+    "playwright": "1.62.1"
+  }
+}

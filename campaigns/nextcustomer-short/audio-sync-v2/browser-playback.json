@@ -1,0 +1,63 @@
+{
+  "ended": true,
+  "currentTime": 20,
+  "duration": 20,
+  "width": 540,
+  "height": 960,
+  "error": null,
+  "audioDecodedBytes": 367148,
+  "totalFrames": 600,
+  "droppedFrames": 0,
+  "proofSha256": "d258b2d8a802133ebbdaa7a72d1cc3b5b10b12fdfc2e83d03e7138bed806943a",
+  "seekChecks": [
+    {
+      "frame": 18,
+      "actualSeconds": 0.6
+    },
+    {
+      "frame": 26,
+      "actualSeconds": 0.866666
+    },
+    {
+      "frame": 34,
+      "actualSeconds": 1.133333
+    },
+    {
+      "frame": 167,
+      "actualSeconds": 5.566666
+    },
+    {
+      "frame": 210,
+      "actualSeconds": 7
+    },
+    {
+      "frame": 227,
+      "actualSeconds": 7.566666
+    },
+    {
+      "frame": 282,
+      "actualSeconds": 9.4
+    },
+    {
+      "frame": 299,
+      "actualSeconds": 9.966666
+    },
+    {
+      "frame": 368,
+      "actualSeconds": 12.266666
+    },
+    {
+      "frame": 376,
+      "actualSeconds": 12.533333
+    },
+    {
+      "frame": 456,
+      "actualSeconds": 15.2
+    },
+    {
+      "frame": 480,
+      "actualSeconds": 16
+    }
+  ],
+  "method": "Continuous 1x browser playback with audio enabled, followed by seeks to 12 AV anchors. This is not human listening or a physical output-device test."
+}

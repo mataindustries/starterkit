@@ -1,0 +1,51 @@
+{
+  "product": "NextCustomer / Starter Kit",
+  "sourceCommit": "ccaf5fdd3aa8395f46eebb0be20c05ec3e5c00ff",
+  "baseline": {
+    "index.html": "0ccae0badeba756c7cfbe16aa1dfc9ad14679f5fac93bc8867ec6a60a57b4ed9",
+    "_headers": "4ab28d8837c7eb73860bafe4f8f00135f1f3516de9e3350e177200b31b3016cf",
+    "README.md": "202f6f49ee62d89284dce848ecf44cd2ef23993c997c1d025f929c760c7afdff"
+  },
+  "viewport": {
+    "width": 412,
+    "height": 915,
+    "deviceScaleFactor": 2
+  },
+  "fictionalBusiness": true,
+  "examplePhone": "US reserved fictional range 555-0100–0199",
+  "events": [
+    {
+      "name": "typing-start",
+      "seconds": 1.582
+    },
+    {
+      "name": "typing-end",
+      "seconds": 2.806
+    },
+    {
+      "name": "make-kit",
+      "seconds": 3.866
+    },
+    {
+      "name": "kit-visible",
+      "seconds": 4.849
+    },
+    {
+      "name": "spanish-switch",
+      "seconds": 8.932
+    }
+  ],
+  "errors": [],
+  "selftestSummary": "20 of 20 passed · AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "exports": {
+    "post": [
+      1080,
+      1350
+    ],
+    "story": [
+      1080,
+      1920
+    ]
+  },
+  "capture": "Real Playwright UI interaction and Save image downloads from the unchanged local index.html; no mock UI."
+}

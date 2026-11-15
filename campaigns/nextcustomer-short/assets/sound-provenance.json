@@ -1,0 +1,14 @@
+{
+  "authoring": "Original synthesis by sound.py; no third-party recordings or music.",
+  "seed": 20261113,
+  "sample_rate": 48000,
+  "duration_seconds": 20,
+  "bpm": 120,
+  "sources": [
+    "exponential sine kick",
+    "damped wood resonators",
+    "inharmonic tonal plucks",
+    "filtered seeded noise"
+  ],
+  "master": "FFmpeg two-pass loudnorm at -16 LUFS / -1.5 dBTP, then -0.4 dB AAC headroom trim; measured final peak must stay <= -1 dBTP"
+}

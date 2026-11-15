@@ -1,0 +1,53 @@
+{
+  "fps": 30,
+  "frames": 600,
+  "duration": 20,
+  "palette": {
+    "cream": "#F3EEE6",
+    "ink": "#171512",
+    "orange": "#E2542B"
+  },
+  "safeArea": {
+    "left": 72,
+    "right": 900,
+    "top": 180,
+    "bottom": 1540
+  },
+  "segments": [
+    [
+      "hook",
+      0,
+      3
+    ],
+    [
+      "real-session",
+      3,
+      7
+    ],
+    [
+      "post",
+      7,
+      9.4
+    ],
+    [
+      "story",
+      9.4,
+      12
+    ],
+    [
+      "copy",
+      12,
+      15
+    ],
+    [
+      "spanish",
+      15,
+      16
+    ],
+    [
+      "cta",
+      16,
+      20
+    ]
+  ]
+}

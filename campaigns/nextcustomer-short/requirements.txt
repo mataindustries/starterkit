@@ -1,0 +1,4 @@
+# Versions used by the managed runtime are also recorded in qa-results.json.
+numpy==2.3.5
+scipy==1.17.0
+Pillow==13.0.0

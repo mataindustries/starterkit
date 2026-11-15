@@ -1,0 +1,38 @@
+{
+  "proof": {
+    "ended": true,
+    "duration": 20,
+    "currentTime": 20,
+    "width": 540,
+    "height": 960,
+    "error": null,
+    "audio": 439436,
+    "playbackQuality": {
+      "totalVideoFrames": 600,
+      "droppedVideoFrames": 0
+    },
+    "viewport": {
+      "width": 360,
+      "height": 800
+    },
+    "method": "Continuous 1x playback from 0 to ended in Chromium; audio enabled. Automated decoding check, not a human listening test."
+  },
+  "final": {
+    "ended": true,
+    "duration": 20,
+    "currentTime": 20,
+    "width": 1080,
+    "height": 1920,
+    "error": null,
+    "audio": 439436,
+    "playbackQuality": {
+      "totalVideoFrames": 600,
+      "droppedVideoFrames": 0
+    },
+    "viewport": {
+      "width": 360,
+      "height": 800
+    },
+    "method": "Continuous 1x playback from 0 to ended in Chromium; audio enabled. Automated decoding check, not a human listening test."
+  }
+}

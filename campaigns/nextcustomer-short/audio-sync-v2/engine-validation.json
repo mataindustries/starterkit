@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "command": "validate",
+  "engineVersion": "0.7.0",
+  "project": "/workspace/starterkit/campaigns/nextcustomer-short/audio-sync-v2/nextcustomer-sync.project.json",
+  "errors": [],
+  "warnings": [],
+  "summary": {
+    "title": "NextCustomer / Paper, Copper, Motion / sync-v2 owner proof",
+    "bars": 10,
+    "timeSignature": "4/4",
+    "bpm": 120,
+    "key": "D minor",
+    "tracks": 7,
+    "notes": 93,
+    "durationTicks": 38400,
+    "durationSeconds": 20
+  },
+  "artifacts": {},
+  "manifest": null
+}

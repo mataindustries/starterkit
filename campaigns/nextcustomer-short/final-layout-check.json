@@ -1,0 +1,6 @@
+{
+  "frames": 600,
+  "textPlacementsChecked": 4157,
+  "violations": [],
+  "policy": "Main film typography: x >= 72, right <= 900, y >= 180, y + font size <= 1540. Decorative shapes excluded. Embedded captures reviewed visually."
+}

@@ -1,0 +1,20 @@
+{
+  "formatVersion": 1,
+  "samples": [
+    {
+      "name": "note-38",
+      "pitch": 0,
+      "file": "note-38.wav"
+    },
+    {
+      "name": "note-45",
+      "pitch": 1,
+      "file": "note-45.wav"
+    },
+    {
+      "name": "note-43",
+      "pitch": 2,
+      "file": "note-43.wav"
+    }
+  ]
+}

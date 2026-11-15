@@ -1,0 +1,595 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "final picture",
+      "passed": true,
+      "detail": "1080\u00d71920, h264, yuv420p"
+    },
+    {
+      "check": "final duration / cadence",
+      "passed": true,
+      "detail": "20.000000 s; 30/1 fps; 600 decoded frames"
+    },
+    {
+      "check": "final audio",
+      "passed": true,
+      "detail": "aac, 48000 Hz, 2 channels"
+    },
+    {
+      "check": "final full decode",
+      "passed": true,
+      "detail": "Complete picture + audio decode without errors"
+    },
+    {
+      "check": "final file size",
+      "passed": true,
+      "detail": "1,703,245 bytes; below GitHub individual-file limit"
+    },
+    {
+      "check": "proof picture",
+      "passed": true,
+      "detail": "540\u00d7960, h264, yuv420p"
+    },
+    {
+      "check": "proof duration / cadence",
+      "passed": true,
+      "detail": "20.000000 s; 30/1 fps; 600 decoded frames"
+    },
+    {
+      "check": "proof audio",
+      "passed": true,
+      "detail": "aac, 48000 Hz, 2 channels"
+    },
+    {
+      "check": "proof full decode",
+      "passed": true,
+      "detail": "Complete picture + audio decode without errors"
+    },
+    {
+      "check": "proof file size",
+      "passed": true,
+      "detail": "848,056 bytes; below GitHub individual-file limit"
+    },
+    {
+      "check": "Final loudness",
+      "passed": true,
+      "detail": "-16.92 LUFS integrated; LRA 12.10 LU"
+    },
+    {
+      "check": "No clipping / true-peak headroom",
+      "passed": true,
+      "detail": "-1.21 dBTP after AAC encoding; ceiling \u2264 -1 dBTP"
+    },
+    {
+      "check": "No unintended black frames",
+      "passed": true,
+      "detail": "No \u226599% near-black frame spans of 0.05 s or longer"
+    },
+    {
+      "check": "Website preserved",
+      "passed": true,
+      "detail": {
+        "index.html": true,
+        "_headers": true,
+        "README.md": true
+      }
+    },
+    {
+      "check": "Genuine bilingual copy",
+      "passed": true,
+      "detail": {
+        "en": {
+          "messages": 5,
+          "ideas": 7,
+          "bioCharacters": 110
+        },
+        "es": {
+          "messages": 5,
+          "ideas": 7,
+          "bioCharacters": 121
+        }
+      }
+    },
+    {
+      "check": "Product self-tests",
+      "passed": true,
+      "detail": "20 of 20 passed \u00b7 AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+    },
+    {
+      "check": "Actual post export / en",
+      "passed": true,
+      "detail": [
+        1080,
+        1350
+      ]
+    },
+    {
+      "check": "Actual post export / es",
+      "passed": true,
+      "detail": [
+        1080,
+        1350
+      ]
+    },
+    {
+      "check": "Actual story export / en",
+      "passed": true,
+      "detail": [
+        1080,
+        1920
+      ]
+    },
+    {
+      "check": "Actual story export / es",
+      "passed": true,
+      "detail": [
+        1080,
+        1920
+      ]
+    },
+    {
+      "check": "thumbnail.png",
+      "passed": true,
+      "detail": [
+        1080,
+        1920
+      ]
+    },
+    {
+      "check": "proof-contact-sheet.png",
+      "passed": true,
+      "detail": [
+        1350,
+        536
+      ]
+    },
+    {
+      "check": "contact-sheet.png",
+      "passed": true,
+      "detail": [
+        1350,
+        536
+      ]
+    },
+    {
+      "check": "Proof rendered before final",
+      "passed": true,
+      "detail": {
+        "proofMtime": 1794556763.434302,
+        "finalMtime": 1794556766.942834
+      }
+    },
+    {
+      "check": "Typography safe areas",
+      "passed": true,
+      "detail": {
+        "frames": 600,
+        "textPlacementsChecked": 4157,
+        "violations": [],
+        "policy": "Main film typography: x >= 72, right <= 900, y >= 180, y + font size <= 1540. Decorative shapes excluded. Embedded captures reviewed visually."
+      }
+    },
+    {
+      "check": "proof Chrome playback",
+      "passed": true,
+      "detail": {
+        "ended": true,
+        "duration": 20,
+        "currentTime": 20,
+        "width": 540,
+        "height": 960,
+        "error": null,
+        "audio": 439436,
+        "playbackQuality": {
+          "totalVideoFrames": 600,
+          "droppedVideoFrames": 0
+        },
+        "viewport": {
+          "width": 360,
+          "height": 800
+        },
+        "method": "Continuous 1x playback from 0 to ended in Chromium; audio enabled. Automated decoding check, not a human listening test."
+      }
+    },
+    {
+      "check": "final Chrome playback",
+      "passed": true,
+      "detail": {
+        "ended": true,
+        "duration": 20,
+        "currentTime": 20,
+        "width": 1080,
+        "height": 1920,
+        "error": null,
+        "audio": 439436,
+        "playbackQuality": {
+          "totalVideoFrames": 600,
+          "droppedVideoFrames": 0
+        },
+        "viewport": {
+          "width": 360,
+          "height": 800
+        },
+        "method": "Continuous 1x playback from 0 to ended in Chromium; audio enabled. Automated decoding check, not a human listening test."
+      }
+    },
+    {
+      "check": "Changes confined to campaign",
+      "passed": true,
+      "detail": "All tracked changes and non-ignored additions are inside campaigns/nextcustomer-short/; root file hashes also checked"
+    }
+  ],
+  "media": {
+    "final": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "width": 1080,
+          "height": 1920,
+          "coded_width": 1088,
+          "coded_height": 1920,
+          "closed_captions": 0,
+          "film_grain": 0,
+          "has_b_frames": 2,
+          "pix_fmt": "yuv420p",
+          "level": 40,
+          "chroma_location": "left",
+          "field_order": "progressive",
+          "refs": 4,
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "30/1",
+          "avg_frame_rate": "30/1",
+          "time_base": "1/15360",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 307200,
+          "duration": "20.000000",
+          "bit_rate": "496125",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "600",
+          "nb_read_frames": "600",
+          "extradata_size": 47,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "vendor_id": "[0][0][0][0]",
+            "encoder": "Lavc61.19.101 libx264"
+          }
+        },
+        {
+          "index": 1,
+          "codec_name": "aac",
+          "codec_long_name": "AAC (Advanced Audio Coding)",
+          "profile": "LC",
+          "codec_type": "audio",
+          "codec_tag_string": "mp4a",
+          "codec_tag": "0x6134706d",
+          "sample_fmt": "fltp",
+          "sample_rate": "48000",
+          "channels": 2,
+          "channel_layout": "stereo",
+          "bits_per_sample": 0,
+          "initial_padding": 0,
+          "id": "0x2",
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/48000",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 960000,
+          "duration": "20.000000",
+          "bit_rate": "175587",
+          "nb_frames": "939",
+          "nb_read_frames": "938",
+          "extradata_size": 5,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "SoundHandler",
+            "vendor_id": "[0][0][0][0]"
+          }
+        }
+      ],
+      "format": {
+        "filename": "/workspace/starterkit/campaigns/nextcustomer-short/nextcustomer_launch_short_1080x1920.mp4",
+        "nb_streams": 2,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "20.000000",
+        "size": "1703245",
+        "bit_rate": "681298",
+        "probe_score": 100,
+        "tags": {
+          "major_brand": "isom",
+          "minor_version": "512",
+          "compatible_brands": "isomiso2avc1mp41",
+          "title": "NextCustomer \u2014 You run the business",
+          "encoder": "Lavf61.7.103",
+          "comment": "Original motion and sound. Actual local Starter Kit UI and exports. Illustrative business."
+        }
+      }
+    },
+    "proof": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "width": 540,
+          "height": 960,
+          "coded_width": 544,
+          "coded_height": 960,
+          "closed_captions": 0,
+          "film_grain": 0,
+          "has_b_frames": 2,
+          "pix_fmt": "yuv420p",
+          "level": 31,
+          "chroma_location": "left",
+          "field_order": "progressive",
+          "refs": 4,
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "30/1",
+          "avg_frame_rate": "30/1",
+          "time_base": "1/15360",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 307200,
+          "duration": "20.000000",
+          "bit_rate": "154041",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "600",
+          "nb_read_frames": "600",
+          "extradata_size": 45,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "vendor_id": "[0][0][0][0]",
+            "encoder": "Lavc61.19.101 libx264"
+          }
+        },
+        {
+          "index": 1,
+          "codec_name": "aac",
+          "codec_long_name": "AAC (Advanced Audio Coding)",
+          "profile": "LC",
+          "codec_type": "audio",
+          "codec_tag_string": "mp4a",
+          "codec_tag": "0x6134706d",
+          "sample_fmt": "fltp",
+          "sample_rate": "48000",
+          "channels": 2,
+          "channel_layout": "stereo",
+          "bits_per_sample": 0,
+          "initial_padding": 0,
+          "id": "0x2",
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/48000",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 960000,
+          "duration": "20.000000",
+          "bit_rate": "175587",
+          "nb_frames": "939",
+          "nb_read_frames": "938",
+          "extradata_size": 5,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "SoundHandler",
+            "vendor_id": "[0][0][0][0]"
+          }
+        }
+      ],
+      "format": {
+        "filename": "/workspace/starterkit/campaigns/nextcustomer-short/nextcustomer_launch_short_proof_540x960.mp4",
+        "nb_streams": 2,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "20.000000",
+        "size": "848056",
+        "bit_rate": "339222",
+        "probe_score": 100,
+        "tags": {
+          "major_brand": "isom",
+          "minor_version": "512",
+          "compatible_brands": "isomiso2avc1mp41",
+          "title": "NextCustomer \u2014 You run the business",
+          "encoder": "Lavf61.7.103",
+          "comment": "Original motion and sound. Actual local Starter Kit UI and exports. Illustrative business."
+        }
+      }
+    }
+  },
+  "audioMeasured": {
+    "input_i": "-16.92",
+    "input_tp": "-1.21",
+    "input_lra": "12.10",
+    "input_thresh": "-27.79",
+    "output_i": "-15.57",
+    "output_tp": "-1.00",
+    "output_lra": "4.10",
+    "output_thresh": "-26.17",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.43"
+  },
+  "browserPlayback": {
+    "proof": {
+      "ended": true,
+      "duration": 20,
+      "currentTime": 20,
+      "width": 540,
+      "height": 960,
+      "error": null,
+      "audio": 439436,
+      "playbackQuality": {
+        "totalVideoFrames": 600,
+        "droppedVideoFrames": 0
+      },
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "method": "Continuous 1x playback from 0 to ended in Chromium; audio enabled. Automated decoding check, not a human listening test."
+    },
+    "final": {
+      "ended": true,
+      "duration": 20,
+      "currentTime": 20,
+      "width": 1080,
+      "height": 1920,
+      "error": null,
+      "audio": 439436,
+      "playbackQuality": {
+        "totalVideoFrames": 600,
+        "droppedVideoFrames": 0
+      },
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "method": "Continuous 1x playback from 0 to ended in Chromium; audio enabled. Automated decoding check, not a human listening test."
+    }
+  },
+  "rootHashes": {
+    "index.html": "0ccae0badeba756c7cfbe16aa1dfc9ad14679f5fac93bc8867ec6a60a57b4ed9",
+    "_headers": "4ab28d8837c7eb73860bafe4f8f00135f1f3516de9e3350e177200b31b3016cf",
+    "README.md": "202f6f49ee62d89284dce848ecf44cd2ef23993c997c1d025f929c760c7afdff"
+  },
+  "files": {
+    "nextcustomer_launch_short_1080x1920.mp4": {
+      "bytes": 1703245,
+      "sha256": "4747d532e4d9d121113dbf91cabb1121d949c879043f2e6ce202d6004e44ee9e"
+    },
+    "nextcustomer_launch_short_proof_540x960.mp4": {
+      "bytes": 848056,
+      "sha256": "30ce1bce6b5065690b8697fa8825542738b75f5706239c169a591eb31b2da968"
+    },
+    "thumbnail.png": {
+      "bytes": 169309,
+      "sha256": "d7934962483d157bfa6efcbcd1aebed4724f60023d36314684f5c8d6edb8c893"
+    },
+    "contact-sheet.png": {
+      "bytes": 167558,
+      "sha256": "bd2e5846ef64176606cc0e19132dd2b4a292ddd684d90a12da111c5fe2ecdeb5"
+    },
+    "proof-contact-sheet.png": {
+      "bytes": 205405,
+      "sha256": "b7b753fa155d18b56c86c19baaaf36511a61d56952e52ae1df79f581fd7af20d"
+    }
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "Pillow": "13.0.0"
+  },
+  "manualGates": [
+    "Physical Android playback with sound has not been performed.",
+    "Before manual publication, owner must put tool link in channel profile and personally fulfill the comment invitation."
+  ],
+  "publication": "No deployment, merge, or YouTube publication performed."
+}

@@ -1,0 +1,26 @@
+Self-test
+
+20 of 20 passed · AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36
+
+✓UI text: Spanish covers every English string
+✓Service copy: every service has complete EN + ES
+✓Copy: 5 messages, 7 ideas, bio ≤ 150 chars, no broken blanks (24 combinations)
+✓Honesty: no invented offers, discounts, rankings or star ratings
+✓Review requests: no incentives and no “only if you were happy” gating
+✓Regression · Every trade gets its own quote question and appointment prep (EN/ES)
+✓Regression · Bio keeps a short description line for every trade instead of dropping it
+✓Regression · Spanish speaks to customers as usted, never tú
+✓Regression · Sharing falls back to saving when sharing is missing or fails, stays quiet on cancel
+✓Camera capture: separate rear-camera input leaves gallery upload available
+✓Marketing templates: no em dashes in generated captions, bios, messages or headlines
+✓Contact info: nothing appears that the owner didn't type
+✓Helpers: phone, handle, website and initials formatting
+✓Privacy: page policy blocks every network request
+✓Fonts: all six embedded typefaces loaded
+✓Text fitting: very long text stays inside its box
+✓Graphics: 3 styles × post/story × no image/photo/logo × EN/ES, long names, all inside safe areas
+✓Regression · Before & after: empty, side-by-side and stacked layouts, EN/ES, inside the frame, exports a 1080 × 1350 PNG
+✓Export: post saves as a 1080 × 1350 PNG
+✓Export: story saves as a 1080 × 1920 PNG
+
+← Back to the app
