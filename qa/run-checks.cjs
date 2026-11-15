@@ -5,10 +5,12 @@
      node qa/run-checks.cjs                         self-test, real UI flow, uploads, timing
      node qa/run-checks.cjs --baseline old.html     also: Editorial, Poster, Grid, the hero examples
                                                     and before/after render pixel-identical to old.html
+     node qa/run-checks.cjs --url https://…         run the same checks against a deployed copy (for
+                                                    example a preview), writing results-preview.json
 
    e.g.  git show origin/main:index.html > /tmp/old.html && node qa/run-checks.cjs --baseline /tmp/old.html
    Needs Node 18+ and Playwright with Chromium (set CHROMIUM_PATH to use a specific binary).
-   Writes qa/luxury-editorial/results.json and exits 1 if any check fails. */
+   Writes qa/luxury-editorial/results.json (results-preview.json with --url) and exits 1 if any check fails. */
 'use strict';
 const fs = require('node:fs');
 const os = require('node:os');
@@ -21,6 +23,7 @@ const FIX = path.join(__dirname, 'fixtures');
 const OUT = path.join(__dirname, 'luxury-editorial');
 const argv = process.argv.slice(2);
 const baselineFile = argv.includes('--baseline') ? argv[argv.indexOf('--baseline') + 1] : null;
+const remote = argv.includes('--url') ? argv[argv.indexOf('--url') + 1].replace(/\/+$/, '') : null;
 const TMP = fs.mkdtempSync(path.join(os.tmpdir(), 'starterkit-qa-'));
 const LUX = 3; // index of Luxury Editorial in the style picker
 
@@ -261,9 +264,18 @@ async function regression(browser, base, file) {
 
 (async () => {
   fs.mkdirSync(OUT, { recursive: true });
-  const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
-  const app = await serve(html);
+  let html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
+  const app = remote ? { base: remote, server: { close() {} } } : await serve(html);
   const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
+  if (remote) { // test exactly what the deployed copy serves, and record whether it matches this checkout
+    const page = await browser.newPage();
+    const res = await page.goto(remote + '/');
+    const served = await res.text(), h = res.headers();
+    check(`Deployed copy · ${remote} answers 200 with the production headers`, res.ok() && /default-src 'none'/.test(h['content-security-policy'] || '') && /nosniff/.test(h['x-content-type-options'] || ''), `${res.status()} ${h['content-type']}`);
+    check('Deployed copy · serves the same index.html as this checkout', served === html, `${Buffer.byteLength(served)} bytes`);
+    html = served;
+    await page.close();
+  }
   let ms = null;
   try {
     await selfTest(browser, app.base);
@@ -276,7 +288,8 @@ async function regression(browser, base, file) {
     app.server.close();
   }
   const failed = results.filter(r => !r.pass);
-  fs.writeFileSync(path.join(OUT, 'results.json'), JSON.stringify({
+  fs.writeFileSync(path.join(OUT, remote ? 'results-preview.json' : 'results.json'), JSON.stringify({
+    url: remote || null,
     page: { bytes: Buffer.byteLength(html), fonts: (html.match(/@font-face/g) || []).length },
     chromium: browser.version(), renderMs: ms && { editorial: +ms[0].toFixed(2), poster: +ms[1].toFixed(2), grid: +ms[2].toFixed(2), luxury: +ms[3].toFixed(2) },
     baseline: baselineFile ? path.basename(baselineFile) : null, passed: results.length - failed.length, total: results.length, results
