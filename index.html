@@ -85,6 +85,11 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 .kithead{padding:14px 0 0}
 .kittitle{font:600 30px/1.1 var(--serif);letter-spacing:-.015em;margin:8px 0 4px;overflow-wrap:anywhere}
 .kitsub{color:var(--muted);font-size:14px;margin:0 0 14px}
+.goal{margin:0 0 4px}
+.goals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.goals button{border:1px solid var(--line2);background:#fff;border-radius:999px;min-height:50px;padding:6px 10px;font:600 14px/1.15 var(--sans);color:var(--ink2)}
+.goals button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.goal .hint{margin:10px 0 0;font-size:13.5px}
 .tabs{position:sticky;top:60px;z-index:20;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:10px 0;background:var(--paper)}
 .tab{border:1px solid var(--line2);background:var(--card);border-radius:12px;min-height:48px;padding:0 4px;font:600 13.5px/1.1 var(--sans);color:var(--ink2)}
 .tab[aria-selected=true]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
@@ -147,7 +152,7 @@ mark{background:rgba(226,84,43,.14);color:inherit;border-radius:4px;padding:0 2p
 #viewer p{color:#F3EEE6;font-size:15px;text-align:center;margin:0;max-width:340px}
 #viewer img{max-width:100%;max-height:68vh;border-radius:8px;-webkit-touch-callout:default;user-select:auto}
 #viewer .btn{border-color:#F3EEE6;color:#F3EEE6;min-width:160px}
-@media (max-width:350px){.tab{font-size:12px;letter-spacing:-.01em;white-space:nowrap}.tabs{gap:4px}.wrap{padding:0 14px}.tpls{gap:7px}.tpl span{font-size:11.5px;letter-spacing:-.01em;padding-left:0;padding-right:0}}
+@media (max-width:350px){.tab{font-size:12px;letter-spacing:-.01em;white-space:nowrap}.tabs{gap:4px}.wrap{padding:0 14px}.tpls{gap:7px}.tpl span{font-size:11.5px;letter-spacing:-.01em;padding-left:0;padding-right:0}.goals{gap:6px}.goals button{font-size:13px;padding:6px 6px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -219,6 +224,11 @@ mark{background:rgba(226,84,43,.14);color:inherit;border-radius:4px;padding:0 2p
   <div class="kithead"><button type="button" class="link" id="b_back">← <span data-i="back"></span></button></div>
   <h2 class="kittitle" id="kitTitle"></h2>
   <p class="kitsub" id="kitSub"></p>
+  <div class="goal">
+    <span class="lbl" id="lbl_goal" data-i="goalL"></span>
+    <div class="goals" id="goals" role="group" aria-labelledby="lbl_goal"></div>
+    <p class="hint" id="goalHint"></p>
+  </div>
   <div class="tabs" role="tablist">
     <button type="button" class="tab" role="tab" data-tab="g" aria-selected="true" data-i="t_g"></button>
     <button type="button" class="tab" role="tab" data-tab="b" aria-selected="false" data-i="t_b"></button>
@@ -267,7 +277,7 @@ mark{background:rgba(226,84,43,.14);color:inherit;border-radius:4px;padding:0 2p
     <div id="out_m"></div>
   </div>
 
-  <div class="panel" id="p_w" role="tabpanel" hidden><p class="hint" data-i="weekIntro" style="margin:0 0 14px;font-size:15px"></p><div id="out_w"></div></div>
+  <div class="panel" id="p_w" role="tabpanel" hidden><p class="hint" id="weekIntro" data-i="weekIntro" style="margin:0 0 14px;font-size:15px"></p><div id="out_w"></div></div>
 </section>
 </main>
 
@@ -322,7 +332,9 @@ g_area:"Service area",g_call:"Call / Text",g_online:"Online",g_email:"Email",g_b
 openImg:"Trouble saving? Open the image",holdHint:"Press and hold the image, then tap “Download image.”",close:"Close",
 baT:"Before & after post",baHint:"Use two real photos of the same job, taken from the same spot. Don't edit the after photo to look better than the work. Ask the client first, and leave out faces, house numbers and license plates. These photos aren't saved after you close the page.",
 baBefore:"+ Before photo",baAfter:"+ After photo",cap_ba:"Before & after · 1080 × 1350",baNeed:"Add a before photo and an after photo first.",
-yourBiz:"Your business"},
+yourBiz:"Your business",
+goalL:"Your goal this week",goalNone:"Optional. Pick one to focus your headline ideas and Week 1 posts.",goalOff:"Tap it again for the general plan.",
+goalSet:"Headline and Week 1 updated.",goalKept:"Week 1 updated. What you typed stays.",goalCleared:"Back to the general plan."},
 es:{appName:"Kit de Inicio",eyebrow:"Gratis · Sin registrarse · Todo se queda en su teléfono",
 h1:"Su negocio, listo para publicar en <em>cinco minutos.</em>",
 lede:"Un flyer, una historia, su perfil, mensajes para clientes y una semana de ideas para publicar, con solo unos datos.",
@@ -355,7 +367,9 @@ g_area:"Zona de servicio",g_call:"Llame o escriba",g_online:"En línea",g_email:
 openImg:"¿No se guardó? Abra la imagen",holdHint:"Mantenga presionada la imagen y toque “Descargar imagen”.",close:"Cerrar",
 baT:"Publicación de antes y después",baHint:"Use dos fotos reales del mismo trabajo, tomadas desde el mismo lugar. No edite la foto de después para que se vea mejor que el trabajo real. Pida permiso al cliente y no muestre caras, números de casa ni placas. Estas fotos no se guardan al cerrar la página.",
 baBefore:"+ Foto de antes",baAfter:"+ Foto de después",cap_ba:"Antes y después · 1080 × 1350",baNeed:"Primero agregue una foto de antes y una de después.",
-yourBiz:"Su negocio"}
+yourBiz:"Su negocio",
+goalL:"Su meta esta semana",goalNone:"Opcional. Escoja una para enfocar sus ideas de título y sus publicaciones de la Semana 1.",goalOff:"Tóquela otra vez para volver al plan general.",
+goalSet:"Título y Semana 1 actualizados.",goalKept:"Semana 1 actualizada. Su texto no cambia.",goalCleared:"De vuelta al plan general."}
 };
 
 const ORDER=["cleaning","landscaping","detailing","pressure","handyman","other"];
@@ -366,46 +380,85 @@ const SV={
 cleaning:{
  en:{label:"House cleaning",noun:"home cleaning",hl:["Come home to clean.","A cleaner home. Your weekends back.","Detail-minded cleaning for busy homes."],
   desc:"Home cleaning for busy households. Kitchens, bathrooms, floors, and the little details that make a place feel fresh.",
-  job:"a kitchen or bathroom you cleaned",tip:"one two-minute habit that keeps a bathroom cleaner between visits",tools:"your cleaning caddy and supplies",faq:"the difference between a regular clean and a deep clean",quote:"how many bedrooms and bathrooms you have, and whether you want a regular or a deep clean",prep:"If anything needs special care, or pets will be home, give me a heads-up."},
+  job:"a kitchen or bathroom you cleaned",tip:"one two-minute habit that keeps a bathroom cleaner between visits",tools:"your cleaning caddy and supplies",faq:"the difference between a regular clean and a deep clean",quote:"how many bedrooms and bathrooms you have, and whether you want a regular or a deep clean",prep:"If anything needs special care, or pets will be home, give me a heads-up.",
+  sell:"Regular or deep clean? Book it by message.",menu:"a deep clean, a move-out clean or a regular weekly clean",step:"wiping down a stovetop or a glass shower door"},
  es:{label:"Limpieza de casas",noun:"limpieza de casas",hl:["Llegue a una casa limpia.","Su casa limpia. Su fin de semana libre.","Limpieza con atención a cada detalle."],
   desc:"Limpieza de casas para familias ocupadas: cocinas, baños, pisos y esos detalles que hacen que todo se sienta fresco.",
-  job:"una cocina o un baño que limpió",tip:"un hábito de dos minutos que mantiene el baño más limpio entre visitas",tools:"sus productos y herramientas de limpieza",faq:"la diferencia entre una limpieza regular y una limpieza profunda",quote:"cuántas recámaras y baños tiene, y si busca una limpieza regular o profunda",prep:"Si hay algo que necesite cuidado especial, o si va a haber mascotas en casa, dígamelo con tiempo."}},
+  job:"una cocina o un baño que limpió",tip:"un hábito de dos minutos que mantiene el baño más limpio entre visitas",tools:"sus productos y herramientas de limpieza",faq:"la diferencia entre una limpieza regular y una limpieza profunda",quote:"cuántas recámaras y baños tiene, y si busca una limpieza regular o profunda",prep:"Si hay algo que necesite cuidado especial, o si va a haber mascotas en casa, dígamelo con tiempo.",
+  sell:"¿Limpieza regular o profunda? Agende por mensaje.",menu:"una limpieza profunda, una limpieza de mudanza o una limpieza semanal",step:"limpiando una estufa o la puerta de vidrio de la regadera"}},
 landscaping:{
  en:{label:"Landscaping",noun:"yard care",hl:["Yards worth coming home to.","Clean cuts. Healthy yards.","Local yard care, done with pride."],
   desc:"Lawn care, trimming, and cleanups that keep your yard neat and healthy all year long.",
-  job:"a yard you cleaned up or trimmed",tip:"when and how often to water during hot weather",tools:"your mower, trimmer, and truck or trailer",faq:"what a regular maintenance visit includes",quote:"a couple of photos of the yard and what you would like done",prep:"Please leave the side gate unlocked, and give me a heads-up if pets will be in the yard."},
+  job:"a yard you cleaned up or trimmed",tip:"when and how often to water during hot weather",tools:"your mower, trimmer, and truck or trailer",faq:"what a regular maintenance visit includes",quote:"a couple of photos of the yard and what you would like done",prep:"Please leave the side gate unlocked, and give me a heads-up if pets will be in the yard.",
+  sell:"Send a photo of your yard. Get a quote.",menu:"a yard cleanup, weekly mowing or hedge trimming",step:"edging along a walkway or a flower bed"},
  es:{label:"Jardinería",noun:"jardinería",hl:["Un jardín que da gusto ver.","Cortes limpios. Jardines sanos.","Jardinería local, hecha con orgullo."],
   desc:"Mantenimiento de jardines, poda y limpiezas. Para que su patio se vea limpio y sano todo el año.",
-  job:"un jardín que limpió o podó",tip:"cuándo y cada cuánto regar cuando hace calor",tools:"su podadora, su desbrozadora y su troca o tráiler",faq:"qué incluye una visita de mantenimiento regular",quote:"un par de fotos del jardín y qué le gustaría que hiciera",prep:"Por favor deje abierta la puerta del patio y dígame si va a haber mascotas afuera."}},
+  job:"un jardín que limpió o podó",tip:"cuándo y cada cuánto regar cuando hace calor",tools:"su podadora, su desbrozadora y su troca o tráiler",faq:"qué incluye una visita de mantenimiento regular",quote:"un par de fotos del jardín y qué le gustaría que hiciera",prep:"Por favor deje abierta la puerta del patio y dígame si va a haber mascotas afuera.",
+  sell:"Mándenos una foto de su jardín y le cotizamos.",menu:"una limpieza de jardín, el corte de pasto semanal o la poda de arbustos",step:"orillando el pasto junto a una banqueta o una jardinera"}},
 detailing:{
  en:{label:"Mobile detailing",noun:"mobile car detailing",hl:["Showroom shine, right in your driveway.","You stay put. Your car gets the shine.","Car detailing that comes to you."],
   desc:"Mobile car detailing at your home or work. Interior, exterior, and the details in between.",
-  job:"a car interior you detailed",tip:"one easy way to keep a car interior cleaner day to day",tools:"your detailing kit and setup",faq:"how long a full detail takes and what you need on site",quote:"the make and model of your car, and whether you want the inside, the outside, or both",prep:"Please park where I can work all around the car, and tell me if there is a water spigot or outlet I can use."},
+  job:"a car interior you detailed",tip:"one easy way to keep a car interior cleaner day to day",tools:"your detailing kit and setup",faq:"how long a full detail takes and what you need on site",quote:"the make and model of your car, and whether you want the inside, the outside, or both",prep:"Please park where I can work all around the car, and tell me if there is a water spigot or outlet I can use.",
+  sell:"Interior, exterior or both. We come to you.",menu:"an interior detail, a wash and wax or a full detail",step:"vacuuming and brushing one seat"},
  es:{label:"Detallado a domicilio",noun:"detallado de autos a domicilio",hl:["Su carro brillando, sin salir de casa.","Usted descansa. Su carro queda brillando.","Detallado de autos hasta su puerta."],
   desc:"Detallado de autos en su casa o trabajo: interior, exterior y todos los detalles.",
-  job:"el interior de un carro que detalló",tip:"una forma fácil de mantener el interior del carro más limpio día a día",tools:"su equipo y productos de detallado",faq:"cuánto tarda un detallado completo y qué necesita en el lugar",quote:"la marca y el modelo de su carro, y si quiere el interior, el exterior o los dos",prep:"Por favor deje el carro donde pueda trabajar alrededor, y dígame si hay una llave de agua o un contacto que pueda usar."}},
+  job:"el interior de un carro que detalló",tip:"una forma fácil de mantener el interior del carro más limpio día a día",tools:"su equipo y productos de detallado",faq:"cuánto tarda un detallado completo y qué necesita en el lugar",quote:"la marca y el modelo de su carro, y si quiere el interior, el exterior o los dos",prep:"Por favor deje el carro donde pueda trabajar alrededor, y dígame si hay una llave de agua o un contacto que pueda usar.",
+  sell:"Interior, exterior o los dos. Vamos a donde esté.",menu:"un detallado de interiores, un lavado con cera o un detallado completo",step:"aspirando y cepillando un asiento"}},
 pressure:{
  en:{label:"Pressure washing",noun:"pressure washing",hl:["Bring back the clean.","Fresh driveways, patios, and walls.","Wash away a year of grime."],
   desc:"Pressure washing for driveways, patios, walkways, and walls. Clean results without giving up your weekend.",
-  job:"a driveway or patio you washed",tip:"how often outdoor surfaces should be washed, and why",tools:"your pressure washer and surface cleaner",faq:"which surfaces can be pressure washed and which need a gentler method",quote:"a photo of the area and roughly how big it is",prep:"Please move cars and anything fragile out of the area, and tell me where the outdoor water spigot is."},
+  job:"a driveway or patio you washed",tip:"how often outdoor surfaces should be washed, and why",tools:"your pressure washer and surface cleaner",faq:"which surfaces can be pressure washed and which need a gentler method",quote:"a photo of the area and roughly how big it is",prep:"Please move cars and anything fragile out of the area, and tell me where the outdoor water spigot is.",
+  sell:"Driveway, patio or walls? Get a quote.",menu:"a driveway, a patio or a house wash",step:"making one slow pass with the surface cleaner on concrete"},
  es:{label:"Lavado a presión",noun:"lavado a presión",hl:["Que todo vuelva a verse limpio.","Entradas, patios y paredes, otra vez limpios.","Adiós a la mugre de todo el año."],
   desc:"Lavado a presión para entradas de cochera, patios, banquetas y paredes. Resultados limpios sin perder su fin de semana.",
-  job:"una entrada o un patio que lavó",tip:"cada cuánto conviene lavar las superficies exteriores y por qué",tools:"su hidrolavadora y su limpiador de superficies",faq:"qué superficies se pueden lavar a presión y cuáles necesitan un método más suave",quote:"una foto del área y más o menos qué tan grande es",prep:"Por favor quite los carros y cualquier cosa delicada del área, y dígame dónde está la llave de agua de afuera."}},
+  job:"una entrada o un patio que lavó",tip:"cada cuánto conviene lavar las superficies exteriores y por qué",tools:"su hidrolavadora y su limpiador de superficies",faq:"qué superficies se pueden lavar a presión y cuáles necesitan un método más suave",quote:"una foto del área y más o menos qué tan grande es",prep:"Por favor quite los carros y cualquier cosa delicada del área, y dígame dónde está la llave de agua de afuera.",
+  sell:"¿Cochera, patio o paredes? Pida su cotización.",menu:"una entrada de cochera, un patio o el lavado de una fachada",step:"pasando despacio el limpiador de superficies sobre el concreto"}},
 handyman:{
  en:{label:"Handyman",noun:"handyman help",hl:["The small fixes, finally handled.","Your to-do list, done.","One call for the little things."],
   desc:"Repairs, installations, and small jobs around the house. Get those pending projects taken care of.",
-  job:"a repair or install you finished",tip:"a small home maintenance task most people forget",tools:"your toolbox or truck setup",faq:"which jobs you take on, and which ones you refer out",quote:"a photo of what needs fixing and a short description",prep:"If you already have parts or materials for the job, please have them handy."},
+  job:"a repair or install you finished",tip:"a small home maintenance task most people forget",tools:"your toolbox or truck setup",faq:"which jobs you take on, and which ones you refer out",quote:"a photo of what needs fixing and a short description",prep:"If you already have parts or materials for the job, please have them handy.",
+  sell:"Send your to-do list. Get a quote.",menu:"mounting a TV, fixing a leaky faucet or a door that sticks",step:"patching and sanding a small hole in a wall"},
  es:{label:"Reparaciones del hogar",noun:"reparaciones para el hogar",hl:["Esos arreglos pendientes, por fin listos.","Su lista de pendientes, resuelta.","Una llamada para los arreglos de la casa."],
   desc:"Reparaciones, instalaciones y trabajitos de la casa: esos proyectos que siguen esperando.",
-  job:"una reparación o instalación que terminó",tip:"un mantenimiento sencillo de la casa que casi todos olvidan",tools:"su caja de herramientas o su troca equipada",faq:"qué trabajos sí hace y cuáles recomienda a alguien más",quote:"una foto de lo que hay que arreglar y una breve descripción",prep:"Si ya tiene piezas o materiales para el trabajo, por favor téngalos a la mano."}},
+  job:"una reparación o instalación que terminó",tip:"un mantenimiento sencillo de la casa que casi todos olvidan",tools:"su caja de herramientas o su troca equipada",faq:"qué trabajos sí hace y cuáles recomienda a alguien más",quote:"una foto de lo que hay que arreglar y una breve descripción",prep:"Si ya tiene piezas o materiales para el trabajo, por favor téngalos a la mano.",
+  sell:"Mándenos su lista de pendientes y le cotizamos.",menu:"instalar una tele, arreglar una llave que gotea o una puerta que se atora",step:"resanando y lijando un hoyito en la pared"}},
 other:{
  en:{label:"",noun:"",hl:["Local {s}, done with care.","{S} for your neighborhood.","{S}, made easy."],desc:"",
-  job:"a recent job",tip:"one helpful tip about {s}",tools:"your tools and setup",faq:"what a typical job includes",quote:"a few details about what you need",prep:""},
+  job:"a recent job",tip:"one helpful tip about {s}",tools:"your tools and setup",faq:"what a typical job includes",quote:"a few details about what you need",prep:"",
+  sell:"{S}: tell us what you need.",menu:"what people ask you for most",step:"doing one key step of a typical job"},
  es:{label:"",noun:"",hl:["{S} cerca de usted, con atención y cuidado.","{S} para su vecindario.","{S}, sin complicaciones."],desc:"",
-  job:"un trabajo reciente",tip:"un consejo útil sobre {s}",tools:"sus herramientas y su equipo",faq:"qué incluye un trabajo típico",quote:"algunos detalles de lo que necesita",prep:""}}
+  job:"un trabajo reciente",tip:"un consejo útil sobre {s}",tools:"sus herramientas y su equipo",faq:"qué incluye un trabajo típico",quote:"algunos detalles de lo que necesita",prep:"",
+  sell:"{S}: díganos qué necesita.",menu:"lo que más le piden",step:"haciendo un paso clave de un trabajo típico"}}
 };
 const CTAS={en:["Message us for a quote","Call or text to book","Book your first visit","Ask about availability"],
             es:["Escríbanos para cotizar","Llame o mande mensaje","Agende su primera visita","Pregunte por disponibilidad"]};
+/* Marketing goals (optional). With no goal the kit is exactly as before. A goal swaps in its own
+   Week 1 plan (goalIdeas) and its own headline and call-to-action suggestions; anything the owner
+   typed into the headline or call to action is kept. "sell" also leads with SV[service].sell. */
+const GOAL_IDS=["sell","proof","brand"];
+const GOALS={
+sell:{
+ en:{name:"Sell now",hint:"Specific services, quotes and your real openings.",
+  intro:"Seven posts to get bookings: specific services, clear next steps and your real openings. Fill in the [brackets] before you post.",
+  hl:["Your quote is one message away.","Now taking new clients."],ctas:["Ask for your quote","Book an appointment","Ask about open dates","Call or text to book"]},
+ es:{name:"Conseguir clientes",hint:"Servicios concretos, cotizaciones y sus espacios reales.",
+  intro:"Siete publicaciones para conseguir clientes: servicios concretos, pasos claros y sus espacios reales. Llene lo que está entre [corchetes] antes de publicar.",
+  hl:["Su cotización, a un mensaje de distancia.","Aceptamos clientes nuevos."],ctas:["Pida su cotización","Agende su cita","Pregunte por fechas disponibles","Llame o mande mensaje"]}},
+proof:{
+ en:{name:"Show proof",hint:"Your real work, your process and real customer words.",
+  intro:"Seven posts that show your real work. Use only your own photos and real customer words. Fill in the [brackets] before you post.",
+  hl:["See the work before you book.","Our work, up close.","Done with care, start to finish."],ctas:["Ask to see more of our work","Want this done? Message us","Ask about a job like this","Message us for a quote"]},
+ es:{name:"Mostrar mi trabajo",hint:"Su trabajo real, cómo trabaja y palabras de clientes reales.",
+  intro:"Siete publicaciones para mostrar su trabajo real. Use solo sus propias fotos y palabras reales de sus clientes. Llene lo que está entre [corchetes] antes de publicar.",
+  hl:["Vea el trabajo antes de agendar.","Nuestro trabajo, de cerca.","Con cuidado, de principio a fin."],ctas:["Pida ver más de nuestro trabajo","¿Quiere algo así? Escríbanos","Pregunte por un trabajo así","Escríbanos para cotizar"]}},
+brand:{
+ en:{name:"Build brand",hint:"Who you are, what you know and where you work.",
+  intro:"Seven posts that help people get to know you: who you are, what you know and where you work. Fill in the [brackets] before you post.",
+  hl:["Hi, neighbors. Nice to meet you.","Get to know who does the work.","{S}: ask us anything."],ctas:["Follow for more tips","Questions? Just ask","Say hi anytime","Get to know us"]},
+ es:{name:"Darme a conocer",hint:"Quién es, lo que sabe y dónde trabaja.",
+  intro:"Siete publicaciones para que la gente lo conozca: quién es, lo que sabe y dónde trabaja. Llene lo que está entre [corchetes] antes de publicar.",
+  hl:["Hola, vecinos. Mucho gusto.","Conozca a quien hace el trabajo.","{S}: pregúntenos lo que quiera."],ctas:["Síganos para más consejos","¿Preguntas? Escríbanos","Salúdenos cuando guste","Conózcanos"]}}
+};
 const PALS=[
  {en:"Terracotta",es:"Terracota",paper:"#F4EEE4",ink:"#1C1813",accent:"#EE6A3B"},
  {en:"Pine & lime",es:"Pino y lima",paper:"#EEF0E5",ink:"#13291F",accent:"#C5E36B"},
@@ -436,16 +489,18 @@ function deriveData(s,img){
   const label=svc==="other"?(capFirst(other)||(L==="es"?"Servicios locales":"Local services")):S.label;
   const noun=svc==="other"?(other?lowerFirst(other):(L==="es"?"servicios locales":"local services")):S.noun;
   const sub=t=>t.replace(/\{S\}/g,capFirst(noun)).replace(/\{s\}/g,noun);
-  const hls=S.hl.map(sub),ctas=CTAS[L];
+  const goal=GOAL_IDS.includes(s.goal)?s.goal:"",G=goal&&GOALS[goal][L];
+  const hls=(G?(goal==="sell"?[S.sell].concat(G.hl):G.hl):S.hl).map(sub),ctas=G?G.ctas:CTAS[L];
   const ownHead=String(s.headline||"").split("\n").map(clean).filter(Boolean).join("\n");
+  const ownCta=s.ctaEdited&&clean(s.cta)?clean(s.cta):"",ci=s.ctaIdx||0;
   const pi=s.pal>=0&&s.pal<PALS.length?s.pal:PAL_DEFAULT[svc];
-  return{lang:L,service:svc,name:clean(s.name)||UI[L].yourBiz,label,noun,area:clean(s.area),
+  return{lang:L,service:svc,goal,name:clean(s.name)||UI[L].yourBiz,label,noun,area:clean(s.area),
     desc:clean(s.desc)||sub(S.desc),headline:s.hlEdited&&ownHead?ownHead:hls[(s.hlIdx||0)%hls.length],
-    cta:s.ctaEdited&&clean(s.cta)?clean(s.cta):ctas[(s.ctaIdx||0)%ctas.length],hls,ctas,
+    cta:ownCta||ctas[ci%ctas.length],bioCta:ownCta||CTAS[L][ci%CTAS[L].length],hls,ctas,
     phone:formatPhone(s.phone),handle:normHandle(s.handle),web:normWeb(s.web),email:clean(s.email),
     owner:clean(s.owner),customer:clean(s.customer),review:clean(s.review),initials:initials(s.name||label),
     pal:PALS[pi],palIdx:pi,img:img||null,kind:s.kind==="logo"?"logo":"photo",
-    x:{job:sub(S.job),tip:sub(S.tip),tools:sub(S.tools),faq:sub(S.faq),quote:sub(S.quote),prep:sub(S.prep)}};
+    x:{job:sub(S.job),tip:sub(S.tip),tools:sub(S.tools),faq:sub(S.faq),quote:sub(S.quote),prep:sub(S.prep),menu:sub(S.menu),step:sub(S.step)}};
 }
 function shortLine(t,max){t=clean(t);if(!t)return"";const s=t.split(/(?<=[.!?])\s/)[0].replace(/[.!?]+$/,"");if(s.length<=max)return s;
   const c=s.slice(0,max),i=Math.max(c.lastIndexOf(" — "),c.lastIndexOf(": "));if(i>30)return c.slice(0,i);const j=c.lastIndexOf(", ");return j>30?c.slice(0,j):""}
@@ -454,7 +509,7 @@ function trimTo(s,n){if(s.length<=n)return s;const c=s.slice(0,n-1);return c.sli
 /* Bio, about, five customer messages, seven post ideas. */
 function buildCopy(d){
   const es=d.lang==="es",inArea=d.area?(es?` en ${d.area}`:` in ${d.area}`):"";
-  const l1=d.area?`${d.label}${inArea}`:d.label,l2=shortLine(d.desc,90),l3=d.cta+(d.phone?` · ${d.phone}`:"");
+  const l1=d.area?`${d.label}${inArea}`:d.label,l2=shortLine(d.desc,90),l3=(d.bioCta||d.cta)+(d.phone?` · ${d.phone}`:"");
   let bio=[l1,l2,l3].filter(Boolean).join("\n");if(bio.length>150){const l2b=shortLine(d.desc,150-l1.length-l3.length-2);bio=[l1,l2b,l3].filter(Boolean).join("\n")}if(bio.length>150)bio=trimTo(bio,150);
   const near=/\b(nearby|surrounding|areas?|vicinity|alrededores|cercan\w*|zonas?)\b/i.test(d.area);
   const p1=d.area?(es?`${d.name} ofrece ${d.noun} en ${d.area}${near?"":" y sus alrededores"}.`:`${d.name} offers ${d.noun} in ${d.area}${near?"":" and nearby areas"}.`)
@@ -485,7 +540,7 @@ function buildCopy(d){
      {t:"Referral request",x:`${hi} thanks again for choosing ${d.name}. If you know a neighbor, friend, or family member who could use ${d.noun}, I'd really appreciate you passing along my info${reach?`: ${reach}`:""}. Referrals mean a lot to a small business like mine.`}];
   }
   const x=d.x;
-  const ideas=es?[
+  const ideas=GOAL_IDS.includes(d.goal)?goalIdeas(d,inArea):es?[
    {t:"Preséntese",w:"Una foto suya (o de sus manos trabajando) y dos líneas: quién es y dónde trabaja.",h:"Con luz natural, el teléfono a la altura de los ojos y un fondo sencillo. La gente contrata a personas: deje que lo conozcan.",c:`¡Hola, ${d.area||"vecinos"}! Soy quien está detrás de ${d.name}. Ofrezco ${d.noun}${inArea}. ¿Tiene alguna pregunta o quiere una cotización? Mándeme un mensaje cuando guste.`},
    {t:"Antes y después",w:`Dos fotos de ${x.job}, lado a lado.`,h:"Mismo lugar, mismo ángulo, antes y después. Pida permiso al cliente y no muestre caras, números de casa ni placas.",c:`Antes → después: [lo que hizo, en pocas palabras]. ¿Necesita algo parecido${inArea}? Mándeme un mensaje.`},
    {t:"Un consejo rápido",w:`Un video vertical de 15 a 30 segundos compartiendo ${x.tip}.`,h:"Teléfono en vertical, hable a la cámara y comparta un solo consejo. Agregue subtítulos: mucha gente ve los videos sin sonido.",c:"Consejo rápido: [su consejo]. Guárdelo para después y compártalo con alguien que lo necesite."},
@@ -503,6 +558,151 @@ function buildCopy(d){
    {t:"Say thank you",w:"Thank the people who supported you this week, and invite customers to leave an honest review.",h:"A simple photo of you or your work. Never post a customer's name or home without permission.",c:`Thank you to everyone who has supported ${d.name}. If I've worked for you, an honest review helps a small business more than you know.`}
   ];
   return{bio,about,msgs,ideas};
+}
+
+/* Week 1 for a chosen goal: seven different kinds of post, each with what to post, how to shoot it
+   on a phone and a starter caption. [Brackets] hold real details only the owner knows. Nothing here
+   invents a price, an opening, a review, a result or a credential. */
+function goalIdeas(d,inArea){
+  const es=d.lang==="es",x=d.x,de=t=>es&&/^el /.test(t)?"del "+t.slice(3):"de "+t;
+  const book=d.phone?(es?`llame o mande mensaje al ${d.phone}`:`call or text ${d.phone}`):(es?"mándeme un mensaje":"send me a message"),Book=capFirst(book);
+  const P={
+  sell:()=>es?[
+   {t:"Destaque un servicio",w:`Un servicio del que quiera más clientes, como ${x.menu}. Diga qué incluye y cómo agendar.`,
+    h:"Use su publicación de la pestaña Gráficos o una foto clara de ese servicio: con luz de día, el teléfono a la altura del pecho y nada de más en la toma.",
+    c:`Ya estoy agendando [servicio]${inArea}. Incluye [qué incluye]. ¿Le interesa? ${Book}.`},
+   {t:"Cómo pedir una cotización",w:`Diga exactamente qué le deben mandar para cotizar: ${x.quote}.`,
+    h:"Teléfono en vertical, cerca de una ventana, hablando a la cámara unos 15 segundos. Diga qué le deben mandar y en cuánto tiempo suele responder. Agregue subtítulos para quien lo vea sin sonido.",
+    c:`¿Quiere una cotización? Mándeme un mensaje con ${x.quote}. Normalmente respondo en [tiempo].`},
+   {t:"Sus espacios disponibles",w:"Una historia con los días u horarios que de verdad tiene libres esta semana. Publique solo los espacios que sí tiene.",
+    h:"Use su historia de la pestaña Gráficos y escriba los días encima con la herramienta de texto de Instagram, o tómele foto a su agenda con los días libres marcados. Tape los nombres de otros clientes.",
+    c:`Tengo espacio esta semana${inArea}: [días y horarios]. ¿Le aparto uno? ${Book}.`},
+   {t:"De qué depende el precio",w:"Explique qué cambia el precio de un trabajo, como el tamaño, la condición o los extras, para que sepan qué esperar. Dé un precio fijo solo si de verdad lo tiene.",
+    h:"Escriba en letras grandes las tres cosas que cambian el precio, una por línea, sobre una foto limpia de su trabajo. Revise que se lea fácil en una pantalla chica.",
+    c:"¿Cuánto cuesta? Depende de [lo que cambia el precio]. Cuénteme qué necesita y le doy un precio claro antes de empezar."},
+   {t:"Qué esperar",w:"Explique en cuatro pasos cortos cómo es contratarlo, desde el primer mensaje hasta el trabajo terminado.",
+    h:"Un carrusel de cuatro fotos verticales, una por paso: su teléfono con un mensaje (sin datos del cliente), cuando llega, trabajando y el trabajo terminado. Tómelas todas con luz de día para que combinen.",
+    c:`Así funciona con ${d.name}: 1) Usted me manda un mensaje. 2) Le mando su cotización. 3) Escogemos el día. 4) Llego y hago el trabajo.${x.prep?" "+x.prep:""}`},
+   {t:"Ayude a escoger",w:`Responda una pregunta que le hacen antes de contratar, como ${x.faq}.`,
+    h:"Dos imágenes: la pregunta en letras grandes en la primera y su respuesta en la segunda. O respóndala a la cámara en menos de 20 segundos.",
+    c:"Una pregunta que me hacen antes de agendar: [pregunta]. La respuesta corta: [respuesta]. ¿Tiene dudas sobre qué necesita? Mándeme un mensaje y le ayudo a escoger."},
+   {t:"Que sea fácil contratarlo",w:"Una publicación sencilla con su servicio, su zona y cómo contactarlo, fijada arriba en su perfil.",
+    h:"Use su publicación de la pestaña Gráficos (muestra los datos de contacto que escribió) y fíjela en su perfil. Si puede, conteste los mensajes nuevos el mismo día, y dos días después de cotizar mande el “Seguimiento de cotización” de la pestaña Mensajes.",
+    c:`${d.label}${inArea}. Para agendar o pedir una cotización, ${book}. Guarde esta publicación para tener mis datos a la mano.`}
+  ]:[
+   {t:"Spotlight one service",w:`One service you want more of, like ${x.menu}. Say what's included and how to book.`,
+    h:"Use your Post graphic from the Graphics tab, or one clear photo of that service: daylight, phone at chest height, nothing extra in the frame.",
+    c:`Now booking [service]${inArea}. It includes [what's included]. Want one? ${Book}.`},
+   {t:"How to get a quote",w:`Tell people exactly what to send you for a quote: ${x.quote}.`,
+    h:"Phone upright, near a window, talking to the camera for about 15 seconds. Say what to send and how soon you usually reply. Add captions for people watching with the sound off.",
+    c:`Want a quote? Send me a message with ${x.quote}. I usually reply within [time].`},
+   {t:"Your real openings",w:"A Story with the days or times you really have open this week. Only post openings you actually have.",
+    h:"Use your Story graphic and type the days on top with Instagram's text tool, or photograph your planner with the open days circled. Cover other clients' names.",
+    c:`Openings this week${inArea}: [days and times]. Want me to save one for you? ${Book}.`},
+   {t:"What affects the price",w:"Explain what changes the price of a job, like size, condition or extras, so people know what to expect. Share a set price only if you really have one.",
+    h:"Write the three things that change the price in big text, one per line, over a clean photo of your work. Check that it reads easily on a small screen.",
+    c:"How much does it cost? It depends on [what changes the price]. Tell me about your job, and I'll give you a clear price before I start."},
+   {t:"What to expect",w:"Walk people through hiring you, from first message to finished job, in four short steps.",
+    h:"A carousel of four vertical photos, one per step: your phone with a message (no client details), arriving, working, the finished job. Shoot them all in daylight so the set matches.",
+    c:`How it works with ${d.name}: 1) You send me a message. 2) I send your quote. 3) We pick a day. 4) I show up and get it done.${x.prep?" "+x.prep:""}`},
+   {t:"Help people choose",w:`Answer a question people ask before they book, like ${x.faq}.`,
+    h:"Two slides: the question in big text on the first, your answer on the second. Or answer it to the camera in under 20 seconds.",
+    c:"A question I get before people book: [question]. The short answer: [answer]. Not sure what you need? Send me a message and I'll help you choose."},
+   {t:"Make it easy to book",w:"A simple post with your service, your area and how to reach you, pinned to the top of your profile.",
+    h:"Use your Post graphic (it shows the contact details you entered) and pin it. Answer new messages the same day if you can, and two days after a quote, send the “Estimate follow-up” from the Messages tab.",
+    c:`${d.label}${inArea}. To book or get a quote, ${book}. Save this post so you have my info when you need it.`}
+  ],
+  proof:()=>es?[
+   {t:"Un trabajo terminado",w:`Una foto clara ${de(x.job)}. Solo trabajo suyo.`,
+    h:"Abra las cortinas o prenda todas las luces, limpie el lente, tome una foto de lejos y luego una de cerca. Pida permiso al cliente y no muestre caras, números de casa ni placas. ¿Todavía no tiene fotos de clientes? Haga un trabajo en su casa o para alguien conocido, y dígalo.",
+    c:`Trabajo reciente${inArea}: [lo que hizo]. Lo que más me gustó: [un detalle]. ¿Quiere algo así? Mándeme un mensaje.`},
+   {t:"Un antes y después real",w:"Dos fotos del mismo trabajo, antes y después, con la publicación de Antes y después de la pestaña Gráficos.",
+    h:"Tome la foto de antes sin mover nada, y la de después desde el mismo lugar, a la misma altura y con la misma luz. Sin filtros ni ediciones que hagan ver el trabajo mejor de lo que quedó. ¿No tomó foto de antes? Sáltese esta y tómela en su próximo trabajo.",
+    c:`Antes y después${inArea}: [lo que hizo]. Las dos fotos son de este trabajo. ¿Necesita algo parecido? Mándeme una foto y le cotizo.`},
+   {t:"Muestre cómo trabaja",w:`Grábese ${x.step}, de 15 a 30 segundos.`,
+    h:"Recargue el teléfono en vertical, a la altura del trabajo. Grabe varios clips de 3 a 5 segundos y deje el sonido real. Muestre sus manos y el trabajo, no la casa ni las cosas del cliente.",
+    c:"Así lo hago: [qué está haciendo y por qué importa]. ¿Quiere ver más del proceso? Sígame."},
+   {t:"Los detalles, de cerca",w:"Tres fotos de cerca de detalles pequeños que muestran un trabajo cuidadoso.",
+    h:"Acerque el teléfono en vez de usar el zoom, toque la pantalla para enfocar y use la luz de una ventana de lado para que se note la textura. Publíquelas juntas como carrusel.",
+    c:"Los detalles que cuido: [detalle 1], [detalle 2], [detalle 3]. Esto es lo que reviso antes de dar un trabajo por terminado."},
+   {t:"Palabras de un cliente real",w:"Una reseña o un mensaje real que le mandó un cliente, compartido con su permiso.",
+    h:"Tómele captura, tape su apellido y su foto, y no cambie ni una palabra. ¿Todavía no tiene reseñas? Nunca escriba una usted: mande el mensaje “Pedir una reseña” de la pestaña Mensajes y publique una foto para dar las gracias.",
+    c:"De un cliente real: “[sus palabras exactas]”. ¡Gracias, [nombre, solo con su permiso]! Las reseñas honestas ayudan mucho a un negocio pequeño como el mío."},
+   {t:"Trabajos de la semana",w:"Un carrusel de 3 a 5 fotos de distintos trabajos.",
+    h:"Tómelas todas igual: en vertical, con luz de día y a la misma distancia. Ponga primero la foto más clara. Pida permiso a cada cliente. ¿Semana tranquila? Use trabajos anteriores y diga de cuándo son.",
+    c:`Algunos trabajos recientes${inArea}: [trabajo 1], [trabajo 2], [trabajo 3]. Deslice para ver cada uno. ¿Le gustaría agendar el suyo? Mándeme un mensaje.`},
+   {t:"Su revisión final",w:"Lo último que hace antes de irse de un trabajo: su recorrido o su lista de revisión.",
+    h:"Grábese caminando despacio por un trabajo terminado, unos 20 segundos, con el teléfono firme a la altura del pecho, y diga qué revisa. Busque un momento tranquilo, sin música, para que se oiga bien su voz.",
+    c:"Mi último paso antes de irme de un trabajo: [lo que revisa]. ¿Tiene preguntas sobre cómo trabajo? Pregúnteme lo que quiera."}
+  ]:[
+   {t:"One finished job",w:`A clear photo of ${x.job}. Only your own work.`,
+    h:"Open the curtains or turn on every light, wipe your lens, take one wide shot, then one close-up. Ask the client first, and leave out faces, house numbers and license plates. No client photos yet? Do a job at your own place or for someone you know, and say so.",
+    c:`Recent job${inArea}: [what you did]. My favorite part: [one detail]. Want something like this? Send me a message.`},
+   {t:"A real before & after",w:"Two photos of the same job, before and after, in the Before & after post on the Graphics tab.",
+    h:"Take the before photo before you touch anything, then the after from the same spot and height, in the same light. No filters or edits that make the work look better than it is. No before photo this time? Skip this one and take it at your next job.",
+    c:`Before and after${inArea}: [what you did]. Both photos are from this job. Need something similar? Send me a photo for a quote.`},
+   {t:"Show how you work",w:`Film yourself ${x.step}, 15 to 30 seconds.`,
+    h:"Prop the phone up vertically at the height of the work. Record a few 3 to 5 second clips and keep the real sound. Show your hands and the work, not the client's home or belongings.",
+    c:"How I do it: [what you're doing and why it matters]. Want to see more of the process? Follow along."},
+   {t:"The details, up close",w:"Three close-up photos of small details that show careful work.",
+    h:"Move the phone closer instead of zooming, tap the screen to focus, and use side light from a window so texture shows. Post them together as a carousel.",
+    c:"The details I care about: [detail 1], [detail 2], [detail 3]. This is what I check before I call a job done."},
+   {t:"Real customer words",w:"A real review or message a customer sent you, shared with their permission.",
+    h:"Screenshot it, cover their last name and photo, and don't change a word. No reviews yet? Never write one yourself: send the “Review request” from the Messages tab, and post a thank-you photo instead.",
+    c:"From a real customer: “[their exact words]”. Thank you, [first name, only with permission]! Honest reviews help a small business like mine."},
+   {t:"This week's work",w:"A carousel of 3 to 5 photos from different jobs.",
+    h:"Shoot each one the same way: vertical, daylight, same distance. Put the clearest photo first. Ask each client first. Slow week? Use earlier jobs and say when they're from.",
+    c:`A few recent jobs${inArea}: [job 1], [job 2], [job 3]. Swipe to see each one. Want yours done next? Send me a message.`},
+   {t:"Your final check",w:"The last thing you do before you leave a job: your walk-through or checklist.",
+    h:"Film a slow walk through a finished job, about 20 seconds, phone steady at chest height, and say what you check. Pick a quiet moment with no music so your voice is clear.",
+    c:"My last step before I leave a job: [what you check]. Questions about how I work? Ask me anything."}
+  ],
+  brand:()=>es?[
+   {t:"Quién está detrás del negocio",w:"Una foto suya (o con su equipo) y tres cosas: su nombre, a qué se dedica y algo que la gente no se imaginaría de usted.",
+    h:"Párese cerca de una ventana o en la sombra, con el teléfono a la altura de los ojos, y sonría como si saludara a un cliente. Pida a alguien que se la tome, o recargue el teléfono y use el temporizador.",
+    c:`¡Hola! Soy ${d.owner||"[su nombre]"}, la persona detrás de ${d.name}${inArea}. Algo que quizá no sabía de mí: [dato curioso]. ¡Salúdeme cuando guste!`},
+   {t:"Enseñe algo útil",w:`Un video corto compartiendo ${x.tip}.`,
+    h:"Teléfono en vertical a la altura de los ojos. Diga el consejo en los primeros 2 segundos y que todo el video dure menos de 30. Agregue subtítulos para quien lo vea sin sonido.",
+    c:"Un consejo de mi trabajo: [su consejo]. Guárdelo para tenerlo a la mano cuando lo necesite."},
+   {t:"Lo que usted hace distinto",w:"Algo real que usted hace distinto, y por qué les importa a sus clientes.",
+    h:"Muéstrelo en vez de solo decirlo: una foto o un clip de ese hábito, como el mensaje que manda cuando va en camino o cómo deja el lugar. Diga solo lo que de verdad hace siempre.",
+    c:"Algo que siempre hago: [lo que hace distinto]. ¿Por qué? Porque [por qué les importa a sus clientes]."},
+   {t:"Su zona",w:`Una historia desde algún lugar de ${d.area||"la zona donde trabaja"}, con la etiqueta de ubicación, y lo que le gusta de trabajar ahí.`,
+    h:"Una calle, un parque, un mural o su cafecito favorito de la zona, con luz de día. Sin caras ni casas de otras personas. Use la etiqueta de ubicación de su ciudad o de un lugar público, nunca la dirección de un cliente.",
+    c:`Me encanta trabajar${inArea||" por aquí"} porque [lo que le gusta]. Vecinos, ¿cuál es su lugar favorito de la zona?`},
+   {t:"Un día de trabajo",w:"Cuatro o cinco clips de 3 segundos de un día de trabajo: cuando carga el equipo, en camino, trabajando, al terminar y de regreso.",
+    h:"Grabe en vertical y sostenga cada toma quieta 3 segundos. Únalas en el editor de Reels de Instagram. Sin caras de clientes, direcciones ni placas.",
+    c:`Un día con ${d.name}: [dónde empezó], [en qué trabajó], [cómo terminó]. ¿De qué les gustaría ver más?`},
+   {t:"Aclare un mito",w:`Algo que la gente suele creer sobre ${d.noun} y que no es cierto.`,
+    h:"Dos imágenes: el mito en letras grandes en la primera y la verdad en la segunda. O dígalo a la cámara en menos de 20 segundos.",
+    c:`Mito: [lo que la gente cree]. Realidad: [lo que ha visto en su trabajo]. ¿Tiene alguna pregunta sobre ${d.noun}? Pregúnteme.`},
+   {t:"La historia del nombre",w:`Por qué le puso ${d.name} a su negocio, o por qué lo empezó. Solo la razón real, en pocas líneas.`,
+    h:"Use su publicación de la pestaña Gráficos (lleva su logo o sus iniciales), o una foto de su troca, su letrero o su lugar de trabajo. ¿Nada especial que contar? Hágalo corto: una razón sencilla y real vale más que una inventada.",
+    c:`¿Por qué ${d.name}? [la razón real]. Gracias por acompañarme.`}
+  ]:[
+   {t:"Who's behind the business",w:"A photo of you (or you and your crew) and three things: your name, what you do and something people wouldn't guess about you.",
+    h:"Stand near a window or in open shade, phone at eye level, and smile like you're greeting a client. Ask someone to take it, or prop the phone up and use the timer.",
+    c:`Hi, I'm ${d.owner||"[your name]"}, the person behind ${d.name}${inArea}. Something you might not guess about me: [fun fact]. Say hi anytime!`},
+   {t:"Teach one thing",w:`A short video sharing ${x.tip}.`,
+    h:"Phone upright at eye level. Say the tip in the first 2 seconds and keep the whole video under 30 seconds. Add captions so it works with the sound off.",
+    c:"A tip from my work: [your tip]. Save this so you have it when you need it."},
+   {t:"What you do differently",w:"One real thing you do differently, and why it matters to your customers.",
+    h:"Show it instead of just saying it: a photo or clip of that habit in action, like the text you send when you're on your way or how you leave the space. Only claim what you really do every time.",
+    c:"One thing I always do: [what you do differently]. Why? Because [why it matters to your customers]."},
+   {t:"Your part of town",w:`A Story from somewhere around ${d.area||"the area you serve"}, with a location sticker, and what you like about working there.`,
+    h:"A local street, park, mural or favorite coffee spot, in daylight. Leave out people's faces and homes. Use a location sticker for your town or a public landmark, not a client's address.",
+    c:`I love working${inArea||" around here"} because [what you like about it]. Neighbors, what's your favorite local spot?`},
+   {t:"A day on the job",w:"Four or five 3-second clips from one workday: loading up, on the road, working, done, heading home.",
+    h:"Film vertical and hold each shot still for 3 seconds. Put them together in Instagram's Reels editor. No client faces, addresses or license plates.",
+    c:`A day with ${d.name}: [where you started], [what you worked on], [how it ended]. What should I show more of?`},
+   {t:"Clear up a myth",w:`Something people often believe about ${d.noun} that isn't true.`,
+    h:"Two slides: the myth in big text on the first, the truth on the second. Or say it to the camera in under 20 seconds.",
+    c:`Myth: [what people believe]. Truth: [what you've seen on the job]. Got a question about ${d.noun}? Ask me.`},
+   {t:"The story behind the name",w:`Why you named your business ${d.name}, or why you started it. Just the real reason, in a few lines.`,
+    h:"Use your Post graphic (it shows your logo or initials), or a photo of your truck, sign or workspace. Nothing dramatic? Keep it short. A simple, true reason beats a made-up one.",
+    c:`Why the name ${d.name}? [the real reason]. Thanks for following along.`}
+  ]};
+  return P[d.goal]();
 }
 
 /* =====================================================================
@@ -809,11 +1009,11 @@ function render(c,W,H,d,t){BB={top:1e9,bottom:-1e9};c.save();c.textAlign="left";
    ===================================================================== */
 const KEY="enm-starter-v1",IKEY="enm-starter-v1-img";
 const DEF={lang:"en",name:"",service:"cleaning",other:"",area:"",desc:"",phone:"",handle:"",web:"",email:"",owner:"",customer:"",review:"",
-  kind:"photo",tpl:0,pal:-1,hlIdx:0,ctaIdx:0,headline:"",cta:"",hlEdited:false,ctaEdited:false,screen:"setup",tab:"g"};
+  kind:"photo",tpl:0,pal:-1,hlIdx:0,ctaIdx:0,headline:"",cta:"",hlEdited:false,ctaEdited:false,screen:"setup",tab:"g",goal:""};
 const FONT_SPECS=['900 40px "Inter Display"','700 40px "Inter Display"','400 40px "Inter"','600 40px "Inter"','600 40px "Lora"','italic 500 40px "Lora"','500 40px "Cormorant Garamond"'];
 const fontsReady=(document.fonts&&document.fonts.load)?Promise.all(FONT_SPECS.map(s=>document.fonts.load(s))).catch(()=>{}):Promise.resolve();
 
-const API={UI,SV,CTAS,PALS,ORDER,DEF,deriveData,buildCopy,render,tBA,shareFlow,fit,setF,resetLS,formatPhone,normHandle,normWeb,initials,DISPLAY,SANS,SERIF,FONT_SPECS,fontsReady};
+const API={UI,SV,CTAS,GOALS,GOAL_IDS,PALS,ORDER,DEF,deriveData,buildCopy,render,tBA,shareFlow,fit,setF,resetLS,formatPhone,normHandle,normWeb,initials,DISPLAY,SANS,SERIF,FONT_SPECS,fontsReady};
 window.ENMStarter=API;
 if(location.hash==="#selftest"){selfTest();return}
 if(window.__ENM_NO_APP)return;
@@ -839,7 +1039,10 @@ function applyI18n(){const S=T();document.documentElement.lang=st.lang;
   $$("[data-ph]").forEach(el=>{el.placeholder=S[el.dataset.ph]});
   $$("[data-lang]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===st.lang)));
   $("#uplabel").textContent=IMG?S.change:S.l_upload;
-  buildChips();buildTplButtons();buildSwatches();descPlaceholder();heroFan()}
+  buildChips();buildTplButtons();buildSwatches();buildGoals();descPlaceholder();heroFan()}
+function buildGoals(){$("#goals").innerHTML=GOAL_IDS.map(g=>`<button type="button" data-goal="${g}" aria-pressed="false">${esc(GOALS[g][st.lang].name)}</button>`).join("");syncGoals()}
+function syncGoals(){const g=GOAL_IDS.includes(st.goal)?st.goal:"";$$("#goals [data-goal]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.goal===g)));
+  $("#goalHint").textContent=g?`${GOALS[g][st.lang].hint} ${T().goalOff}`:T().goalNone}
 function buildChips(){const box=$("#chips");box.innerHTML=ORDER.map(k=>`<button type="button" class="chip" role="radio" data-svc="${k}" aria-checked="${k===st.service}">${esc(CHIPS[st.lang][k])}</button>`).join("");
   $("#f_other").hidden=st.service!=="other"}
 function descPlaceholder(){const d=deriveData(Object.assign({},st,{desc:""}),null);$("#f_desc").placeholder=d.desc||T().l_desc}
@@ -894,8 +1097,11 @@ $("#sw").addEventListener("click",e=>{const b=e.target.closest("[data-pal]");if(
 const fHead=$("#f_head"),fCta=$("#f_cta");
 fHead.addEventListener("input",()=>{st.headline=fHead.value;st.hlEdited=true;save();schedule()});
 fCta.addEventListener("input",()=>{st.cta=fCta.value;st.ctaEdited=true;save();schedule()});
-$("#b_head").addEventListener("click",()=>{st.hlIdx=(st.hlIdx+(st.hlEdited?0:1))%3;st.hlEdited=false;save();renderAll()});
-$("#b_cta").addEventListener("click",()=>{st.ctaIdx=(st.ctaIdx+(st.ctaEdited?0:1))%CTAS.en.length;st.ctaEdited=false;save();renderAll()});
+$("#b_head").addEventListener("click",()=>{st.hlIdx=(st.hlIdx+(st.hlEdited?0:1))%deriveData(st,null).hls.length;st.hlEdited=false;save();renderAll()});
+$("#b_cta").addEventListener("click",()=>{st.ctaIdx=(st.ctaIdx+(st.ctaEdited?0:1))%deriveData(st,null).ctas.length;st.ctaEdited=false;save();renderAll()});
+/* Goal: tap one to focus the kit, tap it again for the general plan. Typed headlines and CTAs stay. */
+$("#goals").addEventListener("click",e=>{const b=e.target.closest("[data-goal]");if(!b)return;st.goal=st.goal===b.dataset.goal?"":b.dataset.goal;syncGoals();save();renderAll();
+  toast(!st.goal?T().goalCleared:(st.hlEdited&&clean(st.headline))||(st.ctaEdited&&clean(st.cta))?T().goalKept:T().goalSet)});
 
 /* rendering */
 let rT,bT,RV=0;const BLOB={};
@@ -915,7 +1121,7 @@ function renderAll(){if(st.screen!=="kit")return;fontsReady.then(()=>{
 const TEXTS={};
 function actions(id,label){return`<div class="mini"><button type="button" class="btn sm primary" data-copy="${id}">${esc(label||T().copy)}</button>${canShareText?`<button type="button" class="btn sm" data-sharetext="${id}">${esc(T().share)}</button>`:""}</div>`}
 function renderText(d,S){const C=buildCopy(d);
-  TEXTS.bio=C.bio;TEXTS.about=C.about;
+  TEXTS.bio=C.bio;TEXTS.about=C.about;$("#weekIntro").textContent=d.goal?GOALS[d.goal][d.lang].intro:S.weekIntro;
   $("#out_b").innerHTML=`<article class="out"><h3>${esc(S.bioT)}</h3><p class="sub">${esc(S.chars.replace("{n}",C.bio.length))}</p><p class="txt">${esc(C.bio)}</p>${actions("bio")}</article>`+
     `<article class="out"><h3>${esc(S.aboutT)}</h3><p class="sub">${esc(S.aboutM)}</p><p class="txt">${esc(C.about)}</p>${actions("about")}</article>`;
   $("#out_m").innerHTML=C.msgs.map((m,i)=>{TEXTS["m"+i]=m.x;return`<article class="out"><p class="meta">${String(i+1).padStart(2,"0")}</p><h3>${esc(m.t)}</h3><p class="txt">${markBlanks(m.x)}</p>${actions("m"+i)}</article>`}).join("");
@@ -961,6 +1167,8 @@ async function selfTest(){
   const run=async(n,fn)=>{try{const[r,info]=await fn();ok(n,r,info)}catch(e){ok(n,false,e.message)}};
   const full={name:"Bright Path Cleaning",area:"Glendora",phone:"6265550123",handle:"brightpath",web:"https://www.brightpath.com/",email:"hi@brightpath.com",owner:"Sergio",customer:"María",review:"https://g.page/r/example",other:"pool cleaning"};
   const minimal={name:"Bright Path",other:"pool cleaning"};
+  const HONEST=/\b(free|gratis|discount\w*|descuento\w*|% off|sale|oferta|promo\w*|guarantee[ds]?|garant\w*|warrant\w*|cheapest|lowest|best|mejor(es)? precio|el mejor|la mejor|#1|n[uú]mero uno|5[- ]star|cinco estrellas|stars?|estrellas|rated|award\w*|premiad\w*|certified|certificad\w*|licen[sc]ed|licenciad\w*|insured|bonded|asegurad\w*|official|oficial|authorized|autorizad\w*|affiliat\w*|partner\w*|socio|trusted|de confianza|satisf\w*|years of experience|años de experiencia|\d+\+? (clients|customers|homes|cars|clientes|casas|carros)|like new|como nuev\w*)\b/i,
+    TU=/\b(m[aá]ndame|ll[aá]mame|escr[ií]beme|av[ií]same|cont[aá]ctanos|ll[aá]manos|escr[ií]benos|m[aá]ndanos|tienes|quieres|necesitas|puedes|estás|tu (casa|carro|jard[ií]n|patio|cita)|te (mando|escribo|recuerdo|agradezco))\b/i;
   await run("UI text: Spanish covers every English string",async()=>{const miss=Object.keys(UI.en).filter(k=>!(k in UI.es)||!String(UI.es[k]).length),extra=Object.keys(UI.es).filter(k=>!(k in UI.en));return[!miss.length&&!extra.length,miss.concat(extra).join(", ")]});
   await run("Service copy: every service has complete EN + ES",async()=>{const bad=[];ORDER.forEach(k=>["en","es"].forEach(l=>{const s=SV[k][l];["label","noun","hl","desc","job","tip","tools","faq","quote","prep"].forEach(f=>{if(!(f in s))bad.push(`${k}/${l}/${f}`)});if(s.hl.length!==3)bad.push(`${k}/${l}/hl`)}));return[!bad.length,bad.join(", ")]});
   const all=[];
@@ -972,7 +1180,7 @@ async function selfTest(){
       if(!C.bio||!C.about||C.msgs.some(m=>!m.x)||C.ideas.some(i=>!i.c))bad.push(`${lang}/${service}/${vn}: empty text`);
       tx.filter(Boolean).forEach(t=>{if(/undefined|null|NaN|[{}]|\s[,.](\s|$)| {2}/.test(t))bad.push(`${lang}/${service}/${vn}: "${String(t).slice(0,70)}"`)})}
     return[!bad.length,bad.slice(0,3).join(" | ")]});
-  await run("Honesty: no invented offers, discounts, rankings or star ratings",async()=>{const re=/\b(free|gratis|discount\w*|descuento\w*|% off|sale|oferta|promo\w*|guarantee[ds]?|garant\w*|warrant\w*|cheapest|lowest|best|mejor(es)? precio|el mejor|la mejor|#1|n[uú]mero uno|5[- ]star|cinco estrellas|stars?|estrellas|rated|award\w*|premiad\w*|certified|certificad\w*|licen[sc]ed|licenciad\w*|insured|bonded|asegurad\w*|official|oficial|authorized|autorizad\w*|affiliat\w*|partner\w*|socio|trusted|de confianza|satisf\w*|years of experience|años de experiencia|\d+\+? (clients|customers|homes|cars|clientes|casas|carros)|like new|como nuev\w*)\b/i;const hit=all.find(t=>re.test(t));return[!hit,hit]});
+  await run("Honesty: no invented offers, discounts, rankings or star ratings",async()=>{const hit=all.find(t=>HONEST.test(t));return[!hit,hit]});
   await run("Review requests: no incentives and no “only if you were happy” gating",async()=>{const re=/(gift|discount|coupon|raffle|reward|prize|entry|regalo|descuento|cup[oó]n|rifa|premio|if you were happy|if you're happy|si qued[oó] content|si le gust[oó])/i;
     const bad=["en","es"].flatMap(l=>ORDER.map(s=>buildCopy(deriveData(Object.assign({},DEF,full,{lang:l,service:s}),null)).msgs[3].x)).filter(t=>re.test(t));return[!bad.length,bad[0]]});
   await run("Regression · Every trade gets its own quote question and appointment prep (EN/ES)",async()=>{const bad=[];
@@ -982,7 +1190,7 @@ async function selfTest(){
   await run("Regression · Bio keeps a short description line for every trade instead of dropping it",async()=>{const bad=[];
     for(const lang of["en","es"])for(const service of["cleaning","landscaping","detailing","pressure","handyman"]){const b=buildCopy(deriveData(Object.assign({},DEF,full,{lang,service}),null)).bio;if(b.split("\n").length<3||b.length>150)bad.push(`${lang}/${service}: ${b.length}`)}
     return[!bad.length,bad.join(", ")]});
-  await run("Regression · Spanish speaks to customers as usted, never tú",async()=>{const re=/\b(m[aá]ndame|ll[aá]mame|escr[ií]beme|av[ií]same|cont[aá]ctanos|ll[aá]manos|escr[ií]benos|m[aá]ndanos|tienes|quieres|necesitas|puedes|estás|tu (casa|carro|jard[ií]n|patio|cita)|te (mando|escribo|recuerdo|agradezco))\b/i;
+  await run("Regression · Spanish speaks to customers as usted, never tú",async()=>{const re=TU;
     const es=[];ORDER.forEach(svc=>{const d=deriveData(Object.assign({},DEF,full,{lang:"es",service:svc}),null),C=buildCopy(d);es.push(C.bio,C.about,...C.msgs.map(m=>m.x),...C.ideas.flatMap(i=>[i.w,i.h,i.c]),...d.hls,...d.ctas,d.desc)});
     es.push(...Object.values(UI.es).filter(v=>typeof v==="string"));const hit=es.find(t=>re.test(t));return[!hit,hit&&hit.slice(0,90)]});
   await run("Regression · Spanish headlines for typed-in services read correctly for feminine, masculine and plural services",async()=>{const bad=[];
@@ -1001,6 +1209,60 @@ async function selfTest(){
   await run("Marketing templates: no em dashes in generated captions, bios, messages or headlines",async()=>{const bad=[];for(const lang of["en","es"])for(const service of ORDER){const d=deriveData(Object.assign({},DEF,full,{lang,service,desc:""}),null),c=buildCopy(d);for(const z of[c.bio,c.about,...c.msgs.map(x=>x.x),...c.ideas.flatMap(x=>[x.w,x.h,x.c]),...d.hls,...d.ctas,d.desc])if(z.includes("—"))bad.push(lang+"/"+service+": "+z.slice(0,55))}return[bad.length===0,bad.slice(0,3).join(" | ")]});
   await run("Contact info: nothing appears that the owner didn't type",async()=>{const d=deriveData(Object.assign({},DEF,{name:"Solo Co",lang:"en"}),null),C=buildCopy(d);const t=[C.bio,C.about,...C.msgs.map(m=>m.x)].join(" ");return[!/\(\d{3}\)|@|\.com|https?:/.test(t),t.slice(0,80)]});
   await run("Helpers: phone, handle, website and initials formatting",async()=>[formatPhone("626 555 0123")==="(626) 555-0123"&&formatPhone("+1 626-555-0123")==="(626) 555-0123"&&normHandle("https://instagram.com/brightpath/")==="@brightpath"&&normHandle("@@abc")==="@abc"&&normWeb("https://www.Brightpath.com/")==="Brightpath.com"&&initials("The Bright Path Cleaning LLC")==="BP"&&initials("Limpieza Brillante")==="LB","mismatch"]);
+  /* Marketing goals. Each goal: its own 7-day plan, phone how-tos, captions, headline and call to action. */
+  const gText=(d,C)=>[...C.ideas.flatMap(i=>[i.t,i.w,i.h,i.c]),...d.hls,...d.ctas,d.headline,d.cta,GOALS[d.goal][d.lang].name,GOALS[d.goal][d.lang].hint,GOALS[d.goal][d.lang].intro];
+  const gAll=[],gFace=[];
+  await run("Goals · three goals named in EN and ES (Sell now / Conseguir clientes, Show proof / Mostrar mi trabajo, Build brand / Darme a conocer), each with its own headline and call-to-action ideas",async()=>{
+    const want={sell:["Sell now","Conseguir clientes"],proof:["Show proof","Mostrar mi trabajo"],brand:["Build brand","Darme a conocer"]},bad=[];if(GOAL_IDS.join()!=="sell,proof,brand")bad.push(GOAL_IDS.join());
+    for(const g of GOAL_IDS){if(GOALS[g].en.name!==want[g][0]||GOALS[g].es.name!==want[g][1])bad.push(g+": names");
+      for(const l of["en","es"]){const G=GOALS[g][l];["name","hint","intro"].forEach(k=>{if(!G[k])bad.push(`${g}/${l}/${k}`)});if(G.ctas.length!==4)bad.push(`${g}/${l}: ctas`)}}
+    ORDER.forEach(k=>["en","es"].forEach(l=>["sell","menu","step"].forEach(f=>{if(!SV[k][l][f])bad.push(`${k}/${l}/${f}`)})));
+    for(const lang of["en","es"])for(const service of ORDER){const D=[""].concat(GOAL_IDS).map(goal=>deriveData(Object.assign({},DEF,full,{lang,service,goal}),null));
+      D.forEach((d,i)=>{if(d.hls.length!==3)bad.push(`${lang}/${service}/${d.goal}: ${d.hls.length} headlines`);
+        for(let j=i+1;j<D.length;j++){if(d.hls.some(h=>D[j].hls.includes(h)))bad.push(`${lang}/${service}: ${d.goal||"general"} and ${D[j].goal} share a headline`);
+          if(i&&d.ctas.some(c=>D[j].ctas.includes(c)))bad.push(`${lang}/${service}: ${d.goal} and ${D[j].goal} share a call to action`);if(d.cta===D[j].cta)bad.push(`${lang}/${service}: same first call to action`)}})}
+    return[!bad.length,bad.slice(0,3).join(" | ")]});
+  await run("Goals · every goal × service × EN/ES × full/minimal details (72 combinations) makes 7 complete ideas, none repeated, with no broken blanks",async()=>{const bad=[];
+    for(const goal of GOAL_IDS)for(const lang of["en","es"])for(const service of ORDER)for(const[vn,v]of[["full",full],["minimal",minimal]]){
+      const d=deriveData(Object.assign({},DEF,v,{lang,service,goal}),null),C=buildCopy(d),id=`${goal}/${lang}/${service}/${vn}`,tx=gText(d,C);gAll.push(...tx);gFace.push(...C.ideas.map(i=>i.c),...d.hls,...d.ctas);
+      if(C.ideas.length!==7)bad.push(`${id}: ${C.ideas.length} ideas`);for(const f of["t","w","h","c"])if(new Set(C.ideas.map(i=>i[f])).size!==7)bad.push(`${id}: a repeated ${f}`);
+      tx.forEach(t=>{if(!t||/undefined|null|NaN|[{}]|\s[,.](\s|$)| {2}|—/.test(t))bad.push(`${id}: "${String(t).slice(0,70)}"`);(t.match(/\[[^\]]*\]/g)||[]).forEach(b=>{if(b.length>42)bad.push(`${id}: blank too long to highlight ${b}`)})})}
+    return[!bad.length,bad.slice(0,3).join(" | ")]});
+  await run("Goals · the three plans are really different: no idea, how-to or caption shared between goals or copied from the general plan, and each mixes at least 5 kinds of post",async()=>{const bad=[];
+    const kind=i=>{const s=(i.w+" "+i.h).toLowerCase();return/carousel|carrusel/.test(s)?"carousel":/\bstory\b|historia/.test(s)?"story":/slides|dos imágenes/.test(s)?"slides":/video|clip|film|gr[aá]b|camera|cámara/.test(s)?"video":/graphic|gráficos/.test(s)?"graphic":/screenshot|captura/.test(s)?"screenshot":"photo"};
+    for(const lang of["en","es"])for(const service of ORDER){const plans=[""].concat(GOAL_IDS).map(goal=>buildCopy(deriveData(Object.assign({},DEF,full,{lang,service,goal}),null)).ideas);
+      for(let a=1;a<plans.length;a++){const k=new Set(plans[a].map(kind));if(k.size<5)bad.push(`${lang}/${service}/${GOAL_IDS[a-1]}: ${k.size} kinds (${[...k]})`);
+        for(let b=0;b<plans.length;b++)if(a!==b)for(const f of["t","w","h","c"]){const o=new Set(plans[b].map(i=>i[f]));const hit=plans[a].find(i=>o.has(i[f]));if(hit)bad.push(`${lang}/${service}: ${GOAL_IDS[a-1]} repeats "${hit[f].slice(0,40)}"`)}}}
+    return[!bad.length,bad.slice(0,3).join(" | ")]});
+  await run("Goals · honest copy: no invented discounts, prices, urgency, testimonials, results, ratings or credentials (EN/ES); customer words appear only as [blanks]",async()=>{
+    const URGENT=/\b(hurry|limited|last chance|act now|today only|ends? (soon|today|tonight)|don'?t miss|spots? left|only \d+|while (they|supplies) last|too late|ap[uú]rese|[uú]ltim[oa]s? (lugares|espacios|d[ií]as|horas|oportunidad)|tiempo limitado|solo (por )?hoy|no se lo pierda|quedan pocos|cupo limitado|aproveche|urgente?|urgent)\b/i;
+    const CLAIM=/\b(expert\w*|pros?|professional\w*|profesional\w*|perfect\w*|flawless|spotless|impecable\w*|happy (customers|clients)|clientes (felices|satisfechos)|(customers|clients) (say|love)|loved by|rave|recomendad[oa]s? por|reviews? from)\b|100\s?%|\$\s?\d|\d+\s?(dollars|d[oó]lares|pesos)/i;
+    const hit=gAll.find(t=>HONEST.test(t)||URGENT.test(t)||CLAIM.test(t))||gFace.find(t=>(t.match(/[“"][^”"]*[”"]/g)||[]).some(q=>!/^[“"]\[[^\]]+\][”"]$/.test(q)));return[gAll.length>2000&&!hit,hit||gAll.length+" strings"]});
+  await run("Goals · Spanish speaks as usted, writes “del”/“al” (never “de el”), and typed-in services of any gender or number never sit next to an article or adjective that would have to agree (EN never says “a real estate”)",async()=>{const bad=[];
+    gAll.filter(t=>TU.test(t)||/\b(de|a) el\b/.test(t)).forEach(t=>bad.push(t.slice(0,70)));
+    const DET=/^(el|la|los|las|un|una|unos|unas|su|sus|nuestr[oa]s?|est[ea]s?|es[ea]s?|del|al|mi|mis|otr[oa]s?)$/i,ADJ=/^(hech[oa]s?|list[oa]s?|nuev[oa]s?|buen[oa]s?|complet[oa]s?|local(es)?|profesional(es)?|r[aá]pid[oa]s?|econ[oó]mic[oa]s?|confiables?|disponibles?|perfect[oa]s?|limpi[oa]s?|cuidados[oa]s?|especial(es)?|ideal(es)?|propi[oa]s?|[uú]nic[oa]s?|mism[oa]s?|tod[oa]s?|cercan[oa]s?)$/i;
+    for(const[lang,others]of[["es",["Clínica estética","Diseño de interiores","Bienes raíces","Uñas acrílicas","Limpieza de albercas","Fotografía"]],["en",["Real estate","Med spa","Pool cleaning","Interior design"]]])for(const other of others)for(const goal of GOAL_IDS){
+      const d=deriveData(Object.assign({},DEF,full,{lang,service:"other",other,goal}),null),n=d.noun.toLowerCase();
+      gText(d,buildCopy(d)).forEach(t=>{const low=t.toLowerCase();for(let k=low.indexOf(n);k>=0;k=low.indexOf(n,k+1)){const before=(low.slice(0,k).trim().split(/\s+/).pop()||"").replace(/[^\p{L}]/gu,""),after=(low.slice(k+n.length).match(/^\s+(\p{L}+)/u)||[])[1]||"";
+        if(lang==="es"?DET.test(before)||ADJ.test(after):/^(a|an)$/.test(before))bad.push(`${lang}/${other}/${goal}: "…${t.slice(Math.max(0,k-24),k+n.length+18)}…"`)}})}
+    return[!bad.length,bad.slice(0,3).join(" | ")]});
+  await run("Goals · the graphics headline and call to action follow the goal, but anything the owner typed stays; bio, about and messages are the same for every goal",async()=>{const bad=[];
+    for(const lang of["en","es"])for(const service of ORDER){const base=Object.assign({},DEF,full,{lang,service}),d0=deriveData(base,null),c0=JSON.stringify([buildCopy(d0).bio,buildCopy(d0).about,buildCopy(d0).msgs]);
+      for(const goal of GOAL_IDS){const id=`${lang}/${service}/${goal}`,d=deriveData(Object.assign({},base,{goal}),null),C=buildCopy(d);
+        if(d.headline!==d.hls[0]||d.cta!==d.ctas[0]||d.headline===d0.headline||d.cta===d0.cta)bad.push(id+": suggestion");
+        if(JSON.stringify([C.bio,C.about,C.msgs])!==c0)bad.push(id+": bio, about or messages changed");
+        const own=deriveData(Object.assign({},base,{goal,hlEdited:true,headline:"My own words",ctaEdited:true,cta:"Text me"}),null);if(own.headline!=="My own words"||own.cta!=="Text me")bad.push(id+": typed text replaced");
+        const half=deriveData(Object.assign({},base,{goal,hlEdited:true,headline:"My own words"}),null);if(half.headline!=="My own words"||half.cta!==d.ctas[0])bad.push(id+": partial edit");
+        for(let i=0;i<8;i++){const di=deriveData(Object.assign({},base,{goal,hlIdx:i,ctaIdx:i}),null);if(!d.hls.includes(di.headline)||!d.ctas.includes(di.cta)||buildCopy(di).bio!==buildCopy(deriveData(Object.assign({},base,{hlIdx:i,ctaIdx:i}),null)).bio)bad.push(`${id}: “Another idea” #${i}`)}}}
+    return[!bad.length,bad.slice(0,3).join(" | ")]});
+  await run("Goals · with no goal (or a saved value this version doesn't know) the kit is exactly the original: same Week 1, headline, call to action, bio and messages",async()=>{const bad=[];
+    const titles={en:["Introduce yourself","Before & after","One quick tip","Behind the scenes","Answer a common question","Where you work","Say thank you"],es:["Preséntese","Antes y después","Un consejo rápido","Detrás de cámaras","Responda una pregunta común","Dónde trabaja","Dé las gracias"]};
+    for(const lang of["en","es"])for(const service of ORDER)for(const v of[full,minimal]){const legacy=Object.assign({},DEF,v,{lang,service});delete legacy.goal;
+      const snap=d=>JSON.stringify([buildCopy(d),d.headline,d.cta,d.hls,d.ctas]),ref=snap(deriveData(legacy,null));
+      for(const goal of["",undefined,null,"constructor","toString","Sell","xyz"]){const d=deriveData(Object.assign({},legacy,{goal}),null);if(d.goal!==""||snap(d)!==ref)bad.push(`${lang}/${service}: goal=${goal}`)}
+      const d=deriveData(legacy,null);if(buildCopy(d).ideas.map(i=>i.t).join()!==titles[lang].join())bad.push(`${lang}/${service}: Week 1 titles`);
+      if(d.headline!==SV[service][lang].hl[0].replace(/\{S\}/g,capFirst(d.noun)).replace(/\{s\}/g,d.noun)||d.cta!==CTAS[lang][0])bad.push(`${lang}/${service}: suggestions`)}
+    return[!bad.length&&DEF.goal==="",bad.slice(0,3).join(" | ")]});
   await run("Privacy: page policy blocks every network request",async()=>{const m=document.querySelector('meta[http-equiv="Content-Security-Policy"]');const c=m?m.content:"";return[/default-src 'none'/.test(c)&&!/connect-src/.test(c)&&!/https?:/.test(c),c]});
   await fontsReady;
   await run("Fonts: all seven embedded typefaces loaded",async()=>{const n=[...document.fonts].filter(f=>f.status==="loaded").length;return[n>=7&&document.fonts.check('500 40px "Cormorant Garamond"'),n+" loaded"]});
@@ -1074,6 +1336,22 @@ async function selfTest(){
   await run("Luxury: listed in the style picker in EN/ES; saved style numbers keep their meaning; unknown ones fall back to Editorial",async()=>{
     const px=t=>{const cv=document.createElement("canvas");cv.width=108;cv.height=135;const c=cv.getContext("2d");c.setTransform(.1,0,0,.1,0,0);render(c,1080,1350,deriveData(Object.assign({},DEF,full),null),t);return c.getImageData(0,0,108,135).data.join()};
     return[TPL.length===4&&TPLID.join()==="editorial,poster,grid,luxury"&&UI.en.tplNames[LUXI]==="Luxury"&&UI.es.tplNames[LUXI]==="Lujo"&&UI.en.tplNames.length===TPL.length&&UI.es.tplNames.length===TPL.length&&px(99)===px(0)&&px(LUXI)!==px(0),TPLID.join()]});
+  await run("Goals · graphics: every goal headline and call to action is drawn in full and inside the safe area in all 4 styles (goal × service × EN/ES × style; post or story; no image, photo or logo; very long details)",async()=>{const bad=[];let n=0;
+    const sq=s=>String(s).replace(/\s|…/g,"").toUpperCase(),imgs=[["none",null,"photo"],["photo",photo,"photo"],["logo",logo,"logo"]];
+    for(const goal of GOAL_IDS)for(const service of ORDER)for(const lang of["en","es"])for(let t=0;t<TPL.length;t++)for(const long of[true,false]){
+      const k=ORDER.indexOf(service)+t,H=k%2?1920:1350,[vn,img,kind]=imgs[(k+(lang==="es"?1:0)+(long?0:1))%3],id=`${goal}/${service}/${lang}/${TPLID[t]}/${vn}/${H}${long?"/long":""}`;
+      const cv=document.createElement("canvas");cv.width=1080;cv.height=H;const c=cv.getContext("2d"),log=spy(c);
+      const d=deriveData(Object.assign({},DEF,full,long?{name:longBiz.name,area:longBiz.area,other:"Tratamientos faciales, corporales y más"}:{},{lang,service,kind,goal,hlIdx:k%3,ctaIdx:k}),img);
+      const b=render(c,1080,H,d,t),lo=H===1920?240:60,hi=H===1920?H-300:H-60;n++;
+      if(b.top<lo||b.bottom>hi)bad.push(`${id}: ${Math.round(b.top)}–${Math.round(b.bottom)}`);if(!varied(cv))bad.push(id+": blank");
+      const drawn=sq(log.text.map(r=>r.t).join(""));if(!long&&(!drawn.includes(sq(d.headline))||!drawn.includes(sq(d.cta))))bad.push(`${id}: headline or call to action cut`)}
+    return[!bad.length,bad.slice(0,3).join(" | ")||n+" renders"]});
+  await run("Goals · Luxury: every goal headline breaks naturally (EN/ES, post and story, with and without a photo): no short word alone at the end, no line ending in “the”, “your”, “la”, “su”…",async()=>{const bad=[],seen=new Set();let n=0;const bare=x=>x.replace(/[^\p{L}&]/gu,"");
+    for(const goal of GOAL_IDS)for(const lang of["en","es"])for(const service of ORDER)for(let i=0;i<3;i++){const v=Object.assign({},full,{lang,service,goal,hlIdx:i}),h=deriveData(Object.assign({},DEF,v),null).headline;if(seen.has(lang+h))continue;seen.add(lang+h);
+      for(const[img,H]of[[null,1350],[photo,1350],[null,1920],[photo,1920]]){const{log}=luxRender(v,img,"photo",H),hl=log.text.filter(r=>/Cormorant/.test(r.font)&&r.t!==r.t.toUpperCase()).map(r=>r.t.trim());n++;
+        const last=hl[hl.length-1]||"",lone=hl.length>1&&!/\s/.test(last)&&bare(last).length<=5,weak=hl.slice(0,-1).some(l=>ARTICLE.test(bare(l.split(" ").pop())));
+        if(lone||weak||hl.join(" ")!==h.replace(/\n/g," "))bad.push(`${lang}/${goal}/${H}${img?"/photo":""}: "${hl.join(" / ")}"`)}}
+    return[!bad.length,bad.slice(0,3).join(" | ")||`${seen.size} headlines, ${n} renders`]});
   await run("Regression · Before & after: empty, side-by-side and stacked layouts, EN/ES, inside the frame, exports a 1080 × 1350 PNG",async()=>{const bad=[];
     const tall=document.createElement("canvas");tall.width=900;tall.height=1200;{const c=tall.getContext("2d");c.fillStyle="#7a8b6a";c.fillRect(0,0,900,1200);c.fillStyle="#d9c7a0";c.fillRect(100,300,700,700)}
     for(const[vn,bf,af,stack]of[["empty",null,null,false],["portrait",tall,tall,false],["landscape",photo,photo,true],["mixed",tall,photo,false]])for(const lang of["en","es"])for(const v of[full,minimal]){
